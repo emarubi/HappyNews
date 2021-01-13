@@ -10,8 +10,28 @@
 
 - Les fonctionnalités du projet (spécifications fonctionnelles)
   - Le MVP (Minimum Viable Product) :
-  - Les évolutions potentielles (ce qui ne sera pas terminé) : tout ce qui est prévu mais ne fait pas partie du MVP
+    - Création compte commerçant:
+      - Création profil
+      - Création dévanture
+      - Création vitrine produits
+      - Affichage Happy News
+      - Envoi newsletter
+      - Géolocalisation
+      - Répondre à un besoin spécifique d'un client par chat ou par e-mail
+    - Création compte client:
+      - Création profil
+      - Mes favoris
+      - Affichage promos / news
+      - Mes news
+      - Recherche promos
+      - Recherche produits
 
+  - Les évolutions potentielles (ce qui ne sera pas terminé) : tout ce qui est prévu mais ne fait pas partie du MVP
+    - Possibilité pour le client de résever et payer en ligne un produit
+    - Possibilité pour le client de se faire livrer
+    - Historique des ventes pour le commerçant
+    - Historique d'achat pour le client
+  
 #### La liste des technololgies utilisées pour le projet (spécifications techniques)
 
 #### La définition de la cible du projet
@@ -25,3 +45,9 @@
 #### User stories
 
 #### Les rôles
+
+    - Nicolas PLAZA: Product Owner
+    - Emanuela VILLEROY: Scrum Master
+    - Arthur DERUELLE: Lead Dev Front
+    - Frédéric CREUSEVEAU: Lead Dev Back
+    - Yann THOBENA: Git Master
