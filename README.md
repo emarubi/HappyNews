@@ -52,8 +52,11 @@ L'application répond à un problème de pouvoir d'achat des clients et à la d�
   - FORMIK et YUP
   - Stripe pour les paiemants en ligne
   - Google Maps API
+  
 - Back:
+  - Node JS
   - PostgreSQL
+  - Squitch
 
 #### La définition de la cible du projet
 
@@ -64,6 +67,8 @@ L'application met en relation des clients et des commerçants de proximité: les
 Tout navigateur sauf Opéra Mini
 
 #### L'arborescence de l'application (le chemin de l'utilisateur)
+
+![Image](docs/arborescence_site.png)
 
 #### La liste des routes prévues
 
