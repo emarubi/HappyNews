@@ -1,14 +1,5 @@
 import React from 'react';
 
-<<<<<<< HEAD
-const Footer = () => {
-    return (
-        <div>
-      Je suis le Footer
-        </div>
-    )
-}
-=======
 // Import du CSS
 import './style.scss';
 
@@ -22,6 +13,5 @@ const Footer = () => (
     </ul>
   </footer>
 );
->>>>>>> Home/footer
 
 export default Footer;
