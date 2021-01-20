@@ -4,23 +4,44 @@
 .container {
   display: flex;
   flex-direction: column;
-  
+  margin: 0 2em;
 }
 
 .mapSection {
-  background-image: url(../../../assets/Images/map.PNG);
-  background-size: cover;
-  background-position: center;
-  min-height: 30vh;
+display:flex;
+margin: 2em 0;
+flex-direction: column;
+align-items: center;
 }
 
-
-
-.custommers {
+.contentInput {
+  margin: 0 auto 1em;
+  width: 25em;
+  background: fff;
+  padding: 0.5em;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 }
 
-.content {
-  margin-top: 10em;
+.textLabel {
+  margin-left: 1em;
+}
+
+.searchOnMap {
+  width: 20em;
+  margin: 1em 0;
+}
+
+.mapPict {
+display: block;
+object-fit: cover;
+width: 100%;
+height: 20em;
+}
+
+.customers {
+  display: flex;
+  height: 20em;
+  padding: 2em 2em;
 }
 
 .customerPict {
@@ -28,15 +49,41 @@
   object-fit: cover;
 }
 
+.customerText {
+  display: block;
+  text-align: center;
+  margin: 2em 2em;
+}
+
+.sectionLandingPageText {
+  margin: 1em 0;
+}
+
+.titleCustomers {
+  font-size: 2em;
+  font-weight: 300;
+}
+
+.retailers {
+  display: flex;
+  height: 20em;
+  padding: 2em 2em;
+  background-color: vars.$Primary;
+}
+
 .retailerPict {
   max-width: 20vw;
   object-fit: cover;
 }
 
-.wave {
-  position: absolute;
-  width: 100%;
-  bottom: -140px;
-  color: #fff;
-  opacity: 1;
+.retailerText {
+  color: #ffffff;
+  display: block;
+  text-align: center;
+  margin: 2em 2em;
+}
+
+.titleRetailers {
+  font-size: 2em;
+  font-weight: 300;
 }
