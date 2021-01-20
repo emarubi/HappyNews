@@ -1,9 +1,50 @@
 @use 'src/styles/vars';
-.navbar {
-    display : flex;
-    background-color: vars.$Background;
+
+
+.header {
+    display: flex ;
+    justify-content: space-between;
+    padding: 0.5em;
+    text-align: center;
+    background: vars.$Background;
+    color: black;
+
+    &-avatar {
+        border-radius: 100%;
+        align-self: flex-end;
+    }
+
+    &-button {
+        background-color: vars.$Primary;
+        border-radius: 10px;
+    }
 }
-.header-avatar {
-    width: 9%;
-    height: 9%;
+
+// min size 1313px
+@media screen and (min-width: 1313px) {
+    .header-avatar {
+        width: 120px;
+      //  height: 5%;
+      }
+}
+// max size 1312 px
+@media screen and (max-width: 1312px) {
+    .header-avatar {
+        width: 100px;
+      //  height: 5%;
+      }
+}
+// max size 992 px
+@media screen and (max-width: 992px) {
+    .header-avatar {
+        width: 80px;
+       // height: 10%;
+    }
+}
+// max size 688 px
+@media screen and (max-width: 688px){
+    .header-avatar {
+        width: 60px;
+     //   height: 15%;
+    }
 }
