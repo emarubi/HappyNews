@@ -1,14 +1,9 @@
-import React from 'react'
+import React from 'react';
 
+const Header = () => (
+  <div>
+    je suis le header
+  </div>
+);
 
-
-const Header = props => {
-    return (
-        <div>
-            je suis le header
-        </div>
-    )
-}
-
-
-export default Header
+export default Header;

@@ -1,11 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-function Page() {
-    return (
-        <div>
-            Je suis la page
-        </div>
-    )
-}
+const Page = () => (
+  <div>
+    Je suis la page
+  </div>
+);
 
-export default Page
+export default Page;
