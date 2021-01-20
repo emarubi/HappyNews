@@ -1,19 +1,16 @@
 @use 'src/styles/vars';
 .title {
   margin-bottom: 0.2em ;
-  &-h1 {
-  font-family: 'Roboto', 'Quicksand', 'Inter', sans-serif;
-  margin-bottom: 0.2em;
-  transition: 0.5s;
-}
-&:hover {
-  color: vars.$Dark;
-
-  font-weight: bold;
-}
-// &-accroche {
-
-// }
+    &-h1 {
+    font-family: 'Roboto', 'Quicksand', 'Inter', sans-serif;
+    margin-bottom: 0.2em;
+    transition: 0.5s;
+    color: vars.$Dark;
+  }
+  &:hover {
+    color: vars.$Dark;
+    font-weight: bold;
+  }
 }
 
 
