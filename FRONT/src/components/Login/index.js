@@ -5,8 +5,8 @@ import Header from 'src/components/Header';
 const Login = () => (
   <div>
     <Header />
-    <section>
-      <a></a>
+    <section className="Login">
+      <img></img>
     </section>
     <Footer />
   </div>
