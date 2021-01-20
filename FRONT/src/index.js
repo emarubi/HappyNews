@@ -1,11 +1,11 @@
 // == Import : npm
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import { render } from 'react-dom';
 // Composants
 import App from 'src/components/App';
 // == Import : local
 import './styles/index.scss';
-
 
 // == Render
 // 1. Élément React racine (celui qui contient l'ensemble de l'app)

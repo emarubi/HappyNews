@@ -1,10 +1,9 @@
 import React from 'react';
 
-
-function Footer(props) {
+const Footer = () => {
     return (
         <div>
-            je suis le footer
+      Je suis le Footer
         </div>
     )
 }

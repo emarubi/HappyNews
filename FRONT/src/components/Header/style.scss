@@ -1,0 +1,9 @@
+@use 'src/styles/vars';
+.navbar {
+    display : flex;
+    background-color: vars.$Background;
+}
+.header-avatar {
+    width: 9%;
+    height: 9%;
+}

@@ -1,8 +1,9 @@
 import React from 'react'
 
-function Page() {
+const Page = () => {
     return (
         <div>
+
             Je suis la page
         </div>
     )
