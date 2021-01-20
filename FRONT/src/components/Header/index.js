@@ -9,6 +9,11 @@ import avatarPhoto from '../../assets/Images/avatar-header.jpg';
 import './style.scss';
 import Title from './Title';
 
+const Header = () => (
+  <div>
+    je suis le header
+  </div>
+);
 
 const Header = () => {
     return (   

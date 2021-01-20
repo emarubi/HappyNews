@@ -4,7 +4,6 @@ import React from 'react';
 import Home from 'src/components/Home';
 import './styles.scss';
 
-
 // == Composant
 const App = () => (
   <div className="container-fluid">
@@ -14,5 +13,3 @@ const App = () => (
 
 // == Export
 export default App;
-
-
