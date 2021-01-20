@@ -1,0 +1,46 @@
+@use 'src/styles/vars';
+
+
+  .avatar img {
+    border-radius: 9999px;
+    height: 9vh;
+    position: relative;
+    width: 9vh;
+    z-index: 2;
+  }
+  .avatar img:hover {
+    border-radius: 9999px;
+    height: 11vh;
+    position: relative;
+    width: 11vh;
+    z-index: 2;
+    border: solid 2px vars.$Primary ;
+  }
+    
+  // min size 1313px
+@media screen and (min-width: 1313px) {
+    .avatar-img {
+        width: 120px;
+    }
+
+}
+// max size 1312 px
+@media screen and (max-width: 1312px) {
+    .avatar-img {
+        width: 100px;
+     }
+}
+// max size 992 px
+@media screen and (max-width: 992px) {
+    .avatar-img {
+        width: 80px;
+       
+    }
+}
+// max size 688 px
+@media screen and (max-width: 688px){
+    .avatar-img {
+        width: 60px;
+     
+    }
+}

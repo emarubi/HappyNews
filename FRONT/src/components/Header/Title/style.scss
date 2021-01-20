@@ -1,7 +1,14 @@
-h1 {
-  font-size: 2.5em;
+@use 'src/styles/vars';
+.title {
+  margin: 0.2em auto;
+  &-h1 {
   font-family: 'Roboto', 'Quicksand', 'Inter', sans-serif;
-  margin-top: 0.2em;
+  margin: 0.2em auto;
+}
+&:hover {
+  color: vars.$Dark;
+  font-weight: bold;
+}
 }
 
 

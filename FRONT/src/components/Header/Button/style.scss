@@ -1,0 +1,20 @@
+@use 'src/styles/vars';
+.button{
+    font-size: 0.9em;
+    margin: 0.6em 0.6em 0 1em;
+    padding: 3px 6px 3px 6px;
+    border: none;
+    background-color: vars.$Primary;
+    color: black;
+    border-radius: 10px;
+   // box-shadow: 3px 3px 6px 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    outline: none;
+    transition: 0.2s;
+}
+
+.button:hover{
+  //  transform: scale(1.01);
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.18);
+    font-weight: bold;
+}
