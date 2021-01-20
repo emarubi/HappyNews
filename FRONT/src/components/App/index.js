@@ -7,7 +7,7 @@ import './styles.scss';
 
 // == Composant
 const App = () => (
-  <div className="container-fluid">
+  <div >
       <Home />
   </div>
 );
