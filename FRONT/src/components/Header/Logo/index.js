@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../../assets/Images/Logo-happy-News.png';
+import logo from 'src/assets/Images/Logo-Happy-News.png';
 import './style.scss';
 function Logo() {
     return (
