@@ -1,15 +1,19 @@
 @use 'src/styles/vars';
 .title {
-  margin: 0.2em auto;
+  margin-bottom: 0.2em ;
   &-h1 {
   font-family: 'Roboto', 'Quicksand', 'Inter', sans-serif;
-  margin: 0.2em auto;
+  margin-bottom: 0.2em;
   transition: 0.5s;
 }
 &:hover {
   color: vars.$Dark;
+
   font-weight: bold;
 }
+// &-accroche {
+
+// }
 }
 
 
