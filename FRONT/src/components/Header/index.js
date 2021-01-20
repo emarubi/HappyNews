@@ -2,7 +2,7 @@
 import React from 'react';
 //import Utilitaire, modules
 import avatarPhoto from '../../assets/Images/avatar-header.jpg';
-import logo from '../../assets/Images/logo-happy-news-web.png';
+import logo from '../../assets/Images/Logo-Happy-News.png';
 //import CSS
 import './style.scss';
 import Title from './Title';
