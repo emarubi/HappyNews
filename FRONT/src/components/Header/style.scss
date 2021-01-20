@@ -6,14 +6,16 @@
     display: flex ;
     justify-content: space-between;
     text-align: center;
+    align-items: center;
     background: vars.$Background;
     color: black;
     height: 6em;
     width: 100%;
     font-size: 1em;
-
-    &-Nav {
+    
+    &-nav {
     display: flex ;
+    align-items: center;
     }
 }
 

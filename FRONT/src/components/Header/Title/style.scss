@@ -4,6 +4,7 @@
   &-h1 {
   font-family: 'Roboto', 'Quicksand', 'Inter', sans-serif;
   margin: 0.2em auto;
+  transition: 0.5s;
 }
 &:hover {
   color: vars.$Dark;
