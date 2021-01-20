@@ -1,27 +1,23 @@
 // import NPM
 import React from 'react';
-//import Utilitaire, modules
-import avatarPhoto from '../../assets/Images/avatar-header.jpg';
-import logo from '../../assets/Images/Logo-Happy-News.png';
-//import CSS
+import Avatar from 'src/components/Header/Avatar';
+import Bouton from 'src/components/Header/Button';
+import Logo from 'src/components/Header/Logo';
 import './style.scss';
 import Title from './Title';
-
-
 const Header = () => {
     return (
       <header className='header'>
-        <a href='#' >
-          <img src={logo} alt="logo website" className='header-logo' />
-        </a> 
-          <Title />
-          <div className='header-avatar-picture'>
-          <img src={avatarPhoto} alt="my-avatar" className='header-avatar' />
-          <button className="header-button"> se connecter </button> 
-          <button className="header-button-news"> liste des news </button> 
-      </div>
-      </header>
+        
+        <Logo />
+        <Title />
 
+        <div className='header-nav'>
+              <Avatar /> 
+              <Bouton> Connection </Bouton>
+              <Bouton> Liste des news </Bouton>
+        </div>
+      </header>
     )
 }
 

@@ -4,15 +4,12 @@ import React from 'react';
 import Home from 'src/components/Home';
 import './styles.scss';
 
-
 // == Composant
 const App = () => (
-  <div >
-      <Home />
+  <div>
+    <Home />
   </div>
 );
 
 // == Export
 export default App;
-
-

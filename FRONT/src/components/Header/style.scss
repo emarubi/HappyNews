@@ -2,88 +2,20 @@
 
 
 .header {
-    font-family: 'Roboto', 'Quicksand', 'Inter', sans-serif;
+    font-family: 'Quicksand', 'Inter','Roboto', sans-serif;
     display: flex ;
     justify-content: space-between;
     text-align: center;
+    align-items: center;
     background: vars.$Background;
-    color: black;
-
-    &-avatar {
-        border-radius: 100%;
-        align-self: flex-end;
-        margin-top: 0.9em;
-    }
-    &-button{
-        font-size: 1em;
-        margin: 1em 1em 0 1em;
-        padding: 2px 4px 2px 4px;
-        border: none;
-        background-color: vars.$Primary;
-        color: black;
-        border-radius: 10px;
-        box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.3);
-        cursor: pointer;
-        outline: none;
-        transition: 0.2s;
-    }
-
-    button:hover{
-        transform: scale(1.01);
-        box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.18);
-    }
-    &-button-news {
-        font-size: 1em;
-        margin: 1em 1em 0 0;
-        padding: 2px 4px 2px 4px;
-        border: none;
-        background-color: vars.$Primary;
-        color: black;
-        border-radius: 10px;
-        box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.3);
-        cursor: pointer;
-        outline: none;
-        transition: 0.2s;
-    }
-    button-news:hover{
-        transform: scale(1.01);
-        box-shadow: 6px 6px 15px 4px rgba(0, 0, 0, 0.18);
-    }
-    &-logo {
-        width: 10em;
-        height: 10em;
+    color: vars.$Dark;
+    height: 6em;
+    width: 100%;
+    font-size: 1em;
+    
+    &-nav {
+    display: flex ;
+    align-items: center;
     }
 }
 
-// min size 1313px
-@media screen and (min-width: 1313px) {
-    .header-avatar {
-        width: 120px;
-    }
-    // .header-button {
-    //     max-width: 100%;
-	// height: auto;
-    // }
-}
-// max size 1312 px
-@media screen and (max-width: 1312px) {
-    .header-avatar {
-        width: 100px;
-     
-      }
-}
-// max size 992 px
-@media screen and (max-width: 992px) {
-    .header-avatar {
-        width: 80px;
-       
-    }
-}
-// max size 688 px
-@media screen and (max-width: 688px){
-    .header-avatar {
-        width: 60px;
-     
-    }
- 
-}
