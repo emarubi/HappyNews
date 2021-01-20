@@ -1,0 +1,31 @@
+h1 {
+  font-size: 2.5em;
+  font-family: 'Roboto', 'Quicksand', 'Inter', sans-serif;
+  margin-top: 0.2em;
+}
+
+
+
+@media screen and (min-width: 1313px) {
+  h1 {
+    font-size: 2.8em;
+  }
+}
+// max size 1313 px
+@media screen and (max-width: 1312px) {
+h1 {
+    font-size: 2.5em;
+  }
+}
+// max size 992px
+@media screen and (max-width: 992px) {
+h1 {
+    font-size: 2em;
+  }
+}
+// max size 688 px
+@media screen and (max-width: 688px){
+h1 {
+    font-size: 1.5em;
+  }
+}
