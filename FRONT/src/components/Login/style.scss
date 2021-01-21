@@ -1,9 +1,10 @@
 @use 'src/styles/vars';
 
 .login {
-  background: vars.$Primary;
+  background: vars.$Linear-gradient;
   height: 50em;
   &__loginbox {
+    box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
     border-radius: 1em;
     width: 25em;
     height: 35em;
@@ -12,7 +13,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -10%);
+    transform: translate(-50%, -20%);
     box-sizing: border-box;
     padding: 4em 2em;
     &__avatar {
@@ -48,6 +49,7 @@
     outline: none;
     height: 1.8em;
     color: #fff;
+    font-size: 0.9em;
   }
   &__input[type="submit"], &__input[type="button"] {
     border:none;
@@ -59,10 +61,17 @@
     border-radius: 1em;
     cursor: pointer;
     margin: 0.6em 0;
+    box-shadow: inset -2px -2px 8px rgb(0, 75, 119,1),
+    inset -2px -2px 12px rgba(255,255,255,0.5),
+    inset 2px 2px 4px rgba(255,255,255,0.1),
+    inset 2px 2px 8px rgba(0,0,0,0.15);
   }
   &__input[type="submit"]:hover, &__input[type="button"]:hover {
-    box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
-    background: vars.$Primary;
+    box-shadow: inset -2px -2px 8px rgb(0, 75, 119,1),
+    inset -2px -2px 12px rgba(255,255,255,0.5),
+    inset 2px 2px 4px rgba(255,255,255,0.1),
+    inset 2px 2px 8px rgba(0,0,0,0.15);
+    background: vars.$Linear-gradient;
     color: vars.$Dark;
   }
   &__link {
