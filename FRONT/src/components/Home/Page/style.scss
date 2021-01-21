@@ -1,7 +1,83 @@
 @use '../../../styles/vars';
 
+body {
+  margin-top: 1em;
+}
+.wrap {
+  background: rgba(0,0,0,0.5) url(../../../assets/Images/map.PNG) no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  fill: #ffffff;
+  background-size: cover;
+  min-height: 50vh;
+  overflow: hidden;
+}
 
-.container {
+.wave {
+  position: absolute;
+  width: 100%;
+  height: 15%;
+  top: 322px;
+  opacity: 1;
+}
+
+
+/*  ---------- Path circle
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body 
+{
+  min-height: 150vh;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url(../../../assets/Images/map.PNG);
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  clip-path: circle(180vh at 50% -80vh);
+}
+
+section .content 
+{
+  max-width: 1000px;
+  text-align: center;
+}
+
+section .content h2 
+{
+  font-size: 5em;
+  color: #fff;
+  font-weight: 700;
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.content {
   display: flex;
   flex-direction: column;
   margin: 0 2em;
@@ -88,4 +164,5 @@ height: 20em;
 .titleRetailers {
   font-size: 2em;
   font-weight: 300;
-}
+}*/
+
