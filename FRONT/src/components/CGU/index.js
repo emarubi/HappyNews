@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.scss'
-function CGU() {
+const CGU =() => {
     return (
         <div className='cgu'>
            <h1>Conditions d'utilisation</h1> 
@@ -73,30 +73,7 @@ function CGU() {
 
                 <p>  Le paiement se fait uniquement par carte bancaire. Le prélèvement se fait automatiquement tous les premiers du moi jusqu’à la fin de l’abonnement inscrit. Nous vous demandons alors de nous autoriser à prélever sur votre compte. Si jamais le paiement ne peut se réaliser, à cause d'un manque de provision ou autres problèmes, la plateforme enverra un mail au membre pour le prévenir qu’il aura cinq jours pour régler la situation. Si la situation n'est pas réglée au bout de cinq jours, AGRIPOUSSE pourra désactiver le compte du membre ainsi que toutes ses annonces. Vous êtes redevable de tout montant non prélevé.</p>
               
- 
 
-{/* 14. Mentions légales
-La Plateforme est éditée par la société MON AGRI MARCHE, SAS au capital de 10 000 Euros immatriculée au Registre du Commerce et des Sociétés de LYON, sous le numéro 828 279 851.
-
-Siège social : 11/13 Rue des Aulnes 69760 Limonest, France.
-
-SIRET : 82827985100012
-
-TVA Intracommunautaire : FR 71 828 279 851
-
-Téléphone : 09 52 85 63 39
-
-Mail : contact@agripousse.pro
-
-Représentée par son Président, Arthur DANIELYAN, Directeur de la publication du Site.
-
- 
-
-La Plateforme est conçue par la société GREENTIC, SARL au capital de 5000 Euros immatriculée au Registre du Commerce et des Sociétés de LYON, sous le numéro 499 502 037 (numéro de TVA intracommunautaire : FR71499502037) dont le siège social est situé au 5 rue de Castries 69002 Lyon, France (email : contact@greentic.net, tél : 04 28 29 02 38), représentée par son Directeur, Edouard LE GALL.
-
- 
-
-Le Site est hébergé sur les serveurs de la SAS OVH, 2 RUE KELLERMANN 59100 ROUBAIX (tél. : 1007). */}
         </div>
     )
 }
