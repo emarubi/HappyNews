@@ -2,9 +2,7 @@ import React from 'react';
 
 import CustomPict from '../../../../assets/Images/customer.png';
 
-
-
-
+import './style.scss';
 
 const Customer = () => {
   return (
