@@ -2,12 +2,13 @@
 
 .character {
   display: flex;
-  margin: 1em 1em;
+/*   margin: 1em 1em; */
 }
 
 .illustrationPicture {
   max-width: 20vw;
   object-fit: cover;
+  margin: 2em 2em;
 }
 
 .presentationText {
@@ -26,4 +27,12 @@
 
 .presentationBody {
   font-size: 1.2em;
+}
+
+.wave {
+  position: absolute;
+  width: 100%;
+  top: 17em;
+  opacity: 1;
+  fill: #fff;
 }
