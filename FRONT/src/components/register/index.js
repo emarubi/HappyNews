@@ -13,7 +13,7 @@ const FormRegister = () => {
 
             <div className="register-form">
                 <label for="InputFirstName">Prénom</label>
-                <input type="text" className="register-form-firstname" id="InputFirstName" placeholder="Prénom" />
+                <input type="text" className="register-form-firstname" name="InputFirstName" placeholder="Prénom" />
             </div>
             </fieldset>
 
@@ -22,17 +22,17 @@ const FormRegister = () => {
             <legend>addresse</legend>
             <div className="register-form">
                 <label for="InputLocation">Adresse</label>
-                <input type="text" className="register-form-location" id="InputLocation" placeholder="Adresse" />
+                <input type="text" className="register-form-location" name="InputLocation" placeholder="Adresse" />
             </div>
 
             <div className="register-form">
                 <label for="InputZipCode">Code Postal</label>
-                <input type="number" className="register-form-ZipCode" id="InputZipCode" placeholder="Code Postal" />
+                <input type="number" className="register-form-ZipCode" name="InputZipCode" placeholder="Code Postal" />
             </div>
 
             <div className="register-form">
                 <label for="InputCity">Ville</label>
-                <input type="text" className="register-form-City" id="InputCity" placeholder="Ville" />
+                <input type="text" className="register-form-City" name="InputCity" placeholder="Ville" />
             </div>
             </fieldset>
                    
@@ -41,16 +41,16 @@ const FormRegister = () => {
             <legend>informations professionnelles</legend>
             <div className="register-form">
                 <label for="InputSociety">Socièté</label>
-                <input type="text" className="register-form-Society" id="InputSociety" placeholder="Socièté" />
+                <input type="text" className="register-form-Society" name="InputSociety" placeholder="Socièté" />
             </div>
             <div className="register-form">
                 <label for="InputEnseigne">Enseigne</label>
-                <input type="text" className="register-form-enseigne" id="InputEnseigne" placeholder="Enseigne" />
+                <input type="text" className="register-form-enseigne" name="InputEnseigne" placeholder="Enseigne" />
             </div>
 
             <div className="register-form">
                 <label for="InputSiret">Siret</label>
-                <input type="password" className="form-control" id="InputSiret" placeholder="Siret" />
+                <input type="password" className="form-control" name="InputSiret" placeholder="Siret" />
             </div>
             </fieldset>
 
@@ -58,20 +58,20 @@ const FormRegister = () => {
             <legend>securité</legend>
             <div className="register-form">
                 <label for="ImputEmail">Email address</label>
-                <input type="email" className="register-form-email" id="ImputEmail" placeholder="Entrer votre email" />
+                <input type="email" className="register-form-email" name="ImputEmail" placeholder="Entrer votre email" />
             </div>
 
             <div className="register-form">
                 <label for="InputPassword1">Password</label>
-                <input type="password" className="form-control" id="InputPassword1" placeholder="Mot de Passe" />
+                <input type="password" className="form-control" name="InputPassword1" placeholder="Mot de Passe" />
             </div>
      
             <div className="register-form">
                 <label for="InputPassword">Password</label>
-                <input type="password" className="form-control" id="InputPassword" placeholder="Confirmer le Mot de Passe" />
+                <input type="password" className="form-control" name="InputPassword" placeholder="Confirmer le Mot de Passe" />
             </div>
             </fieldset>
-            <Button type = "submit"> Validez la création</Button>
+            <Button> Validez la création</Button>
 
         </form>
       

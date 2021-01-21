@@ -1,5 +1,5 @@
 import React from 'react';
-import avatarPhoto from '../../../assets/Images/avatar-header.jpg';
+import avatarPhoto from '../../../assets/Images/avatar-SVG-primarycolor.svg';
 import './style.scss';
 
 function Avatar() {

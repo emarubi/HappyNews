@@ -1,11 +1,12 @@
 import React from 'react';
-import Footer from 'src/components/Footer';
-import Header from 'src/components/Header';
-
-// Import du CSS
-import './style.scss';
 // Import images
 import avatar from 'src/assets/Images/avatar-SVG-primarycolor.svg';
+import Footer from 'src/components/Footer';
+import Header from 'src/components/Header';
+import Bouton from '../Header/Button';
+// import Bouton from '../Header/Button';
+// Import du CSS
+import './style.scss';
 
 const Login = () => (
   <div>
@@ -24,6 +25,18 @@ const Login = () => (
           <h2 className="form__h2">Si vous n'avez pas encore de compte :</h2>
           <input className="form__input" type="button" value="Création compte Client" />
           <input className="form__input" type="button" value="Création compte Commerçant" />
+          <Bouton> Se connecter </Bouton>
+         {/*  import Bouton from ... */}
+         {/*  import Bouton from ... */}
+          {/* 
+           <Bouton > creation compte client <Bouton />
+          */}
+
+          {/* 
+          div
+          bouton type submit
+
+          */}
         </form>
       </div>
     </section>

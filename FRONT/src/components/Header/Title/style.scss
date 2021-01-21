@@ -1,8 +1,11 @@
 @use 'src/styles/vars';
 .title {
-    margin-bottom: 0.2em ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
     &-h1 {
-    font-family:  'Quicksand', 'Inter', 'Roboto',sans-serif;
+    // font-family:  'Quicksand', 'Inter', 'Roboto',sans-serif;
     margin-bottom: 0.2em;
     transition: 0.5s;
     color: vars.$Dark;
