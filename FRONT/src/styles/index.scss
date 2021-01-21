@@ -2,7 +2,13 @@
 @use 'vars';
 
 body {
-  font-family: sans-serif;
+ font-family: 'Quicksand', 'Inter', 'Roboto', sans-serif;
+ font-weight: 400;
+ background: vars.$Linear-gradient;
+ //background-color: vars.$Background 
+  // font-family: 'Inter', sans-serif;
+  // font-family: 'Quicksand', sans-serif;
+  // font-family: 'Roboto', sans-serif;
 }
 
 /* 

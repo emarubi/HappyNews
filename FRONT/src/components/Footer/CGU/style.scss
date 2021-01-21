@@ -1,0 +1,16 @@
+@use 'src/styles/vars';
+.cgu {
+    margin: 1em ;
+    text-align: justify;
+    background-color: vars.$Linear-gradient;
+    margin: 0 auto ;
+    width: 70%;
+}
+
+// h1,h2,h3,h4 {
+//     margin: 0.5em;
+// }
+// p {
+//     margin: 0.7em;
+//     line-height: 1.5em;
+// }

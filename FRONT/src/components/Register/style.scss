@@ -1,0 +1,35 @@
+@use 'src/styles/vars';
+
+.register {
+    width: 30%;
+    margin: 4.5em auto ;
+
+}
+  
+legend {
+    font-size: large;
+    font-weight: bold;
+    color: vars.$Primary;
+}
+
+fieldset {
+    border: 1px dashed gray;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 15px;
+}
+fieldset>div {
+    width: 100%;
+    padding: 5px;
+}
+label {
+    margin-right: 0.5em;
+}
+div>label {
+    width: 38%;
+    display: inline-block;
+    text-align: right;
+    font-weight: bold;
+    font-size: small;
+}
+
