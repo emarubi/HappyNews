@@ -1,17 +1,20 @@
 @use 'src/styles/vars';
 .terms{
-    margin: 1em ;
     text-align: justify;
-    height: 71.1vh;
+    height: 73vh;
+    width: 50%;
+    margin: 3em auto 3em;
+    line-height: 1.2em;
+
+    &_title{
+    margin: 1em;
+    font-weight: vars.$Dark ;
+    }
+
+    &_paragraph {
+        margin: 1em;
+        font-size: 1.2em;
+    }
 }
-// h1{
-//     margin: 0.5em;
-//     font-weight: vars.$Dark ;
-// }
-// p {
-//     margin: 1em;
-// }
-// span {
-//     font-weight: vars.$Dark ;
-// }
+
 
