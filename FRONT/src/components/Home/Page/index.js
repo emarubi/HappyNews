@@ -26,7 +26,7 @@ function Page() {
             {/** ------------- Map Section ---------- */}
             <section className="customer">
                 <div className="pictureCharacter">
-                    <img className="customerPict" src={ Customer } alt="customer"/>
+                    <img className="illustrationPicture" src={ Customer } alt="customer"/>
                 </div>
                 <div className="presentationText">
                     <h2 className="presentationTitle">Vous êtes Client</h2>
@@ -41,7 +41,7 @@ function Page() {
                     <p className="presentationBody">Lorem ipsum, dolor    sit amet consectetur adipisicing elit. Expedita officia    quia alias voluptates? Corporis magni facere sint  assumenda porro ipsum! Iste laborum repellat provident   qui numquam possimus totam porro? Et?</p>
                 </div>
                 <div className="pictureCharacter">
-                    <img className="retailerPict" src={ Retailer } alt="retailer"/>
+                    <img className="illustrationPicture" src={ Retailer } alt="retailer"/>
                 </div>
             </section>
             
