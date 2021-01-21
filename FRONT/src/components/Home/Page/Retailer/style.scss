@@ -3,7 +3,6 @@
 .custom-shape-divider-top-1611227983 {
   fill: #FFF;
   width: 100%;
-  border: 1px solid black;
   position: relative;
   top: 170px;
 }
@@ -14,11 +13,11 @@
   display: flex;
   height: 60vh;
   padding-top: 10em;
-  border: 1px solid black;
 }
 
 .illustrationPicture.retailer {
   max-width: 20vw;
+  margin-right: 1.5em;
 }
 
 .presentationText.retailer {
@@ -33,7 +32,6 @@
   padding-bottom: 0.5em;
   font-size: 2em;
   font-weight: 400;
-  border: 1px solid black;
 }
 
 .presentationBody.retailer {
