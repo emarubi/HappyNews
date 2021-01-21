@@ -3,23 +3,6 @@
 body {
   margin-top: 1em;
 }
-.wrap {
-  background: rgba(0,0,0,0.5) url(../../../assets/Images/map.PNG) no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  fill: #ffffff;
-  background-size: cover;
-  min-height: 50vh;
-  overflow: hidden;
-}
-
-.wave {
-  position: absolute;
-  width: 100%;
-  height: 15%;
-  top: 322px;
-  opacity: 1;
-}
 
 .character {
   display: flex;
@@ -37,6 +20,30 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0 3em;
+}
+
+.presentationTitle {
+  padding-bottom: 0.5em;
+  font-size: 2em;
+  font-weight: 400;
+}
+
+.presentationBody {
+  font-size: 1.2em;
+}
+
+.retailer {
+  background: vars.$Linear-gradient;
+  color: #ffffff;
+}
+
+.custom-shape-divider-top-1611223784 {
+  border: 1px solid black;
+  width: 100%;
+  height: 20%;
+  top: 698px;
+  opacity: 1;
+  fill: #FFF;
 }
 
 
