@@ -9,7 +9,6 @@ const Maps = () => {
        <section className="mapSection">
                 <div className="wrap">
                     <div className="content">
-
                     </div>
                     {/** ------------- Wave shape ---------- */}
                     <div class="custom-shape-divider-bottom-1611212523">
