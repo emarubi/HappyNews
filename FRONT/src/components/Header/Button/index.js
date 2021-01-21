@@ -4,7 +4,7 @@ import './style.scss';
 const Bouton = ({children}) => {
     return (
         <div>
-            <button className='button'>
+            <button type="submit" className='button'>
                 {children}
             </button>   
         </div>
