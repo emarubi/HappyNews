@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.scss';
 
-function Bouton({children}) {
+const Bouton = ({children}) => {
     return (
         <div>
             <button className='button'>
