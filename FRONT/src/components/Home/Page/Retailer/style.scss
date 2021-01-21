@@ -1,3 +1,5 @@
+@use '../../../../styles/vars';
+
 .custom-shape-divider-top-1611227983 {
   fill: #FFF;
   width: 100%;
@@ -6,9 +8,38 @@
   top: 170px;
 }
 
-.character .retailer {
-margin-top: 2em;
+.character.retailer {
+  background: vars.$Linear-gradient;
+  color: #FFF;
+  display: flex;
+  height: 60vh;
+  padding-top: 10em;
+  border: 1px solid black;
 }
+
+.illustrationPicture.retailer {
+  max-width: 20vw;
+}
+
+.presentationText.retailer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 3em;
+}
+
+.presentationTitle.retailer {
+  padding-bottom: 0.5em;
+  font-size: 2em;
+  font-weight: 400;
+  border: 1px solid black;
+}
+
+.presentationBody.retailer {
+  font-size: 1.2em;
+}
+
 
 
 
