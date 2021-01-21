@@ -1,26 +1,18 @@
 import React from 'react';
-import Map from '../../../assets/Images/map.PNG';
-import Customer from '../../../assets/Images/customer.png';
+import Maps from './Map/index';
+import Customer from './Customer/index';
 import Retailer from '../../../assets/Images/retailer.png';
 
 import './style.scss';
 
 function Page() {
     return (
+        <Maps />
         <body>
             {/** ------------- Map Section ---------- */}
            
 
-            {/** ------------- Customer Section ---------- */}
-            <section className="character customer">
-                <div className="pictureCharacter customer">
-                    <img className="illustrationPicture customer" src={ Customer } alt="customer"/>
-                </div>
-                <div className="presentationText customer">
-                    <h2 className="presentationTitle customer">Vous êtes Client</h2>
-                    <p className="presentationBody customer">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates, laudantium id hic enim ut corrupti eum odio facilis dolore earum alias veniam? Nisi consectetur quos distinctio. Repellendus dolorum id quisquam!</p>
-                </div>
-            </section>
+            
 
             {/** ------------- Retailer Section ---------- */}
             <section className="character retailer">

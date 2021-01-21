@@ -1,0 +1,27 @@
+.character {
+  display: flex;
+  margin: 1em 1em;
+}
+
+.illustrationPicture {
+  max-width: 20vw;
+  object-fit: cover;
+}
+
+.presentationText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 3em;
+}
+
+.presentationTitle {
+  padding-bottom: 0.5em;
+  font-size: 2em;
+  font-weight: 400;
+}
+
+.presentationBody {
+  font-size: 1.2em;
+}

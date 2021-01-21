@@ -1,7 +1,9 @@
 import React from 'react';
-import Map from '../../../assets/Images/map.PNG';
+import map from '../../../assets/Images/map.PNG';
 
-function Map() {
+import './style.scss';
+
+const Maps = () => {
   return (
     <body>
        <section className="mapSection">
@@ -21,4 +23,4 @@ function Map() {
   )
 } 
 
-export default Map;
+export default Maps;
