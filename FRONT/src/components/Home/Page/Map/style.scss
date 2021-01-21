@@ -1,0 +1,22 @@
+@use '../../../../styles/vars';
+
+.bodySection {
+  
+}
+.wrap {
+  background: rgba(0,0,0,0.5) url(../../../../assets/Images/map.PNG) no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  fill: #ffffff;
+  background-size: cover;
+  min-height: 70vh;
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  width: 100%;
+  /*top: 26em;*/
+  opacity: 1;
+}
+

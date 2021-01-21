@@ -1,0 +1,38 @@
+@use '../../../../styles/vars';
+
+.character {
+  display: flex;
+/*   margin: 1em 1em; */
+}
+
+.illustrationPicture {
+  max-width: 20vw;
+  object-fit: cover;
+  margin: 2em 2em;
+}
+
+.presentationText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 3em;
+}
+
+.presentationTitle {
+  padding-bottom: 0.5em;
+  font-size: 2em;
+  font-weight: 400;
+}
+
+.presentationBody {
+  font-size: 1.2em;
+}
+
+.wave {
+  position: absolute;
+  width: 100%;
+  top: 17em;
+  opacity: 1;
+  fill: #fff;
+}

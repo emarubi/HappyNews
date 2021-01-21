@@ -1,0 +1,45 @@
+@use '../../../../styles/vars';
+
+
+
+.custom-shape-divider-top-1611227983 {
+  fill: #FFF;
+  width: 100%;
+  position: relative;
+  top: 168px;
+}
+
+.character.retailer {
+  background: vars.$Linear-gradient;
+  color: #FFF;
+  display: flex;
+  height: 60vh;
+  padding-top: 10em;
+}
+
+.illustrationPicture.retailer {
+  max-width: 20vw;
+  margin-right: 1.5em;
+}
+
+.presentationText.retailer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 3em;
+}
+
+.presentationTitle.retailer {
+  padding-bottom: 0.5em;
+  font-size: 2em;
+  font-weight: 400;
+}
+
+.presentationBody.retailer {
+  font-size: 1.2em;
+}
+
+
+
+

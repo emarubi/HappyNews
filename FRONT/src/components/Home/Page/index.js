@@ -1,9 +1,18 @@
 import React from 'react';
+import Maps from './Map/index';
+import Customer from './Customer/index';
+import Retailer from './Retailer/index';
 
-const Page = () => (
-  <div>
-    Je suis la page
-  </div>
-);
+import './style.scss';
+
+function Page() {
+    return (
+        <div>
+            <Maps />
+            <Customer />
+            <Retailer />
+        </div>
+    )
+}
 
 export default Page;
