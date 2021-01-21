@@ -1,5 +1,5 @@
 import React from 'react';
-import map from '../../../assets/Images/map.PNG';
+import mapPict from '../../../../assets/Images/map.PNG'
 
 import './style.scss';
 
