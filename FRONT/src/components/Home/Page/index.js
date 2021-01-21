@@ -23,8 +23,8 @@ function Page() {
                 </div>
             </section>
 
-            {/** ------------- Map Section ---------- */}
-            <section className="customer">
+            {/** ------------- Customer Section ---------- */}
+            <section className="character customer">
                 <div className="pictureCharacter">
                     <img className="illustrationPicture" src={ Customer } alt="customer"/>
                 </div>
@@ -34,8 +34,8 @@ function Page() {
                 </div>
             </section>
 
-            {/** ------------- Map Section ---------- */}
-            <section className="retailer">
+            {/** ------------- Retailer Section ---------- */}
+            <section className="character retailer">
                 <div className="presentationText">
                     <h2 className="presentationTitle">Vous êtes Commerçant</h2>
                     <p className="presentationBody">Lorem ipsum, dolor    sit amet consectetur adipisicing elit. Expedita officia    quia alias voluptates? Corporis magni facere sint  assumenda porro ipsum! Iste laborum repellat provident   qui numquam possimus totam porro? Et?</p>
