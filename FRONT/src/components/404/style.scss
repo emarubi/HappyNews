@@ -1,8 +1,16 @@
+@use 'src/styles/vars';
 .error {  
     height: 79.5vh;
    display: flex;
+   flex-direction: column;
 
    &_picture {
     margin : auto ;
+    }
+
+    &_message {
+        color: vars.$Dark;
+        margin : auto ;
+        font-size: 2.5em;
     }
 }

@@ -5,6 +5,9 @@ const NotFound = () => {
     return (
         <div className='error'>
             <img src={errorPicture}  alt='erreur 404' className='error_picture'/>
+            <p className='error_message'>
+                OUPS ! cette page semble introuvable
+            </p>
         </div>
     )
 }
