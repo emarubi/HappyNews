@@ -2,21 +2,21 @@
 
 
 .header {
-    font-family: 'Quicksand', 'Inter','Roboto', sans-serif;
-    display: flex ;
-    justify-content: space-between;
-    text-align: center;
-    background: vars.$Background;
-    color: vars.$Dark;
-    height: 6em;
-    width: 100%;
-    font-size: 1em;
-    padding: 1em;
-    &-nav {
-    display: flex;
-    width: 30%;
-    justify-content:flex-end;
-    align-items: center;
-    }
+  font-family: 'Quicksand', 'Inter','Roboto', sans-serif;
+  display: flex ;
+  justify-content: space-between;
+  text-align: center;
+  background: vars.$Background;
+  color: vars.$Dark;
+  height: 6em;
+  width: 100%;
+  font-size: 1em;
+  padding: 1em;
+  &-nav {
+  display: flex;
+  width: 30%;
+  justify-content:flex-end;
+  align-items: center;
+  }
 }
 

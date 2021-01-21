@@ -5,6 +5,7 @@ import Bouton from 'src/components/Header/Button';
 import Logo from 'src/components/Header/Logo';
 import './style.scss';
 import Title from './Title';
+
 const Header = () => {
     return (
       <header className='header'>
@@ -14,12 +15,11 @@ const Header = () => {
 
         <div className='header-nav'>
               <Avatar /> 
-              <Bouton> Connection </Bouton>
-              <Bouton> Liste des news </Bouton>
+              <Bouton>Connection</Bouton>
+              <Bouton>Liste des news</Bouton>
         </div>
       </header>
     )
-}
-
+};
 
 export default Header;

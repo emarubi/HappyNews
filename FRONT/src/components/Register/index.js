@@ -71,8 +71,7 @@ const FormRegister = () => {
                 <input type="password" className="form-control" name="InputPassword" placeholder="Confirmer le Mot de Passe" />
             </div>
             </fieldset>
-            <Button> Validez la création</Button>
-
+            <Button>Validez la création</Button>
         </form>
       
     )

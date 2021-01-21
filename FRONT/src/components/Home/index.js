@@ -2,7 +2,7 @@ import React from 'react';
 // import Footer from 'src/components/Footer';
 // import CGU from 'src/components/Footer/CGU';
 // import Terms from 'src/components/Footer/Terms';
-import RegisterForm from 'src/components/Register';
+// import RegisterForm from 'src/components/Register';
 // import About from 'src/components/Footer/About';
 // import Header from 'src/components/Header';
 // import NotFound from '../404';
@@ -12,7 +12,7 @@ const Home = () => (
     {/* <Header /> */}
     {/* <Page /> */}
     {/* pour tester le temps de faire des routes */}
-    <RegisterForm />
+    {/* <RegisterForm /> */}
     {/* <CGU /> */}
     {/* <Terms /> */}
     {/* <About /> */}
