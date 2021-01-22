@@ -2,7 +2,6 @@
 import React from 'react';
 // == Import
 import Home from 'src/components/Home';
-import Login from 'src/components/Login';
 import './styles.scss';
 
 // == Composant

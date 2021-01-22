@@ -1,16 +1,16 @@
 import React from 'react';
 // Import images
 import avatar from 'src/assets/Images/avatar-SVG-primarycolor.svg';
-import Footer from 'src/components/Footer';
-import Header from 'src/components/Header';
+// import Footer from 'src/components/Footer';
+// import Header from 'src/components/Header';
 import Bouton from '../Header/Button';
-
 // Import du CSS
 import './style.scss';
 
+
 const Login = () => (
   <div>
-    <Header />
+    {/* <Header /> */}
     <section className="login">
       <div className="login__loginbox">
         <img alt="avatar" src={avatar} className="login__loginbox__avatar" />
@@ -28,7 +28,7 @@ const Login = () => (
         </form>
       </div>
     </section>
-    <Footer />
+    {/* <Footer /> */}
   </div>
 );
 
