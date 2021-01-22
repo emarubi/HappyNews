@@ -3,7 +3,8 @@ import Maps from './Map/index';
 import Customer from './Customer/index';
 import Retailer from './Retailer/index';
 import CustomerProfile from './CustomerProfile/index';
-import RetailerProfile from './RetailerProfile/index'
+import RetailerProfile from './RetailerProfile/index';
+import NewsModal from './NewsModal/index';
 
 import './style.scss';
 
@@ -15,8 +16,10 @@ function Page() {
             <Customer />
             <Retailer />
             <CustomerProfile />
-            */}
             <RetailerProfile />
+            */}
+            
+            <NewsModal />
             
         </div>
     )
