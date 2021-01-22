@@ -1,25 +1,16 @@
 @use '../../../../styles/vars';
 
 
-
-.custom-shape-divider-top-1611227983 {
-  fill: #FFF;
-  width: 100%;
-  position: relative;
-  top: 168px;
-}
-
 .character.retailer {
   background: vars.$Linear-gradient;
   color: #FFF;
   display: flex;
   height: 60vh;
-  padding-top: 10em;
 }
 
 .illustrationPicture.retailer {
   max-width: 20vw;
-  margin-right: 1.5em;
+  margin: 2em 4em;
 }
 
 .presentationText.retailer {
@@ -28,6 +19,8 @@
   justify-content: center;
   align-items: center;
   margin: 0 3em;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .presentationTitle.retailer {

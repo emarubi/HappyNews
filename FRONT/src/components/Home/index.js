@@ -6,9 +6,11 @@ import Page from 'src/components/Home/Page';
 const Home = () => {
     return (
     <div>
+        
         <Header />
         <Page />
         <Footer />
+        
     </div>
     );
 }
