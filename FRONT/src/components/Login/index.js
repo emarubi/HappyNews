@@ -1,12 +1,9 @@
 import React from 'react';
-// Import images
+import { NavLink } from 'react-router-dom';
 import avatar from 'src/assets/Images/avatar-SVG-primarycolor.svg';
-// import Footer from 'src/components/Footer';
-// import Header from 'src/components/Header';
 import Bouton from '../Header/Button';
 // Import du CSS
 import './style.scss';
-
 
 const Login = () => (
   <div>
@@ -20,11 +17,11 @@ const Login = () => (
           <input id="InputEmail" className="form__input" type="email" name="email" placeholder="Saisissez un mail" />
           <label className="form__label" htmlFor="inputPassword">Password</label>
           <input id="InputPassword" className="form__input" type="password" name="password" placeholder="Saisissez un mot de passe" />
-          <Bouton>Se connecter</Bouton>
+          <NavLink to='#' ><Bouton>Se connecter</Bouton></ NavLink>
           <a className="form__link" href="#">Mot de passe oublié ?</a>
           <h2 className="form__h2">Si vous n'avez pas encore de compte :</h2>
-          <Bouton>Création compte Client</Bouton>
-          <Bouton>Création compte Commerçant</Bouton>
+          <NavLink to='/inscription/client' ><Bouton>Création compte Client</Bouton></NavLink>
+          <NavLink to='/inscription/commercant' ><Bouton>Création compte Commerçant</Bouton></NavLink>
         </form>
       </div>
     </section>

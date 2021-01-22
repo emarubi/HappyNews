@@ -5,13 +5,7 @@ import './style.scss';
 function Logo() {
     return (
         <div className='logo'>
-            {/* <a href='#' >
-                <img src={logo} alt="logo website" className='logo-img' />
-            </a>  */}
-            <NavLink to='/' >
-<img src={logo} alt="logo website" className='logo-img' />
-     {/* Contact   */}
-</ NavLink>
+            <NavLink to='/' > <img src={logo} alt="logo website" className='logo-img' /></ NavLink>
         </div>
     )
 }

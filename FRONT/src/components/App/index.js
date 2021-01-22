@@ -25,12 +25,40 @@ const App = () => (
       <Route exact path="/">
         <Home />
       </Route>
-      {/* <Route exact path="/inscription">
-        <Login />
-      </Route> */}
       <Route exact path="/connexion">  
         <Login /> 
       </Route>
+
+    {/* <Route exact path="/inscription/commercant">
+        < />
+      </Route> */}
+    {/* <Route exact path="/inscription/client">
+        < />
+      </Route> */}
+    {/* <Route exact path="/commercant/profil/:id">
+        < />
+      </Route> */}
+    {/* <Route exact path="/commercant/profil/:id/modifications-client">
+        < />
+      </Route> */}
+      {/* <Route exact path="/client/profil/:id">
+        < />
+      </Route> */}
+      {/* <Route exact path="/client/profil/:id/modifications-client">
+        < />
+      </Route> */}
+    {/* <Route exact path="/news/liste">
+        < />
+      </Route> */}
+    {/* <Route exact path="/news/:categoriesId">
+        < />
+    </Route> */}
+    {/* <Route exact path="/news/recherche">
+          < />
+    </Route> */}
+    {/* <Route exact path="/map/recherche">
+          < />
+    </Route> */}
       <Route exact path="/condition-generales-d'utilisations"> 
       <CGU /> 
       </Route>
