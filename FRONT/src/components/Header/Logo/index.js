@@ -11,7 +11,7 @@ function Logo() {
             <NavLink to='/' >
 <img src={logo} alt="logo website" className='logo-img' />
      {/* Contact   */}
-</ Link>
+</ NavLink>
         </div>
     )
 }
