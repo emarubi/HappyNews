@@ -1,6 +1,6 @@
 import React from 'react';
 
-import discount from '../../../../assets/Images/discount.png';
+import discount from '../../assets/Images/discount.png';
 
 import './style.scss';
 

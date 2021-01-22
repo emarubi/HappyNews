@@ -4,7 +4,7 @@ import Customer from './Customer/index';
 import Retailer from './Retailer/index';
 import CustomerProfile from './CustomerProfile/index';
 import RetailerProfile from './RetailerProfile/index';
-import NewsModal from './NewsModal/index';
+import NewsModal from '../../NewsModal/index';
 
 import './style.scss';
 
