@@ -33,7 +33,12 @@ const RetailerProfile = () => {
 
             <div className="right-side">
               <div className="content-right-side">
-                <button>Modifier le profil</button>
+                <div className="button-profile">
+                  <button>Modifier le profil</button>
+                </div>
+                <div className="button-addNews">
+                  <button>Ajouter une News</button>
+                </div>
               </div>
             </div>
 
