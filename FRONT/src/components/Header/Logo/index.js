@@ -1,12 +1,17 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import logo from '../../../assets/Images/logo-happy-news-SVG.svg';
 import './style.scss';
 function Logo() {
     return (
         <div className='logo'>
-            <a href='#' >
+            {/* <a href='#' >
                 <img src={logo} alt="logo website" className='logo-img' />
-            </a> 
+            </a>  */}
+            <NavLink to='/' >
+<img src={logo} alt="logo website" className='logo-img' />
+     {/* Contact   */}
+</ Link>
         </div>
     )
 }
