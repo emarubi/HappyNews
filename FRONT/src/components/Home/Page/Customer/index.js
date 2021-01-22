@@ -1,9 +1,8 @@
 import React from 'react';
+import CustomPict from 'src/assets/Images/customer.png';
+import Wave2 from 'src/assets/Images/wave2.png';
 
-import CustomPict from '../../../../assets/Images/customer.png';
-import Wave2 from '../../../../assets/Images/wave2.png';
 
-import './style.scss';
 
 const Customer = () => {
   return (
@@ -17,7 +16,6 @@ const Customer = () => {
           <p className="presentationBody customer">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates, laudantium id hic enim ut corrupti eum odio facilis dolore earum alias veniam? Nisi consectetur quos distinctio. Repellendus dolorum id quisquam!</p>
         </div>
       </div>
-
       <div className="contenWave">
       <img className="wave-2" src={ Wave2 } alt="wave"/>
       </div>

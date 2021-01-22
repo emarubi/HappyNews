@@ -1,23 +1,18 @@
 import React from 'react';
-import Maps from './Map/index';
 import Customer from './Customer/index';
+import Maps from './Map/index';
 import Retailer from './Retailer/index';
-import CustomerProfile from './CustomerProfile/index';
-import RetailerProfile from './RetailerProfile/index'
-
+// == Import du CSS
 import './style.scss';
+
+
 
 function Page() {
     return (
         <div>
-            {/** 
-             * <Maps />
+            <Maps />
             <Customer />
             <Retailer />
-            <CustomerProfile />
-            */}
-            <RetailerProfile />
-            
         </div>
     )
 }
