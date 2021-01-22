@@ -8,8 +8,8 @@ import './styles.scss';
 // == Composant
 const App = () => (
   <div>
-    {/* <Home /> */}
-    <Login />
+    <Home />
+    {/* <Login /> */}
   </div>
 );
 

@@ -1,17 +1,26 @@
 @use '../../../../styles/vars';
 
 .character {
-  display: flex;
+  display: block;
 /*   margin: 1em 1em; */
 }
+.contain{
+  display: flex;
+}
 
-.illustrationPicture {
-  max-width: 20vw;
+.illustrationPicture.customer {
+  width: 80%;
   object-fit: cover;
   margin: 2em 2em;
 }
 
-.presentationText {
+.presentationTitle.customer {
+  padding-bottom: 0.5em;
+  font-size: 2em;
+  font-weight: 400;
+}
+
+.presentationText.customer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,20 +28,20 @@
   margin: 0 3em;
 }
 
-.presentationTitle {
-  padding-bottom: 0.5em;
-  font-size: 2em;
-  font-weight: 400;
-}
-
-.presentationBody {
+.presentationBody.customer {
   font-size: 1.2em;
 }
 
-.wave {
-  position: absolute;
-  width: 100%;
-  top: 17em;
-  opacity: 1;
-  fill: #fff;
+.contenWave {
+  position: relative;
 }
+
+.wave-2 {
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+  top: 0.3em;
+  left: -0.1rem;
+}
+
+
