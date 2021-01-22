@@ -4,7 +4,8 @@
     display: flex;
     flex-direction: column;
     width: 30%;
-    margin: 4.5em auto ;
+    margin: 4.5em auto;
+    padding: 0 2em;
     background: black;
     color: #fff;
     border-radius: 1em;
@@ -70,6 +71,6 @@ div>label {
     display: inline-block;
     text-align: right;
     font-weight: bold;
-    font-size: small;
+    
 }
 
