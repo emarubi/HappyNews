@@ -8,7 +8,7 @@ import './styles.scss';
 // == Composant
 const App = () => (
   <div>
-    <Home />
+    {/* <Home /> */}
     <Login />
   </div>
 );
