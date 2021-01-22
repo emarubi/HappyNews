@@ -12,6 +12,7 @@ import Home from 'src/components/Home';
 import Login from 'src/components/Login';
 import Terms from 'src/components/Terms';
 import NewsModal from 'src/components/NewsModal';
+import AddNewsForm from 'src/components/AddNewsForm';
 // == Import CSS
 import './styles.scss';
 
@@ -35,6 +36,9 @@ const App = () => (
       {/* Route provisoire pour afficher le détail d'une carte */}
       <Route exact path="/newsmodal">  
         <NewsModal /> 
+      </Route>
+      <Route exact path="/creation-de-news">  
+        <AddNewsForm /> 
       </Route>
       <Route exact path="/condition-generales-d'utilisations"> 
       <CGU /> 
