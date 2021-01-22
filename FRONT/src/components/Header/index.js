@@ -1,14 +1,25 @@
-import React from 'react'
+// import NPM
+import React from 'react';
+import Avatar from 'src/components/Header/Avatar';
+import Bouton from 'src/components/Header/Button';
+import Logo from 'src/components/Header/Logo';
+import './style.scss';
+import Title from './Title';
 
-
-
-const Header = props => {
+const Header = () => {
     return (
-        <div>
-            je suis le header
+      <header className='header'>
+        
+        <Logo />
+        <Title />
+
+        <div className='header-nav'>
+              <Avatar /> 
+              <Bouton>Connection</Bouton>
+              <Bouton>Liste des news</Bouton>
         </div>
+      </header>
     )
-}
+};
 
-
-export default Header
+export default Header;

@@ -1,0 +1,48 @@
+@use 'src/styles/vars';
+/* .button{
+    width: 9em;
+    font-size: 0.9em;
+    margin: 0 0.4em 0 0.8em;
+    padding: 3px 6px 3px 6px;
+    border: none;
+    background-color: vars.$Primary;
+    color: black;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    transition: 0.2s;
+    font-family:  'Quicksand', 'Inter', 'Roboto',sans-serif;
+} */
+
+/* .button:hover{
+  //  transform: scale(1.01);
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.18);
+    font-weight: bold;
+} */
+
+.button {
+  width: 100%;
+  border:none;
+  outline: none;
+  height: 1.8em;
+  background: vars.$Secondary;
+  color: #fff;
+  font-size: 1.2em;
+  border-radius: 1em;
+  cursor: pointer;
+  margin: 0.6em 0;
+  box-shadow: inset -2px -2px 8px rgb(0, 75, 119,1),
+  inset -2px -2px 12px rgba(255,255,255,0.5),
+  inset 2px 2px 4px rgba(255,255,255,0.1),
+  inset 2px 2px 8px rgba(0,0,0,0.15);
+}
+
+.button:hover{
+  box-shadow: inset -2px -2px 8px rgb(0, 75, 119,1),
+  inset -2px -2px 12px rgba(255,255,255,0.5),
+  inset 2px 2px 4px rgba(255,255,255,0.1),
+  inset 2px 2px 8px rgba(0,0,0,0.15);
+  background: vars.$Linear-gradient;
+  color: vars.$Dark;
+}
+
