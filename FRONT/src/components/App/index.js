@@ -17,7 +17,7 @@ const App = () => (
       <Route exact path='/'>
         <Home />
       </Route>
-      <Route>
+      <Route exact path="*">
         <NotFound />
       </Route>
     </Switch>
