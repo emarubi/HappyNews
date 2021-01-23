@@ -32,6 +32,10 @@
 .newsList {
   background: rgba(54, 88, 107, 0.6);
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  height: 45em;
+  overflow-x: auto;
+  &__item {
+    min-width: 30%;
+  }
 }

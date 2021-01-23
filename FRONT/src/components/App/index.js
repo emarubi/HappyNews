@@ -15,8 +15,8 @@ import News from 'src/components/News';
 // == Import CSS
 import './styles.scss';
 
-
-
+import newsList from 'src/data/data';
+console.log(newsList.data);
 
 // == Composant
 const App = () => (
@@ -49,7 +49,7 @@ const App = () => (
         < />
       </Route> */}
       <Route exact path="/news/liste">
-        <News />
+        <News newsList={newsList.data} />
       </Route>
     {/* <Route exact path="/news/:categoriesId">
         < />
