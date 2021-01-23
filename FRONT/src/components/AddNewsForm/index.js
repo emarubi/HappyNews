@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Send from '../../assets/Images/send.png';
 
 import './style.scss';
 
 const AddNewsForm = () => {
+
+  const initialState = {
+    title: '',
+    description: '',
+    category: '',
+    price: '',
+    file: []
+  }
+
+  const [newHappyNews, setNewHappyNews] = useState(initialState)
+
+
+
   return (
     <section className="section-addnews-form">
       <div id="wraper">
