@@ -5,12 +5,12 @@ import './style.scss';
 const AddNewsForm = () => {
   return (
     <section className="section-addnews-form">
-      <div className="wraper">
+      <div id="wraper">
         <div className="form-container">
           <span className="form-heading">Ajouter une News</span>
           <form action="" className="form-body">
-            <div className="news-title">
-              <i className="fas fas-title"></i>
+            <div className="input-group">
+              <i className="news-title"></i>
               <input type="text"placeholder="Titre..." required/>
               <span className="bar"></span>
             </div>
