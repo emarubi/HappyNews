@@ -18,8 +18,10 @@
 .form-container {
   width: 100%;
   max-width: 40rem;
+  height: 90%;
   background-color: #ffffff;
   position: relative;
+  top:-3em;
   padding: 10rem 0;
   box-shadow: 0 1px 1.5rem rgba(0,0,0,.1);
   border-radius: 1rem;
@@ -100,4 +102,37 @@ box-shadow: 0 1px 1.5rem rgba(0,0,0,.1);
 .input-group input:focus + .bar::before {
   width: 100%;
   transition: width 650ms;
+}
+
+.input-group button{
+  margin: 3rem;
+  padding: 1rem 5rem;
+  background: linear-gradient(to left, #fc6767, #ec008c);
+  border: none;
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  border-radius: 3rem;
+}
+
+.input-group button:focus,
+.input-group button:hover {
+  background: linear-gradient(to right, #fc6767, #ec008c);
+}
+
+@media screen and (max-width: 700px){
+  .form-container::before{
+    height: 10rem;
+  }
+
+  .form-heading {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .form-body {
+    border-radius: initial;
+    transform: initial;
+    box-shadow: none;
+  }
 }
