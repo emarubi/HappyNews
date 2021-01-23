@@ -1,5 +1,37 @@
 @use 'src/styles/vars';
 
-.searchBar {
-  
+.searchSection {
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 4em;
+  background: vars.$Primary;
+  &__searchBar {
+    width: 25%;
+  }
+  &__searchOnMap {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    &__buttonContainer {
+      width: 30em;
+    }
+  }
+}
+
+.tagsContainer {
+  display: flex;
+  background: vars.$Primary;
+  &__tag {
+    width: 15em;
+    margin: 1em;
+  }
+}
+
+.newsList {
+  background: rgba(54, 88, 107, 0.6);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
