@@ -15,7 +15,12 @@ const AddNewsForm = () => {
   }
 
   const [newHappyNews, setNewHappyNews] = useState(initialState);
-  console.log(newHappyNews);
+  
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log(newHappyNews);
+  }
 
 
   return (
@@ -23,7 +28,7 @@ const AddNewsForm = () => {
       <div id="wraper">
         <div className="form-container">
           <span className="form-heading">Ajouter une News</span>
-          <form action="" className="form-body">
+          <form action="" className="form-body" onSubmit={ handleSubmit }>
             <div className="input-group">
               <i className="news-title"></i>
               <input 
