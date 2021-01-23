@@ -14,8 +14,8 @@ const AddNewsForm = () => {
     file: []
   }
 
-  const [newHappyNews, setNewHappyNews] = useState(initialState)
-
+  const [newHappyNews, setNewHappyNews] = useState(initialState);
+  console.log(newHappyNews);
 
 
   return (
@@ -26,33 +26,63 @@ const AddNewsForm = () => {
           <form action="" className="form-body">
             <div className="input-group">
               <i className="news-title"></i>
-              <input type="text"placeholder="Titre..." required/>
+              <input 
+                type="text"
+                value={ newHappyNews.title }
+                placeholder="Titre..." 
+                required
+                onChange={ e => setNewHappyNews({...newHappyNews, title: e.target.value}) }
+                />
               <span className="bar"></span>
             </div>
             <div className="input-group">
               <i className="news-description"></i>
-              <input type="text"placeholder="Description..." required/>
+              <input 
+                type="text"
+                value={ newHappyNews.description }
+                placeholder="Description..." 
+                required
+                onChange={ e => setNewHappyNews({...newHappyNews, description: e.target.value}) }
+                />
               <span className="bar"></span>
             </div>
             <div className="input-group">
               <i className="news-category"></i>
-              <input type="text"placeholder="Catégorie..." required/>
+              <input 
+                type="text"
+                value={ newHappyNews.category }
+                placeholder="Catégorie..." 
+                required
+                onChange={ e => setNewHappyNews({...newHappyNews, category: e.target.value}) }
+                />
               <span className="bar"></span>
             </div>
             <div className="input-group">
               <i className="news-price"></i>
-              <input type="number"placeholder="Prix..." required/>
+              <input 
+                type="number"
+                value={ newHappyNews.price }
+                placeholder="Prix..." 
+                required
+                onChange={ e => setNewHappyNews({...newHappyNews, price: e.target.value}) }
+                />
               <span className="bar"></span>
             </div>
             <div className="input-group">
               <i className="picture-downlaod"></i>
-              <input type="file" accept="image" required/>
+              <input 
+                type="file"
+                value={ newHappyNews.file } 
+                accept="image" 
+                required
+                onChange={ e => setNewHappyNews({...newHappyNews, file: e.target.value}) }
+                />
               <span className="bar"></span>
             </div>
             <div className="input-group">
               <button className="news-valid-form-but">
                 <i className="picture-valid">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-telegram" width="32" height="32" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
                   </svg>
@@ -60,7 +90,7 @@ const AddNewsForm = () => {
               </button>
               <button className="news-valid-form-but">
                 <i className="picture-valid">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-x" width="32" height="32" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <line x1="18" y1="6" x2="6" y2="18" />
                     <line x1="6" y1="6" x2="18" y2="18" />
