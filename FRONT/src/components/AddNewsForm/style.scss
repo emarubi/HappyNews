@@ -105,8 +105,8 @@ box-shadow: 0 1px 1.5rem rgba(0,0,0,.1);
 }
 
 .input-group button{
-  margin: 3rem;
-  padding: 1rem 5rem;
+  margin: 2rem auto;
+  padding: 0.4rem 4rem;
   background: linear-gradient(to left, #fc6767, #ec008c);
   border: none;
   color: #fff;
@@ -120,13 +120,22 @@ box-shadow: 0 1px 1.5rem rgba(0,0,0,.1);
   background: linear-gradient(to right, #fc6767, #ec008c);
 }
 
+.form__send--picture {
+  height: 2em;
+}
+
 @media screen and (max-width: 700px){
   .form-container::before{
     height: 10rem;
   }
 
+  .form-container::before{
+    height: 17rem;
+  }
+
   .form-heading {
     left: 50%;
+    font-size: 1.5rem;
     transform: translateX(-50%);
   }
 
@@ -134,5 +143,11 @@ box-shadow: 0 1px 1.5rem rgba(0,0,0,.1);
     border-radius: initial;
     transform: initial;
     box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .form-container::before{
+    height: 8.5rem;
   }
 }
