@@ -13,6 +13,7 @@
   box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
   font-weight: 500;
   &__list {
+    color: inherit;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -30,6 +31,9 @@
       :hover::after {
         width: 100%;
         transition: width .3s;
+      }
+      &__link:hover {
+        color: vars.$Primary;
       }
     }
 

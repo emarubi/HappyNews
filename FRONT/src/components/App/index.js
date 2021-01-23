@@ -11,6 +11,7 @@ import Header from 'src/components/Header';
 import Home from 'src/components/Home';
 import Login from 'src/components/Login';
 import Terms from 'src/components/Terms';
+import News from 'src/components/News';
 // == Import CSS
 import './styles.scss';
 
@@ -25,8 +26,8 @@ const App = () => (
       <Route exact path="/">
         <Home />
       </Route>
-      <Route exact path="/connexion">  
-        <Login /> 
+      <Route exact path="/connexion">
+        <Login />
       </Route>
 
     {/* <Route exact path="/inscription/commercant">
@@ -47,9 +48,9 @@ const App = () => (
       {/* <Route exact path="/client/profil/:id/modifications-client">
         < />
       </Route> */}
-    {/* <Route exact path="/news/liste">
-        < />
-      </Route> */}
+      <Route exact path="/news/liste">
+        <News />
+      </Route>
     {/* <Route exact path="/news/:categoriesId">
         < />
     </Route> */}
@@ -60,7 +61,7 @@ const App = () => (
           < />
     </Route> */}
       <Route exact path="/condition-generales-d'utilisations"> 
-      <CGU /> 
+        <CGU />
       </Route>
       <Route exact path="/nous-contacter/formulaire">
         <ContactForm />
