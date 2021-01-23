@@ -1,9 +1,9 @@
 import React from 'react';
+import ProfilePict from 'src/assets/Images/profile_pic.png';
+import ShopCard from 'src/assets/Images/shopCard.png';
+import './style.scss';
 
-import ShopCard from '../../../../assets/Images/shopCard.png';
-import ProfilePict from '../../../../assets/Images/profile_pic.png';
 
-import './style.scss'
 
 const CustomerProfile = () => {
   return (
