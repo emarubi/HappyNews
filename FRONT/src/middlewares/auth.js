@@ -11,7 +11,7 @@ const api = (store) => (next) => (action) => {
                 url: 'https://api-happy-news.herokuapp.com/login', // endpoint de login
                 headers: { // header pour dire qu'on parle en JSON
                   'Content-Type': 'application/json',
-                  'Cookie': 'connect.sid=s%3AfhPHxE7GncGThwzNKUSGwQZV9Js-dsLN.7YjWIJyga9CxT9ftGBwlOi3BNUMQdixv1%2F3GSNYHq7M'
+                //   'Cookie': 'connect.sid=s%3AfhPHxE7GncGThwzNKUSGwQZV9Js-dsLN.7YjWIJyga9CxT9ftGBwlOi3BNUMQdixv1%2F3GSNYHq7M'
                 },
                 data: { // body de la requete (contenu du json)
                   email,

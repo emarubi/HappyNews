@@ -19,8 +19,9 @@ const authReducer = (state = initialState, action ) => {
       return {
         ...state,
         // on copie les données de l'action dans le reducer
-        logged: action.logged,
-        token: action.token,
+        //logged: action.logged,
+        token: action.userToken,
+        first_name : action.user.first_name
       };
         default:
         return { ...state };

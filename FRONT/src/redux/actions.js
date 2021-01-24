@@ -15,13 +15,13 @@ export const changeAuthField = (value, name) => ({
         type: 'LOGIN'
     };
   }
-  export const handleLoginSuccess = () => {
-    return {
-        type: 'LOGIN_SUCCESS'
-    };
-  }
-  export const handleLoginError = () => {
-    return {
-        type: 'LOGIN_ERROR'
-    };
-  }
+//   export const handleLoginSuccess = () => {
+//     return {
+//         type: 'LOGIN_SUCCESS'
+//     };
+//   }
+//   export const handleLoginError = () => {
+//     return {
+//         type: 'LOGIN_ERROR'
+//     };
+//   }
