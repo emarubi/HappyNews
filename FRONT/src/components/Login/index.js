@@ -5,7 +5,9 @@ import Bouton from '../Header/Button';
 // Import du CSS
 import './style.scss';
 
-const Login = ({email, password}) => (
+const Login = ({email, password, handleChange, name}) => {
+  const inputId = `input-${name}`
+  return (
   <div>
     <section className="login">
       <div className="login__loginbox">
@@ -13,12 +15,20 @@ const Login = ({email, password}) => (
         <h1 className="login__loginbox__title">Connexion</h1>
         <form>
           <label className="form__label" htmlFor="inputEmail">Email</label>
-          <input id="InputEmail" className="form__input" type="email" name="email" placeholder="Saisissez un mail"
+          <input id= {inputId}
           
+          // "InputEmail" 
+          className="form__input" type="email" name='email' placeholder="Saisissez un mail"
+          value = {email}
+          onChange= {(event)=> handleChange(event.target.value)}
           />
+        
           <label className="form__label" htmlFor="inputPassword">Password</label>
-          <input id="InputPassword" className="form__input" type="password" name="password" placeholder="Saisissez un mot de passe"
-          
+          <input id= {inputId}
+          // "InputPassword" 
+          className="form__input" type="password" name='passeword' placeholder="Saisissez un mot de passe"
+          value={password}
+          onChange={(event) => handleChange(event.target.value)}
           />
           <NavLink to='#' ><Bouton>Se connecter</Bouton></ NavLink>
           <a className="form__link" href="#">Mot de passe oublié ?</a>
@@ -30,5 +40,5 @@ const Login = ({email, password}) => (
     </section>
   </div>
 );
-
+}
 export default Login;

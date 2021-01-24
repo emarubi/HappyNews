@@ -1,6 +1,6 @@
 export const initialState = {
-    email: '',
-    password: '',
+    email: 'toto',
+    password: 'vanilla',
 };
 
 const authReducer = (state = initialState, action ) => {
