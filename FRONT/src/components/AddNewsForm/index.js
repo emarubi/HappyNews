@@ -11,7 +11,8 @@ const AddNewsForm = () => {
     description: '',
     category: '',
     price: '',
-    file: []
+    file: [],
+    author: ''
   }
 
   const [newHappyNews, setNewHappyNews] = useState(initialState);
