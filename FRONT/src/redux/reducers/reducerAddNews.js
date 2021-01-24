@@ -14,13 +14,15 @@ const helperAddNews = action => {
 
 // reducer
 
-const reducerAddNews = (initialState, ADD_BOOKS) => {
+const reducerAddNews = ( state = initialState.news, ADD_BOOKS) => {
   switch (action.type) {
     case ADD_BOOKS:
-      [..state, helperAddNews(action)]
-      break;
-  
+      state = [..state, helperAddNews(action)]
+      return state;
+      
     default:
       break;
   }
 }
+
+export default reducerAddNews;
