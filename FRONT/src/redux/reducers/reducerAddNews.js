@@ -29,8 +29,7 @@ const reducerAddNews = ( state = initialState.news, ADD_BOOKS) => {
       localStorage.setItem('newsData', JSON.stringify(state))
       return state;
       
-    default:
-      break;
+    default: return state;
   }
 }
 
