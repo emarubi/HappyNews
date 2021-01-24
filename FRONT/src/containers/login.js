@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
-import { changeAuthField } from 'src/redux/actions';
+import { changeAuthField, handleLogin } from 'src/redux/actions';
 import Login from "../components/Login";
 
 const mapStateToProps = (state) => {
     return {
         // to get state parameters
         email: state.auth.email,
-        password: state.auth. password
+        password: state.auth. password,
+        isLogged: state.auth.logged,
     }
 }
 
@@ -18,7 +19,9 @@ const mapDispatchToProps = (dispatch) =>{
             // console.log('value', value)
             // console.log('name',name)
         },
-        // handleLogin : () => {},
+        handleLogin : () => {
+            dispatch(handleLogin( console.log('je suis dans le container')));
+        }
         // handleLogout: () => {}
     }
 }

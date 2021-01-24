@@ -2,7 +2,7 @@ import React from 'react';
 import './style.scss';
 
 const Field = ({value, name, onChange, placeholder}) => {
-    const inputId = `input-${name}`
+    const inputId = `input-${name}`;
     const handleChange = (event) => {
         onChange(event.target.value, name);
       };

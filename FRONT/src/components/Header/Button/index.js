@@ -1,10 +1,10 @@
 import React from 'react';
 import './style.scss';
 
-const Bouton = ({children}) => {
+const Bouton = ({children, type}) => {
   return (
     <div>
-      <button type="submit" className='button'>
+      <button type={type} className='button'>
         {children}
       </button>
     </div>

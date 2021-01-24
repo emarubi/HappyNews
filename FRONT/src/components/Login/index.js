@@ -7,26 +7,32 @@ import Field from './Field.js';
 import './style.scss';
 
 
-const Login = ({email, password, changeField}) => {
-  
+const Login = ({email, password, changeField, handleLogin}) => {
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    handleLogin(
+      console.log('je suis dans le composant login')
+    );
+  }; 
   return (
   <div>
     <section className="login">
       <div className="login__loginbox">
         <img alt="avatar" src={avatar} className="login__loginbox__avatar" />
         <h1 className="login__loginbox__title">Connexion</h1>
-        <form>
+        <form onSubmit={handleSubmit}>
         <Field
         name="email"
         value={email}
         onChange={changeField}
-        placeholder='Mot de passe'
+        placeholder='Email'
         />
         <Field
              name="password"
              value={password}
              onChange={changeField}
-             placeholder='email'
+             placeholder='Mot de passe'
          />
           {/* <label className="form__label" htmlFor={inputId}
            // "inputEmail"
@@ -48,12 +54,19 @@ const Login = ({email, password, changeField}) => {
           value={password}
           onChange={(event) => handleChange(event.target.value, name)}
           /> */}
-          <NavLink to='#' ><Bouton>Se connecter</Bouton></ NavLink>
+            <button
+            type="submit"
+            className="login-form-button"
+          >
+            OK
+          </button>
+          {/* <NavLink to='#' ><Bouton type="submit" >Se connecter</Bouton></ NavLink> */}
+         </form> 
           <a className="form__link" href="#">Mot de passe oublié ?</a>
           <h2 className="form__h2">Si vous n'avez pas encore de compte :</h2>
           <NavLink to='/inscription/client' ><Bouton>Création compte Client</Bouton></NavLink>
           <NavLink to='/inscription/commercant' ><Bouton>Création compte Commerçant</Bouton></NavLink>
-        </form>
+        
       </div>
     </section>
   </div>
