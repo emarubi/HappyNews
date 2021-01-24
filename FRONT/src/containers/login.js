@@ -12,9 +12,12 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) =>{
     return {
-        changeField : () => {},
-        handleLogin : () => {},
-        handleLogout: () => {}
+        changeField : (value, name) => {
+            console.log('value', value)
+            console.log('name',name)
+        },
+        // handleLogin : () => {},
+        // handleLogout: () => {}
     }
 }
 

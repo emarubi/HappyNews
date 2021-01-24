@@ -1,5 +1,5 @@
 export const initialState = {
-    email: 'toto',
+    email: 'asmatar',
     password: 'vanilla',
 };
 
