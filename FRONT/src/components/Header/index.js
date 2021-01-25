@@ -31,7 +31,7 @@ const Header = ({isLogged, handleLogout, first_name }) => {
           </>
       )}
         {!isLogged && (
-          <NavLink to='/connexion'> <Button>Connection</Button></ NavLink>
+          <NavLink to='/connexion'> <Button>Connexion</Button></ NavLink>
         )}
               <NavLink to='/news/liste'><Button>Liste des news</Button></ NavLink>
         </div>

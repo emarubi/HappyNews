@@ -17,10 +17,14 @@ import Terms from 'src/components/Terms';
 import Header from 'src/containers/header';
 import Login from 'src/containers/login';
 import News from 'src/components/News';
+import NewsModal from 'src/components/NewsModal';
+import AddNewsForm from 'src/components/AddNewsForm';
 // == Import CSS
 import './styles.scss';
 
 import newsList from 'src/data/data';
+
+
 
 // == Composant
 const App = ({ isLogged }) => (
@@ -64,8 +68,18 @@ const App = ({ isLogged }) => (
     {/* <Route exact path="/map/recherche">
           < />
     </Route> */}
+      {/* <Route exact path="/inscription">
+        <Login />
+      </Route> */}
+      {/* Route provisoire pour afficher le détail d'une carte */}
+      <Route exact path="/newsmodal">  
+        <NewsModal news={newsList.data} /> 
+      </Route>
+      <Route exact path="/creation-de-news">  
+        <AddNewsForm /> 
+      </Route>
       <Route exact path="/condition-generales-d'utilisations"> 
-        <CGU />
+        <CGU /> 
       </Route>
       <Route exact path="/nous-contacter/formulaire">
         <ContactForm />
