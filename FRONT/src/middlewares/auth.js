@@ -30,7 +30,7 @@ const api = (store) => (next) => (action) => {
                 ...response.data,
             });
             console.log('Je suis dans la réponse, et response.data du Tokenvaut : ', response.data.userToken);
-            console.log('Je suis dans la réponse, et response.data du first_name : ', response.data.user.[0].first_name);
+            console.log('Je suis dans la réponse, et response.data du first_name : ', response.data.user[0].first_name);
             console.log('Je suis dans la réponse, et response.data du first_name : ', response.data.logged);
             })
             .catch((error) => { // cas d'erreur
@@ -43,3 +43,47 @@ const api = (store) => (next) => (action) => {
     }
 }
 export default api;
+
+
+// import axios from 'axios';
+
+// const api => (next) => (action) => {
+//     switch (action.type) {
+//         case 'LOGIN': {
+//             let { auth: { email, password } } = store.getState();
+
+//             let config = {
+//        F ot  method: 'post', // verFooPT
+//        Head     url: 'https://api-hHead-news.herokuapp.com/login', // endpoint de login
+//                 headers: { // header pour dire qu'on parle en JSON
+//                'Content-Type': 'application/json',
+//                 },
+// oe                password,
+//                 },
+//               };
+//             axios(config) // on lance la requete...
+
+
+//             .then((response) => { // cas de réussite
+//             // une action, pour sauvegarder les données dans le reducer
+//             // cette action ne sera pas traitée dans le middleware, et ira jusqu'au reducer
+//             const { userToken } = response.data;
+//                 localStorage.setItem('token', userToken);
+//             store.dispatch({
+//                 type: 'LOGIN_SUCCESS',
+//                 // on déverse tout le contenu de response.data dans notre action
+//                 ...response.data,
+//                 console.log('Je suis dans la réponse, et response.data du Tokenvaut : ', response.data.userToken);
+//                 console.log('Je suis dans la réponse, et response.data du first_name : ', response.data.user.[0].first_name);
+//                 console.log('Je suis dans la réponse, et response.data du first_name : ', response.data.logged);
+//             })
+//             .catch((error) => { // cas d'erreur
+//             console.log(error);
+//             });
+//         break;
+//         }
+//     {/*     default::">
+//       next
+//     } */}
+// }
+// export default api;{/*/:id */}
