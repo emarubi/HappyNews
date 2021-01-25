@@ -23,7 +23,8 @@ import AddNewsForm from 'src/components/AddNewsForm';
 import './styles.scss';
 
 import newsList from 'src/data/data';
-
+// import Register from 'src/components/Register';
+import Register from 'src/containers/register';
 
 
 // == Composant
@@ -37,12 +38,12 @@ const App = ({ isLogged }) => (
       <Route exact path="/connexion">
         {isLogged ? <Redirect to="/news/liste" /> : <Login />}
       </Route>
-    {/* <Route exact path="/inscription/commercant">
-        < />
-      </Route> */}
-    {/* <Route exact path="/inscription/client">
-        < />
-      </Route> */}
+    <Route exact path="/inscription/commercant">
+        <Register />
+      </Route>
+    <Route exact path="/inscription/client">
+        <Register />
+      </Route>
     <Route exact path="/commercant/profil"> {/* pas encore l'id customers */}
         <RetaillerP />
     </Route>

@@ -4,7 +4,7 @@ import './style.scss';
 
 const Field = ({value, name, onChange, placeholder}) => {
   const inputId = `input-${name}`;
-  const handleChange = (event) => {
+  const handleChange = (event) => {   
     onChange(event.target.value, name);
   };
   return (

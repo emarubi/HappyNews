@@ -19,7 +19,6 @@ const mapDispatchToProps = (dispatch) =>{
         handleLogin : () => {
             dispatch(handleLogin( console.log('je suis dans le container')));
         }
-        // handleLogout: () => {}
     }
 }
 

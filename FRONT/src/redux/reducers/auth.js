@@ -6,7 +6,15 @@ export const initialState = {
     password: '',
     logged : false,
     token: null,
-    first_name : null
+    first_name : null,
+    name: '',
+    prenom: '',
+    address: '',
+    zip_code: '',
+    ville: '',
+    societe:'',
+    enseigne: '',
+    siret: '',
 };
 
 const authReducer = (state = initialState, action ) => {
