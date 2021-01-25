@@ -1,6 +1,7 @@
 // == Import npm
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 // == Import
 import NotFound from 'src/components/404';
 import About from 'src/components/About';
@@ -14,24 +15,24 @@ import RetaillerP from 'src/components/RetaillerP';
 import Terms from 'src/components/Terms';
 // import Header from 'src/components/Header';
 import Header from 'src/containers/header';
-import Login from 'src/containers/Login';
+import Login from 'src/containers/login';
+import News from 'src/components/News';
 // == Import CSS
 import './styles.scss';
 
+import newsList from 'src/data/data';
 
 // == Composant
-const App = ({isLogged}) => (
+const App = ({ isLogged }) => (
   <div>
     <Header />
     <Switch>
       <Route exact path="/">
         <Home />
       </Route>
-      <Route exact path="/connexion">  
-        <Login />
-        {/* {isLogged ? <Redirect to="/news/liste" /> : <Login />} */}
+      <Route exact path="/connexion">
+        {isLogged ? <Redirect to="/news/liste" /> : <Login />}
       </Route>
-
     {/* <Route exact path="/inscription/commercant">
         < />
       </Route> */}
@@ -40,7 +41,7 @@ const App = ({isLogged}) => (
       </Route> */}
     <Route exact path="/commercant/profil"> {/* pas encore l'id customers */}
         <RetaillerP />
-      </Route>
+    </Route>
     {/* <Route exact path="/commercant/profil/:id/modifications-client">
         < />
       </Route> */}
@@ -51,9 +52,9 @@ const App = ({isLogged}) => (
       {/* <Route exact path="/client/profil/:id/modifications-client">
         < />
       </Route> */}
-    {/* <Route exact path="/news/liste">
-        < />
-      </Route> */}
+      <Route exact path="/news/liste">
+        <News newsList={newsList.data} />
+      </Route>
     {/* <Route exact path="/news/:categoriesId">
         < />
     </Route> */}
@@ -64,7 +65,7 @@ const App = ({isLogged}) => (
           < />
     </Route> */}
       <Route exact path="/condition-generales-d'utilisations"> 
-      <CGU /> 
+        <CGU />
       </Route>
       <Route exact path="/nous-contacter/formulaire">
         <ContactForm />
@@ -83,6 +84,9 @@ const App = ({isLogged}) => (
   </div>
 );
 
+App.propTypes = {
+  isLogged: PropTypes.bool.isRequired,
+};
+
 // == Export
 export default App;
-
