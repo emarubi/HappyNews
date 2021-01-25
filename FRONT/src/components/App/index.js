@@ -8,11 +8,12 @@ import CGU from 'src/components/CGU';
 import ContactForm from 'src/components/ContactForm';
 import CUstomerP from 'src/components/CUstomerP';
 import Footer from 'src/components/Footer';
-import Header from 'src/components/Header';
 import Home from 'src/components/Home';
 // import Login from 'src/components/Login';
 import RetaillerP from 'src/components/RetaillerP';
 import Terms from 'src/components/Terms';
+// import Header from 'src/components/Header';
+import Header from 'src/containers/header';
 import Login from 'src/containers/Login';
 // == Import CSS
 import './styles.scss';

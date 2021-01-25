@@ -8,7 +8,7 @@ import Field from './Field.js';
 import './style.scss';
 
 
-const Login = ({email, password, changeField, handleLogin, isLogged}) => {
+const Login = ({email, password, changeField, handleLogin}) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -20,10 +20,6 @@ const Login = ({email, password, changeField, handleLogin, isLogged}) => {
   return (
  
     <div>
-          {/* {isLogged && (
-      <p> je suis connecté </p>
-    )}
-    {!isLogged && ( */}
       <section className="login">
         <div className="login__loginbox">
           <img alt="avatar" src={avatar} className="login__loginbox__avatar" />
@@ -41,33 +37,8 @@ const Login = ({email, password, changeField, handleLogin, isLogged}) => {
               onChange={changeField}
               placeholder='Mot de passe'
           />
-            {/* <label className="form__label" htmlFor={inputId}
-            // "inputEmail"
-            >Email</label>
-            <input id= {inputId}
-          
-            // "InputEmail" 
-            className="form__input" type="email" name='email' placeholder="Saisissez un mail"
-            value = {email}
-            onChange= {(event)=> handleChange(event.target.value, name)}
-            />
-          
-            <label className="form__label" htmlFor={inputId}
-            // "inputPassword"
-            >Password</label>
-            <input id= {inputId}
-            // "InputPassword" 
-            className="form__input" type="password" name='passeword' placeholder="Saisissez un mot de passe"
-            value={password}
-            onChange={(event) => handleChange(event.target.value, name)}
-            /> */}
-              <button
-              type="submit"
-              className="login-form-button"
-            >
-              OK
-            </button>
-            {/* <NavLink to='#' ><Bouton type="submit" >Se connecter</Bouton></ NavLink> */}
+  
+            <Bouton type="submit" >Se connecter</Bouton>
           </form> 
             <a className="form__link" href="#">Mot de passe oublié ?</a>
             <h2 className="form__h2">Si vous n'avez pas encore de compte :</h2>
@@ -76,7 +47,7 @@ const Login = ({email, password, changeField, handleLogin, isLogged}) => {
           
         </div>
       </section>
-      // )}
+       {/* )} */}
     </div>
     
 );

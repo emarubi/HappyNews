@@ -1,26 +1,48 @@
 // import NPM
+import PropTypes from 'prop-types';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Avatar from 'src/components/Header/Avatar';
-import Bouton from 'src/components/Header/Button';
+import Button from 'src/components/Header/Button';
 import Logo from 'src/components/Header/Logo';
 import './style.scss';
 import Title from './Title';
 
 
 
-const Header = () => {
+const Header = ({isLogged, handleLogout, first_name }) => {
     return (
       <header className='header'> 
         <Logo />
         <Title />
         <div className='header-nav'>
-              <Avatar /> 
-              <NavLink to='/connexion'> <Bouton>Connection</Bouton></ NavLink>
-              <NavLink to='/news/liste'><Bouton>Liste des news</Bouton></ NavLink>
+            <Avatar /> 
+            {isLogged && (
+          <>
+            <div className="header-helloUser">
+              <p>Bonjour {first_name} !</p>
+            </div>
+          <Button
+            type="button"
+            event={handleLogout}
+          >
+            Déconnexion
+          </Button>
+          </>
+      )}
+        {!isLogged && (
+          <NavLink to='/connexion'> <Button>Connection</Button></ NavLink>
+        )}
+              <NavLink to='/news/liste'><Button>Liste des news</Button></ NavLink>
         </div>
       </header>
     )
 };
+
+Header.propTypes = {
+  isLogged: PropTypes.bool,
+  handleLogout: PropTypes.func.isRequired,
+  first_name: PropTypes.string
+}
 
 export default Header;

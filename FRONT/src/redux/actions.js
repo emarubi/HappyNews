@@ -5,6 +5,7 @@ export const CHANGE_AUTH_FIELD = 'CHANGE_AUTH_FIELD';
 export const LOGIN = 'LOGIN';
 export const LOGIN_SUCCESS  = 'LOGIN_SUCCESS'
 export const LOGIN_ERROR  = 'LOGIN_ERROR'
+export const LOGOUT  = 'LOGOUT'
 // function to change input field
 export const changeAuthField = (value, name) => ({
     type: CHANGE_AUTH_FIELD,
@@ -17,6 +18,32 @@ export const changeAuthField = (value, name) => ({
         type: 'LOGIN'
     };
   }
+
+  export const handleLogout = () => {
+    return {
+        type: 'LOGOUT'
+    };
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //   export const handleLoginSuccess = () => {
 //     return {
 //         type: 'LOGIN_SUCCESS'
@@ -29,9 +56,7 @@ export const changeAuthField = (value, name) => ({
 //   }
 
 //   export const handleLogin = () => {
-  
-//       console.log('je suis dans thhunk')
-      
+//       console.log('je suis dans thhunk')    
 //     let config = {
 //         method: 'post', // verbe POST
 //         url: 'https://api-happy-news.herokuapp.com/login', // endpoint de login

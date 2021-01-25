@@ -13,7 +13,6 @@ const Field = ({value, name, onChange, placeholder}) => {
         <label 
         className="form__label" 
         htmlFor={inputId}
-        // "inputEmail"
        >
            {placeholder}
        </label>
@@ -22,22 +21,11 @@ const Field = ({value, name, onChange, placeholder}) => {
        value = {value}
        onChange= {handleChange}
        id= {inputId}
-       // "InputEmail" 
        type='text'
        className="form__input" 
        placeholder={placeholder}
         name={name}
        />
-     
-       {/* <label className="form__label" htmlFor={inputId}
-       // "inputPassword"
-       >Password</label>
-       <input id= {inputId}
-       // "InputPassword" 
-       className="form__input" type="password" name='passeword' placeholder="Saisissez un mot de passe"
-       value={password}
-       onChange={(event) => handleChange(event.target.value, name)}
-       /> */}
        </>
     )
 }

@@ -13,11 +13,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) =>{
     return {
-        // to dispatch the action which change the field values
         changeField : (value, name) => {
             dispatch(changeAuthField(value, name));
-            // console.log('value', value)
-            // console.log('name',name)
         },
         handleLogin : () => {
             dispatch(handleLogin( console.log('je suis dans le container')));
