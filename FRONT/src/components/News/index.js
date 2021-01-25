@@ -42,12 +42,6 @@ const News = ({ newsList }) => (
           <NewsModal news={news} />
         </div>
       ))}
-{/*       <div className="newsList__item">
-        <NewsModal />
-      </div>
-      <div className="newsList__item">
-        <NewsModal />
-      </div> */}
     </section>
   </div>
 );

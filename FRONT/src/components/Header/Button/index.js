@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.scss';
 
-const Bouton = ({children}) => {
+const Button = ({children}) => {
   return (
     <div>
       <button type="submit" className='button'>
@@ -11,4 +11,4 @@ const Bouton = ({children}) => {
   )
 };
 
-export default Bouton;
+export default Button;
