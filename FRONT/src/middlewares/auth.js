@@ -18,7 +18,6 @@ const api = (store) => (next) => (action) => {
                   password,
                 },
               };
-            
             axios(config) // on lance la requete...
             .then((response) => { // cas de réussite
             // on envoie une action, pour sauvegarder les données dans le reducer
