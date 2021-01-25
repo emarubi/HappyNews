@@ -1,6 +1,6 @@
 // == Import npm
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 // == Import
 import NotFound from 'src/components/404';
 import About from 'src/components/About';
@@ -19,10 +19,8 @@ import Login from 'src/containers/Login';
 import './styles.scss';
 
 
-
-
 // == Composant
-const App = () => (
+const App = ({isLogged}) => (
   <div>
     <Header />
     <Switch>
@@ -30,7 +28,8 @@ const App = () => (
         <Home />
       </Route>
       <Route exact path="/connexion">  
-        <Login /> 
+        <Login />
+        {isLogged ? <Redirect to="/news/liste" /> : <Login />}
       </Route>
 
     {/* <Route exact path="/inscription/commercant">
