@@ -1,7 +1,11 @@
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-// rootReducer = résultat de combineReducers
-import rootReducer from './reducers';
+import { reducerAddNews } from './reducers/reducerAddNews';
+
+console.log(reducerAddNews);
+const rootReducer = combineReducers({
+  newsList: reducerAddNews
+})
 
 
 // on crée le store

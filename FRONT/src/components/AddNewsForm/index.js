@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 
 import Send from '../../assets/Images/send.png';
+import { connect } from 'react-redux';
+import { addNews } from '../../redux/actions';
 
 import './style.scss';
 
-const AddNewsForm = () => {
-
+const AddNewsForm = ({ newsData,addNewsToList }) => {
+  console.log(newsData);
   const initialState = {
     title: '',
     description: '',
@@ -20,7 +22,11 @@ const AddNewsForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(newHappyNews);
+    // console.log(newHappyNews);
+    addNewsToList(newHappyNews);
+
+    // Vider le input
+    setNewHappyNews(initialState)
   }
 
 
@@ -116,4 +122,18 @@ const AddNewsForm = () => {
   )
 }
 
-export default AddNewsForm;
+const mapStateToProps = state => {
+  return {
+    newsData: state.newsList
+  }
+}
+
+console.log(mapStateToProps)
+
+const mapDispatchToProps = dispatch => {
+  return {
+    addNewsToList: param => dispatch(addNews(param))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddNewsForm);

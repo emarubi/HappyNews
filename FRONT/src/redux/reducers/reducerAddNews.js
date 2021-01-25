@@ -1,30 +1,31 @@
-import { ADD_BOOKS } from '../constants';
+import { ADD_NEWS } from '../constants';
 import { v4 as uuiv4 } from 'uuid';
 
 const initialState = {
   news: []
 }
 
-const helperAddNews = action => {
+// Helper
+const helperAddData = action => {
   return {
     id: uuiv4(),
-    title:action.payload.title,
-    author:action.payload.author
+    title: action.payload.title,
+    author: action.payload.author
   }
 }
 
 // reducer
 
-const reducerAddNews = ( state = initialState.news, ADD_BOOKS) => {
+export const reducerAddNews = (state = initialState.news, action) => {
 
-  // condition to get newsData informations ir allready exists
+  // condition to get newsData informations if allready exists
   if (localStorage.getItem('newsData')) {
     state = JSON.parse(localStorage.getItem('newsData'))
   }
 
   switch (action.type) {
-    case ADD_BOOKS:
-      state = [..state, helperAddNews(action)]
+    case ADD_NEWS:
+      state = [...state, helperAddData(action)]
       // To have access to the news registered
       localStorage.setItem('newsData', JSON.stringify(state))
       return state;
@@ -33,4 +34,3 @@ const reducerAddNews = ( state = initialState.news, ADD_BOOKS) => {
   }
 }
 
-export default reducerAddNews;
