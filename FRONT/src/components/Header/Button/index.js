@@ -1,14 +1,14 @@
 import React from 'react';
 import './style.scss';
 
-const Bouton = ({children}) => {
+const Button = ({children, type, event}) => {
   return (
     <div>
-      <button type="submit" className='button'>
+      <button type={type} onClick={event} className='button'>
         {children}
       </button>
     </div>
   )
 };
 
-export default Bouton;
+export default Button;

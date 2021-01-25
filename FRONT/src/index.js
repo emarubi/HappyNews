@@ -4,7 +4,8 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 // Composants
-import App from 'src/components/App';
+// import App from 'src/components/App';
+import App from 'src/containers/app';
 import store from 'src/redux/store';
 // == Import : local
 import './styles/index.scss';

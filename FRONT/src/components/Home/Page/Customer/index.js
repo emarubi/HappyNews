@@ -1,7 +1,7 @@
 import React from 'react';
 import CustomPict from 'src/assets/Images/customer.png';
 import Wave2 from 'src/assets/Images/wave2.png';
-
+import './style.scss';
 
 
 const Customer = () => {

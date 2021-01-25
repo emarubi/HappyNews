@@ -1,24 +1,26 @@
 // == Import npm
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 // == Import
 import NotFound from 'src/components/404';
 import About from 'src/components/About';
 import CGU from 'src/components/CGU';
 import ContactForm from 'src/components/ContactForm';
+import CUstomerP from 'src/components/CUstomerP';
 import Footer from 'src/components/Footer';
-import Header from 'src/components/Header';
 import Home from 'src/components/Home';
-import Login from 'src/components/Login';
+// import Login from 'src/components/Login';
+import RetaillerP from 'src/components/RetaillerP';
 import Terms from 'src/components/Terms';
+// import Header from 'src/components/Header';
+import Header from 'src/containers/header';
+import Login from 'src/containers/Login';
 // == Import CSS
 import './styles.scss';
 
 
-
-
 // == Composant
-const App = () => (
+const App = ({isLogged}) => (
   <div>
     <Header />
     <Switch>
@@ -26,7 +28,8 @@ const App = () => (
         <Home />
       </Route>
       <Route exact path="/connexion">  
-        <Login /> 
+        <Login />
+        {isLogged ? <Redirect to="/news/liste" /> : <Login />}
       </Route>
 
     {/* <Route exact path="/inscription/commercant">
@@ -35,15 +38,16 @@ const App = () => (
     {/* <Route exact path="/inscription/client">
         < />
       </Route> */}
-    {/* <Route exact path="/commercant/profil/:id">
-        < />
-      </Route> */}
+    <Route exact path="/commercant/profil"> {/* pas encore l'id customers */}
+        <RetaillerP />
+      </Route>
     {/* <Route exact path="/commercant/profil/:id/modifications-client">
         < />
       </Route> */}
-      {/* <Route exact path="/client/profil/:id">
-        < />
-      </Route> */}
+     
+      <Route exact path="/client/profil">
+        <CUstomerP />
+      </Route>
       {/* <Route exact path="/client/profil/:id/modifications-client">
         < />
       </Route> */}
