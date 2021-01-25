@@ -20,7 +20,7 @@ const ContactForm = () => {
                 <input type="email" className="contact-form-input" name="ImputEmail" id="ImputEmail" placeholder="Entrer votre email" />
             </div>
             <div className="contact-form">
-                <label className='contact-label-form' for="ImputEmail">Email</label>
+                <label className='contact-label-form' for="ImputText">Votre message</label>
                 <textarea type="text-area" className="contact-form-input" name="ImputEmail" id="ImputEmail" placeholder="Entrer votre message" ></textarea>
             </div>
         </form>
