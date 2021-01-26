@@ -27,12 +27,14 @@ const Login = ({email, password, changeField, handleLogin}) => {
               value={email}
               onChange={changeField}
               placeholder="Email"
+              type="email"
             />
             <Field
               name="password"
               value={password}
               onChange={changeField}
               placeholder="Mot de passe"
+              type="password"
             />
             <Button type="submit">Se connecter</Button>
           </form>
