@@ -3,11 +3,12 @@ import React from 'react';
 import Button from '../Header/Button';
 import Field from '../Login/Field';
 import PropTypes from 'prop-types';
+// import { useForm } from 'react-hook-form';
 import './style.scss';
-const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne, siret, ImputEmailSub, InputPasswordSub, InputPasswordverified, changeField}) => {
-
+const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne, siret, ImputEmailSub, InputPasswordSub, InputPasswordverified, changeField, subscriptionSubmit}) => {
+    // const { register, handleSubmit, errors } = useForm();
     return (
-        <form className='register'>
+        <form className='register' onSubmit={(event) => { event.preventDefault(); subscriptionSubmit()}}>
            {/* <Avatar /> */}
             <h1 className="register-title">Inscription</h1>
              <fieldset className="register-sec-identite">
@@ -22,6 +23,9 @@ const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne
              onChange={changeField}
              placeholder="Nom"
              type= 'text'
+            //  register= {register({
+            //     required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres'
+            //   }})}
              />
             <div className="register-form">
                 {/* <label className='register-label-form' htmlFor="InputFirstName">Prénom</label> */}
@@ -36,8 +40,12 @@ const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne
              onChange={changeField}
              placeholder="prenom"
              type= 'text'
+            //  register= {register({
+            //     required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres'
+            //   }})}
              />
             </div>
+            {/* {errors.prenom && <span> {errors.prenom.message} </span>} */}
             </fieldset>
 
 
@@ -52,6 +60,9 @@ const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne
              onChange={changeField}
              placeholder="address"
              type= 'text'
+            //  register= {register({
+            //     required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres'
+            //   }})}
              />
             </div>
 
@@ -64,6 +75,9 @@ const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne
              onChange={changeField}
              placeholder="zip_code"
              type="number"
+            //  register= {register({
+            //     required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres'
+            //   }})}
              />
             </div>
 
@@ -76,6 +90,9 @@ const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne
              onChange={changeField}
              placeholder="ville"
              type= 'text'
+            //  register= {register({
+            //     required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres'
+            //   }})}
              />
             </div>
             </fieldset>
@@ -92,6 +109,9 @@ const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne
              onChange={changeField}
              placeholder="societe"
              type= 'text'
+            //  register= {register({
+            //     required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres'
+            //   }})}
              />
             </div>
             <div className="register-form">
@@ -103,6 +123,9 @@ const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne
              onChange={changeField}
              placeholder="enseigne"
              type= 'text'
+            //  register= {register({
+            //     required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres'
+            //   }})}
              />
             </div>
 
@@ -115,6 +138,9 @@ const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne
              onChange={changeField}
              placeholder="siret"
              type="text"
+            //  register= {register({
+            //     required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres'
+            //   }})}
              />
             </div>
             </fieldset>
@@ -130,6 +156,9 @@ const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne
              onChange={changeField}
              placeholder="email"
              type= 'email'
+            //  register= {register({
+            //     required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres'
+            //   }})}
              />
             </div>
 
@@ -142,6 +171,9 @@ const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne
              onChange={changeField}
              placeholder="mot de passe"
              type= 'password'
+            //  register= {register({
+            //     required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres'
+            //   }})}
              />
             </div>
      
@@ -154,6 +186,9 @@ const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne
              onChange={changeField}
              placeholder="confirmer votre mot de passe "
              type= 'password'
+            //  register= {register({
+            //     required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres'
+            //   }})}
              />
             </div>
             </fieldset>

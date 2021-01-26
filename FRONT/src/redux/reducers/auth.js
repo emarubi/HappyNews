@@ -35,7 +35,7 @@ const authReducer = (state = initialState, action ) => {
         // on copie les données de l'action dans le reducer
         logged: action.data.logged,
         token: action.data.userToken,
-        // first_name : action.user[0].first_name
+        first_name : action.data.user[0].first_name
       };
       case LOGOUT:
         localStorage.removeItem('token')

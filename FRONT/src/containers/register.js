@@ -20,6 +20,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         changeField : (value, name) => {
             dispatch(changeAuthField(value, name));
+        },
+        subscriptionSubmit : () => {
+            dispatch(subscriptionSubmitForm(console.log('je suis dans le container de subscribe from')));
         }
     }
 }
