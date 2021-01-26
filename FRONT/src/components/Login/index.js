@@ -34,17 +34,21 @@ const Login = ({
               placeholder="Email"
               type= "email"
               register= {register({
-                required: true, minLength: 2
-              })}
+                required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres'
+              }})}
             />
-            {errors.email && <p> ce n'est pas bon !!!</p>}
+            {errors.email && <span> {errors.email.message} </span>}
             <Field
               name="password"
               value={password}
               onChange={changeField}
               placeholder="Mot de passe"
               type= "password"
+              register= {register({
+                required: {value :true, message: 'ce champs est obligatoire'}, minLength:{value: 2, message: 'le password doit contenir plus de deux caracteres'}
+              })}
             />
+                  {errors.password && <p> {errors.password.message}</p>}
             <Button type="submit">Se connecter</Button>
           </form>
           <a className="form__link" href="#">Mot de passe oublié ?</a>
