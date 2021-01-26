@@ -2,12 +2,10 @@ import React from 'react';
 // import Avatar from '../Header/Avatar';
 import Button from '../Header/Button';
 import Field from '../Login/Field';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import './style.scss';
 const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne, siret, ImputEmailSub, InputPasswordSub, InputPasswordverified, changeField}) => {
-    //  const changeField = (event) => {   
-    //      changeFieldRegister(event.target.value, name);
-    //    };
+
     return (
         <form className='register'>
            {/* <Avatar /> */}
@@ -23,6 +21,7 @@ const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne
              value={name}
              onChange={changeField}
              placeholder="Nom"
+             type= 'text'
              />
             <div className="register-form">
                 {/* <label className='register-label-form' htmlFor="InputFirstName">Prénom</label> */}
@@ -36,6 +35,7 @@ const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne
              value={prenom}
              onChange={changeField}
              placeholder="prenom"
+             type= 'text'
              />
             </div>
             </fieldset>
@@ -51,6 +51,7 @@ const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne
              value={address}
              onChange={changeField}
              placeholder="address"
+             type= 'text'
              />
             </div>
 
@@ -62,6 +63,7 @@ const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne
              value={zip_code}
              onChange={changeField}
              placeholder="zip_code"
+             type="number"
              />
             </div>
 
@@ -73,6 +75,7 @@ const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne
              value={ville}
              onChange={changeField}
              placeholder="ville"
+             type= 'text'
              />
             </div>
             </fieldset>
@@ -88,6 +91,7 @@ const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne
              value={societe}
              onChange={changeField}
              placeholder="societe"
+             type= 'text'
              />
             </div>
             <div className="register-form">
@@ -98,6 +102,7 @@ const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne
              value={enseigne}
              onChange={changeField}
              placeholder="enseigne"
+             type= 'text'
              />
             </div>
 
@@ -109,6 +114,7 @@ const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne
              value={siret}
              onChange={changeField}
              placeholder="siret"
+             type="text"
              />
             </div>
             </fieldset>
@@ -123,6 +129,7 @@ const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne
              value={ImputEmailSub}
              onChange={changeField}
              placeholder="email"
+             type= 'email'
              />
             </div>
 
@@ -134,6 +141,7 @@ const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne
              value={InputPasswordSub}
              onChange={changeField}
              placeholder="mot de passe"
+             type= 'password'
              />
             </div>
      
@@ -145,6 +153,7 @@ const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne
              value={InputPasswordverified}
              onChange={changeField}
              placeholder="confirmer votre mot de passe "
+             type= 'password'
              />
             </div>
             </fieldset>
@@ -155,8 +164,22 @@ const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne
 };
 
 export default FormRegister;
-// FormRegister.propTypes = {
-//     name: PropTypes.string.isRequired,
-//     changeField: PropTypes.func.isRequired,
+FormRegister.propTypes = {
+    name: PropTypes.string.isRequired,
+    prenom: PropTypes.string.isRequired,
+    address: PropTypes.string.isRequired,
+    zip_code: PropTypes.string.isRequired,
+    ville: PropTypes.string.isRequired,
+    societe: PropTypes.string.isRequired,
+    enseigne: PropTypes.string.isRequired,
+    // siret: PropTypes.number,
+    ImputEmailSub: PropTypes.string.isRequired,
+    InputPasswordSub: PropTypes.string.isRequired,
+    InputPasswordverified: PropTypes.string.isRequired,
+    changeField: PropTypes.func.isRequired,
   
-// };
+};
+// FormRegister.defaultProps = {
+//     siret: 0,
+    // zip_code: null,
+//   };

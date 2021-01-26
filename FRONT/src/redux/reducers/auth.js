@@ -5,7 +5,7 @@ export const initialState = {
     email: '',
     password: '',
     logged : false,   
-    token: null,
+    token: null || localStorage.getItem('token'),
     first_name : null,
     name: '',
     prenom: '',
@@ -18,7 +18,6 @@ export const initialState = {
     ImputEmailSub: '',
     InputPasswordSub: '',
     InputPasswordverified: ''
-  
 };
 
 const authReducer = (state = initialState, action ) => {
@@ -34,9 +33,9 @@ const authReducer = (state = initialState, action ) => {
       return {
         ...state,
         // on copie les données de l'action dans le reducer
-        logged: action.logged,
-        token: action.userToken,
-        first_name : action.user[0].first_name
+        logged: action.data.logged,
+        token: action.data.userToken,
+        // first_name : action.user[0].first_name
       };
       case LOGOUT:
         localStorage.removeItem('token')

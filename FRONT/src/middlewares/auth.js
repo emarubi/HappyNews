@@ -1,8 +1,8 @@
 import axios from 'axios';
-
+import {LOGIN, handleLoginSuccess} from '../redux/actions'
 const api = (store) => (next) => (action) => {
   switch (action.type) {
-    case 'LOGIN': {
+    case LOGIN: {
       const { auth: { email, password } } = store.getState();
 
       const config = {
@@ -22,16 +22,21 @@ const api = (store) => (next) => (action) => {
         .then((response) => { // cas de réussite
         // on envoie une action, pour sauvegarder les données dans le reducer
         // cette action ne sera pas traitée dans le middleware, et ira jusqu'au reducer
+          // const { userToken } = response.data;
+          // localStorage.setItem('token', userToken);
+          // store.dispatch({
+          //   type: LOGIN_SUCCESS,
+          //   // localStorage.setItem('token', userToken);
+          //   // on déverse tout le contenu de response.data dans notre action
+          //   ...response.data,
           const { userToken } = response.data;
+          store.dispatch(handleLoginSuccess(response.data));
+          // on le stocke aussi dans le localStorage
           localStorage.setItem('token', userToken);
-          store.dispatch({
-            type: 'LOGIN_SUCCESS',
-            // on déverse tout le contenu de response.data dans notre action
-            ...response.data,
-          });
+          console.log(response.data)
           console.log('Je suis dans la réponse, et response.data du Tokenvaut : ', response.data.userToken);
           console.log('Je suis dans la réponse, et response.data du first_name : ', response.data.user[0].first_name);
-          console.log('Je suis dans la réponse, et response.data du first_name : ', response.data.logged);
+          console.log('Je suis dans la réponse, et response.data du logged : ', response.data.logged);
         })
         .catch((error) => { // cas d'erreur
           console.log(error);

@@ -8,7 +8,7 @@ export const LOGIN_ERROR  = 'LOGIN_ERROR'
 export const LOGOUT  = 'LOGOUT'
 // function to change input field
 export const changeAuthField = (value, name) => ({
-    type: CHANGE_AUTH_FIELD,
+    type: 'CHANGE_AUTH_FIELD',
     name,
     value,
   });
@@ -19,44 +19,17 @@ export const changeAuthField = (value, name) => ({
     };
   }
 
+  export const handleLoginSuccess = (data) => {
+    return {
+        type: 'LOGIN_SUCCESS',
+        data,
+    };
+  }  
   export const handleLogout = () => {
     return {
         type: 'LOGOUT'
     };
   }
-
-
-  import { ADD_NEWS } from './constants';
-
-  export const addNews = data => {
-    return {
-      type: ADD_NEWS,
-      payload: data  /** Object */
-    }
-  }
-  // >>>>>>> origin/front/getDataFromNewsForm
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//   export const handleLoginSuccess = () => {
-//     return {
-//         type: 'LOGIN_SUCCESS'
-//     };
-//   }
 //   export const handleLoginError = () => {
 //     return {
 //         type: 'LOGIN_ERROR'

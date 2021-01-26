@@ -4,35 +4,43 @@ import { NavLink } from 'react-router-dom';
 import avatar from 'src/assets/Images/avatar-SVG-primarycolor.svg';
 import Button from '../Header/Button';
 import Field from './Field';
+// pour react hook form
+// import { useForm } from 'react-hook-form';
 // Import du CSS
 import './style.scss';
 
-const Login = ({email, password, changeField, handleLogin}) => {
+const Login = ({
+  email, 
+  password, changeField, handleLogin}) => {
+    //pour react hook form on commente handle submit
   const handleSubmit = (event) => {
     event.preventDefault();
-    handleLogin(
-      console.log('je suis dans le composant login')
-    );
+    handleLogin();
   };
-
+  // const { handleSubmit, errors } = useForm();
+  // const onSubmit = data => console.log(data);
   return (
     <div>
       <section className="login">
         <div className="login__loginbox">
           <img alt="avatar" src={avatar} className="login__loginbox__avatar" />
           <h1 className="login__loginbox__title">Connexion</h1>
+          {/* (handlelogin pour react hook form*/}
           <form onSubmit={handleSubmit}>
             <Field
               name="email"
               value={email}
               onChange={changeField}
               placeholder="Email"
+              type= "email"
+          
             />
             <Field
               name="password"
               value={password}
               onChange={changeField}
               placeholder="Mot de passe"
+              type= "password"
             />
             <Button type="submit">Se connecter</Button>
           </form>
@@ -45,12 +53,10 @@ const Login = ({email, password, changeField, handleLogin}) => {
     </div>
   );
 };
-
 Login.propTypes = {
   email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,
   handleLogin: PropTypes.func.isRequired,
 };
-
 export default Login;
