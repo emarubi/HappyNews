@@ -4,7 +4,7 @@ import { CHANGE_AUTH_FIELD, LOGIN_SUCCESS, LOGOUT } from 'src/redux/actions';
 export const initialState = {
     email: '',
     password: '',
-    logged : false,
+    logged : false,   
     token: null,
     first_name : null,
     name: '',
@@ -15,6 +15,10 @@ export const initialState = {
     societe:'',
     enseigne: '',
     siret: '',
+    ImputEmailSub: '',
+    InputPasswordSub: '',
+    InputPasswordverified: ''
+  
 };
 
 const authReducer = (state = initialState, action ) => {

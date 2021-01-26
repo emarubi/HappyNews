@@ -4,7 +4,7 @@ import Button from '../Header/Button';
 import Field from '../Login/Field';
 // import PropTypes from 'prop-types';
 import './style.scss';
-const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne, siret, changeField}) => {
+const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne, siret, ImputEmailSub, InputPasswordSub, InputPasswordverified, changeField}) => {
     //  const changeField = (event) => {   
     //      changeFieldRegister(event.target.value, name);
     //    };
@@ -116,19 +116,36 @@ const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne
             <fieldset className="register-sec-security">
             <legend className="register-leg-security">securité</legend>
             <div className="register-form">
-                <label className='register-label-form' htmlFor="ImputEmail">Email</label>
-                <input type="email" className="register-form-input" name="ImputEmail" id="ImputEmail" placeholder="Entrer votre email" />
-            
+                {/* <label className='register-label-form' htmlFor="ImputEmailSub">Email</label>
+                <input type="email" className="register-form-input" name="ImputEmailSub" id="ImputEmailSub" placeholder="Entrer votre email" /> */}
+                <Field 
+             name="ImputEmailSub"
+             value={ImputEmailSub}
+             onChange={changeField}
+             placeholder="email"
+             />
             </div>
 
             <div className="register-form">
-                <label className='register-label-form' htmlFor="InputPassword">Password</label>
-                <input type="password" className="register-form-input" name="InputPassword" id="InputPassword" placeholder="Mot de Passe" />
+                {/* <label className='register-label-form' htmlFor="InputPasswordSub">Password</label> */}
+                {/* <input type="password" className="register-form-input" name="InputPasswordSub" id="InputPasswordSub" placeholder="Mot de Passe" /> */}
+                <Field 
+             name="InputPasswordSub"
+             value={InputPasswordSub}
+             onChange={changeField}
+             placeholder="mot de passe"
+             />
             </div>
      
             <div className="register-form">
-                <label className='register-label-form' htmlFor="InputPasswordverified">Password</label>
-                <input type="password" className="register-form-input" name="InputPasswordverified" id="InputPasswordverified" placeholder="Confirmer le Mot de Passe" />
+                {/* <label className='register-label-form' htmlFor="InputPasswordverified">Password</label>
+                <input type="password" className="register-form-input" name="InputPasswordverified" id="InputPasswordverified" placeholder="Confirmer le Mot de Passe" /> */}
+                <Field 
+             name="InputPasswordverified"
+             value={InputPasswordverified}
+             onChange={changeField}
+             placeholder="confirmer votre mot de passe "
+             />
             </div>
             </fieldset>
             <Button>Validez la création</Button>

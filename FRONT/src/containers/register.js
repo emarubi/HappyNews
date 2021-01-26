@@ -10,7 +10,10 @@ const mapStateToProps = (state) => ({
     societe: state.auth.societe,
     enseigne: state.auth.enseigne,
     siret: state.auth.siret,
-    ville: state.auth.ville
+    ville: state.auth.ville,
+    ImputEmailSub: state.auth.ImputEmailSub,
+    InputPasswordSub: state.auth.InputPasswordSub,
+    InputPasswordverified: state.auth.InputPasswordverified
 })
 
 const mapDispatchToProps = (dispatch) => {
