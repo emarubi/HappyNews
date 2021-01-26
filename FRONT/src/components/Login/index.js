@@ -5,20 +5,19 @@ import avatar from 'src/assets/Images/avatar-SVG-primarycolor.svg';
 import Button from '../Header/Button';
 import Field from './Field';
 // pour react hook form
-// import { useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 // Import du CSS
 import './style.scss';
 
 const Login = ({
-  email, 
-  password, changeField, handleLogin}) => {
+  email, password, changeField, handleLogin}) => {
     //pour react hook form on commente handle submit
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    handleLogin();
-  };
-  // const { handleSubmit, errors } = useForm();
-  // const onSubmit = data => console.log(data);
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   handleLogin();
+  // };
+  const { register, handleSubmit, errors } = useForm();
+  // const handleSubmit = data => console.log(data);
   return (
     <div>
       <section className="login">
@@ -26,15 +25,19 @@ const Login = ({
           <img alt="avatar" src={avatar} className="login__loginbox__avatar" />
           <h1 className="login__loginbox__title">Connexion</h1>
           {/* (handlelogin pour react hook form*/}
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit(handleLogin)}>
+          
             <Field
               name="email"
               value={email}
               onChange={changeField}
               placeholder="Email"
               type= "email"
-          
+              register= {register({
+                required: true, minLength: 2
+              })}
             />
+            {errors.email && <p> ce n'est pas bon !!!</p>}
             <Field
               name="password"
               value={password}
