@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import SearchBar from 'src/components/News/SearchBar';
 import Button from 'src/components/Header/Button';
 import NewsModal from 'src/components/NewsModal';
@@ -9,45 +9,54 @@ import { Icon } from 'semantic-ui-react';
 // Import du CSS
 import './style.scss';
 
-const News = ({ newsList }) => (
-  <div>
-    <section className="searchSection">
-      <div className="searchSection__searchBar">
-        <SearchBar />
-      </div>
-      <div className="searchSection__searchOnMap">
-        <div>
-          <Icon name="map marker alternate" size="big" />
+const News = ({ list, loadNews, hasData }) => {
+  // useEffect : appelle une fonction au chargement du composant
+  // car 2eme parametre = []
+  useEffect(() => {
+  // loadRecipes : une prop qui charge les news (les articles)
+  // cette fonction prop sera définie dans le container
+    loadNews();
+  }, []);
+
+  return (
+    <div>
+      <section className="searchSection">
+        <div className="searchSection__searchBar">
+          <SearchBar />
         </div>
-        <div className="searchSection__searchOnMap__buttonContainer">
-          <Button>Afficher sur la carte</Button>
+        <div className="searchSection__searchOnMap">
+          <div>
+            <Icon name="map marker alternate" size="big" />
+          </div>
+          <div className="searchSection__searchOnMap__buttonContainer">
+            <Button>Afficher sur la carte</Button>
+          </div>
         </div>
+      </section>
+      {/* On prévoit ici la future fonctionnalité de recherche par tag */}
+      <div className="tagsContainer">
+        {list.map((news) => (
+          <div key={news.activity_id} className="tagsContainer__tag">
+            <Button>{news.activity_name}</Button>
+          </div>
+        ))}
       </div>
-    </section>
-    {/* On prévoit ici la future fonctionnalité de recherche par tag */}
-    <div className="tagsContainer">
-      <div className="tagsContainer__tag">
-        <Button>Tag 1</Button>
-      </div>
-      <div className="tagsContainer__tag">
-        <Button>Tag 2</Button>
-      </div>
-      <div className="tagsContainer__tag">
-        <Button>Tag 3</Button>
-      </div>
+      <section className="newsList">
+        {list.map((news) => (
+          <div key={news.id} className="newsList__item">
+            {hasData && <NewsModal news={news} />}
+            {/* Affichage conditionnel : si pas de donnée, pas de News */}
+          </div>
+        ))}
+      </section>
     </div>
-    <section className="newsList">
-      {newsList.map((news) => (
-        <div className="newsList__item">
-          <NewsModal news={news} />
-        </div>
-      ))}
-    </section>
-  </div>
-);
+  );
+};
 
 News.propTypes = {
-  newsList: PropTypes.arrayOf(
+  loadNews: PropTypes.func.isRequired,
+  hasData: PropTypes.bool.isRequired,
+  list: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       article_title: PropTypes.string.isRequired,
@@ -57,6 +66,7 @@ News.propTypes = {
       is_news: PropTypes.bool.isRequired,
       user_id: PropTypes.number.isRequired,
       activity_id: PropTypes.number.isRequired,
+      activity_name: PropTypes.string.isRequired,
     }),
   ).isRequired,
 };

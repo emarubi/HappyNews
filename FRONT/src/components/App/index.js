@@ -16,15 +16,13 @@ import Terms from 'src/components/Terms';
 // import Header from 'src/components/Header';
 import Header from 'src/containers/header';
 import Login from 'src/containers/login';
-import News from 'src/components/News';
+import News from 'src/containers/news';
 import NewsModal from 'src/components/NewsModal';
 import AddNewsForm from 'src/components/AddNewsForm';
 // == Import CSS
 import './styles.scss';
 
 import newsList from 'src/data/data';
-
-
 
 // == Composant
 const App = ({ isLogged }) => (
@@ -57,7 +55,7 @@ const App = ({ isLogged }) => (
         < />
       </Route> */}
       <Route exact path="/news/liste">
-        <News newsList={newsList.data} />
+        <News />
       </Route>
     {/* <Route exact path="/news/:categoriesId">
         < />
@@ -72,14 +70,14 @@ const App = ({ isLogged }) => (
         <Login />
       </Route> */}
       {/* Route provisoire pour afficher le détail d'une carte */}
-      <Route exact path="/newsmodal">  
-        <NewsModal news={newsList.data} /> 
+      <Route exact path="/newsmodal">
+        <NewsModal news={newsList.data[3]} />
       </Route>
-      <Route exact path="/creation-de-news">  
-        <AddNewsForm /> 
+      <Route exact path="/creation-de-news">
+        <AddNewsForm />
       </Route>
       <Route exact path="/condition-generales-d'utilisations"> 
-        <CGU /> 
+        <CGU />
       </Route>
       <Route exact path="/nous-contacter/formulaire">
         <ContactForm />
