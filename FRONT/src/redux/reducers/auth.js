@@ -1,5 +1,5 @@
 // ajout de loggin success pour thunk
-import { CHANGE_AUTH_FIELD, LOGIN_SUCCESS, LOGOUT } from 'src/redux/actions';
+import { CHANGE_AUTH_FIELD, LOGIN_SUCCESS, LOGOUT, GET_SELECT_FIELD } from 'src/redux/actions';
 
 export const initialState = {
     email: '',
@@ -18,7 +18,7 @@ export const initialState = {
     role_id: 4,
     ImputEmailSub: '',
     InputPasswordSub: '',
-    // InputPasswordverified: ''
+    activity_id: null
 };
 
 const authReducer = (state = initialState, action ) => {
@@ -64,6 +64,61 @@ const authReducer = (state = initialState, action ) => {
             role_id : 4
           };
         };
+        case 'GET_SELECT_FIELD':
+          if(action.value === 'boulangerie') {
+            return {
+               ...state,
+                activity_id: 1
+             };
+          }
+          if(action.value === 'boucherie') {
+            return {
+               ...state,
+                activity_id: 2
+             };
+          }
+          if(action.value === 'fleuriste') {
+            return {
+               ...state,
+                activity_id: 3
+             };
+          }
+          if(action.value === 'fromagerie') {
+            return {
+               ...state,
+                activity_id: 4
+             };
+          }
+          if(action.value === 'charcuterie') {
+            return {
+               ...state,
+                activity_id: 5
+             };
+          }
+          if(action.value === 'garagiste') {
+            return {
+               ...state,
+                activity_id: 6
+             };
+          }
+          if(action.value === 'primeur') {
+            return {
+               ...state,
+                activity_id: 7
+             };
+          }
+          if(action.value === 'coiffeur') {
+            return {
+               ...state,
+                activity_id: 8
+             };
+          }
+          if(action.value === 'papeterie') {
+            return {
+               ...state,
+                activity_id: 9
+             };
+          }
         default:
         return { ...state };
     }

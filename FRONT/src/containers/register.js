@@ -29,7 +29,12 @@ const mapDispatchToProps = (dispatch) => {
             console.log('je suis dans le register container, valeur de checked', checked)
             // dispatch(HandleRoleIdChecked(checked));
             dispatch ({ type: 'SUBSCRIBE_ROLE_ID', checked  })
-        }
+        },
+        changeSelectField : (value) => {
+            console.log('je suis dans le register container, valeur de l\'input', value)
+            // dispatch(getSelectField(value));
+            dispatch ({ type: 'GET_SELECT_FIELD', value  })
+        },
     }
 }
 

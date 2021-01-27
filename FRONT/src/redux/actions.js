@@ -8,6 +8,8 @@ export const LOGIN_ERROR  = 'LOGIN_ERROR'
 export const LOGOUT  = 'LOGOUT'
 export const SUBSCRIBE = 'SUBSCRIBE'
 export const SUBSCRIBE_ROLE_ID = 'SUBSCRIBE_ROLE_ID'
+export const GET_SELECT_FIELD = 'GET_SELECT_FIELD'
+
 // function to change input field
 export const changeAuthField = (value, name) => ({
     type: 'CHANGE_AUTH_FIELD',
@@ -41,7 +43,7 @@ export const changeAuthField = (value, name) => ({
 export const subscriptionSubmitForm = () => {
   return {
     type: 'SUBSCRIBE'
-  }
+  };
 } 
 export const HandleRoleIdChecked = (checked) => {
   console.log('je suis dans mon action createur et checked vaut', checked);
@@ -50,3 +52,9 @@ export const HandleRoleIdChecked = (checked) => {
     checked
   }
 } 
+export const getSelectField = (value) => {
+  return {
+      type: 'GET_SELECT_FIELD',
+      value
+  };
+}  

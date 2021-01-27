@@ -18,6 +18,7 @@ const FormRegister = ({last_name,
     changeField, 
     HandleRoleId,
     role_id,
+    changeSelectField,
     subscriptionSubmit}) => {
 
 
@@ -94,9 +95,24 @@ const FormRegister = ({last_name,
             <fieldset className="register-sec-business">
             <legend className="register-leg-business">informations professionnelles</legend>
             <div className="register-form">  
-
-
             <div>
+
+            <label htmlFor="activity">Quelle est votre domaine d'activité:</label>
+            <select id="activity" onChange={(event)=> {changeSelectField(event.target.value);
+            console.log(event.target.value)}}  name="activity_id">
+                <option value="boulangerie">boulangerie</option>
+                <option value="boucherie">boucherie</option>
+                <option value="fleuriste">fleuriste</option>
+                <option value="fromagerie">fromagerie</option>
+                <option value="charcuterie">charcuterie</option>
+                <option value="garagiste">garagiste</option>
+                <option value="primeur">primeur</option>
+                <option value="coiffeur">coiffeur</option>
+                <option value="papeterie">papeterie</option>
+            </select>
+            </div>
+            <div>
+
             <Field 
              name="company_name"
              value={company_name}
