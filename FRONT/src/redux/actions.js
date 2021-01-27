@@ -1,3 +1,4 @@
+import { ADD_NEWS } from './constants';
 //import axios pour thunk
 // import axios from 'axios';
 // action type  CHANGE_AUTH_FIELD 
