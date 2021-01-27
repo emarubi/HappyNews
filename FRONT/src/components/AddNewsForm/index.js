@@ -1,49 +1,22 @@
 import React, { useState } from 'react';
 
-import Send from '../../assets/Images/send.png';
-import { connect } from 'react-redux';
-import { addNews } from '../../redux/actions';
-
 import './style.scss';
 
-const AddNewsForm = ({ newsData,addNewsToList }) => {
-  console.log(newsData);
-  const initialState = {
-    title: '',
-    description: '',
-    category: '',
-    price: '',
-    file: [],
-    author: ''
-  }
-
-  const [newHappyNews, setNewHappyNews] = useState(initialState);
+const AddNewsForm = () => {
   
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    // console.log(newHappyNews);
-    addNewsToList(newHappyNews);
-
-    // Vider le input
-    setNewHappyNews(initialState)
-  }
-
-
   return (
-    <section className="section-addnews-form">
+     <section className="section-addnews-form">
       <div id="wraper">
         <div className="form-container">
           <span className="form-heading">Ajouter une News</span>
-          <form action="" className="form-body" onSubmit={ handleSubmit }>
+          <form action="" className="form-body" onSubmit={() => {}}>
             <div className="input-group">
               <i className="news-title"></i>
               <input 
                 type="text"
-                value={ newHappyNews.title }
+                value=""
                 placeholder="Titre..." 
-                required
-                onChange={ e => setNewHappyNews({...newHappyNews, title: e.target.value}) }
+                onChange={() => {}}
                 />
               <span className="bar"></span>
             </div>
@@ -51,10 +24,9 @@ const AddNewsForm = ({ newsData,addNewsToList }) => {
               <i className="news-description"></i>
               <input 
                 type="text"
-                value={ newHappyNews.description }
+                value=""
                 placeholder="Description..." 
-                required
-                onChange={ e => setNewHappyNews({...newHappyNews, description: e.target.value}) }
+                onChange={() => {}}
                 />
               <span className="bar"></span>
             </div>
@@ -62,10 +34,9 @@ const AddNewsForm = ({ newsData,addNewsToList }) => {
               <i className="news-category"></i>
               <input 
                 type="text"
-                value={ newHappyNews.category }
+                value=""
                 placeholder="Catégorie..." 
-                required
-                onChange={ e => setNewHappyNews({...newHappyNews, category: e.target.value}) }
+                onChange={() => {}}
                 />
               <span className="bar"></span>
             </div>
@@ -73,10 +44,9 @@ const AddNewsForm = ({ newsData,addNewsToList }) => {
               <i className="news-price"></i>
               <input 
                 type="number"
-                value={ newHappyNews.price }
+                value=""
                 placeholder="Prix..." 
-                required
-                onChange={ e => setNewHappyNews({...newHappyNews, price: e.target.value}) }
+                onChange={() => {}}
                 />
               <span className="bar"></span>
             </div>
@@ -84,10 +54,9 @@ const AddNewsForm = ({ newsData,addNewsToList }) => {
               <i className="picture-downlaod"></i>
               <input 
                 type="file"
-                value={ newHappyNews.file } 
+                value=""
                 accept="image" 
-                required
-                onChange={ e => setNewHappyNews({...newHappyNews, file: e.target.value}) }
+                onChange={() => {}}
                 />
               <span className="bar"></span>
             </div>
@@ -109,31 +78,27 @@ const AddNewsForm = ({ newsData,addNewsToList }) => {
                   </svg>
                 </i>
               </button>
-              {/**
-               * <div className="switch-login">
-                <a href="#">Déjà un compte? <span>Login</span></a>
-              </div>
-               */}
             </div>
           </form>
         </div>
       </div>
     </section>
+
   )
+    
 }
 
-const mapStateToProps = state => {
-  return {
-    newsData: state.newsList
-  }
-}
+// const mapStateToProps = state => {
+//   return {
+    
+//   }
+// }
 
-console.log(mapStateToProps)
 
-const mapDispatchToProps = dispatch => {
-  return {
-    addNewsToList: param => dispatch(addNews(param))
-  }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddNewsForm);
+// const mapDispatchToProps = dispatch => {
+//   return {
+//   }
+// }
+
+export default AddNewsForm;
