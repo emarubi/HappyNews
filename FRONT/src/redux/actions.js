@@ -29,7 +29,8 @@ export const changeAuthField = (value, name) => ({
 // Function to add a news
   export const handleAddNews = () => {
     return {
-      type: 'ADD_NEWS'
+      type: 'ADD_NEWS',
+      payload: data  /* Object with the local state of addNewsForm */
     }
   }
 
