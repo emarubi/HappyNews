@@ -26,12 +26,10 @@ export const changeAuthField = (value, name) => ({
   }
 
 
-  import { ADD_NEWS } from './constants';
 
-  export const addNews = data => {
+  export const addNews = () => {
     return {
-      type: ADD_NEWS,
-      payload: data  /** Object */
+      type: 'ADD_NEWS'
     }
   }
   // >>>>>>> origin/front/getDataFromNewsForm
