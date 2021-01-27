@@ -16,7 +16,7 @@ const AddNewsForm = () => {
   
 
   // function called when form is validate
-  const handleSubmit = e => {
+  const handleAddNews = e => {
     // function called to block the reload of the page
     e.preventDefault();
     console.log(newData);
@@ -30,7 +30,7 @@ const AddNewsForm = () => {
           <form method="post" 
             action="" 
             className="form-body" 
-            onSubmit={handleSubmit}
+            onSubmit={handleAddNews}
             enctype="multipart/form-data">
             <div className="input-group">
               <i className="news-title"></i>

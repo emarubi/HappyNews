@@ -26,13 +26,15 @@ export const changeAuthField = (value, name) => ({
   }
 
 
-
-  export const addNews = () => {
+// Function to add a news
+  export const handleAddNews = () => {
     return {
       type: 'ADD_NEWS'
     }
   }
-  // >>>>>>> origin/front/getDataFromNewsForm
+
+  // Function to submit the addNewsForm
+  
 
 
 
