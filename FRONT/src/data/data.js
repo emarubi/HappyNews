@@ -1,10 +1,10 @@
 export default {
-  "data": [
+    "data": [
       {
           "id": 6,
           "article_title": "viande de boeuf à fondue",
           "description": "Sélection des meilleures viandes du Limousin, pièces choisies: rumsteak, rond de tranche, poire, merlan)",
-          "picture_url": null,
+          "picture_url": "https://assets.afcdn.com/recipe/20170626/69853_w1024h576c1cx3194cy1957.jpg",
           "price": "13",
           "is_news": true,
           "news_duration": 1,
@@ -20,7 +20,7 @@ export default {
           "id": 7,
           "article_title": "bouquet 40 roses + cadeau surprise",
           "description": "Pour chaque bouquet de 40 roses un cadeau surprise",
-          "picture_url": null,
+          "picture_url": "https://cdn.pixabay.com/photo/2015/03/26/09/41/roses-690085_960_720.jpg",
           "price": "30",
           "is_news": true,
           "news_duration": 5,
