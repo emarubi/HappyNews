@@ -13,7 +13,14 @@ const AddNewsForm = () => {
   }
   // Usestate to register local state befor send it
   const [newData, setNewData] = useState(initialState);
-  console.log(newData);
+  
+
+  // function called when form is validate
+  const handleSubmit = e => {
+    // function called to block the reload of the page
+    e.preventDefault();
+    console.log(newData);
+  }
   
   return (
      <section className="section-addnews-form">
@@ -21,10 +28,10 @@ const AddNewsForm = () => {
         <div className="form-container">
           <span className="form-heading">Ajouter une News</span>
           <form method="post" 
-                action="" 
-                className="form-body" 
-                onSubmit={() => {}}
-                enctype="multipart/form-data">
+            action="" 
+            className="form-body" 
+            onSubmit={handleSubmit}
+            enctype="multipart/form-data">
             <div className="input-group">
               <i className="news-title"></i>
               <input 
@@ -71,7 +78,7 @@ const AddNewsForm = () => {
                 type="file"
                 value={newData.file}
                 accept="image" 
-                onChange={e => setNewData({...newData, file: e.target.value})}
+                onChange={e => setNewData({...newData, file: [e.target.value]})}
                 multiple
                 />
               <span className="bar"></span>
