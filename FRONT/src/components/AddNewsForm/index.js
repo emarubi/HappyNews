@@ -3,6 +3,17 @@ import React, { useState } from 'react';
 import './style.scss';
 
 const AddNewsForm = () => {
+  // local state form definition
+  const initialState = {
+    title: '',
+    description: '',
+    category: '',
+    price: '',
+    file:[]
+  }
+  // Usestate to register local state befor send it
+  const [newData, setNewData] = useState(initialState);
+  console.log(newData);
   
   return (
      <section className="section-addnews-form">
@@ -18,9 +29,9 @@ const AddNewsForm = () => {
               <i className="news-title"></i>
               <input 
                 type="text"
-                value=""
+                value={newData.title}
                 placeholder="Titre..." 
-                onChange={() => {}}
+                onChange={e => setNewData({...newData, title: e.target.value})}
                 />
               <span className="bar"></span>
             </div>
@@ -28,9 +39,9 @@ const AddNewsForm = () => {
               <i className="news-description"></i>
               <input 
                 type="text"
-                value=""
+                value={newData.description}
                 placeholder="Description..." 
-                onChange={() => {}}
+                onChange={e => setNewData({...newData, description: e.target.value})}
                 />
               <span className="bar"></span>
             </div>
@@ -38,9 +49,9 @@ const AddNewsForm = () => {
               <i className="news-category"></i>
               <input 
                 type="text"
-                value=""
+                value={newData.category}
                 placeholder="Catégorie..." 
-                onChange={() => {}}
+                onChange={e => setNewData({...newData, category: e.target.value})}
                 />
               <span className="bar"></span>
             </div>
@@ -48,9 +59,9 @@ const AddNewsForm = () => {
               <i className="news-price"></i>
               <input 
                 type="number"
-                value=""
+                value={newData.price}
                 placeholder="Prix..." 
-                onChange={() => {}}
+                onChange={e => setNewData({...newData, price: e.target.value})}
                 />
               <span className="bar"></span>
             </div>
@@ -58,9 +69,9 @@ const AddNewsForm = () => {
               <i className="picture-downlaod"></i>
               <input 
                 type="file"
-                value=""
+                value={newData.file}
                 accept="image" 
-                onChange={() => {}}
+                onChange={e => setNewData({...newData, file: e.target.value})}
                 multiple
                 />
               <span className="bar"></span>
@@ -93,17 +104,5 @@ const AddNewsForm = () => {
     
 }
 
-// const mapStateToProps = state => {
-//   return {
-    
-//   }
-// }
-
-
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//   }
-// }
 
 export default AddNewsForm;
