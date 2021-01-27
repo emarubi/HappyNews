@@ -2,7 +2,12 @@ import data from '../../data/data';
 import { ADD_NEWS } from '../constants';
 
 const initialState = {
-  news: []
+  news: [],
+  title: '',
+  description: '',
+  category: '',
+  price: '',
+  file:[]
 }
 
 // reducer
