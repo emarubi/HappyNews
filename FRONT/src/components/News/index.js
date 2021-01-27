@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+
+// Import des composants
 import SearchBar from 'src/components/News/SearchBar';
 import Button from 'src/components/Header/Button';
 import NewsModal from 'src/components/NewsModal';
-import PropTypes from 'prop-types';
+import Spinner from 'src/components/Spinner';
 
 import { Icon } from 'semantic-ui-react';
 
@@ -15,7 +18,7 @@ const News = ({
   // useEffect : appelle une fonction au chargement du composant
   // car 2eme parametre = []
   useEffect(() => {
-  // loadRecipes : une prop qui charge les news (les articles)
+  // loadNews : une prop qui charge les news (les articles)
   // cette fonction prop sera définie dans le container
     loadNews();
     // loadActivities: une prop qui charge les acitivités (les catégories de news)
@@ -46,6 +49,7 @@ const News = ({
         ))}
       </div>
       <section className="newsList">
+        {!hasData && <Spinner />}
         {list.map((news) => (
           <div key={news.id} className="newsList__item">
             {hasData && <NewsModal news={news} />}

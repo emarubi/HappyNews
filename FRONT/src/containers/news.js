@@ -12,6 +12,8 @@ const mapStateToProps = (state) => ({
   list: state.newsList.list,
   // on crée la data qui liste nos activités (= catégories dans notre page News)
   activities: state.activities.activitiesList,
+  // on crée un booleen pour gérer notre spinner
+  isLoading: !state.hasData,
 });
 // mapDispatchToProps = cablage des actions (props de type fonction)
 const mapDispatchToProps = (dispatch) => ({
