@@ -4,12 +4,14 @@ import { connect } from 'react-redux';
 import News from 'src/components/News';
 
 const mapStateToProps = (state) => ({
-  // on crée un boolen qui vaut vrai si on a des news sont dans la liste
+  // on crée un booleen qui vaut vrai si on a des news sont dans la liste
   hasData: state.newsList.list.length > 0,
+  // on crée un booleen qui vaut vrai si on a des activitiés dans la liste (activities)
+  hasDataActivities: state.newsList.activities.length > 0,
   // on crée la data qui liste nos news
   list: state.newsList.list,
   // on crée la data qui liste nos activités (= catégories dans notre page News)
-  all_activities: state.all_activities,
+  activities: state.newsList.activities,
 });
 // mapDispatchToProps = cablage des actions (props de type fonction)
 const mapDispatchToProps = (dispatch) => ({

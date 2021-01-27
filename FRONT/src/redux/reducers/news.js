@@ -1,7 +1,7 @@
 // state initial de la tranche "newsList" notre store
 const initialState = {
   list: [],
-  all_activities: [],
+  activities: [],
 };
 
 // reducer qui va gérer les news
@@ -13,10 +13,10 @@ const newsReducer = (oldState = initialState, action) => {
         list: action.list,
       };
     // Je dispatch une nouvelle action dans le cas d'un appel à la liste des activités
-    case 'GET_ACTIVITIES':
+    case 'GET_ACTIVITIES_SUCCESS':
       return {
         ...oldState,
-        all_activities: action.all_activities,
+        activities: action.activities,
       };
     default:
       return { ...oldState };

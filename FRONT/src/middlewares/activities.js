@@ -9,8 +9,8 @@ const api = (store) => (next) => (action) => {
         .then((response) => { // requete réussie
           // on envoie une action pour sauvegarder les activités
           // avec un second paramètre qui contient la réponse
-          store.dispatch({ type: 'GET_ACTIVITIES_SUCCESS', all_activities: response.data });
-          // list existant déjà dans nos data, j'appel la liste des activités : all_activities
+          store.dispatch({ type: 'GET_ACTIVITIES_SUCCESS', activities: response.data.data });
+          // list existant déjà dans nos data, j'appel la liste des activités : activities
         });
       break;
     default:
