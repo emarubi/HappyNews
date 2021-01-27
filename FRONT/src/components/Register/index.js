@@ -21,6 +21,7 @@ const FormRegister = ({last_name,
     changeSelectField,
     subscriptionSubmit}) => {
 
+    // const { register, handleSubmit, errors } = useForm();
 
     return (
         <form className='register' onSubmit={(event) => { event.preventDefault(); subscriptionSubmit()}}>
@@ -34,7 +35,9 @@ const FormRegister = ({last_name,
              onChange={changeField}
              placeholder="Nom"
              type= 'text'
-         
+            //  register= {register({
+            //     required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres'
+            //   }})}
              />
             <div className="register-form">
                 <Field 
@@ -187,6 +190,10 @@ FormRegister.propTypes = {
     ImputEmailSub: PropTypes.string.isRequired,
     InputPasswordSub: PropTypes.string.isRequired,
     changeField: PropTypes.func.isRequired,
+    HandleRoleId: PropTypes.func.isRequired,
+    role_id: PropTypes.number.isRequired,
+    changeSelectField: PropTypes.func.isRequired,
+    subscriptionSubmit: PropTypes.func.isRequired,
   
 };
 // FormRegister.defaultProps = {

@@ -45,16 +45,16 @@ export const subscriptionSubmitForm = () => {
     type: 'SUBSCRIBE'
   };
 } 
-export const HandleRoleIdChecked = (checked) => {
-  console.log('je suis dans mon action createur et checked vaut', checked);
-  return {
-    type: 'SUBSCRIBE_ROLE_ID',
-    checked
-  }
-} 
-export const getSelectField = (value) => {
-  return {
-      type: 'GET_SELECT_FIELD',
-      value
-  };
-}  
+// export const HandleRoleIdChecked = (checked) => {
+//   console.log('je suis dans mon action createur et checked vaut', checked);
+//   return {
+//     type: 'SUBSCRIBE_ROLE_ID',
+//     checked
+//   }
+// } 
+// export const getSelectField = (value) => {
+//   return {
+//       type: 'GET_SELECT_FIELD',
+//       value
+//   };
+// }  

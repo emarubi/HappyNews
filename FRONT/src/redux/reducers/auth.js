@@ -1,5 +1,5 @@
 // ajout de loggin success pour thunk
-import { CHANGE_AUTH_FIELD, LOGIN_SUCCESS, LOGOUT, GET_SELECT_FIELD } from 'src/redux/actions';
+import { CHANGE_AUTH_FIELD, LOGIN_SUCCESS, LOGOUT } from 'src/redux/actions';
 
 export const initialState = {
     email: '',
