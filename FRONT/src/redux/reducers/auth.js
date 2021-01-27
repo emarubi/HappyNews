@@ -6,18 +6,19 @@ export const initialState = {
     password: '',
     logged : false,   
     token: null || localStorage.getItem('token'),
-    first_name : null,
-    name: '',
-    prenom: '',
-    address: '',
+    first_name : '',
+    last_name: '',
+    first_name: '',
+    adress: '',
     zip_code: '',
-    ville: '',
-    societe:'',
-    enseigne: '',
-    siret: '',
+    city: '',
+    company_name:'',
+    shop_name: '',
+    registration_number: '',
+    role_id: 4,
     ImputEmailSub: '',
     InputPasswordSub: '',
-    InputPasswordverified: ''
+    // InputPasswordverified: ''
 };
 
 const authReducer = (state = initialState, action ) => {
@@ -28,7 +29,7 @@ const authReducer = (state = initialState, action ) => {
           [action.name]: action.value
         };
         
-    // case 'LOGIN_SUCCESS':
+
       case LOGIN_SUCCESS:
       return {
         ...state,
@@ -48,6 +49,20 @@ const authReducer = (state = initialState, action ) => {
           password: '',
           first_name: null,
           
+        };
+        // case SUBSCRIBE_ROLE_ID:
+        case 'SUBSCRIBE_ROLE_ID':
+          if(action.checked == true) {
+            return {
+               ...state,
+                role_id: 3
+             };
+          }
+          if (action.checked == false) {
+            return {
+            ...state,
+            role_id : 4
+          };
         };
         default:
         return { ...state };

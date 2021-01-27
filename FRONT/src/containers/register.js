@@ -3,17 +3,18 @@ import { connect } from 'react-redux'
 import { changeAuthField } from 'src/redux/actions';
 
 const mapStateToProps = (state) => ({
-    name: state.auth.name,
-    prenom : state.auth.prenom,
-    address: state.auth.address,
+    last_name: state.auth.last_name,
+    first_name : state.auth.first_name,
+    adress: state.auth.adress,
     zip_code: state.auth.zip_code,
-    societe: state.auth.societe,
-    enseigne: state.auth.enseigne,
-    siret: state.auth.siret,
-    ville: state.auth.ville,
+    city: state.auth.city,
+    company_name: state.auth.company_name,
+    shop_name: state.auth.shop_name,
+    registration_number: state.auth.registration_number,
     ImputEmailSub: state.auth.ImputEmailSub,
     InputPasswordSub: state.auth.InputPasswordSub,
-    InputPasswordverified: state.auth.InputPasswordverified
+    // InputPasswordverified: state.auth.InputPasswordverified,
+    role_id: state.auth.role_id
 })
 
 const mapDispatchToProps = (dispatch) => {
@@ -23,6 +24,11 @@ const mapDispatchToProps = (dispatch) => {
         },
         subscriptionSubmit : () => {
             dispatch(subscriptionSubmitForm(console.log('je suis dans le container de subscribe from')));
+        },
+        HandleRoleId: (checked) => {
+            console.log('je suis dans le register container, valeur de checked', checked)
+            // dispatch(HandleRoleIdChecked(checked));
+            dispatch ({ type: 'SUBSCRIBE_ROLE_ID', checked  })
         }
     }
 }

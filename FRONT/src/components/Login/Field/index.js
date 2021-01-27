@@ -32,7 +32,7 @@ const Field = ({value, name, onChange, type, placeholder, register}) => {
 Field.propTypes = {
   value: PropTypes.string,
   name: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   type: PropTypes.oneOfType([ PropTypes.number,
   PropTypes.string]).isRequired,

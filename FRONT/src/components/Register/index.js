@@ -5,192 +5,162 @@ import Field from '../Login/Field';
 import PropTypes from 'prop-types';
 // import { useForm } from 'react-hook-form';
 import './style.scss';
-const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne, siret, ImputEmailSub, InputPasswordSub, InputPasswordverified, changeField, subscriptionSubmit}) => {
-    // const { register, handleSubmit, errors } = useForm();
+const FormRegister = ({last_name,
+    first_name, 
+    adress, 
+    zip_code, 
+    city, 
+    company_name, 
+    shop_name, 
+    registration_number, 
+    ImputEmailSub, 
+    InputPasswordSub, 
+    changeField, 
+    HandleRoleId,
+    subscriptionSubmit}) => {
+
+
     return (
         <form className='register' onSubmit={(event) => { event.preventDefault(); subscriptionSubmit()}}>
            {/* <Avatar /> */}
             <h1 className="register-title">Inscription</h1>
              <fieldset className="register-sec-identite">
              <legend className="register-leg-identite">Identité</legend>
-            {/* <div className="register-form">
-                <label className='register-label-form' for="InputLastName">Nom</label>
-                <input type="text" className="register-form-input" id="InputlastName" name="InputFirstName" placeholder="Nom" />
-            </div> */}
             <Field 
-             name="name"
-             value={name}
+             name="last_name"
+             value={last_name}
              onChange={changeField}
              placeholder="Nom"
              type= 'text'
-            //  register= {register({
-            //     required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres'
-            //   }})}
+         
              />
             <div className="register-form">
-                {/* <label className='register-label-form' htmlFor="InputFirstName">Prénom</label> */}
-                {/* <input
-                // value={name} onChange= {event =>  
-                //     changeFieldRegister(event.target.value, name)
-                // }
-                type="text" className="register-form-input" name="InputFirstName" id="InputFirstName" placeholder="Prénom" /> */}
                 <Field 
-             name="prenom"
-             value={prenom}
+             name="first_name"
+             value={first_name}
              onChange={changeField}
              placeholder="prenom"
              type= 'text'
-            //  register= {register({
-            //     required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres'
-            //   }})}
+           
              />
             </div>
             {/* {errors.prenom && <span> {errors.prenom.message} </span>} */}
             </fieldset>
-
-
             <fieldset className="register-sec-address">
             <legend className="register-leg-address">addresse</legend>
             <div className="register-form">
-                {/* <label className='register-label-form' htmlFor="InputLocation">Adresse</label> */}
-                {/* <input type="text" className="register-form-input" name="InputLocation" id="InputLocation" placeholder="Adresse" /> */}
                 <Field 
-             name="address"
-             value={address}
+             name="adress"
+             value={adress}
              onChange={changeField}
-             placeholder="address"
+             placeholder="adress"
              type= 'text'
-            //  register= {register({
-            //     required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres'
-            //   }})}
              />
+     
             </div>
-
+            
             <div className="register-form">
-                {/* <label className='register-label-form' htmlFor="InputZipCode">Code Postal</label> */}
-                {/* <input type="number" className="register-form-input" name="InputZipCode" id="InputZipCode" placeholder="Code Postal" /> */}
                 <Field 
              name="zip_code"
              value={zip_code}
              onChange={changeField}
-             placeholder="zip_code"
-             type="number"
-            //  register= {register({
-            //     required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres'
-            //   }})}
+             placeholder="code postal"
+             type="number"    
              />
             </div>
-
             <div className="register-form">
-                {/* <label className='register-label-form' htmlFor="InputCity">Ville</label> */}
-                {/* <input type="text" className="register-form-input" name="InputCity" id="InputCity" placeholder="Ville" /> */}
                 <Field 
-             name="ville"
-             value={ville}
+             name="city"
+             value={city}
              onChange={changeField}
              placeholder="ville"
              type= 'text'
-            //  register= {register({
-            //     required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres'
-            //   }})}
+           
              />
             </div>
             </fieldset>
-                   
-                
+           
+ {/* { role_id =3 &&  <> */}
+                  {/* <Field 
+             name="role_id"
+             value={role_id} // par defaut 4
+             onChange={ changeRoleId }
+             placeholder="cocher la case si vous etes un commercant"
+             type="checkbox"         
+             />     */}
+            <label
+        className="form__label"
+        htmlFor="roleID"
+      >
+       cliquer si vous etes commercant
+      </label>
+      <input
+        onChange={(event)=> {HandleRoleId(event.target.checked)}}
+        id="roleID"
+        type='checkbox'
+        className="form__input"
+        name='role_id'
+        />
             <fieldset className="register-sec-business">
-            <legend className="register-leg-business">informations professionnelles</legend>
-            <div className="register-form">
-                {/* <label className='register-label-form' htmlFor="InputSociety">Socièté</label> */}
-                {/* <input type="text" className="register-form-input" name="InputSociety" placeholder="Socièté" /> */}
-                <Field 
-             name="societe"
-             value={societe}
+            <div className="register-form">     
+           
+            </div>
+
+        <legend className="register-leg-business">informations professionnelles</legend>
+                <div>
+            <Field 
+             name="company_name"
+             value={company_name}
              onChange={changeField}
              placeholder="societe"
-             type= 'text'
-            //  register= {register({
-            //     required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres'
-            //   }})}
+             type= 'text'     
              />
-            </div>
+            </div>            
             <div className="register-form">
-                {/* <label className='register-label-form' htmlFor="InputEnseigne">Enseigne</label> */}
-                {/* <input type="text" className="register-form-input" name="InputEnseigne" id="InputEnseigne" placeholder="Enseigne" /> */}
                 <Field 
-             name="enseigne"
-             value={enseigne}
+             name="shop_name"
+             value={shop_name}
              onChange={changeField}
              placeholder="enseigne"
-             type= 'text'
-            //  register= {register({
-            //     required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres'
-            //   }})}
+             type= 'text'       
              />
             </div>
-
             <div className="register-form">
-                {/* <label className='register-label-form' htmlFor="InputSiret">Siret</label> */}
-                {/* <input type="password" className="register-form-input" name="InputSiret" id="InputSiret" placeholder="Siret" /> */}
                 <Field 
-             name="siret"
-             value={siret}
+             name="registration_number"
+             value={registration_number}
              onChange={changeField}
              placeholder="siret"
-             type="text"
-            //  register= {register({
-            //     required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres'
-            //   }})}
+             type="text"         
              />
             </div>
             </fieldset>
-
+            {/* </>  */}
+        {/* } */}
             <fieldset className="register-sec-security">
             <legend className="register-leg-security">securité</legend>
             <div className="register-form">
-                {/* <label className='register-label-form' htmlFor="ImputEmailSub">Email</label>
-                <input type="email" className="register-form-input" name="ImputEmailSub" id="ImputEmailSub" placeholder="Entrer votre email" /> */}
                 <Field 
              name="ImputEmailSub"
              value={ImputEmailSub}
              onChange={changeField}
              placeholder="email"
              type= 'email'
-            //  register= {register({
-            //     required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres'
-            //   }})}
+        
              />
             </div>
-
             <div className="register-form">
-                {/* <label className='register-label-form' htmlFor="InputPasswordSub">Password</label> */}
-                {/* <input type="password" className="register-form-input" name="InputPasswordSub" id="InputPasswordSub" placeholder="Mot de Passe" /> */}
                 <Field 
              name="InputPasswordSub"
              value={InputPasswordSub}
              onChange={changeField}
              placeholder="mot de passe"
              type= 'password'
-            //  register= {register({
-            //     required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres'
-            //   }})}
+          
              />
             </div>
      
-            <div className="register-form">
-                {/* <label className='register-label-form' htmlFor="InputPasswordverified">Password</label>
-                <input type="password" className="register-form-input" name="InputPasswordverified" id="InputPasswordverified" placeholder="Confirmer le Mot de Passe" /> */}
-                <Field 
-             name="InputPasswordverified"
-             value={InputPasswordverified}
-             onChange={changeField}
-             placeholder="confirmer votre mot de passe "
-             type= 'password'
-            //  register= {register({
-            //     required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres'
-            //   }})}
-             />
-            </div>
+
             </fieldset>
             <Button>Validez la création</Button>
         </form>
@@ -200,17 +170,16 @@ const FormRegister = ({name, prenom, address, zip_code, ville, societe, enseigne
 
 export default FormRegister;
 FormRegister.propTypes = {
-    name: PropTypes.string.isRequired,
-    prenom: PropTypes.string.isRequired,
-    address: PropTypes.string.isRequired,
+    last_name: PropTypes.string.isRequired,
+    first_name: PropTypes.string.isRequired,
+    adress: PropTypes.string.isRequired,
     zip_code: PropTypes.string.isRequired,
-    ville: PropTypes.string.isRequired,
-    societe: PropTypes.string.isRequired,
-    enseigne: PropTypes.string.isRequired,
-    // siret: PropTypes.number,
+    city: PropTypes.string.isRequired,
+    company_name: PropTypes.string.isRequired,
+    shop_name: PropTypes.string.isRequired,
+    // registration_number: PropTypes.number,
     ImputEmailSub: PropTypes.string.isRequired,
     InputPasswordSub: PropTypes.string.isRequired,
-    InputPasswordverified: PropTypes.string.isRequired,
     changeField: PropTypes.func.isRequired,
   
 };
