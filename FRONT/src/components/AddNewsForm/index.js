@@ -9,7 +9,11 @@ const AddNewsForm = () => {
       <div id="wraper">
         <div className="form-container">
           <span className="form-heading">Ajouter une News</span>
-          <form action="" className="form-body" onSubmit={() => {}}>
+          <form method="post" 
+                action="" 
+                className="form-body" 
+                onSubmit={() => {}}
+                enctype="multipart/form-data">
             <div className="input-group">
               <i className="news-title"></i>
               <input 
@@ -57,6 +61,7 @@ const AddNewsForm = () => {
                 value=""
                 accept="image" 
                 onChange={() => {}}
+                multiple
                 />
               <span className="bar"></span>
             </div>
