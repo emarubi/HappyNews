@@ -17,6 +17,7 @@ const FormRegister = ({last_name,
     InputPasswordSub, 
     changeField, 
     HandleRoleId,
+    role_id,
     subscriptionSubmit}) => {
 
 
@@ -80,34 +81,22 @@ const FormRegister = ({last_name,
             </div>
             </fieldset>
            
- {/* { role_id =3 &&  <> */}
-                  {/* <Field 
-             name="role_id"
-             value={role_id} // par defaut 4
-             onChange={ changeRoleId }
-             placeholder="cocher la case si vous etes un commercant"
-             type="checkbox"         
-             />     */}
-            <label
-        className="form__label"
-        htmlFor="roleID"
-      >
-       cliquer si vous etes commercant
-      </label>
-      <input
-        onChange={(event)=> {HandleRoleId(event.target.checked)}}
-        id="roleID"
-        type='checkbox'
-        className="form__input"
-        name='role_id'
-        />
+            <label className="form__label"htmlFor="roleID"> cliquer si vous etes commercant</label>
+            <input
+            onChange={(event)=> {HandleRoleId(event.target.checked)}}
+            id="roleID"
+            type='checkbox'
+            className="form__input"
+            name='role_id'
+            />
+      { role_id === 3 && 
+<>        
             <fieldset className="register-sec-business">
-            <div className="register-form">     
-           
-            </div>
+            <legend className="register-leg-business">informations professionnelles</legend>
+            <div className="register-form">  
 
-        <legend className="register-leg-business">informations professionnelles</legend>
-                <div>
+
+            <div>
             <Field 
              name="company_name"
              value={company_name}
@@ -133,10 +122,11 @@ const FormRegister = ({last_name,
              placeholder="siret"
              type="text"         
              />
+             </div>
             </div>
             </fieldset>
-            {/* </>  */}
-        {/* } */}
+   </>
+}
             <fieldset className="register-sec-security">
             <legend className="register-leg-security">securité</legend>
             <div className="register-form">
