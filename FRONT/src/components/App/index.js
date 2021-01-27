@@ -38,10 +38,7 @@ const App = ({ isLogged }) => (
       <Route exact path="/connexion">
         {isLogged ? <Redirect to="/news/liste" /> : <Login />}
       </Route>
-    <Route exact path="/inscription/commercant">
-        <Register />
-      </Route>
-    <Route exact path="/inscription/client">
+    <Route exact path="/inscription">
         <Register />
       </Route>
     <Route exact path="/commercant/profil"> {/* pas encore l'id customers */}
