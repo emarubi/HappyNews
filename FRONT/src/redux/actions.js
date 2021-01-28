@@ -1,12 +1,14 @@
-import { ADD_NEWS } from './constants';
+
 //import axios pour thunk
 // import axios from 'axios';
 // action type  CHANGE_AUTH_FIELD 
 export const CHANGE_AUTH_FIELD = 'CHANGE_AUTH_FIELD';
 export const LOGIN = 'LOGIN';
-export const LOGIN_SUCCESS  = 'LOGIN_SUCCESS'
-export const LOGIN_ERROR  = 'LOGIN_ERROR'
-export const LOGOUT  = 'LOGOUT'
+export const LOGIN_SUCCESS  = 'LOGIN_SUCCESS';
+export const LOGIN_ERROR  = 'LOGIN_ERROR';
+export const LOGOUT  = 'LOGOUT';
+export const ADD_NEWS = 'ADD_NEWS';
+export const CHANGE_ADDNEWS_FIELD = 'CHANGE_ADDNEWS_FIELD';
 // function to change input field
 export const changeAuthField = (value, name) => ({
     type: CHANGE_AUTH_FIELD,
@@ -16,29 +18,39 @@ export const changeAuthField = (value, name) => ({
 
   export const handleLogin = () => {
     return {
-        type: 'LOGIN'
+        type: LOGIN
     };
   }
 
   export const handleLogout = () => {
     return {
-        type: 'LOGOUT'
+        type: LOGOUT
     };
   }
 
 
 // Function to add a news
-  export const handleAddNews = () => {
+  export const changeAddNewsField = (name, value) => {
     return {
-      type: 'ADD_NEWS',
-      payload: data  /* Object with the local state of addNewsForm */
+      type: CHANGE_ADDNEWS_FIELD,
+      name,
+      value,
     }
   }
 
   // Function to submit the addNewsForm
-  
+  export const addNews = () => {
+    return {
+      type: ADD_NEWS,
+    }
+  }
 
-
+  export const addNewsSuccess = (data) => {
+    return {
+      type: ADD_NEWS_SUCCESS,
+      data
+    }
+  }
 
 
 

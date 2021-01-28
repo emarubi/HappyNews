@@ -1,14 +1,14 @@
-import axios from 'axios';
+// import axios from 'axios';
 
-const add = (store) => (next) => (action) => {
-  switch (action.type) {
-    case ADD_NEWS:
+// const add = (store) => (next) => (action) => {
+//   switch (action.type) {
+//     case ADD_NEWS:
       
-      break;
+//       break;
   
-    default:
-      break;
-  }
-};
+//     default:
+//       break;
+//   }
+// };
 
-export default add;
+// export default add;

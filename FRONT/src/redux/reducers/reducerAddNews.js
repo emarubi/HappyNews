@@ -1,31 +1,40 @@
-import data from '../../data/data';
-import { ADD_NEWS } from '../actions';
+
+import { ADD_NEWS, CHANGE_ADDNEWS_FIELD } from '../actions';
 
 // Initial State
 const initialState = {
-  news: [],
-  title: '',
-  description: '',
-  category: '',
-  price: '',
-  file:[], 
-  is_news: true
+    article_title: '',
+    description: '',
+    picture_url: '',
+    price: '',
+    is_news: true,
+    user_id: null,
+    activity_id: '',
+    news_duration:1,
 }
 
 // reducer
 
-const reducerAddNews = (state = initialState, action) => {
-  console.log('state dans le reducer:', state)
+const reducerAddNews = (oldState = initialState, action) => {
+  console.log('oldState dans le reducer:', oldState)
 
   switch (action.type) {
-    case ADD_NEWS:
-      state = [ ...state ]
-      return state
-
-    default:
-      break;
+    // case ADD_NEWS_SUCCESS:
+    //   return {
+    //     ...oldState,
+    //     article_title: action.data.title,
+    //     desc
+        
+    //   };
+    case CHANGE_ADDNEWS_FIELD:
+      return {
+        ...oldState,
+        [action.name]:action.value,
+      }
+      default:
+      return { ...oldState};
   }
-  return { ...state}
 }
 
 export default reducerAddNews;
+

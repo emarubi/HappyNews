@@ -1,25 +1,19 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import './style.scss';
 
-const AddNewsForm = () => {
-  // local state form definition
-  const initialState = {
-    title: '',
-    description: '',
-    category: '',
-    price: '',
-    file:[]
-  }
-  // Usestate to register local state befor send it
-  const [newData, setNewData] = useState(initialState);
-  
+export const AddNewsForm = ({ title, description, category, price, file, handleChangeField, handleAddNews, addNews }) => {
+ 
+ 
+  const handleChange = (e) => handleChangeField([e.target.name], e.target.value);
 
   // function called when form is validate
-  const handleAddNews = e => {
+  const handleSubmit = e => {
     // function called to block the reload of the page
     e.preventDefault();
-    console.log(newData);
+    addNews();
+    
   }
   
   return (
@@ -30,16 +24,16 @@ const AddNewsForm = () => {
           <form method="post" 
             action="" 
             className="form-body" 
-            onSubmit={handleAddNews}
+            onSubmit={e => handleSubmit()}
             enctype="multipart/form-data">
             <div className="input-group">
               <i className="news-title"></i>
               <input 
                 name="title"
                 type="text"
-                value={newData.title}
+                value={title}
                 placeholder="Titre..." 
-                onChange={e => setNewData({...newData, title: e.target.value})}
+                onChange={e => handleChange(e)}
                 />
               <span className="bar"></span>
             </div>
@@ -48,9 +42,9 @@ const AddNewsForm = () => {
               <input
                 name="description" 
                 type="text"
-                value={newData.description}
+                value={description}
                 placeholder="Description..." 
-                onChange={e => setNewData({...newData, description: e.target.value})}
+                onChange={e => handleChange(e)}
                 />
               <span className="bar"></span>
             </div>
@@ -59,9 +53,9 @@ const AddNewsForm = () => {
               <input 
                 name="category"
                 type="text"
-                value={newData.category}
+                value={category}
                 placeholder="Catégorie..." 
-                onChange={e => setNewData({...newData, category: e.target.value})}
+                onChange={e => handleChange(e)}
                 />
               <span className="bar"></span>
             </div>
@@ -70,9 +64,9 @@ const AddNewsForm = () => {
               <input 
                 name="price"
                 type="number"
-                value={newData.price}
+                value={price}
                 placeholder="Prix..." 
-                onChange={e => setNewData({...newData, price: e.target.value})}
+                onChange={e => handleChange(e)}
                 />
               <span className="bar"></span>
             </div>
@@ -81,9 +75,9 @@ const AddNewsForm = () => {
               <input 
                 name="file"
                 type="file"
-                value={newData.file}
+                value={file}
                 accept="image" 
-                onChange={e => setNewData({...newData, file: [e.target.value]})}
+                onChange={e => handleChange(e)}
                 multiple
                 />
               <span className="bar"></span>
@@ -116,5 +110,13 @@ const AddNewsForm = () => {
     
 }
 
+// AddNewsForm.propTypes = {
+//   title: PropTypes.string.isRequired,
+//   description: PropTypes.string.isRequired,
+//   category: PropTypes.string.isRequired,
+//   price: PropTypes.string.isRequired,
+//   file: PropTypes.array.isRequired,
+//   handleSubmit: PropTypes.func.isRequired,
+// };
 
-export default AddNewsForm;
+// export default AddNewsForm;

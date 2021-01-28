@@ -1,23 +1,39 @@
 import { connect } from 'react-redux';
 import { AddNewsForm } from 'src/components/AddNewsForm';
-import { handleAddNews } from 'src/components/Login';
+// import { handleAddNews } from 'src/components/Login';
+// import { changeAuthField } from '../redux/actions';
+import { changeAddNewsField } from '../redux/actions';
 
-const mapStateToProps = state => {
-  return {
-    news: [state.news],
-    title: state.title,
-    description: state.description,
-    category: state.category,
-    price: state.price,
-    file:[state.file], 
+// Cablage des données
+const mapStateToProps = (state) => ({
+    // news: [state.addNews.news],
+    title: state.addNews.title,
+    description: state.addNews.description,
+    category: state.addNews.category,
+    price: state.addNews.price,
+    file:state.addNews.file,
     is_news: true
-  }
-}
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
+// // Cablage des actions
+const mapDispatchToProps = (dispatch) => ({
+    handleChangeField: (name, value) => {
+      dispatch(changeAddNewsField(name,value));
+    },
+    handleAddNews: () => {
+      dispatch(addNews());
+    },
+});
 
-  }
-}
+    
+//   return {
+//     // changeField : (value, name) => {
+//     //   dispatch(changeAuthField(value, name));
+//     // },
+//     // handleAddNews : () => {
+//     //   dispatch(handleAddNews( consoleLog('log depuis le container')));
+//     // }
+  
+// }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddNewsForm);
