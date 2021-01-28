@@ -1,35 +1,31 @@
 import axios from 'axios';
+import FormData from 'form-data';
 import {LOGIN, SUBSCRIBE, handleLoginSuccess, handleSubscribeSuccess} from '../redux/actions'
+
 const api = (store) => (next) => (action) => {
   switch (action.type) {
     case LOGIN: {
-      const { auth: { email, password } } = store.getState();
+      const state = store.getState();
+      console.log(state)
+
+      const form = new FormData();
+      form.append('email', state.auth.email);
+      form.append('password', state.auth.password);
+
 
       const config = {
         method: 'post', // verbe POST
         url: 'https://api-happy-news.herokuapp.com/login', // endpoint de login
-        headers: { // header pour dire qu'on parle en JSON
-          'Content-Type': 'application/json',
-      //   'Cookie': 'connect.sid=s%3AfhPHxE7GncGThwzNKUSGwQZV9Js-dsLN.7YjWIJyga9CxT9ftGBwlOi3BNUMQdixv1%2F3GSNYHq7M'
-        },
-        data:
-          { // body de la requete (contenu du json)
-            email,
-            password,
-          },
+        data: form,
+        headers: { 
+          'Content-Type': 'multipart/form-data',
+        }
       };
       axios(config) // on lance la requete...
         .then((response) => { // cas de réussite
-        // on envoie une action, pour sauvegarder les données dans le reducer
-        // cette action ne sera pas traitée dans le middleware, et ira jusqu'au reducer
-          // const { userToken } = response.data;
-          // localStorage.setItem('token', userToken);
-          // store.dispatch({
-          //   type: LOGIN_SUCCESS,
-          //   // localStorage.setItem('token', userToken);
-          //   // on déverse tout le contenu de response.data dans notre action
-          //   ...response.data,
+
           const { userToken } = response.data;
+          console.log(userToken)
           store.dispatch(handleLoginSuccess(response.data));
           // on le stocke aussi dans le localStorage
           localStorage.setItem('token', userToken);
@@ -44,16 +40,34 @@ const api = (store) => (next) => (action) => {
       break;
     }
     case SUBSCRIBE: {
-      const { auth: { first_name, last_name, adress, zip_code,
-        city, company_name, shop_name, registration_number, role_id,
-        email, password, activity_id  } } = store.getState();
+      // const { auth: { first_name, last_name, adress, zip_code,
+      //   city, company_name, shop_name, registration_number, role_id,
+      //   email, password, activity_id  } } = store.getState();
+      const state = store.getState();
+      console.log(state)
+
+      const form = new FormData();
+      form.append('first_name', state.auth.first_name);
+      form.append('last_name', state.auth.last_name);
+      form.append('adress', state.auth.adress);
+      form.append('zip_code', state.auth.zip_code);
+      form.append('city', state.auth.city);
+      form.append('email', state.auth.email);
+      form.append('password', state.auth.password);
+      form.append('role_id', state.auth.role_id);
+      form.append('company_name', state.auth.company_name);
+      form.append('shop_name', state.auth.shop_name);
+      form.append('registration_number', state.auth.registration_number);
+      form.append('activity_id', state.auth.activity_id);
+
         let config = {
           method: 'post',
           url: 'https://api-happy-news.herokuapp.com/signup',
+          data : form,
+          // { first_name, last_name, adress, zip_code, city, email, password, role_id, activity_id  }
           headers: { 
-            'Content-Type': 'application/json'
+            'Content-Type': 'multipart/form-data'
           },
-          data : { first_name, last_name, adress, zip_code, city, email, password, role_id, activity_id  }
         };
         axios(config)
         .then((response) => {
