@@ -24,9 +24,6 @@ import './styles.scss';
 
 import newsList from 'src/data/data';
 
-// Import de mon utilitaire pour la recherche de de News par activité commerçant
-import { getNewsByActivity } from 'src/utils';
-
 // == Composant
 const App = ({ isLogged }) => (
   <div>
