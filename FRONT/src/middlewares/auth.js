@@ -11,7 +11,7 @@ const api = (store) => (next) => (action) => {
       const form = new FormData();
       form.append('email', state.auth.email);
       form.append('password', state.auth.password);
-
+      console.log(form)
 
       const config = {
         method: 'post', // verbe POST
@@ -48,33 +48,44 @@ const api = (store) => (next) => (action) => {
 
       const form = new FormData();
       form.append('first_name', state.auth.first_name);
+      console.log(state.auth.first_name)
       form.append('last_name', state.auth.last_name);
+      console.log(state.auth.last_name)
       form.append('adress', state.auth.adress);
+      console.log(state.auth.adress)
       form.append('zip_code', state.auth.zip_code);
-      form.append('latitude', state.auth.latitude);
-      form.append('longitude', state.auth.longitude);
-      form.append('city', state.auth.city);
-      form.append('email', state.auth.email);
-      form.append('password', state.auth.password);
-      form.append('role_id', state.auth.role_id);
-      form.append('company_name', state.auth.company_name);
-      form.append('shop_name', state.auth.shop_name);
-      form.append('registration_number', state.auth.registration_number);
-      form.append('activity_id', state.auth.activity_id);
-
-        let config = {
+    console.log(state.auth.zip_code)
+    form.append('city', state.auth.city);
+    console.log(state.auth.city)
+    form.append('email', state.auth.email);
+    console.log(state.auth.email)
+    form.append('password', state.auth.password);
+    console.log(state.auth.password)
+    form.append('role_id', state.auth.role_id);
+    console.log(state.auth.role_id)
+    form.append('company_name', state.auth.company_name);
+    console.log(state.auth.company_name)
+    form.append('shop_name', state.auth.shop_name);
+    console.log(state.auth.shop_name)
+    form.append('registration_number', state.auth.registration_number);
+          console.log(state.auth.registration_number)
+          form.append('activity_id', state.auth.activity_id);
+    console.log(state.auth.activity_id)
+console.log(form);
+        const config = {
           method: 'post',
           url: 'https://api-happy-news.herokuapp.com/signup',
           data : form,
           // { first_name, last_name, adress, zip_code, city, email, password, role_id, activity_id  }
           headers: { 
-            'Content-Type': 'multipart/form-data'
-          },
+            'Content-Type': 'multipart/form-data',
+          },       
         };
         axios(config)
         .then((response) => {
-          console.log(response.data)
-          store.dispatch(handleSubscribeSuccess(response.data.data));
+          store.dispatch(handleSubscribeSuccess(response.data));
+          console.log(response.data.city)
+          
         })
         .catch((error) => { // cas d'erreur
           console.log(error);
