@@ -9,29 +9,30 @@ export const LOGOUT  = 'LOGOUT'
 export const SUBSCRIBE = 'SUBSCRIBE'
 export const SUBSCRIBE_ROLE_ID = 'SUBSCRIBE_ROLE_ID'
 export const GET_SELECT_FIELD = 'GET_SELECT_FIELD'
+export const SUBSCRIBE_SUCCESS = 'GET_SELECT_FIELD'
 
 // function to change input field
 export const changeAuthField = (value, name) => ({
-    type: 'CHANGE_AUTH_FIELD',
+    type: CHANGE_AUTH_FIELD,
     name,
     value,
   });
 
   export const handleLogin = () => {
     return {
-        type: 'LOGIN'
+        type: LOGIN
     };
   }
 
   export const handleLoginSuccess = (data) => {
     return {
-        type: 'LOGIN_SUCCESS',
+        type: LOGIN_SUCCESS,
         data,
     };
   }  
   export const handleLogout = () => {
     return {
-        type: 'LOGOUT'
+        type: LOGOUT
     };
   }
 //   export const handleLoginError = () => {
@@ -40,21 +41,26 @@ export const changeAuthField = (value, name) => ({
 //     };
 //   }
 
-export const subscriptionSubmitForm = () => {
+export const subscriptionSubmitForm = () => ({
+    type: SUBSCRIBE
+  })
+
+export const HandleRoleIdChecked = (checked) => {
+  console.log('je suis dans mon action createur et checked vaut', checked);
   return {
-    type: 'SUBSCRIBE'
+    type: 'SUBSCRIBE_ROLE_ID',
+    checked
+  }
+} 
+export const getSelectField = (value) => {
+  return {
+      type: 'GET_SELECT_FIELD',
+      value
+  };
+}  
+export const handleSubscribeSuccess = (data) => {
+  return {
+    type: SUBSCRIBE_SUCCESS,
+    data
   };
 } 
-// export const HandleRoleIdChecked = (checked) => {
-//   console.log('je suis dans mon action createur et checked vaut', checked);
-//   return {
-//     type: 'SUBSCRIBE_ROLE_ID',
-//     checked
-//   }
-// } 
-// export const getSelectField = (value) => {
-//   return {
-//       type: 'GET_SELECT_FIELD',
-//       value
-//   };
-// }  

@@ -1,6 +1,6 @@
 import FormRegister from 'src/components/Register';
 import { connect } from 'react-redux'
-import { changeAuthField } from 'src/redux/actions';
+import { changeAuthField, subscriptionSubmitForm, HandleRoleIdChecked,getSelectField } from 'src/redux/actions';
 
 const mapStateToProps = (state) => ({
     last_name: state.auth.last_name,
@@ -23,17 +23,18 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(changeAuthField(value, name));
         },
         subscriptionSubmit : () => {
-            dispatch(subscriptionSubmitForm(console.log('je suis dans le container de subscribe from')));
+            dispatch(subscriptionSubmitForm());
+            // dispatch ({ type: 'SUBSCRIBE'  })
         },
         HandleRoleId: (checked) => {
             console.log('je suis dans le register container, valeur de checked', checked)
-            // dispatch(HandleRoleIdChecked(checked));
-            dispatch ({ type: 'SUBSCRIBE_ROLE_ID', checked  })
+            dispatch(HandleRoleIdChecked(checked));
+            // dispatch ({ type: 'SUBSCRIBE_ROLE_ID', checked  })
         },
         changeSelectField : (value) => {
             console.log('je suis dans le register container, valeur de l\'input', value)
-            // dispatch(getSelectField(value));
-            dispatch ({ type: 'GET_SELECT_FIELD', value  })
+            dispatch(getSelectField(value));
+            // dispatch ({ type: 'GET_SELECT_FIELD', value  })
         },
     }
 }

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {LOGIN, handleLoginSuccess} from '../redux/actions'
+import {LOGIN, SUBSCRIBE, handleLoginSuccess, handleSubscribeSuccess} from '../redux/actions'
 const api = (store) => (next) => (action) => {
   switch (action.type) {
     case LOGIN: {
@@ -43,6 +43,33 @@ const api = (store) => (next) => (action) => {
         });
       break;
     }
+    case SUBSCRIBE: {
+      const { auth: { last_name, first_name,adress, zip_code,
+        city,company_name ,shop_name ,registration_number ,role_id,
+        ImputEmailSub, InputPasswordSub, activity_id  } } = store.getState();
+        let config = {
+          method: 'post',
+          url: 'https://api-happy-news.herokuapp.com/signup',
+          headers: { 
+            'Content-Type': 'application/json'
+          },
+          data : { last_name, first_name,adress, zip_code,
+            city,company_name ,shop_name ,registration_number ,role_id,
+            ImputEmailSub, InputPasswordSub, activity_id  }
+        };
+        axios(config)
+        .then((response) => {
+          const { userToken } = response.data;
+          console.log(response.data)
+          store.dispatch(handleSubscribeSuccess(response.data));
+          localStorage.setItem('token', userToken);
+          console.log('Je suis dans la réponse, et response.data du Tokenvaut : ', response.data.password);
+
+        })
+        .catch((error) => { // cas d'erreur
+          console.log(error);
+        });
+      }
     default:
       next(action);
   }
