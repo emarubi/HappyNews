@@ -11,13 +11,13 @@ export const initialState = {
     first_name: '',
     last_name: '',
     adress: '',
-    zip_code: null,
+    zip_code: '',
     city: '',
     company_name:'',
     shop_name: '',
     registration_number: '',
     role_id: 4,
-    activity_id: null
+    activity_id: ''
 };
 
 const authReducer = (state = initialState, action ) => {
