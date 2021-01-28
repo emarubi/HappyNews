@@ -41,6 +41,7 @@ Field.propTypes = {
 // Valeurs par défaut pour les props
 Field.defaultProps = {
   value: '',
+  
 };
 
 export default Field;

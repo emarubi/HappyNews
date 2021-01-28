@@ -41,9 +41,13 @@ export const changeAuthField = (value, name) => ({
 //     };
 //   }
 
-export const subscriptionSubmitForm = () => ({
+export const subscriptionSubmitForm = () => {
+  console.log('je suis dans submit form de l\'action creation')
+  return{
     type: SUBSCRIBE
-  })
+  }  
+  
+  }
 
 export const HandleRoleIdChecked = (checked) => {
   console.log('je suis dans mon action createur et checked vaut', checked);

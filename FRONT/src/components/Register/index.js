@@ -13,8 +13,8 @@ const FormRegister = ({last_name,
     company_name, 
     shop_name, 
     registration_number, 
-    ImputEmailSub, 
-    InputPasswordSub, 
+    email, 
+    password, 
     changeField, 
     HandleRoleId,
     role_id,
@@ -150,8 +150,8 @@ const FormRegister = ({last_name,
             <legend className="register-leg-security">securité</legend>
             <div className="register-form">
                 <Field 
-             name="ImputEmailSub"
-             value={ImputEmailSub}
+             name="email"
+             value={email}
              onChange={changeField}
              placeholder="email"
              type= 'email'
@@ -160,8 +160,8 @@ const FormRegister = ({last_name,
             </div>
             <div className="register-form">
                 <Field 
-             name="InputPasswordSub"
-             value={InputPasswordSub}
+             name="password"
+             value={password}
              onChange={changeField}
              placeholder="mot de passe"
              type= 'password'
@@ -182,13 +182,13 @@ FormRegister.propTypes = {
     last_name: PropTypes.string.isRequired,
     first_name: PropTypes.string.isRequired,
     adress: PropTypes.string.isRequired,
-    zip_code: PropTypes.string.isRequired,
+    zip_code: PropTypes.string,
     city: PropTypes.string.isRequired,
     company_name: PropTypes.string.isRequired,
     shop_name: PropTypes.string.isRequired,
     // registration_number: PropTypes.number,
-    ImputEmailSub: PropTypes.string.isRequired,
-    InputPasswordSub: PropTypes.string.isRequired,
+    email: PropTypes.string,
+    password: PropTypes.string,
     changeField: PropTypes.func.isRequired,
     HandleRoleId: PropTypes.func.isRequired,
     role_id: PropTypes.number.isRequired,
@@ -196,7 +196,7 @@ FormRegister.propTypes = {
     subscriptionSubmit: PropTypes.func.isRequired,
   
 };
-// FormRegister.defaultProps = {
-//     siret: 0,
-    // zip_code: null,
-//   };
+FormRegister.defaultProps = {
+// siret: 0,
+zip_code: '',
+};

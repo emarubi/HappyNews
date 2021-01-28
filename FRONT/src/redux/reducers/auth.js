@@ -8,17 +8,15 @@ export const initialState = {
     password: '',
     logged : false,   
     token: null || localStorage.getItem('token'),
-    last_name: '',
     first_name: '',
+    last_name: '',
     adress: '',
-    zip_code: '',
+    zip_code: null,
     city: '',
     company_name:'',
     shop_name: '',
     registration_number: '',
     role_id: 4,
-    ImputEmailSub: '',
-    InputPasswordSub: '',
     activity_id: null
 };
 

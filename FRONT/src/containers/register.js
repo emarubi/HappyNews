@@ -11,8 +11,8 @@ const mapStateToProps = (state) => ({
     company_name: state.auth.company_name,
     shop_name: state.auth.shop_name,
     registration_number: state.auth.registration_number,
-    ImputEmailSub: state.auth.ImputEmailSub,
-    InputPasswordSub: state.auth.InputPasswordSub,
+    email: state.auth.email,
+    password: state.auth.password,
     // InputPasswordverified: state.auth.InputPasswordverified,
     role_id: state.auth.role_id
 })
@@ -23,18 +23,19 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(changeAuthField(value, name));
         },
         subscriptionSubmit : () => {
+            console.log('je suis dans le container subscripition submit')
             dispatch(subscriptionSubmitForm());
-            // dispatch ({ type: 'SUBSCRIBE'  })
+           
         },
         HandleRoleId: (checked) => {
             console.log('je suis dans le register container, valeur de checked', checked)
             dispatch(HandleRoleIdChecked(checked));
-            // dispatch ({ type: 'SUBSCRIBE_ROLE_ID', checked  })
+           
         },
         changeSelectField : (value) => {
             console.log('je suis dans le register container, valeur de l\'input', value)
             dispatch(getSelectField(value));
-            // dispatch ({ type: 'GET_SELECT_FIELD', value  })
+            
         },
     }
 }
