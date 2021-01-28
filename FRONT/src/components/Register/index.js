@@ -3,7 +3,7 @@ import React from 'react';
 import Button from '../Header/Button';
 import Field from '../Login/Field';
 import PropTypes from 'prop-types';
-// import { useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import './style.scss';
 const FormRegister = ({last_name,
     first_name, 
@@ -21,10 +21,13 @@ const FormRegister = ({last_name,
     changeSelectField,
     subscriptionSubmit}) => {
 
-    // const { register, handleSubmit, errors } = useForm();
+    const { register, handleSubmit, errors } = useForm({
+         shouldFocusError : true
+    
+    });
 
     return (
-        <form className='register' onSubmit={(event) => { event.preventDefault(); subscriptionSubmit()}}>
+        <form className='register' onSubmit={handleSubmit(subscriptionSubmit)}>
            {/* <Avatar /> */}
             <h1 className="register-title">Inscription</h1>
              <fieldset className="register-sec-identite">
@@ -35,10 +38,11 @@ const FormRegister = ({last_name,
              onChange={changeField}
              placeholder="Nom"
              type= 'text'
-            //  register= {register({
-            //     required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres'
-            //   }})}
+             register= {register({
+                required: {value :true, message: 'ce champs est obligatoire'}, minLength: {value: 4, message: 'vous devez entrer au moins 4 caracteres'
+              }})}
              />
+               {errors.last_name && <span> {errors.last_name.message} </span>}
             <div className="register-form">
                 <Field 
              name="first_name"
@@ -46,10 +50,12 @@ const FormRegister = ({last_name,
              onChange={changeField}
              placeholder="prenom"
              type= 'text'
-           
+             register= {register({
+                required: {value :true, message: 'ce champs est obligatoire'}, minLength: {value: 5, message: 'vous devez entrer au moins 5 caracteres'
+              }})}
              />
             </div>
-            {/* {errors.prenom && <span> {errors.prenom.message} </span>} */}
+            {errors.first_name && <span> {errors.first_name.message} </span>}
             </fieldset>
             <fieldset className="register-sec-address">
             <legend className="register-leg-address">addresse</legend>
@@ -60,19 +66,26 @@ const FormRegister = ({last_name,
              onChange={changeField}
              placeholder="adress"
              type= 'text'
+             register= {register({
+                required: {value :true, message: 'ce champs est obligatoire'}, minLength: {value: 6, message: 'vous devez entrer au moins 6 caracteres'
+              }})}
              />
      
             </div>
-            
+            {errors.adress && <span> {errors.adress.message} </span>}
             <div className="register-form">
                 <Field 
              name="zip_code"
              value={zip_code}
              onChange={changeField}
              placeholder="code postal"
-             type="number"    
+             type="number"   
+             register= {register({
+                required: {value :true, message: 'ce champs est obligatoire'}
+             })} 
              />
             </div>
+            {errors.zip_code && <span> {errors.zip_code.message} </span>}
             <div className="register-form">
                 <Field 
              name="city"
@@ -80,9 +93,12 @@ const FormRegister = ({last_name,
              onChange={changeField}
              placeholder="ville"
              type= 'text'
-           
+             register= {register({
+                required: {value :true, message: 'ce champs est obligatoire'}
+             })} 
              />
             </div>
+            {errors.city && <span> {errors.city.message} </span>}
             </fieldset>
            
             <label className="form__label"htmlFor="roleID"> cliquer si vous etes commercant</label>
@@ -155,9 +171,13 @@ const FormRegister = ({last_name,
              onChange={changeField}
              placeholder="email"
              type= 'email'
-        
+             register= {register({
+                required: {value :true, message: 'ce champs est obligatoire'}
+             })} 
              />
             </div>
+            {errors.email && <span> {errors.email.message} </span>}
+
             <div className="register-form">
                 <Field 
              name="password"
@@ -165,10 +185,13 @@ const FormRegister = ({last_name,
              onChange={changeField}
              placeholder="mot de passe"
              type= 'password'
-          
+             register= {register({
+                required: {value :true, message: 'ce champs est obligatoire'}
+             })} 
              />
             </div>
-     
+            {errors.password && <span> {errors.password.message} </span>}
+
 
             </fieldset>
             <Button>Validez la création</Button>
