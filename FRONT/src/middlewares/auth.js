@@ -51,6 +51,8 @@ const api = (store) => (next) => (action) => {
       form.append('last_name', state.auth.last_name);
       form.append('adress', state.auth.adress);
       form.append('zip_code', state.auth.zip_code);
+      form.append('latitude', state.auth.latitude);
+      form.append('longitude', state.auth.longitude);
       form.append('city', state.auth.city);
       form.append('email', state.auth.email);
       form.append('password', state.auth.password);
