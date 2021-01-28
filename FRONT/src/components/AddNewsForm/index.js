@@ -35,6 +35,7 @@ const AddNewsForm = () => {
             <div className="input-group">
               <i className="news-title"></i>
               <input 
+                name="title"
                 type="text"
                 value={newData.title}
                 placeholder="Titre..." 
@@ -44,7 +45,8 @@ const AddNewsForm = () => {
             </div>
             <div className="input-group">
               <i className="news-description"></i>
-              <input 
+              <input
+                name="description" 
                 type="text"
                 value={newData.description}
                 placeholder="Description..." 
@@ -55,6 +57,7 @@ const AddNewsForm = () => {
             <div className="input-group">
               <i className="news-category"></i>
               <input 
+                name="category"
                 type="text"
                 value={newData.category}
                 placeholder="Catégorie..." 
@@ -65,6 +68,7 @@ const AddNewsForm = () => {
             <div className="input-group">
               <i className="news-price"></i>
               <input 
+                name="price"
                 type="number"
                 value={newData.price}
                 placeholder="Prix..." 
@@ -75,6 +79,7 @@ const AddNewsForm = () => {
             <div className="input-group">
               <i className="picture-downlaod"></i>
               <input 
+                name="file"
                 type="file"
                 value={newData.file}
                 accept="image" 
@@ -92,7 +97,7 @@ const AddNewsForm = () => {
                   </svg>
                 </i>
               </button>
-              <button className="news-valid-form-but">
+              <button type="submit" className="news-valid-form-but">
                 <i className="picture-valid">
                   <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-x" width="32" height="32" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
