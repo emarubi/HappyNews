@@ -13,7 +13,6 @@ const mapStateToProps = (state) => ({
     registration_number: state.auth.registration_number,
     email: state.auth.email,
     password: state.auth.password,
-    // InputPasswordverified: state.auth.InputPasswordverified,
     role_id: state.auth.role_id
 })
 
@@ -25,17 +24,14 @@ const mapDispatchToProps = (dispatch) => {
         subscriptionSubmit : () => {
             console.log('je suis dans le container subscripition submit')
             dispatch(subscriptionSubmitForm());
-           
         },
         HandleRoleId: (checked) => {
             console.log('je suis dans le register container, valeur de checked', checked)
             dispatch(HandleRoleIdChecked(checked));
-           
         },
         changeSelectField : (value) => {
             console.log('je suis dans le register container, valeur de l\'input', value)
             dispatch(getSelectField(value));
-            
         },
     }
 }
