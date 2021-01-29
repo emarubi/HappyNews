@@ -61,16 +61,20 @@ const api = (store) => (next) => (action) => {
     console.log(state.auth.email)
     form.append('password', state.auth.password);
     console.log(state.auth.password)
+    if (state.auth.role_id == 3) {
+      form.append('company_name', state.auth.company_name);
+      console.log(state.auth.company_name)
+      form.append('shop_name', state.auth.shop_name);
+      console.log(state.auth.shop_name)
+      form.append('registration_number', state.auth.registration_number);
+      console.log(state.auth.registration_number)
+    }
     form.append('role_id', state.auth.role_id);
     console.log(state.auth.role_id)
-    form.append('company_name', state.auth.company_name);
-    console.log(state.auth.company_name)
-    form.append('shop_name', state.auth.shop_name);
-    console.log(state.auth.shop_name)
-    form.append('registration_number', state.auth.registration_number);
-    console.log(state.auth.registration_number)
+    if (state.auth.role_id == 3) {
     form.append('activity_id', state.auth.activity_id);
     console.log(state.auth.activity_id)
+    }
     console.log(form);
         const config = {
           method: 'post',
@@ -82,7 +86,7 @@ const api = (store) => (next) => (action) => {
         };
         axios(config)
         .then((response) => {
-          console.log(response.data.data.city)
+          console.log(response.data.data.city) //
           store.dispatch(handleSubscribeSuccess(response.data));
           
         })

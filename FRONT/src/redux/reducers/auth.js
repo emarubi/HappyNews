@@ -17,7 +17,7 @@ export const initialState = {
     latitude: '',
     longitude: '',
     city: '',
-    company_name:'',
+    company_name: '',
     shop_name: '',
     registration_number: '',
     role_id: 4,
@@ -55,7 +55,7 @@ const authReducer = (state = initialState, action ) => {
           
         };
         // case SUBSCRIBE_ROLE_ID:
-        case SUBSCRIBE_ROLE_ID:
+      case SUBSCRIBE_ROLE_ID:
           if(action.checked == true) {
             return {
                ...state,
@@ -68,7 +68,7 @@ const authReducer = (state = initialState, action ) => {
             role_id : 4
           };
         };
-        case GET_SELECT_FIELD:
+      case GET_SELECT_FIELD:
           if(action.value === 'boulangerie') {
             return {
                ...state,
@@ -123,12 +123,12 @@ const authReducer = (state = initialState, action ) => {
                 activity_id: 9
              };
           };
-        case SUBSCRIBE_SUCCESS:
+      case SUBSCRIBE_SUCCESS:
             return {
                ...state,
             };
-        default:
-        return { ...state };
+      default:
+      return { ...state };
     }
   };
   
