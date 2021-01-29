@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import './style.scss';
 
-const Field = ({ type, value, name, onChange, placeholder }) => {
+const Field = ({ type, value, name, onChange, placeholder, register }) => {
   const inputId = `input-${name}`;
   const handleChange = (event) => {
     onChange(event.target.value, name);
@@ -23,17 +23,19 @@ const Field = ({ type, value, name, onChange, placeholder }) => {
         className="form__input"
         placeholder={placeholder}
         name={name}
+        ref={register}
       />
     </>
   );
 };
 
 Field.propTypes = {
-  type: PropTypes.string.isRequired,
   value: PropTypes.string,
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  type: PropTypes.oneOfType([PropTypes.number,
+    PropTypes.string]).isRequired,
 };
 
 // Valeurs par défaut pour les props

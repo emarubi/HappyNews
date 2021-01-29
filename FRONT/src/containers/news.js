@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 // composant de présentation
 import News from 'src/components/News';
 
+import { changeSearchValueAction, handleSearchSubmit } from 'src/redux/actions';
+
 const mapStateToProps = (state) => ({
   // on crée un booleen qui vaut vrai si on a des news sont dans la liste
   hasData: state.newsList.list.length > 0,
@@ -14,6 +16,8 @@ const mapStateToProps = (state) => ({
   activities: state.activities.activitiesList,
   // on crée un booleen pour gérer notre spinner
   isLoading: !state.hasData,
+  // La donnée qui correspond à la recherche saisie par l'utilisateur dans News
+  searchValue: state.searchValue.searchValue,
 });
 // mapDispatchToProps = cablage des actions (props de type fonction)
 const mapDispatchToProps = (dispatch) => ({
@@ -22,6 +26,12 @@ const mapDispatchToProps = (dispatch) => ({
   },
   loadActivities: () => {
     dispatch({ type: 'GET_ACTIVITIES' });
+  },
+  changeSearchField: (value, name) => {
+    dispatch(changeSearchValueAction(value, name));
+  },
+  handleSearchSubmit: () => {
+    dispatch(handleSearchSubmit(console.log('Je suis dans le container searchBar')));
   },
 });
 

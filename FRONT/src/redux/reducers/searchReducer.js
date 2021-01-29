@@ -1,17 +1,17 @@
-import { SET_SEARCH_VALUE, SAVE_RESULTS } from 'src/redux/actions';
+// import { CHANGE_SEARCH_VALUE } from '../actions';
+import { CHANGE_SEARCH_VALUE } from 'src/redux/actions';
 
 const initialState = {
   searchValue: '',
-  searchResults: {},
 };
 
-export default function reducer(oldState = initialState, action) {
+const searchReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_SEARCH_VALUE:
-      return { ...oldState, searchValue: action.value };
-    case SAVE_RESULTS:
-      return { ...oldState, searchResults: action.results };
+    case CHANGE_SEARCH_VALUE:
+      return { ...state, searchValue: action.value };
     default:
-      return { ...oldState };
+      return { ...state };
   }
-}
+};
+
+export default searchReducer;

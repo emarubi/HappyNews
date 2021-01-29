@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useForm } from 'react-hook-form';
 
 // Import des composants
-import SearchBar from 'src/components/News/SearchBar';
+import Field from 'src/components/Login/Field';
 import Button from 'src/components/Header/Button';
 import NewsModal from 'src/components/NewsModal';
 import Spinner from 'src/components/Spinner';
@@ -14,6 +15,7 @@ import './style.scss';
 
 const News = ({
   list, loadNews, hasData, activities, loadActivities, hasDataActivities,
+  searchValue, changeSearchField, handleSearchSubmit,
 }) => {
   // useEffect : appelle une fonction au chargement du composant
   // car 2eme parametre = []
@@ -25,11 +27,24 @@ const News = ({
     loadActivities();
   }, []);
 
+  const { register, handleSubmit, errors } = useForm();
   return (
     <div>
       <section className="searchSection">
         <div className="searchSection__searchBar">
-          <SearchBar />
+          <form onSubmit={handleSubmit(handleSearchSubmit)}>
+            <Field
+              name="search"
+              value={searchValue}
+              onChange={changeSearchField}
+              placeholder="Saisissez le nom de votre ville"
+              type="search"
+              register={register({
+                required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres',
+                }})}
+            />
+            {errors.email && <span> {errors.email.message} </span>}
+          </form>
         </div>
         <div className="searchSection__searchOnMap">
           <div>
@@ -62,6 +77,9 @@ const News = ({
 };
 
 News.propTypes = {
+  handleSearchSubmit: PropTypes.func.isRequired,
+  changeSearchField: PropTypes.func.isRequired,
+  searchValue: PropTypes.string,
   loadNews: PropTypes.func.isRequired,
   loadActivities: PropTypes.func.isRequired,
   hasData: PropTypes.bool.isRequired,
@@ -83,8 +101,13 @@ News.propTypes = {
       user_id: PropTypes.number.isRequired,
       activity_id: PropTypes.number.isRequired,
       activity_name: PropTypes.string.isRequired,
+      city: PropTypes.string.isRequired,
     }),
   ).isRequired,
+};
+
+News.defaultProps = {
+  searchValue: '',
 };
 
 export default News;

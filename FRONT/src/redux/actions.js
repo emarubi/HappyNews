@@ -36,7 +36,21 @@ export const changeAuthField = (value, name) => ({
   }
   // >>>>>>> origin/front/getDataFromNewsForm
 
+// ACTION CREATOR YANN
+// je crée une action pour le changement de la valeur de l'input de recherche
+// de la page News
+export const CHANGE_SEARCH_VALUE = 'CHANGE_SEARCH_VALUE';
+export const SEARCH = 'SEARCH';
 
+export const changeSearchValueAction = (value, name) => ({
+  type: CHANGE_SEARCH_VALUE,
+  value,
+  name,
+});
+
+export const handleSearchSubmit = () => ({
+  type: 'SEARCH',
+});
 
 
 

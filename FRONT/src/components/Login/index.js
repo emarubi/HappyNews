@@ -11,7 +11,7 @@ const Login = ({email, password, changeField, handleLogin}) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     handleLogin(
-      console.log('je suis dans le composant login')
+      console.log('je suis dans le composant login'),
     );
   };
 
