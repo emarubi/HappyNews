@@ -46,14 +46,14 @@ const api = (store) => (next) => (action) => {
       const state = store.getState();
       console.log(state)
 
-      const form = new FormData();
-      form.append('first_name', state.auth.first_name);
-      console.log(state.auth.first_name)
-      form.append('last_name', state.auth.last_name);
-      console.log(state.auth.last_name)
-      form.append('adress', state.auth.adress);
-      console.log(state.auth.adress)
-      form.append('zip_code', state.auth.zip_code);
+    const form = new FormData();
+    form.append('first_name', state.auth.first_name);
+    console.log(state.auth.first_name)
+    form.append('last_name', state.auth.last_name);
+    console.log(state.auth.last_name)
+    form.append('adress', state.auth.adress);
+    console.log(state.auth.adress)
+    form.append('zip_code', state.auth.zip_code);
     console.log(state.auth.zip_code)
     form.append('city', state.auth.city);
     console.log(state.auth.city)
@@ -68,23 +68,22 @@ const api = (store) => (next) => (action) => {
     form.append('shop_name', state.auth.shop_name);
     console.log(state.auth.shop_name)
     form.append('registration_number', state.auth.registration_number);
-          console.log(state.auth.registration_number)
-          form.append('activity_id', state.auth.activity_id);
+    console.log(state.auth.registration_number)
+    form.append('activity_id', state.auth.activity_id);
     console.log(state.auth.activity_id)
-console.log(form);
+    console.log(form);
         const config = {
           method: 'post',
           url: 'https://api-happy-news.herokuapp.com/signup',
           data : form,
-          // { first_name, last_name, adress, zip_code, city, email, password, role_id, activity_id  }
           headers: { 
             'Content-Type': 'multipart/form-data',
           },       
         };
         axios(config)
         .then((response) => {
+          console.log(response.data.data.city)
           store.dispatch(handleSubscribeSuccess(response.data));
-          console.log(response.data.city)
           
         })
         .catch((error) => { // cas d'erreur

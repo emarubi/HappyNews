@@ -8,6 +8,7 @@ export const initialState = {
     password: '',
     logged : false,   
     token: null || localStorage.getItem('token'),
+    id: '',
     errorMessage: '',
     first_name: '',
     last_name: '',
@@ -38,7 +39,8 @@ const authReducer = (state = initialState, action ) => {
         // on copie les données de l'action dans le reducer
         logged: action.data.logged,
         token: action.data.userToken,
-        first_name : action.data.user.first_name
+        first_name : action.data.user.first_name,
+        id : action.data.user.id
       };
       case LOGOUT:
         localStorage.removeItem('token')
@@ -121,12 +123,9 @@ const authReducer = (state = initialState, action ) => {
                 activity_id: 9
              };
           };
-         case SUBSCRIBE_SUCCESS:
+        case SUBSCRIBE_SUCCESS:
             return {
                ...state,
-               logged: action.data.logged,
-               token: action.data.userToken,
-               first_name : action.data.user[0].first_name
             };
         default:
         return { ...state };
