@@ -44,7 +44,7 @@ const News = ({
                 value={searchValue}
                 onChange={changeSearchField}
                 placeholder="Saisissez le nom de votre ville"
-                type="text"
+                type="search"
                 register={register({
                   required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres',
                   }})}
