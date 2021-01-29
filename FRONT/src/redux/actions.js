@@ -28,8 +28,9 @@ export const changeAuthField = (value, name) => ({
     };
   }
 
+{/** ---------------------------- AddNewsForm Actions ------------------------------------------- */}
 
-// Function to add a news
+// Function to change fields on addNewsForm
   export const changeAddNewsField = (name, value) => {
     return {
       type: CHANGE_ADDNEWS_FIELD,
@@ -51,6 +52,7 @@ export const changeAuthField = (value, name) => ({
       data
     }
   }
+
 
 
 

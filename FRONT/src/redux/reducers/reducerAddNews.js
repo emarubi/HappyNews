@@ -19,13 +19,7 @@ const reducerAddNews = (oldState = initialState, action) => {
   console.log('oldState dans le reducer:', oldState)
 
   switch (action.type) {
-    // case ADD_NEWS_SUCCESS:
-    //   return {
-    //     ...oldState,
-    //     article_title: action.data.title,
-    //     desc
-        
-    //   };
+    
     case CHANGE_ADDNEWS_FIELD:
       return {
         ...oldState,

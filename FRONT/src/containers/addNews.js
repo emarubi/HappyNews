@@ -15,13 +15,15 @@ const mapStateToProps = (state) => ({
     is_news: true
 });
 
-// // Cablage des actions
+// Cablage des actions
 const mapDispatchToProps = (dispatch) => ({
     handleChangeField: (name, value) => {
       dispatch(changeAddNewsField(name,value));
+      // console.log('la value :', value);
+      // console.log('le name :', name);
     },
     handleAddNews: () => {
-      dispatch(addNews());
+      // dispatch(addNews());
     },
 });
 
