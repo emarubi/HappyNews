@@ -5,7 +5,7 @@ import './style.scss';
 
 const Retailer = () => {
   return (
-    <body>
+    <div>
       <section className="character retailer">
           <div className="presentationText retailer">
             <h2 className="presentationTitle retailer">Vous êtes Commerçant</h2>
@@ -16,7 +16,7 @@ const Retailer = () => {
           </div>
 
       </section> 
-    </body>
+    </div>
   )
 }
 

@@ -18,11 +18,13 @@ import Header from 'src/containers/header';
 import Login from 'src/containers/login';
 import News from 'src/containers/news';
 import NewsModal from 'src/components/NewsModal';
-import AddNewsForm from 'src/components/AddNewsForm';
 // == Import CSS
 import './styles.scss';
 
 import newsList from 'src/data/data';
+// import Register from 'src/components/Register';
+import Register from 'src/containers/register';
+
 
 // == Composant
 const App = ({ isLogged }) => (
@@ -35,12 +37,9 @@ const App = ({ isLogged }) => (
       <Route exact path="/connexion">
         {isLogged ? <Redirect to="/news/liste" /> : <Login />}
       </Route>
-    {/* <Route exact path="/inscription/commercant">
-        < />
-      </Route> */}
-    {/* <Route exact path="/inscription/client">
-        < />
-      </Route> */}
+    <Route exact path="/inscription">
+        <Register />
+      </Route>
     <Route exact path="/commercant/profil"> {/* pas encore l'id customers */}
         <RetaillerP />
     </Route>
@@ -66,16 +65,13 @@ const App = ({ isLogged }) => (
     {/* <Route exact path="/map/recherche">
           < />
     </Route> */}
-      {/* <Route exact path="/inscription">
-        <Login />
-      </Route> */}
       {/* Route provisoire pour afficher le détail d'une carte */}
       <Route exact path="/newsmodal">
         <NewsModal news={newsList.data[3]} />
       </Route>
-      <Route exact path="/creation-de-news">
+      {/* <Route exact path="/creation-de-news">
         <AddNewsForm />
-      </Route>
+      </Route> */}
       <Route exact path="/condition-generales-d'utilisations"> 
         <CGU />
       </Route>
