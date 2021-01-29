@@ -8,8 +8,6 @@ import Button from 'src/components/Header/Button';
 import NewsModal from 'src/components/NewsModal';
 import Spinner from 'src/components/Spinner';
 
-import { Icon } from 'semantic-ui-react';
-
 // Import du CSS
 import './style.scss';
 
@@ -32,23 +30,36 @@ const News = ({
     <div>
       <section className="searchSection">
         <div className="searchSection__searchBar">
-          <form onSubmit={handleSubmit(handleSearchSubmit)}>
-            <Field
-              name="search"
-              value={searchValue}
-              onChange={changeSearchField}
-              placeholder="Saisissez le nom de votre ville"
-              type="search"
-              register={register({
-                required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres',
-                }})}
-            />
-            {errors.email && <span> {errors.email.message} </span>}
-          </form>
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-search" width="44" height="44" viewBox="0 0 24 24" stroke-width="3" stroke="#36586B" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <circle cx="10" cy="10" r="7" />
+              <line x1="21" y1="21" x2="15" y2="15" />
+            </svg>
+          </div>
+          <div className="searchSection__searchBar__container">
+            <form onSubmit={handleSubmit(handleSearchSubmit)}>
+              <Field
+                name="search"
+                value={searchValue}
+                onChange={changeSearchField}
+                placeholder="Saisissez le nom de votre ville"
+                type="text"
+                register={register({
+                  required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres',
+                  }})}
+              />
+              {errors.email && <span> {errors.email.message} </span>}
+            </form>
+          </div>
         </div>
         <div className="searchSection__searchOnMap">
           <div>
-            <Icon name="map marker alternate" size="big" />
+            <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-map-pin" width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="#36586B" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <circle cx="12" cy="11" r="3" />
+              <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+            </svg>
           </div>
           <div className="searchSection__searchOnMap__buttonContainer">
             <Button>Afficher sur la carte</Button>
