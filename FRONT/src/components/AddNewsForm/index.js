@@ -6,7 +6,7 @@ import './style.scss';
 export const AddNewsForm = ({ title, description, category, price, file, handleChangeField, handleAddNews, addNews }) => {
  
  
-  const handleChange = (e) => handleChangeField([e.target.name], e.target.value);
+  const handleChange = e => handleChangeField([e.target.name], e.target.value);
 
   // function called when form is validate
   const handleSubmit = e => {
@@ -29,7 +29,7 @@ export const AddNewsForm = ({ title, description, category, price, file, handleC
             <div className="input-group">
               <i className="news-title"></i>
               <input 
-                name="title"
+                name="article_title"
                 type="text"
                 value={title}
                 placeholder="Titre..." 
@@ -50,13 +50,23 @@ export const AddNewsForm = ({ title, description, category, price, file, handleC
             </div>
             <div className="input-group">
               <i className="news-category"></i>
-              <input 
-                name="category"
-                type="text"
-                value={category}
+              <select 
+                // name="category"
+                // type="text"
+                // value={category}
                 placeholder="Catégorie..." 
-                onChange={e => handleChange(e)}
-                />
+                // onChange={e => handleChange(e)}
+                >
+                  <option name="category" value="boulangerie" onChange={e => handleChange(e)}>boulangerie</option>
+                  <option name="category" value="boucherie" onChange={e => handleChange(e)}>boucherie</option>
+                  <option name="category" value="charcuterie" onChange={e => handleChange(e)}>charcuterie</option>
+                  <option name="category" value="coiffeur" onChange={e => handleChange(e)}>coiffeur</option>
+                  <option name="category" value="fleuriste" onChange={e => handleChange(e)}>fleuriste</option>
+                  <option name="category" value="fromagerie" onChange={e => handleChange(e)}>fromagerie</option>
+                  <option name="category" value="garagiste" onChange={e => handleChange(e)}>garagiste</option>
+                  <option name="category" value="papeterie" onChange={e => handleChange(e)}>papeterie</option>
+                  <option name="category" value="primeur" onChange={e => handleChange(e)}>primeur</option>
+              </select>
               <span className="bar"></span>
             </div>
             <div className="input-group">

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
+
 import { AddNewsForm } from 'src/components/AddNewsForm';
-// import { handleAddNews } from 'src/components/Login';
-// import { changeAuthField } from '../redux/actions';
+
 import { changeAddNewsField } from '../redux/actions';
 
 // Cablage des données

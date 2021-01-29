@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ADD_NEWS, ADD_NEWS_SUCCESS, } from '../redux/actions';
+import { ADD_NEWS, ADD_NEWS_SUCCESS } from '../redux/actions';
 
 const add = (store) => (next) => (action) => {
   switch (action.type) {

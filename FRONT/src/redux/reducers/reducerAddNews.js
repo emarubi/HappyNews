@@ -7,12 +7,10 @@ const initialState = {
     description: '',
     picture_url: '',
     price: '',
-    is_news: true,
-    user_id: null,
-    activity_id: '',
-    news_duration:1,
+    is_news: true, 
+    user_id: null, // A récupérer depuis le localstorage
+    activity_id: '', // A récupérer depuis un champs déroulant. 9 id différents à récup dans le back
 }
-
 // reducer
 
 const reducerAddNews = (oldState = initialState, action) => {
