@@ -11,7 +11,7 @@ import CUstomerP from 'src/components/CUstomerP';
 import Footer from 'src/components/Footer';
 import Home from 'src/components/Home';
 // import Login from 'src/components/Login';
-import RetaillerP from 'src/components/RetaillerP';
+import RetaillerP from 'src/containers/RetaillerP';
 import Terms from 'src/components/Terms';
 // import Header from 'src/components/Header';
 import Header from 'src/containers/header';

@@ -2,24 +2,24 @@
 import { CHANGE_AUTH_FIELD, LOGIN_SUCCESS, LOGOUT,  SUBSCRIBE_SUCCESS, SUBSCRIBE_ROLE_ID, GET_SELECT_FIELD } from 'src/redux/actions';
 
 export const initialState = {
-    email: '',
-    password: '',
-    logged : false,   
-    token: null || localStorage.getItem('token'),
-    id: '',
-    errorMessage: '',
-    first_name: '',
-    last_name: '',
-    adress: '',
-    zip_code: '',
-    latitude: '',
-    longitude: '',
-    city: '',
-    company_name: null,
-    shop_name: null,
-    registration_number: null,
-    role_id: 4,
-    activity_id: null
+   userId : '',
+   email: '',
+   password: '',
+   logged : false,   
+   token: null || localStorage.getItem('token'),
+   errorMessage: '',
+   first_name: '',
+   last_name: '',
+   adress: '',
+   zip_code: '',
+   latitude: '',
+   longitude: '',
+   city: '',
+   company_name: null,
+   shop_name: null,
+   registration_number: null,
+   role_id: 4,
+   activity_id: null
 };
 const authReducer = (state = initialState, action ) => {
     switch (action.type) {
@@ -32,13 +32,18 @@ const authReducer = (state = initialState, action ) => {
       return {
         ...state,
         // on copie les données de l'action dans le reducer
-        logged: action.data.logged,
-        token: action.data.userToken,
-        first_name : action.data.user.first_name,
-        id : action.data.user.id
+      logged: action.data.logged,
+      token: action.data.userToken,
+      first_name : action.data.user[0].first_name,
+      userId : action.data.user[0].id,
+      adress: action.data.user[0].adress,
+      zip_code: action.data.user[0].zip_code,
+      city: action.data.user[0].city,
+      role_id: action.data.user[0].role_id,
       };
       case LOGOUT:
-        localStorage.removeItem('token')
+      //   localStorage.removeItem('token')
+      localStorage.clear()
         return {
           ...state,
           logged: false,

@@ -8,17 +8,18 @@ import Logo from 'src/components/Header/Logo';
 import './style.scss';
 import Title from './Title';
 
-const Header = ({isLogged, handleLogout, first_name }) => {
+const Header = ({token, handleLogout }) => {
+  const prenom = JSON.parse(localStorage.getItem('first_name'))
   return (
     <header className='header'> 
       <Logo />
       <Title />
       <div className='header-nav'>
         <Avatar /> 
-        {isLogged && (
+        {token && (
         <>
           <div className="header-helloUser">
-            <p>Bonjour {first_name} !</p>
+            <p>Bonjour {prenom} !</p>
           </div>
         <Button
           type="button"
@@ -26,10 +27,13 @@ const Header = ({isLogged, handleLogout, first_name }) => {
         >
           Déconnexion
         </Button>
+        <NavLink to='/commercant/profil'> <Button>mon profil</Button></ NavLink>
         </>
       )}
-      {!isLogged && (
+      {token == null && (
+        <>
         <NavLink to='/connexion'> <Button>Connexion</Button></ NavLink>
+        </>
       )}
         <NavLink to='/news/liste'><Button>Liste des news</Button></ NavLink>
       </div>

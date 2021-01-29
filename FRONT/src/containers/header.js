@@ -4,8 +4,9 @@ import Header from "../components/Header";
 const mapStateToProps = (state) => {
     return {
         // to get state parameters
-        isLogged: state.auth.logged,
+        token: state.auth.token,
         first_name: state.auth.first_name,
+        isCommercant: state.auth.role_id,
     }
 }
 

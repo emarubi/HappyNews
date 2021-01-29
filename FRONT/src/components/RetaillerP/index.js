@@ -5,9 +5,10 @@ import Tabs from './Tabs';
 import TitleProfil from './TitleProfil';
 
 const RetailerP = () => {
- return (
+  const prenom = JSON.parse(localStorage.getItem('first_name'))
+  return (
     <div className='Profil-container'> 
-      <TitleProfil> Mon profil commercant </TitleProfil>
+      <TitleProfil> bienvenue sur votre profil {prenom} </TitleProfil>
       <ProfilInformation />
       <Tabs />
     </div>
