@@ -6,13 +6,20 @@ import { changeAddNewsField } from '../redux/actions';
 
 // Cablage des données
 const mapStateToProps = (state) => ({
-    // news: [state.addNews.news],
-    title: state.addNews.title,
+   
+    // title: ,
+    // description: 
+    // category: state.addNews.category,
+    // price: 
+    // file:
+    // is_news: true
+    article_title: state.addNews.title,
     description: state.addNews.description,
-    category: state.addNews.category,
+    picture_url: state.addNews.file,
     price: state.addNews.price,
-    file:state.addNews.file,
-    is_news: true
+    is_news: true,
+    user_id: '', // TODO: A récupérer depuis le localStorage 
+    activity_id: state.addNews.category,
 });
 
 // Cablage des actions
