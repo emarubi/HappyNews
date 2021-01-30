@@ -20,8 +20,4 @@ const Retailer = () => {
   )
 }
 
-  </section>
-
-);
-
 export default Retailer;

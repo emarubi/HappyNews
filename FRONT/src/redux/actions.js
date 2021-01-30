@@ -9,6 +9,61 @@ export const GET_SELECT_FIELD = 'GET_SELECT_FIELD';
 export const SUBSCRIBE_SUCCESS = 'GET_SELECT_FIELD';
 // export const SUBSCRIBE_ERROR= 'SUBSCRIBE_ERROR'
 
+
+export const ADD_NEWS = 'ADD_NEWS';
+export const CHANGE_ADDNEWS_FIELD = 'CHANGE_ADDNEWS_FIELD';
+// function to change input field
+/* export const changeAuthField = (value, name) => ({
+    type: CHANGE_AUTH_FIELD,
+    name,
+    value,
+  });
+
+  export const handleLogin = () => {
+    return {
+        type: LOGIN
+    };
+  }
+
+  export const handleLogout = () => {
+    return {
+        type: LOGOUT
+    };
+  } */
+
+{/** ---------------------------- AddNewsForm Actions ------------------------------------------- */}
+
+// Function to change fields on addNewsForm
+  export const changeAddNewsField = (name, value) => {
+    return {
+      type: CHANGE_ADDNEWS_FIELD,
+      name,
+      value,
+    }
+  }
+
+  // Function to submit the addNewsForm
+  export const addNews = () => {
+    return {
+      type: ADD_NEWS,
+    }
+  }
+
+  export const addNewsSuccess = (data) => {
+    return {
+      type: ADD_NEWS_SUCCESS,
+      data
+    }
+  }
+{/** ----------------------------------------------------------------- */}
+
+
+
+
+
+
+
+
 export const changeAuthField = (value, name) => ({
   type: CHANGE_AUTH_FIELD,
   name,

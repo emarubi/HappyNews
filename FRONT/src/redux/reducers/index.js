@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 import authReducer from './auth';
-// import reducerAddNews from './reducerAddNews';
+import AddNewsReducer from './reducerAddNews';
 import newsReducer from './news';
 import activitiesReducer from './activities';
 
 export default combineReducers({
   auth: authReducer,
-  // addNews: reducerAddNews,
+  addNews: AddNewsReducer,
   newsList: newsReducer,
   activities: activitiesReducer,
 });
