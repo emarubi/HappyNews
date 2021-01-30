@@ -21,6 +21,7 @@ const Header = ({token, handleLogout }) => {
           <div className="header-helloUser">
             <p>Bonjour {prenom} !</p>
           </div>
+          <NavLink to='/commercant/profil'></NavLink>
         <Button
           type="button"
           event={handleLogout}

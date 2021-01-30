@@ -41,7 +41,9 @@ const App = ({ isLogged }) => (
         <Register />
       </Route>
     <Route exact path="/commercant/profil"> {/* pas encore l'id customers */}
-        <RetaillerP />
+        {/* <RetaillerP /> */}
+        { localStorage.getItem('token') ? <RetaillerP /> : <Redirect to="/news/liste" />}
+        {/* {token ? <Redirect to="/news/liste" /> : } */}
     </Route>
     {/* <Route exact path="/commercant/profil/:id/modifications-client">
         < />

@@ -26,12 +26,18 @@ const api = (store) => (next) => (action) => {
 
           const { userToken } = response.data;
           const { first_name } = response.data.user[0];
+          const { last_name } = response.data.user[0];
+          const { shop_name } = response.data.user[0];
           const { role_id } = response.data.user[0];
           const { city } = response.data.user[0];
+          const { email } = response.data.user[0];
           const { id } = response.data.user[0];
           console.log(userToken)
           localStorage.setItem('token', userToken);
           localStorage.setItem('first_name', JSON.stringify(first_name));
+          localStorage.setItem('last_name', JSON.stringify(last_name));
+          localStorage.setItem('shop_name', JSON.stringify(shop_name));
+          localStorage.setItem('email', JSON.stringify(email));
           localStorage.setItem('role', JSON.stringify(role_id));
           localStorage.setItem('city', JSON.stringify(city));
           localStorage.setItem('id', JSON.stringify(id));
