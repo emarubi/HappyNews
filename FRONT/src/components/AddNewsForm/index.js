@@ -33,7 +33,7 @@ export const AddNewsForm = ({ title, activity_id, price, picture_url, handleChan
             action="" 
             className="form-body" 
             onSubmit={e => handleSubmit(e)}
-            enctype="multipart/form-data">
+            encType="multipart/form-data">
             <div className="input-group">
               <i className="news-title"></i>
               <input 

@@ -70,9 +70,9 @@ const App = ({ isLogged }) => (
       <Route exact path="/newsmodal">
         <NewsModal news={newsList.data[3]} />
       </Route>
-      {/* <Route exact path="/creation-de-news">
+      <Route exact path="/creation-de-news">
         <AddNewsForm />
-      </Route> */}
+      </Route>
       <Route exact path="/condition-generales-d'utilisations"> 
         <CGU />
       </Route>
