@@ -3,7 +3,7 @@ import RetaillerP from 'src/components/RetaillerP';
 
 const mapStateToProps = (state) => {
     return {
-        prenom: state.auth.first_name
+        
     }
 }
 

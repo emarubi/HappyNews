@@ -7,7 +7,7 @@ import TitleProfil from './TitleProfil';
 const RetailerP = () => {
   const prenom = JSON.parse(localStorage.getItem('first_name'))
   return (
-    <div className='Profil-container'> 
+    <div className='profil-container'> 
       <TitleProfil> bienvenue sur votre profil {prenom} </TitleProfil>
       <ProfilInformation />
       <Tabs />

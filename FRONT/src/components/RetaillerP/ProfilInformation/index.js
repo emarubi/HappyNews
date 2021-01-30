@@ -6,7 +6,9 @@ import './style.scss';
 const ProfilInformation = () => {
     return (
         <div className='information-container'>
+            <div className="avatar-profil">
             <Avatar/>
+            </div>
             <InformationForm />
         </div>
     )
