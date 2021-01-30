@@ -17,9 +17,8 @@ const mapDispatchToProps = (dispatch) =>{
             dispatch(changeAuthField(value, name));
         },
         handleLogin : () => {
-            dispatch(handleLogin( console.log('je suis dans le container')));
+            dispatch(handleLogin(console.log('je suis dans le container')));
         }
-        // handleLogout: () => {}
     }
 }
 

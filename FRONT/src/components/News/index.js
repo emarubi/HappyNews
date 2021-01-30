@@ -9,13 +9,17 @@ import { Icon } from 'semantic-ui-react';
 // Import du CSS
 import './style.scss';
 
-const News = ({ list, loadNews, hasData }) => {
+const News = ({
+  list, loadNews, hasData, activities, loadActivities, hasDataActivities,
+}) => {
   // useEffect : appelle une fonction au chargement du composant
   // car 2eme parametre = []
   useEffect(() => {
   // loadRecipes : une prop qui charge les news (les articles)
   // cette fonction prop sera définie dans le container
     loadNews();
+    // loadActivities: une prop qui charge les acitivités (les catégories de news)
+    loadActivities();
   }, []);
 
   return (
@@ -35,9 +39,9 @@ const News = ({ list, loadNews, hasData }) => {
       </section>
       {/* On prévoit ici la future fonctionnalité de recherche par tag */}
       <div className="tagsContainer">
-        {list.map((news) => (
-          <div key={news.activity_id} className="tagsContainer__tag">
-            <Button>{news.activity_name}</Button>
+        {activities.map((tag) => (
+          <div key={tag.id} className="tagsContainer__tag">
+            {hasDataActivities && <Button>{tag.activity_name}</Button>}
           </div>
         ))}
       </div>
@@ -55,7 +59,15 @@ const News = ({ list, loadNews, hasData }) => {
 
 News.propTypes = {
   loadNews: PropTypes.func.isRequired,
+  loadActivities: PropTypes.func.isRequired,
   hasData: PropTypes.bool.isRequired,
+  hasDataActivities: PropTypes.bool.isRequired,
+  activities: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      activity_name: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
   list: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
