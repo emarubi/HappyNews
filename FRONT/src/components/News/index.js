@@ -55,10 +55,11 @@ const News = ({
                 placeholder="Saisissez le nom de votre ville"
                 type="search"
                 register={register({
-                  required: true, minLength: {value: 8, message: 'vous devez entrer au moins 10 caracteres',
-                  }})}
+                  required: true, minLength: { value: list.city, message: 'vous devez entrer un nom de ville',
+                  }
+                })}
               />
-              {errors.email && <span> {errors.email.message} </span>}
+              {errors.search && <span> {errors.search.message} </span>}
             </form>
           </div>
         </div>
