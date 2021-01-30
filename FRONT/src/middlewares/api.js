@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const api = (store) => (next) => (action) => {
   switch (action.type) {
+    
     case 'GET_NEWS':
       // on déclenche la requete
       axios.get('https://api-happy-news.herokuapp.com/article')

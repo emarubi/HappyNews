@@ -1,14 +1,11 @@
 @use '../../../../styles/vars';
 
-.mapSection{
-  height: 58vh;
-}
 .wrap {
   position: relative;
   display: block;
 }
 
-.mapContainer {
+.leaflet-container {
   height: 58vh;
 }
 

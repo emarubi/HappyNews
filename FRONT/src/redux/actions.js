@@ -1,56 +1,34 @@
-//import axios pour thunk
+// import axios pour thunk
 // import axios from 'axios';
-// action type  CHANGE_AUTH_FIELD 
+// action type  CHANGE_AUTH_FIELD
+import { ADD_NEWS } from './constants';
+
 export const CHANGE_AUTH_FIELD = 'CHANGE_AUTH_FIELD';
 export const LOGIN = 'LOGIN';
-export const LOGIN_SUCCESS  = 'LOGIN_SUCCESS'
-export const LOGIN_ERROR  = 'LOGIN_ERROR'
-export const LOGOUT  = 'LOGOUT'
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const LOGIN_ERROR = 'LOGIN_ERROR';
+export const LOGOUT = 'LOGOUT';
+
 // function to change input field
 export const changeAuthField = (value, name) => ({
-    type: CHANGE_AUTH_FIELD,
-    name,
-    value,
-  });
+  type: CHANGE_AUTH_FIELD,
+  name,
+  value,
+});
 
-  export const handleLogin = () => {
-    return {
-        type: 'LOGIN'
-    };
-  }
+export const handleLogin = () => ({
+  type: 'LOGIN',
+});
 
-  export const handleLogout = () => {
-    return {
-        type: 'LOGOUT'
-    };
-  }
+export const handleLogout = () => ({
+  type: 'LOGOUT',
+});
 
-
-  import { ADD_NEWS } from './constants';
-
-  export const addNews = data => {
-    return {
-      type: ADD_NEWS,
-      payload: data  /** Object */
-    }
-  }
-  // >>>>>>> origin/front/getDataFromNewsForm
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export const addNews = (data) => ({
+  type: ADD_NEWS,
+  payload: data, /** Object */
+});
+// >>>>>>> origin/front/getDataFromNewsForm
 
 //   export const handleLoginSuccess = () => {
 //     return {
@@ -64,7 +42,7 @@ export const changeAuthField = (value, name) => ({
 //   }
 
 //   export const handleLogin = () => {
-//       console.log('je suis dans thhunk')    
+//       console.log('je suis dans thhunk')
 //     let config = {
 //         method: 'post', // verbe POST
 //         url: 'https://api-happy-news.herokuapp.com/login', // endpoint de login
@@ -72,14 +50,14 @@ export const changeAuthField = (value, name) => ({
 //           'Content-Type': 'application/json',
 //         //   'Cookie': 'connect.sid=s%3AfhPHxE7GncGThwzNKUSGwQZV9Js-dsLN.7YjWIJyga9CxT9ftGBwlOi3BNUMQdixv1%2F3GSNYHq7M'
 //         },
-//         data: 
+//         data:
 // { // body de la requete (contenu du json)
 //     email,
 //     password,
 //   },
 //       };
 //     // ici on fait un appel a l'API on va donc dispatcher la premiere action pour mettre le loading a true
-      
+
 //             axios(config)
 //             // A - l'API nous renvois des commentaires, on est dans le 2eme cas ( cf L21)
 //             .then (response => {
@@ -91,5 +69,5 @@ export const changeAuthField = (value, name) => ({
 //                 console.log(error)
 //                 // dispatch(handleLoginError(error.message))
 //             })
-      
+
 //     }
