@@ -3,10 +3,18 @@ import PropTypes from 'prop-types';
 
 import './style.scss';
 
-export const AddNewsForm = ({ title, description, category, price, file, handleChangeField, handleAddNews, addNews }) => {
+export const AddNewsForm = ({ title, activity_id, price, picture_url, handleChangeField, handleAddNews, addNews }) => {
  
  
   const handleChange = e => handleChangeField([e.target.name], e.target.value);
+
+  const handleChangeImage = e => {
+    const file = e.target.files[0]
+    const reader = new FileReader()
+    const fileUrl = reader.readAsDataURL(file)
+    console.log(fileUrl)
+    // handleChangeField(picture_url, file)
+  }
 
   // function called when form is validate
   const handleSubmit = e => {
@@ -24,7 +32,7 @@ export const AddNewsForm = ({ title, description, category, price, file, handleC
           <form method="post" 
             action="" 
             className="form-body" 
-            onSubmit={e => handleSubmit()}
+            onSubmit={e => handleSubmit(e)}
             enctype="multipart/form-data">
             <div className="input-group">
               <i className="news-title"></i>
@@ -42,7 +50,7 @@ export const AddNewsForm = ({ title, description, category, price, file, handleC
               <input
                 name="description" 
                 type="text"
-                value={description}
+                value={activity_id}
                 placeholder="Description..." 
                 onChange={e => handleChange(e)}
                 />
@@ -50,22 +58,23 @@ export const AddNewsForm = ({ title, description, category, price, file, handleC
             </div>
             <div className="input-group">
               <i className="news-category"></i>
-              <select 
-                // name="category"
+              <select
+              onChange={e => handleChange(e)}
+                name="activity_id"
                 // type="text"
                 // value={category}
                 placeholder="Catégorie..." 
                 // onChange={e => handleChange(e)}
                 >
-                  <option name="category" value="boulangerie" onChange={e => handleChange(e)}>boulangerie</option>
-                  <option name="category" value="boucherie" onChange={e => handleChange(e)}>boucherie</option>
-                  <option name="category" value="charcuterie" onChange={e => handleChange(e)}>charcuterie</option>
-                  <option name="category" value="coiffeur" onChange={e => handleChange(e)}>coiffeur</option>
-                  <option name="category" value="fleuriste" onChange={e => handleChange(e)}>fleuriste</option>
-                  <option name="category" value="fromagerie" onChange={e => handleChange(e)}>fromagerie</option>
-                  <option name="category" value="garagiste" onChange={e => handleChange(e)}>garagiste</option>
-                  <option name="category" value="papeterie" onChange={e => handleChange(e)}>papeterie</option>
-                  <option name="category" value="primeur" onChange={e => handleChange(e)}>primeur</option>
+                  <option  value="boulangerie" >boulangerie</option>
+                  <option  value="boucherie" >boucherie</option>
+                  <option  value="charcuterie" >charcuterie</option>
+                  <option  value="coiffeur">coiffeur</option>
+                  <option  value="fleuriste" >fleuriste</option>
+                  <option  value="fromagerie" >fromagerie</option>
+                  <option  value="garagiste" >garagiste</option>
+                  <option  value="papeterie" >papeterie</option>
+                  <option  value="primeur" >primeur</option>
               </select>
               <span className="bar"></span>
             </div>
@@ -83,11 +92,11 @@ export const AddNewsForm = ({ title, description, category, price, file, handleC
             <div className="input-group">
               <i className="picture-downlaod"></i>
               <input 
-                name="file"
+                name="picture_url"
                 type="file"
-                value={file}
+                value={picture_url}
                 accept="image" 
-                onChange={e => handleChange(e)}
+                onChange={e => handleChangeImage(e)}
                 multiple
                 />
               <span className="bar"></span>

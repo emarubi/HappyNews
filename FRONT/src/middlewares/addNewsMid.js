@@ -9,16 +9,18 @@ const add = (store) => (next) => (action) => {
       // store.getstate nous donne l'état du store à un instant T. On le déstructure pour prendre ce dont on a besoin
       const { } = store.getState();
 
+      const formData = new FormData;
+// tu vas remplir ton formData, avec les données de ton formulaire
       const config = {
         method: 'post', // verbe de la requête, ici un post pour insérer des informations à la bdd
         url: 'https://api-happy-news.herokuapp.com/', // Voir avec Fredo pour finir la route. Viser celle pour la creation de new
         headers: {
           'Content-Type' : 'multipart/form-data', // Ici on précise le type de data qu'on envoie. Celui-ci sert à pouvoir envoyer du texte et des fichiers
         },
-        data:
-        { // Ici insérer les datas voulus
+        data: formData
+/*         { // Ici insérer les datas voulus
 
-        }
+        } */
       };
 
       axios(config)
