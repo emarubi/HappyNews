@@ -1,15 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import {
   MapContainer, TileLayer, Marker, Popup, useMapEvents,
 } from 'react-leaflet';
-import { Icon } from 'leaflet';
+import L from 'leaflet';
 // import users from './user';
 import './style.scss';
+import placeholder from '../../../../assets/Images/placeholder.png';
+// import useGeoLocation from './useGeoLocation';
 
-// const visitorIcon = new Icon({
-//   iconUrl: '/'
-// })
+// icon for visitor is imported from images  directory
+const visitorIcon = L.icon({
+  iconUrl: placeholder,
+  iconSize: [40, 40],
+});
 
 const Maps = () => {
   // define a state for an activeUser, when the visitor click on a user Marker on the map
@@ -17,6 +21,24 @@ const Maps = () => {
   const [activeUser, setActiveUser] = useState(null);
 
   const [users, setUsers] = useState([]);
+
+  // const mapRef = useRef();
+
+  // const location = useGeoLocation();
+  // console.log('location avant showMyLocation', location);
+
+  // const showMyLocation = () => {
+  //   console.log('location dans showMyLocation', location);
+  //   if (location.loaded && !location.error) {
+  //     // eslint-disable-next-line max-len
+  //     console.log('nous sommes dans showMyLocation');
+  //     mapRef.current.L.flyTo([location.coordinates.lat, location.coordinates.lng], 13, { animate: true });
+  //   }
+  //   else {
+  //     console.log(location.error.message);
+  //   }
+  // };
+  // showMyLocation;
 
   useEffect(() => {
     axios.get('https://api-happy-news.herokuapp.com/user')
@@ -46,7 +68,11 @@ const Maps = () => {
     });
 
     return position === null ? null : (
-      <Marker position={position}>
+      <Marker
+        position={position}
+        riseOnHover
+        icon={visitorIcon}
+      >
         <Popup>Vous êtes ici</Popup>
       </Marker>
     );
@@ -57,12 +83,21 @@ const Maps = () => {
     <MapContainer
       center={[48.856614, 2.3522219]}
       zoom={13}
-      scrollWheelZoom={false}
+      scrollWheelZoom
     >
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
+
+      {location.loaded && !location.error && (
+        <Marker
+          icon={visitorIcon}
+          position={[location.coordinates.lat, location.coordinates.lng]}
+        >
+          <Popup>Vous êtes ici</Popup>
+        </Marker>
+      )}
 
       <LocationMarker />
 
@@ -74,7 +109,7 @@ const Maps = () => {
               key={user.id}
               position={[parseFloat(user.latitude), parseFloat(user.longitude)]}
               eventHandlers={{
-                click: () => {
+                mouseover: () => {
                   console.log('marker clicked', user.shop_name);
                   setActiveUser(user);
                 },
@@ -86,6 +121,7 @@ const Maps = () => {
       {activeUser && (
         <Popup
           position={[activeUser.latitude, activeUser.longitude]}
+          closeOnClick={false}
         >
           <div>
             <h2>{activeUser.shop_name}</h2>
