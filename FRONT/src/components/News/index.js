@@ -8,6 +8,9 @@ import Button from 'src/components/Header/Button';
 import NewsModal from 'src/components/NewsModal';
 import Spinner from 'src/components/Spinner';
 
+// utils
+import getNewsByCityName from 'src/utils';
+
 // Import du CSS
 import './style.scss';
 
@@ -15,6 +18,7 @@ const News = ({
   list, loadNews, hasData, activities, loadActivities, hasDataActivities,
   searchValue, changeSearchField, handleSearchSubmit,
 }) => {
+  const filteredNews = getNewsByCityName(list, searchValue);
   // useEffect : appelle une fonction au chargement du composant
   // car 2eme parametre = []
   useEffect(() => {
@@ -25,13 +29,18 @@ const News = ({
     loadActivities();
   }, []);
 
+  useEffect(() => {
+    getNewsByCityName(list, searchValue);
+    console.log(filteredNews);
+  }, [searchValue]);
+
   const { register, handleSubmit, errors } = useForm();
   return (
     <div>
       <section className="searchSection">
         <div className="searchSection__searchBar">
           <div>
-            <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-search" width="44" height="44" viewBox="0 0 24 24" stroke-width="3" stroke="#36586B" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-search" width="44" height="44" viewBox="0 0 24 24" strokeWidth="3" stroke="#36586B" fill="none" strokeLinecap="round" strokeLinejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <circle cx="10" cy="10" r="7" />
               <line x1="21" y1="21" x2="15" y2="15" />
@@ -55,8 +64,8 @@ const News = ({
         </div>
         <div className="searchSection__searchOnMap">
           <div>
-            <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-map-pin" width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="#36586B" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-map-pin" width="44" height="44" viewBox="0 0 24 24" strokeWidth="2" stroke="#36586B" fill="none" strokeLinecap="round" strokeLinejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <circle cx="12" cy="11" r="3" />
               <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
             </svg>
@@ -76,7 +85,7 @@ const News = ({
       </div>
       <section className="newsList">
         {!hasData && <Spinner />}
-        {list.map((news) => (
+        {filteredNews.map((news) => (
           <div key={news.id} className="newsList__item">
             {hasData && <NewsModal news={news} />}
             {/* Affichage conditionnel : si pas de donnée, pas de News */}
