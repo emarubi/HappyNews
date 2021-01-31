@@ -35,13 +35,13 @@ function Maps() {
       });
   }, []);
 
-  // const [map, setMap] = useState(regionCoord);
+  const [map, setMap] = useState();
   // visitor geoLocalisation on the Map
   function LocationMarker() {
     const [position, setPosition] = useState(null);
 
     const map = useMapEvents({
-      mouseover() {
+      click() {
         map.locate();
       },
       locationfound(e) {
@@ -60,30 +60,32 @@ function Maps() {
       </Marker>
     );
   }
+
   return (
     <>
       {regionCoord
       && (
-      <MapContainer
-        center={regionCoord}
-        zoom={zoom}
-        style={{ height: '60vh' }}
-      >
+        <MapContainer
+          center={regionCoord}
+          zoom={zoom}
+          style={{ height: '60vh' }}
+          whenCreated={setMap}
+        >
+          <TileLayer
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
 
-        <TileLayer
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <LocationMarker />
+          <LocationMarker />
 
-        {LocationMarker.position
+          {LocationMarker.position
         && (
           <Marker position={LocationMarker.position} icon={visitorIcon}>
             <Popup>Vous êtes ici</Popup>
           </Marker>
         )}
 
-        {users.length
+          {users.length
         && users.map((user) => (
           (!isNaN(parseFloat(user.latitude)) || !isNaN(parseFloat(user.longitude)))
             && (
@@ -99,21 +101,21 @@ function Maps() {
             />
             )
         ))}
-        {/* check if there is an active user (if the visitor click on is marker),
+          {/* check if there is an active user (if the visitor click on is marker),
         if true, it shows a Popup */}
-        {activeUser && (
-        <Popup
-          position={[activeUser.latitude, activeUser.longitude]}
-          closeOnClick={false}
-          keepInView
-        >
-          <div>
-            {/* <h2>{activeUser.shop_name}</h2> */}
-            <p> <Link to={`/user/${activeUser.id}`}>{activeUser.shop_name}</Link></p>
-          </div>
-        </Popup>
-        )}
-      </MapContainer>
+          {activeUser && (
+          <Popup
+            position={[activeUser.latitude, activeUser.longitude]}
+            closeOnClick={false}
+            keepInView
+          >
+            <div>
+              {/* <h2>{activeUser.shop_name}</h2> */}
+              <p> <Link to={`/user/${activeUser.id}`}>{activeUser.shop_name}</Link></p>
+            </div>
+          </Popup>
+          )}
+        </MapContainer>
       )}
     </>
   );
