@@ -7,7 +7,7 @@ import api from '../middlewares/api';
 // import du moddleware activities
 import activitiesMiddleware from '../middlewares/activities';
 // rootReducer = résultat de combineReducers
-// import user from '../middlewares/userMiddleware'
+import user from '../middlewares/userMiddleware'
 import rootReducer from './reducers';
 
 // on crée le store
@@ -16,7 +16,7 @@ const store = createStore (rootReducer, composeWithDevTools(applyMiddleware(
   authMiddleware,
   api,
   activitiesMiddleware,
-  // user
+  user
 )));
 
 export default store;

@@ -11,7 +11,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         loadUserDetails: () => {
         // dispatch({ type: 'GET_NEWS' });
-        dispatch(getUserDetails())
+        dispatch(getUserDetails(console.log('container')))
     }
   }
 }

@@ -74,9 +74,11 @@ export const changeAuthField = (value, name) => ({
 
 // action to get users details page for retailler's profil
 
-export const getUserDetails =() => {
+export const getUserDetails =(id) => {
+  console.log('action' , id)
   return {
-    type : GET_USER_DETAILS
+    type : GET_USER_DETAILS,
+    id
   }
 }
 export const getUserDetailsSuccess =(user) => {
