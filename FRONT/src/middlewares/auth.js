@@ -25,14 +25,15 @@ const api = (store) => (next) => (action) => {
         .then((response) => { // cas de réussite
 
           const { userToken } = response.data;
+          const { id } = response.data.user[0];
           console.log(userToken)
           localStorage.setItem('token', userToken);
+          localStorage.setItem('id', id);
           store.dispatch(handleLoginSuccess(response.data));
           // on le stocke aussi dans le localStorage
       
           console.log(response.data)
           console.log('Je suis dans la réponse, et response.data du Tokenvaut : ', response.data.userToken);
-          console.log('Je suis dans la réponse, et response.data du first_name : ', response.data.user[0].first_name);
           console.log('Je suis dans la réponse, et response.data du logged : ', response.data.logged);
           console.log('Je suis dans la réponse, et response.data de l\'id : ', response.data.user[0].id);
         })

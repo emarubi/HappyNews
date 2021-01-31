@@ -10,7 +10,7 @@ import './style.scss';
 import {useParams} from 'react-router-dom'
 import Title from './Title';
         
-const Header = ({token, handleLogout, id }) => {
+const Header = ({token, handleLogout, id, prenom }) => {
 
  console.log(useParams)
   return (
@@ -22,7 +22,7 @@ const Header = ({token, handleLogout, id }) => {
         {token && (
         <>
           <div className="header-helloUser">
-            <p>Bonjour  !</p>
+            <p>Bonjour {prenom} !</p>
           </div>
         <Button
           type="button"

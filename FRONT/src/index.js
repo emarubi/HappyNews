@@ -10,7 +10,7 @@ import store from 'src/redux/store';
 // == Import : local
 import './styles/index.scss';
 // == Render
-// 1. Élément React racine (celui qui contient l'ensemble de l'app)
+// 1. Él${inine (celui qui contient l'ensemble de l'app)
 //    => crée une structure d'objets imbriqués (DOM virtuel)
 const rootReactElement =    <BrowserRouter>
                                 <Provider store={store}>

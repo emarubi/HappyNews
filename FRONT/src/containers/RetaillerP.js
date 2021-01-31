@@ -4,14 +4,13 @@ import { getUserDetails  } from 'src/redux/actions';
 
 const mapStateToProps = (state) => {
     return {
-
+        user: state.user
     }
 }
 
 const mapDispatchToProps = (dispatch) =>{
     return {
         loadUserDetails : (id) => {
-            console.log(id)
             dispatch(getUserDetails(id))
         }
     }

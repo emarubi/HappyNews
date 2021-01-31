@@ -5,7 +5,7 @@ const mapStateToProps = (state) => {
     return {
         // to get state parameters
         token: state.auth.token,
-        first_name: state.auth.first_name,
+        prenom: state.auth.first_name,
         id: state.auth.userId
     }
 }

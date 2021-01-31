@@ -35,6 +35,7 @@ const authReducer = (state = initialState, action ) => {
       logged: action.data.logged,
       token: action.data.userToken,
       first_name : action.data.user[0].first_name,
+      last_name : action.data.user[0].last_name,
       userId : action.data.user[0].id,
       adress: action.data.user[0].adress,
       zip_code: action.data.user[0].zip_code,

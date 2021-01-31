@@ -5,7 +5,7 @@ import {GET_USER_DETAILS, getUserDetailsSuccess} from '../redux/actions'
 
 const userApi = (store) => (next) => (action) => {
 
-  console.log('je suis dans middl')
+ 
   switch (action.type) {
     
     case GET_USER_DETAILS:{
