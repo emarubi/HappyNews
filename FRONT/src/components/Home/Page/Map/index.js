@@ -1,23 +1,30 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import {
-  MapContainer, TileLayer, Marker, Popup, useMapEvents,
+  MapContainer, Marker, Popup, TileLayer, useMapEvents,
 } from 'react-leaflet';
-import { Icon } from 'leaflet';
-// import users from './user';
-import './style.scss';
+import L from 'leaflet';
+// import 'leaflet/dist/leaflet.css';
+import placeholder from '../../../../assets/Images/placeholder.png';
 
-// const visitorIcon = new Icon({
-//   iconUrl: '/'
-// })
+// icon for visitor is imported from images  directory
+const visitorIcon = L.icon({
+  iconUrl: placeholder,
+  iconSize: [40, 40],
+});
 
-const Maps = () => {
+const zoom = 13;
+const regionCoord = [48.864716, 2.349014];
+
+function Maps() {
   // define a state for an activeUser, when the visitor click on a user Marker on the map
   // if the vsitor doesn't select a user Marker, the activeUser is set at null in the state
   const [activeUser, setActiveUser] = useState(null);
 
   const [users, setUsers] = useState([]);
 
+  // axios request to fetch data from server
   useEffect(() => {
     axios.get('https://api-happy-news.herokuapp.com/user')
       .then((response) => {
@@ -28,9 +35,7 @@ const Maps = () => {
       });
   }, []);
 
-  console.log('users après requête axios', users);
-
-  // const position = [48.856614, 2.3522219]; // coordonnées GPS de Paris
+  const [map, setMap] = useState();
   // visitor geoLocalisation on the Map
   function LocationMarker() {
     const [position, setPosition] = useState(null);
@@ -46,27 +51,41 @@ const Maps = () => {
     });
 
     return position === null ? null : (
-      <Marker position={position}>
+      <Marker
+        position={position}
+        riseOnHover
+        icon={visitorIcon}
+      >
         <Popup>Vous êtes ici</Popup>
       </Marker>
     );
   }
 
   return (
+    <>
+      {regionCoord
+      && (
+        <MapContainer
+          center={regionCoord}
+          zoom={zoom}
+          style={{ height: '60vh' }}
+          whenCreated={setMap}
+        >
+          <TileLayer
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
 
-    <MapContainer
-      center={[48.856614, 2.3522219]}
-      zoom={13}
-      scrollWheelZoom={false}
-    >
-      <TileLayer
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
+          <LocationMarker />
 
-      <LocationMarker />
+          {LocationMarker.position
+        && (
+          <Marker position={LocationMarker.position} icon={visitorIcon}>
+            <Popup>Vous êtes ici</Popup>
+          </Marker>
+        )}
 
-      {users.length
+          {users.length
         && users.map((user) => (
           (!isNaN(parseFloat(user.latitude)) || !isNaN(parseFloat(user.longitude)))
             && (
@@ -74,7 +93,7 @@ const Maps = () => {
               key={user.id}
               position={[parseFloat(user.latitude), parseFloat(user.longitude)]}
               eventHandlers={{
-                click: () => {
+                mouseover: () => {
                   console.log('marker clicked', user.shop_name);
                   setActiveUser(user);
                 },
@@ -82,18 +101,24 @@ const Maps = () => {
             />
             )
         ))}
-      {/* check if there is an active user (if the visitor click on is marker), if true, it shows a Popup */}
-      {activeUser && (
-        <Popup
-          position={[activeUser.latitude, activeUser.longitude]}
-        >
-          <div>
-            <h2>{activeUser.shop_name}</h2>
-          </div>
-        </Popup>
+          {/* check if there is an active user (if the visitor click on is marker),
+        if true, it shows a Popup */}
+          {activeUser && (
+          <Popup
+            position={[activeUser.latitude, activeUser.longitude]}
+            closeOnClick={false}
+            keepInView
+          >
+            <div>
+              {/* <h2>{activeUser.shop_name}</h2> */}
+              <p> <Link to={`/user/${activeUser.id}`}>{activeUser.shop_name}</Link></p>
+            </div>
+          </Popup>
+          )}
+        </MapContainer>
       )}
-    </MapContainer>
-
+    </>
   );
-};
+}
+
 export default Maps;
