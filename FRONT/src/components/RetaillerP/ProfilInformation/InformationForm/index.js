@@ -1,11 +1,16 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './style.scss';
-const InformationForm = () => {
+const InformationForm = ({loadUserDetails}) => {
     const Nom = JSON.parse(localStorage.getItem('last_name'))
     const prenom = JSON.parse(localStorage.getItem('first_name'))
     const ville = JSON.parse(localStorage.getItem('city'))
     const shop_name = JSON.parse(localStorage.getItem('shop_name'))
     const email = JSON.parse(localStorage.getItem('email'))
+    
+    useEffect(() => {
+      loadUserDetails();
+    }, []);
+
     return (
         <div className='user-info__container'>
             <ul className='user-info__container__list'>

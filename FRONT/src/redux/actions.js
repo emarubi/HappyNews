@@ -9,6 +9,11 @@ export const GET_SELECT_FIELD = 'GET_SELECT_FIELD'
 export const SUBSCRIBE_SUCCESS = 'GET_SELECT_FIELD'
 // export const SUBSCRIBE_ERROR= 'SUBSCRIBE_ERROR'
 
+// export for gettting user in retailler's profil information
+export const GET_USER_DETAILS = 'GET_USER_DETAILS'
+export const GET_USER_DETAILS_SUCCESS = 'GET_USER_DETAILS_SUCCESS'
+export const GET_USER_DETAILS_ERROR = 'GET_USER_DETAILS_ERROR'
+
 export const changeAuthField = (value, name) => ({
     type: CHANGE_AUTH_FIELD,
     name,
@@ -66,3 +71,22 @@ export const changeAuthField = (value, name) => ({
 //         type: 'SUBSCRIBE_ERROR'
 //     };
 //   }
+
+// action to get users details page for retailler's profil
+
+export const getUserDetails =() => {
+  return {
+    type : GET_USER_DETAILS
+  }
+}
+export const getUserDetailsSuccess =(user) => {
+  return {
+    type : GET_USER_DETAILS_SUCCESS,
+    user
+  }
+}
+export const getUserDetailsError =() => {
+  return {
+    type : GET_USER_DETAILS_ERROR
+  }
+}
