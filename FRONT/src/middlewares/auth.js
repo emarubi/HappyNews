@@ -25,23 +25,8 @@ const api = (store) => (next) => (action) => {
         .then((response) => { // cas de réussite
 
           const { userToken } = response.data;
-          const { first_name } = response.data.user[0];
-          const { last_name } = response.data.user[0];
-          const { shop_name } = response.data.user[0];
-          const { role_id } = response.data.user[0];
-          const { city } = response.data.user[0];
-          const { email } = response.data.user[0];
-          const { id } = response.data.user[0];
           console.log(userToken)
           localStorage.setItem('token', userToken);
-          localStorage.setItem('first_name', JSON.stringify(first_name));
-          localStorage.setItem('last_name', JSON.stringify(last_name));
-          localStorage.setItem('shop_name', JSON.stringify(shop_name));
-          localStorage.setItem('email', JSON.stringify(email));
-          localStorage.setItem('role', JSON.stringify(role_id));
-          localStorage.setItem('city', JSON.stringify(city));
-          localStorage.setItem('id', JSON.stringify(id));
-
           store.dispatch(handleLoginSuccess(response.data));
           // on le stocke aussi dans le localStorage
       
@@ -50,7 +35,6 @@ const api = (store) => (next) => (action) => {
           console.log('Je suis dans la réponse, et response.data du first_name : ', response.data.user[0].first_name);
           console.log('Je suis dans la réponse, et response.data du logged : ', response.data.logged);
           console.log('Je suis dans la réponse, et response.data de l\'id : ', response.data.user[0].id);
-
         })
         .catch((error) => { // cas d'erreur
           console.log(error);

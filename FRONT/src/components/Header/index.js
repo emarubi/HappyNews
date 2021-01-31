@@ -2,14 +2,17 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Avatar from 'src/components/Header/Avatar';
+import Avatar from 'src/components/Header/Avatar'
+;
 import Button from 'src/components/Header/Button';
 import Logo from 'src/components/Header/Logo';
 import './style.scss';
+import {useParams} from 'react-router-dom'
 import Title from './Title';
+        
+const Header = ({token, handleLogout, id }) => {
 
-const Header = ({token, handleLogout }) => {
- 
+ console.log(useParams)
   return (
     <header className='header'> 
       <Logo />
@@ -21,14 +24,13 @@ const Header = ({token, handleLogout }) => {
           <div className="header-helloUser">
             <p>Bonjour  !</p>
           </div>
-          <NavLink to='/commercant/profil'></NavLink>
         <Button
           type="button"
           event={handleLogout}
         >
           Déconnexion
         </Button>
-        <NavLink to='/commercant/profil'> <Button>mon profil</Button></ NavLink>
+        <NavLink to={`/commercant/profil/${id}`}> <Button>mon profil</Button></ NavLink>
         </>
       )}
       {token == null && (
