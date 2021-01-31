@@ -9,7 +9,7 @@ const RetailerP = ({loadUserDetails, user}) => {
   let {id} = useParams()
   useEffect(() => {
     loadUserDetails(id);
-  }, []);
+  }, [user]);
 
   return (
     <div className='profil-container'> 
