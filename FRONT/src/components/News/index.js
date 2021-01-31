@@ -9,16 +9,17 @@ import NewsModal from 'src/components/NewsModal';
 import Spinner from 'src/components/Spinner';
 
 // utils
-import getNewsByCityName from 'src/utils';
+import getNewsByCityName from 'src/utils/getNewsByCityName';
+import getNewsByActivity from 'src/utils/getNewsByActivity';
 
 // Import du CSS
 import './style.scss';
 
 const News = ({
   list, loadNews, hasData, activities, loadActivities, hasDataActivities,
-  searchValue, changeSearchField, handleSearchSubmit,
+  searchValue, changeSearchField, handleSearchSubmit, activitySelected, handleSelectedActivity,
 }) => {
-  const filteredNews = getNewsByCityName(list, searchValue);
+  const filteredNews = getNewsByCityName(list, searchValue) && getNewsByActivity(list, activitySelected);
   // useEffect : appelle une fonction au chargement du composant
   // car 2eme parametre = []
   useEffect(() => {
@@ -33,6 +34,11 @@ const News = ({
     getNewsByCityName(list, searchValue);
     console.log(filteredNews);
   }, [searchValue]);
+
+  useEffect(() => {
+    getNewsByActivity(list, activitySelected);
+    console.log(filteredNews);
+  }, [activitySelected]);
 
   const { register, handleSubmit, errors } = useForm();
   return (
@@ -55,9 +61,8 @@ const News = ({
                 placeholder="Saisissez le nom de votre ville"
                 type="search"
                 register={register({
-                  required: true, minLength: { value: list.city, message: 'vous devez entrer un nom de ville',
-                  }
-                })}
+                  required: true, message: 'vous devez entrer un nom de ville valide',
+                })} // TODO : reste a configurer
               />
               {errors.search && <span> {errors.search.message} </span>}
             </form>
@@ -80,7 +85,14 @@ const News = ({
       <div className="tagsContainer">
         {activities.map((tag) => (
           <div key={tag.id} className="tagsContainer__tag">
-            {hasDataActivities && <Button>{tag.activity_name}</Button>}
+            {hasDataActivities && (
+              <Button
+                event={(event) => {
+                  handleSelectedActivity(event.target.textContent);
+                }}
+              >{tag.activity_name}
+              </Button>
+            )}
           </div>
         ))}
       </div>
@@ -98,6 +110,8 @@ const News = ({
 };
 
 News.propTypes = {
+  handleSelectedActivity: PropTypes.func.isRequired,
+  activitySelected: PropTypes.string,
   handleSearchSubmit: PropTypes.func.isRequired,
   changeSearchField: PropTypes.func.isRequired,
   searchValue: PropTypes.string,
@@ -129,6 +143,7 @@ News.propTypes = {
 
 News.defaultProps = {
   searchValue: '',
+  activitySelected: '',
 };
 
 export default News;

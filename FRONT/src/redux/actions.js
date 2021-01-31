@@ -41,6 +41,7 @@ export const changeAuthField = (value, name) => ({
 // de la page News
 export const CHANGE_SEARCH_VALUE = 'CHANGE_SEARCH_VALUE';
 export const SEARCH = 'SEARCH';
+export const ACTIVITY_SELECTED = 'ACTIVITY_SELECTED';
 
 export const changeSearchValueAction = (value, name) => ({
   type: CHANGE_SEARCH_VALUE,
@@ -50,6 +51,11 @@ export const changeSearchValueAction = (value, name) => ({
 
 export const handleSearchSubmit = () => ({
   type: 'SEARCH',
+});
+
+export const handleSelectedActivity = (value) => ({
+  type: ACTIVITY_SELECTED,
+  value,
 });
 
 
