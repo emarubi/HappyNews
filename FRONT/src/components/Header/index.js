@@ -9,7 +9,7 @@ import './style.scss';
 import Title from './Title';
 
 const Header = ({token, handleLogout }) => {
-  const prenom = JSON.parse(localStorage.getItem('first_name'))
+ 
   return (
     <header className='header'> 
       <Logo />
@@ -19,7 +19,7 @@ const Header = ({token, handleLogout }) => {
         {token && (
         <>
           <div className="header-helloUser">
-            <p>Bonjour {prenom} !</p>
+            <p>Bonjour  !</p>
           </div>
           <NavLink to='/commercant/profil'></NavLink>
         <Button
