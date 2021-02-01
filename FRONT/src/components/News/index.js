@@ -35,6 +35,7 @@ const News = ({
   useEffect(() => {
     getNewsByCityNameAndActivity(list, searchValue, activitySelected);
     console.log(filteredNews);
+    localStorage.setItem('searchValue', searchValue);
   }, [searchValue, activitySelected]);
 
 /*   useEffect(() => {
