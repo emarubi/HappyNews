@@ -10,6 +10,7 @@ const initialState = {
     is_news: true, 
     user_id: null, // A récupérer depuis le localstorage
     activity_id: '', // A récupérer depuis un champs déroulant. 9 id différents à récup dans le back
+    vivible: false
 }
 // reducer
 

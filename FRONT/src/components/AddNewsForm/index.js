@@ -2,18 +2,26 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import './style.scss';
+import { HandleRoleIdChecked } from '../../redux/actions';
 
-export const AddNewsForm = ({ title, activity_id, price, picture_url, handleChangeField, handleAddNews, addNews }) => {
+export const AddNewsForm = ({ title, activity_id, price, picture_url, visible, handleChangeField, handleAddNews, addNews }) => {
  
  
   const handleChange = e => handleChangeField([e.target.name], e.target.value);
 
   const handleChangeImage = e => {
-    const file = e.target.files[0]
     const reader = new FileReader()
-    const fileUrl = reader.readAsDataURL(file)
-    console.log(fileUrl)
-    // handleChangeField(picture_url, file)
+    const file = e.target.files[0]
+    reader.onloadend =() =>{
+      console.log('reader.result', reader.result)
+      handleChangeField('picture_url', reader.result)
+    }
+    //handleChangeField('picture_url', baseImage)
+    //reader.readAsDataURL(file)
+    //const reader = new FileReader()
+    //const fileUrl = reader.readAsDataURL(file)
+    console.log(reader.readAsDataURL(file))
+    //handleChangeField('picture_url', file)
   }
 
   // function called when form is validate
@@ -30,10 +38,11 @@ export const AddNewsForm = ({ title, activity_id, price, picture_url, handleChan
         <div className="form-container">
           <span className="form-heading">Ajouter une News</span>
           <form method="post" 
-            action="" 
+            //action="" 
             className="form-body" 
             onSubmit={e => handleSubmit(e)}
-            encType="multipart/form-data">
+            //encType="multipart/form-data"
+            >
             <div className="input-group">
               <i className="news-title"></i>
               <input 
@@ -42,6 +51,7 @@ export const AddNewsForm = ({ title, activity_id, price, picture_url, handleChan
                 value={title}
                 placeholder="Titre..." 
                 onChange={e => handleChange(e)}
+                required
                 />
               <span className="bar"></span>
             </div>
@@ -97,8 +107,8 @@ export const AddNewsForm = ({ title, activity_id, price, picture_url, handleChan
                 value={picture_url}
                 accept="image" 
                 onChange={e => handleChangeImage(e)}
-                multiple
-                />
+                //multiple
+              />
               <span className="bar"></span>
             </div>
             <div className="input-group">

@@ -13,11 +13,14 @@ const mapStateToProps = (state) => ({
     is_news: true,
     user_id: state.auth.userId, // TODO: A récupérer depuis le localStorage 
     activity_id: state.addNews.category,
+    visible: state.addNews.visible
 });
 
 // Cablage des actions
 const mapDispatchToProps = (dispatch) => ({
     handleChangeField: (name, value) => {
+      console.log('name from handleChangeField : ', name);
+      console.log('value from handleChangeField : ', value);
       dispatch(changeAddNewsField(name,value));
       // console.log('la value :', value);
       // console.log('le name :', name);
