@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './style.scss';
 import TabTitle from './TabTitle';
 
-const Tabs = ({ content }) => {
+const Tabs = ({ user }) => {
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (index) => {
@@ -13,7 +13,6 @@ const Tabs = ({ content }) => {
   return (
     <div className="container">
       <div className="bloc-tabs">
-
         <button
           className={toggleState === 1 ? 'tabs active-tabs' : 'tabs'}
           onClick={() => toggleTab(1)}
@@ -33,17 +32,15 @@ const Tabs = ({ content }) => {
           <TabTitle>Ma vitrine</TabTitle>
         </button>
       </div>
-
       <div className="content-tabs">
         <div
           className={toggleState === 1 ? 'content  active-content' : 'content'}
         >
 
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Sit consequatur saepe hic perspiciatis sunt odio laborum temporibus impedit
-            optio quaerat consequuntur excepturi, dolorem iusto, iste eligendi culpa incidunt
-            libero quasi ipsa minus, autem cum laboriosam in. Eveniet aperiam dolorem quam.
+
+            {user.content}
+
           </p>
         </div>
 
