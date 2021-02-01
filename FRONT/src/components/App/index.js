@@ -18,7 +18,7 @@ import Header from 'src/containers/header';
 import Login from 'src/containers/login';
 import News from 'src/containers/news';
 import NewsModal from 'src/components/NewsModal';
-import AddNewsForm from 'src/containers/AddNews';
+import AddNewsForm from 'src/containers/addNews';
 // == Import CSS
 import './styles.scss';
 
