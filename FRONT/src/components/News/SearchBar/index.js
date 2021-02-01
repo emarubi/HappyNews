@@ -1,8 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-
-import { Input, Form } from 'semantic-ui-react';
-
+import React from 'react';
+import { Form, Input } from 'semantic-ui-react';
 // Import du CSS
 import './style.scss';
 

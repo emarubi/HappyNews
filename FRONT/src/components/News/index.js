@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
-import SearchBar from 'src/components/News/SearchBar';
-import Button from 'src/components/Header/Button';
-import NewsModal from 'src/components/NewsModal';
 import PropTypes from 'prop-types';
-
+import React, { useEffect } from 'react';
 import { Icon } from 'semantic-ui-react';
-
+import Button from 'src/components/Header/Button';
+import SearchBar from 'src/components/News/SearchBar';
+import NewsModal from 'src/components/NewsModal';
 // Import du CSS
 import './style.scss';
+
+
 
 const News = ({
   list, loadNews, hasData, activities, loadActivities, hasDataActivities,
