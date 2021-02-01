@@ -111,7 +111,8 @@ function Maps() {
           >
             <div>
               {/* <h2>{activeUser.shop_name}</h2> */}
-              <p> <Link to={`/user/${activeUser.id}`}>{activeUser.shop_name}</Link></p>
+              {/* <p> <Link to={`/user/${activeUser.id}`}>{activeUser.shop_name}</Link></p> */}
+              <p><Link to={`/commercant/profil/:${activeUser.id}`}>{activeUser.shop_name}</Link></p>
             </div>
           </Popup>
           )}
