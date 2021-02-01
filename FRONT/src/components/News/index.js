@@ -19,7 +19,8 @@ const News = ({
   list, loadNews, hasData, activities, loadActivities, hasDataActivities,
   searchValue, changeSearchField, handleSearchSubmit, activitySelected, handleSelectedActivity,
 }) => {
-  const filteredNews = getNewsByCityName(list, searchValue) && getNewsByActivity(list, activitySelected);
+  const filteredNews = (
+    getNewsByCityName(list, searchValue) && getNewsByActivity(list, activitySelected));
   // useEffect : appelle une fonction au chargement du composant
   // car 2eme parametre = []
   useEffect(() => {
