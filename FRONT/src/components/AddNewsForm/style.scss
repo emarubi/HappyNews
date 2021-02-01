@@ -2,8 +2,8 @@
 
 .section-addnews-form {
   height: 75vh;
-  border: 1px solid black;
-  background:vars.$Linear-gradient;
+  border: 1px solid red;
+  background:rgba(0,0,0,0.4); /* vars.$Linear-gradient*/
 }
 
 #wraper {
@@ -18,7 +18,7 @@
 .form-container {
   width: 100%;
   max-width: 40rem;
-  height: 90%;
+  height: 80%;
   background-color: #ffffff;
   position: relative;
   top:-3em;
@@ -50,8 +50,8 @@
 }
 
 .form-body {
-transform: translateX(10rem);
-padding: 2rem 0;
+transform: translateX(8rem) translateY(-3rem);
+padding: 1rem 0;
 background-color: #fff;
 border-radius: 1rem;
 box-shadow: 0 1px 1.5rem rgba(0,0,0,.1);
