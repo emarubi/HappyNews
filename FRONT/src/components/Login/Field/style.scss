@@ -1,0 +1,36 @@
+@use 'src/styles/vars';
+
+.form {
+  &__label, &__h2 {
+    margin: 0 0 0.3em;
+    padding: 0;
+    font-weight: bold;
+  }
+  &__input {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+  &__input[type="email"], &__input[type="password"], &__input[type="search"]{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 1.8em;
+    color: #fff;
+    font-size: 0.9em;
+  }
+
+  &__link {
+    display: block;
+    color: #c64141;
+    font-weight: 500;
+    font-size: 0.9em;
+    margin-bottom: 3em;
+  }
+  &__link:hover {
+    color: vars.$Primary;
+  }
+  &__h2 {
+    font-size: 1.1em;
+  }
+}

@@ -1,13 +1,16 @@
 import React from 'react';
 import './style.scss';
-const InformationForm = () => {
-    return (
-        <div>
-            <p className="user-info">Nom : Oclock</p>
-            <p className="user-info"> Prénom : J'aime happy news</p>
-            <p className="user-info">mail</p>
-        </div>
-    )
-}
+
+const InformationForm = ({ user }) => (
+  <div className="user-info__container">
+    <ul className="user-info__container__list">
+      <li className="user-info"> Nom : {user.first_name} </li>
+      <li className="user-info"> Prenom : {user.last_name} </li>
+      <li className="user-info"> Ville : {user.city} </li>
+      <li className="user-info"> nom du magasin : {user.shop_name} </li>
+      <li className="user-info"> Contactez ce commercant par email : {user.email} </li>
+    </ul>
+  </div>
+);
 
 export default InformationForm;
