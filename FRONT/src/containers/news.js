@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
-
 // composant de présentation
 import News from 'src/components/News';
-
 import { changeSearchValueAction, handleSearchSubmit, handleSelectedActivity } from 'src/redux/actions';
+
 
 const mapStateToProps = (state) => ({
   // on crée un booleen qui vaut vrai si on a des news sont dans la liste

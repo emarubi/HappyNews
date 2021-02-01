@@ -1,19 +1,21 @@
-import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-
+import Button from 'src/components/Header/Button';
 // Import des composants
 import Field from 'src/components/Login/Field';
-import Button from 'src/components/Header/Button';
 import NewsModal from 'src/components/NewsModal';
 import Spinner from 'src/components/Spinner';
-
+import getNewsByActivity from 'src/utils/getNewsByActivity';
 // utils
 import getNewsByCityName from 'src/utils/getNewsByCityName';
-import getNewsByActivity from 'src/utils/getNewsByActivity';
-
 // Import du CSS
 import './style.scss';
+
+
+
+
+
 
 const News = ({
   list, loadNews, hasData, activities, loadActivities, hasDataActivities,

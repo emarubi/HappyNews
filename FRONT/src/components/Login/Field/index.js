@@ -2,9 +2,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import './style.scss';
 
-const Field = ({ type, value, name, onChange, placeholder, register }) => {
+const Field = ({
+  type, value, name, onChange, placeholder, register,
+}) => {
   const inputId = `input-${name}`;
-  const handleChange = (event) => {   
+  const handleChange = (event) => {
     onChange(event.target.value, name);
   };
   return (

@@ -1,6 +1,5 @@
 import React from 'react';
 import RetailPict from '../../../../assets/Images/retailer.png';
-
 import './style.scss';
 
 const Retailer = () => (

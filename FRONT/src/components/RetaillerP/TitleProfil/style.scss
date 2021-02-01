@@ -1,4 +1,10 @@
-.title-profil {
-    font-size: 1.7em;
-    font-weight: bold;
+.title__retailer {
+    width: 100%;
+    padding: 1em 0;
+    &__profil {
+        text-align: center ;
+        font-size: 1.7em;
+        font-weight: bold;
+    }
+
 }

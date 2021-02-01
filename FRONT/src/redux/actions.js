@@ -8,8 +8,7 @@ export const SUBSCRIBE_ROLE_ID = 'SUBSCRIBE_ROLE_ID';
 export const GET_SELECT_FIELD = 'GET_SELECT_FIELD';
 export const SUBSCRIBE_SUCCESS = 'GET_SELECT_FIELD';
 // export const SUBSCRIBE_ERROR= 'SUBSCRIBE_ERROR'
-
-
+export const ADD_NEWS_SUCCESS = 'ADD_NEWS_SUCCESS';
 export const ADD_NEWS = 'ADD_NEWS';
 export const CHANGE_ADDNEWS_FIELD = 'CHANGE_ADDNEWS_FIELD';
 // function to change input field
@@ -31,24 +30,18 @@ export const CHANGE_ADDNEWS_FIELD = 'CHANGE_ADDNEWS_FIELD';
     };
   } */
 
-{/** ---------------------------- AddNewsForm Actions ------------------------------------------- */}
-
 // Function to change fields on addNewsForm
-  export const changeAddNewsField = (name, value) => {
-    return {
-      type: CHANGE_ADDNEWS_FIELD,
-      name,
-      value,
-    }
-  }
+export const changeAddNewsField = (name, value) => ({
+  type: CHANGE_ADDNEWS_FIELD,
+  name,
+  value,
+});
 
-  // Function to submit the addNewsForm
-  export const addNews = () => {
-    return {
-      type: ADD_NEWS,
-    }
-  }
-  // >>>>>>> origin/front/getDataFromNewsForm
+// Function to submit the addNewsForm
+export const addNews = () => ({
+  type: ADD_NEWS,
+});
+// >>>>>>> origin/front/getDataFromNewsForm
 
 // ACTION CREATOR YANN
 // je crée une action pour le changement de la valeur de l'input de recherche
@@ -72,26 +65,15 @@ export const handleSelectedActivity = (value) => ({
   value,
 });
 
+export const addNewsSuccess = (data) => ({
+  type: ADD_NEWS_SUCCESS,
+  data,
+});
 
-
-
-
-
-
-  export const addNewsSuccess = (data) => {
-    return {
-      type: ADD_NEWS_SUCCESS,
-      data
-    }
-  }
-{/** ----------------------------------------------------------------- */}
-
-
-
-
-
-
-
+// export for gettting user in retailler's profil information
+export const GET_USER_DETAILS = 'GET_USER_DETAILS';
+export const GET_USER_DETAILS_SUCCESS = 'GET_USER_DETAILS_SUCCESS';
+export const GET_USER_DETAILS_ERROR = 'GET_USER_DETAILS_ERROR';
 
 export const changeAuthField = (value, name) => ({
   type: CHANGE_AUTH_FIELD,
@@ -140,3 +122,14 @@ export const handleSubscribeSuccess = (data) => ({
 //         type: 'SUBSCRIBE_ERROR'
 //     };
 //   }
+export const getUserDetails = (id) => ({
+  type: GET_USER_DETAILS,
+  id,
+});
+export const getUserDetailsSuccess = (user) => ({
+  type: GET_USER_DETAILS_SUCCESS,
+  user,
+});
+export const getUserDetailsError = () => ({
+  type: GET_USER_DETAILS_ERROR,
+});
