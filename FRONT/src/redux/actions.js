@@ -48,6 +48,35 @@ export const CHANGE_ADDNEWS_FIELD = 'CHANGE_ADDNEWS_FIELD';
       type: ADD_NEWS,
     }
   }
+  // >>>>>>> origin/front/getDataFromNewsForm
+
+// ACTION CREATOR YANN
+// je crée une action pour le changement de la valeur de l'input de recherche
+// de la page News
+export const CHANGE_SEARCH_VALUE = 'CHANGE_SEARCH_VALUE';
+export const SEARCH = 'SEARCH';
+export const ACTIVITY_SELECTED = 'ACTIVITY_SELECTED';
+
+export const changeSearchValueAction = (value, name) => ({
+  type: CHANGE_SEARCH_VALUE,
+  value,
+  name,
+});
+
+export const handleSearchSubmit = () => ({
+  type: 'SEARCH',
+});
+
+export const handleSelectedActivity = (value) => ({
+  type: ACTIVITY_SELECTED,
+  value,
+});
+
+
+
+
+
+
 
   export const addNewsSuccess = (data) => {
     return {

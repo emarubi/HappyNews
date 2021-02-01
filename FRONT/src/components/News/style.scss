@@ -7,7 +7,17 @@
   padding: 4em;
   background: vars.$Primary;
   &__searchBar {
+    display:flex;
+    align-items: center;
     width: 25%;
+    & label {
+      display: none;
+    }
+    &__container {
+      margin-left: 1em;
+      width: 30em;
+      font-size: 1.6em;
+    }
   }
   &__searchOnMap {
     display:flex;
@@ -15,6 +25,7 @@
     justify-content: center;
     width: 25%;
     &__buttonContainer {
+      margin-left: 1em;
       width: 30em;
     }
   }
