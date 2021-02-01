@@ -1,5 +1,5 @@
 // import { CHANGE_SEARCH_VALUE } from '../actions';
-import { CHANGE_SEARCH_VALUE, ACTIVITY_SELECTED } from 'src/redux/actions';
+import { ACTIVITY_SELECTED, CHANGE_SEARCH_VALUE } from 'src/redux/actions';
 
 const initialState = {
   searchValue: '',

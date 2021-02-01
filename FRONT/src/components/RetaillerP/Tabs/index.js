@@ -1,22 +1,28 @@
+/* eslint-disable react/button-has-type */
 import React, { useState } from 'react';
+// import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
+import NewsModal from 'src/components/NewsModal';
 import './style.scss';
 import TabTitle from './TabTitle';
 
-const Tabs = ({ user }) => {
+const Tabs = ({ user, news }) => {
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (index) => {
-    console.log(index);
     setToggleState(index);
   };
+
+  // const { id } = useParams();
+  // console.log(news);
+
+  // const newsByUserId = news.filter((article) => article.user_id = id);
+  // console.log(newsByUserId);
 
   return (
     <div className="container">
       <div className="bloc-tabs">
-        <button
-          className={toggleState === 1 ? 'tabs active-tabs' : 'tabs'}
-          onClick={() => toggleTab(1)}
-        >
+        <button className={toggleState === 1 ? 'tabs active-tabs' : 'tabs'} onClick={() => toggleTab(1)}>
           <TabTitle> Mon activité</TabTitle>
         </button>
         <button
@@ -33,35 +39,27 @@ const Tabs = ({ user }) => {
         </button>
       </div>
       <div className="content-tabs">
-        <div
-          className={toggleState === 1 ? 'content  active-content' : 'content'}
-        >
-
+        <div className={toggleState === 1 ? 'content  active-content' : 'content'}>
           <p>
-
             {user.content}
-
           </p>
         </div>
 
-        <div
-          className={toggleState === 2 ? 'content  active-content' : 'content'}
-        >
-
+        <div className={toggleState === 2 ? 'content  active-content' : 'content'}>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-            at fugiat quae natus repellendus sit omnis quam, dignissimos temporibus
-            suscipit culpa vitae molestias odio enim, doloremque eligendi. Nam harum
-            expedita odit labore voluptas blanditiis consectetur perspiciatis quo
-            facere beatae, voluptatem odio temporibus voluptatum aliquid enim
-            eaque quae, fuga nulla mollitia!
+            {/* // news.map((item) => <li> {item.id}</li>) */}
+            {
+                news.map((news) => (
+                  <div key={news.id} className="newsList__item">
+                    <NewsModal news={news} />
+
+                  </div>
+                ))
+              }
           </p>
         </div>
 
-        <div
-          className={toggleState === 3 ? 'content  active-content' : 'content'}
-        >
-
+        <div className={toggleState === 3 ? 'content  active-content' : 'content'}>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, quos
             qui itaque, perferendis ab ipsam, veniam dolores porro maxime earum nesciunt
@@ -73,9 +71,9 @@ const Tabs = ({ user }) => {
             molestiae a quasi provident accusantium sequi, quam unde sint.
           </p>
         </div>
+
       </div>
     </div>
   );
 };
-
 export default Tabs;

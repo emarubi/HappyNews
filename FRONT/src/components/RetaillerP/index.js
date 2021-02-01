@@ -5,10 +5,13 @@ import Tabs from 'src/containers/tab';
 import './style.scss';
 import TitleProfil from './TitleProfil';
 
-const RetailerP = ({ loadUserDetails, user }) => {
+const RetailerP = ({
+  loadUserDetails, user, loadNews,
+}) => {
   const { id } = useParams();
   useEffect(() => {
     loadUserDetails(id);
+    loadNews();
   }, []);
 
   return (

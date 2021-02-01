@@ -12,11 +12,6 @@ import getNewsByCityName from 'src/utils/getNewsByCityName';
 // Import du CSS
 import './style.scss';
 
-
-
-
-
-
 const News = ({
   list, loadNews, hasData, activities, loadActivities, hasDataActivities,
   searchValue, changeSearchField, handleSearchSubmit, activitySelected, handleSelectedActivity,
