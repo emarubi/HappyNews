@@ -10,18 +10,16 @@ export const AddNewsForm = ({ title, activity_id, price, picture_url, visible, h
   const handleChange = e => handleChangeField([e.target.name], e.target.value);
 
   const handleChangeImage = e => {
+    // Je crée un nouveau reader
     const reader = new FileReader()
+    // Je récupère mon image
     const file = e.target.files[0]
+    // Je la converti en blob afin de pouvoir l'envoyer au back. 
     reader.onloadend =() =>{
       console.log('reader.result', reader.result)
       handleChangeField('picture_url', reader.result)
     }
-    //handleChangeField('picture_url', baseImage)
-    //reader.readAsDataURL(file)
-    //const reader = new FileReader()
-    //const fileUrl = reader.readAsDataURL(file)
     console.log(reader.readAsDataURL(file))
-    //handleChangeField('picture_url', file)
   }
 
   // function called when form is validate
