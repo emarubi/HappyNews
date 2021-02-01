@@ -18,6 +18,9 @@ const Tabs = ({ user, news }) => {
 
   // const newsByUserId = news.filter((article) => article.user_id = id);
   // console.log(newsByUserId);
+  console.log(news);
+  const newsIsNews = news.filter((news) => (news.is_news === true));
+  console.log(newsIsNews);
 
   return (
     <div className="container">
