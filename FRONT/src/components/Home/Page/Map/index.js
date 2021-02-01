@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import {
-  MapContainer, Marker, Popup, TileLayer, useMapEvents,
+  MapContainer, Marker, Popup, TileLayer, useMap,
 } from 'react-leaflet';
 import L from 'leaflet';
 // import 'leaflet/dist/leaflet.css';
@@ -14,7 +14,7 @@ const visitorIcon = L.icon({
   iconSize: [40, 40],
 });
 
-const zoom = 13;
+const zoom = 14;
 const regionCoord = [48.864716, 2.349014];
 
 function Maps() {
@@ -35,25 +35,33 @@ function Maps() {
       });
   }, []);
 
-  const [map, setMap] = useState();
+  // const [map, setMap] = useState();
   // visitor geoLocalisation on the Map
   function LocationMarker() {
     const [position, setPosition] = useState(null);
 
-    const map = useMapEvents({
-      click() {
-        map.locate();
-      },
-      locationfound(e) {
+    const map = useMap();
+    useEffect(() => {
+      map.locate().on('locationfound', (e) => {
         setPosition(e.latlng);
         map.flyTo(e.latlng, map.getZoom());
-      },
-    });
+      });
+    }, []);
+    // the code above, if you want to geolocate on click
+    // const map = useMapEvents({
+    //   click() {
+    //     map.locate();
+    //   },
+    //   locationfound(e) {
+    //     setPosition(e.latlng);
+    //     map.flyTo(e.latlng, map.getZoom());
+    //   },
+    // });
 
     return position === null ? null : (
       <Marker
         position={position}
-        riseOnHover
+        // riseOnHover
         icon={visitorIcon}
       >
         <Popup>Vous êtes ici</Popup>
@@ -68,8 +76,7 @@ function Maps() {
         <MapContainer
           center={regionCoord}
           zoom={zoom}
-          style={{ height: '60vh' }}
-          whenCreated={setMap}
+          style={{ height: '80vh' }}
         >
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -77,13 +84,6 @@ function Maps() {
           />
 
           <LocationMarker />
-
-          {LocationMarker.position
-        && (
-          <Marker position={LocationMarker.position} icon={visitorIcon}>
-            <Popup>Vous êtes ici</Popup>
-          </Marker>
-        )}
 
           {users.length
         && users.map((user) => (
@@ -106,12 +106,9 @@ function Maps() {
           {activeUser && (
           <Popup
             position={[activeUser.latitude, activeUser.longitude]}
-            closeOnClick={false}
-            keepInView
+            // closeOnClick={false}
           >
             <div>
-              {/* <h2>{activeUser.shop_name}</h2> */}
-              {/* <p> <Link to={`/user/${activeUser.id}`}>{activeUser.shop_name}</Link></p> */}
               <p><Link to={`/commercant/profil/:${activeUser.id}`}>{activeUser.shop_name}</Link></p>
             </div>
           </Popup>
