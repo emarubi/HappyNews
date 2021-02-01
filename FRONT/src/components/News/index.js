@@ -1,28 +1,27 @@
 import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import Button from 'src/components/Header/Button';
 // Import des composants
 import Field from 'src/components/Login/Field';
 import NewsModal from 'src/components/NewsModal';
 import Spinner from 'src/components/Spinner';
-import getNewsByActivity from 'src/utils/getNewsByActivity';
+
 // utils
-import getNewsByCityName from 'src/utils/getNewsByCityName';
+// import getNewsByActivity from 'src/utils/getNewsByActivity';
+// import getNewsByCityName from 'src/utils/getNewsByCityName';
+import getNewsByCityNameAndActivity from 'src/utils/getNewsByCityNameAndActivity';
 // Import du CSS
 import './style.scss';
-
-
-
-
-
 
 const News = ({
   list, loadNews, hasData, activities, loadActivities, hasDataActivities,
   searchValue, changeSearchField, handleSearchSubmit, activitySelected, handleSelectedActivity,
 }) => {
   const filteredNews = (
-    getNewsByCityName(list, searchValue) || getNewsByActivity(list, activitySelected));
+    // getNewsByCityName(list, searchValue) && getNewsByActivity(list, activitySelected));
+    getNewsByCityNameAndActivity(list, searchValue, activitySelected));
   // useEffect : appelle une fonction au chargement du composant
   // car 2eme parametre = []
   useEffect(() => {
@@ -34,6 +33,11 @@ const News = ({
   }, []);
 
   useEffect(() => {
+    getNewsByCityNameAndActivity(list, searchValue, activitySelected);
+    console.log(filteredNews);
+  }, [searchValue, activitySelected]);
+
+/*   useEffect(() => {
     getNewsByCityName(list, searchValue);
     console.log(filteredNews);
   }, [searchValue]);
@@ -41,7 +45,7 @@ const News = ({
   useEffect(() => {
     getNewsByActivity(list, activitySelected);
     console.log(filteredNews);
-  }, [activitySelected]);
+  }, [activitySelected]); */
 
   const { register, handleSubmit, errors } = useForm();
   return (
@@ -80,7 +84,9 @@ const News = ({
             </svg>
           </div>
           <div className="searchSection__searchOnMap__buttonContainer">
-            <Button>Afficher sur la carte</Button>
+            <NavLink to="/">
+              <Button>Afficher sur la carte</Button>
+            </NavLink>
           </div>
         </div>
       </section>
@@ -101,7 +107,7 @@ const News = ({
       </div>
       <section className="newsList">
         {!hasData && <Spinner />}
-        {filteredNews.map((news) => (
+        {filteredNews && filteredNews.map((news) => (
           <div key={news.id} className="newsList__item">
             {hasData && <NewsModal news={news} />}
             {/* Affichage conditionnel : si pas de donnée, pas de News */}
