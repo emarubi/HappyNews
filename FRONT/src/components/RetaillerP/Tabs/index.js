@@ -13,6 +13,7 @@ const Tabs = ({ user, news }) => {
   };
   const { id } = useParams();
   console.log(id);
+  console.log(parseInt(id));
   // const { id } = useParams();
   // console.log(news);
 
@@ -25,8 +26,14 @@ const Tabs = ({ user, news }) => {
   const newsIsNewsFalse = news.filter((news) => (news.is_news === false));
   console.log(newsIsNewsFalse);
 
-  const newsUserId = news.filter((news) => (news.user_id === id));
+  const newsUserId = news.filter((news) => (news.user_id === parseInt(id)));
   console.log(newsUserId);
+
+  const newsUserIdIsTrue = news.filter((news) => ((news.is_news === true) && (news.user_id === parseInt(id))));
+  console.log(newsUserIdIsTrue);
+
+  const newsUserIdIsFalse = news.filter((news) => ((news.is_news === false) && (news.user_id === parseInt(id))));
+  console.log(newsUserIdIsFalse);
 
   return (
     <div className="container">
@@ -58,10 +65,9 @@ const Tabs = ({ user, news }) => {
           <p>
             {/* // news.map((item) => <li> {item.id}</li>) */}
             {
-                newsIsNewsTrue.map((news) => (
+                newsUserIdIsTrue.map((news) => (
                   <div key={news.id} className="newsList__item">
                     <NewsModal news={news} />
-
                   </div>
                 ))
               }
@@ -71,7 +77,7 @@ const Tabs = ({ user, news }) => {
         <div className={toggleState === 3 ? 'content  active-content' : 'content'}>
           <p>
             {
-                newsIsNewsFalse.map((news) => (
+                newsUserIdIsFalse.map((news) => (
                   <div key={news.id} className="newsList__item">
                     <NewsModal news={news} />
 
