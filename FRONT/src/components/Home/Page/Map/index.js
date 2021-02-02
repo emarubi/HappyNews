@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 // import propTypes from 'prop-types';
 import axios from 'axios';
-import {
-  MapContainer, Marker, Popup, TileLayer, useMap,
-} from 'react-leaflet';
 import L from 'leaflet';
-import './style.scss';
-// import 'leaflet/dist/leaflet.css';
-import './style.scss';
+import React, { useEffect, useState } from 'react';
+import {
+  MapContainer, Marker, Popup, TileLayer, useMap
+} from 'react-leaflet';
+import { Link } from 'react-router-dom';
 import placeholder from '../../../../assets/Images/placeholder.png';
+import './style.scss';
 
 // icon for visitor is imported from images  directory
 const visitorIcon = L.icon({
@@ -121,7 +119,7 @@ function Maps() {
             // closeOnClick={false}
           >
             <div>
-              <p><Link to={`/commercant/profil/:${activeUser.id}`}>{activeUser.shop_name}</Link></p>
+              <p><Link to={`/commercant/profil/${activeUser.id}`}>{activeUser.shop_name}</Link></p>
               {/* <p>{activeUser.activity_name}</p> */}
             </div>
           </Popup>
@@ -154,7 +152,7 @@ function Maps() {
               <div>
                 {/* <h2>{activeUser.shop_name}</h2> */}
                 {/* <p> <Link to={`/user/${activeUser.id}`}>{activeUser.shop_name}</Link></p> */}
-                <p><Link to={`/commercant/profil/:${activeUser.id}`}>{activeUser.shop_name}</Link></p>
+                <p><Link to={`/commercant/profil/${activeUser.id}`}>{activeUser.shop_name}</Link></p>
               </div>
             </Popup>
             )}
