@@ -4,7 +4,7 @@ import { GET_CITY_FROM_API_SUCCESS } from 'src/redux/actions';
 const getCityCoordinatesByApi = (store) => (next) => (action) => {
   switch (action.type) {
     case 'GET_CITY_FROM_API':
-      axios.get(`http://api-adresse.data.gouv.fr/search/?q=${action.cityNameEnteredByTheUser}&type=municipality&limit=1`)
+      axios.get(`http://api-adresse.data.gouv.fr/search/?q=${action.cityNameEnteredByTheUser.search}&type=municipality&autocomplete=0`)
         .then((response) => {
           console.log([response.data.features[0].geometry.coordinates[1],
             response.data.features[0].geometry.coordinates[0]]);

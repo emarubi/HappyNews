@@ -8,7 +8,6 @@ import {
 import L from 'leaflet';
 import './style.scss';
 // import 'leaflet/dist/leaflet.css';
-import './style.scss';
 import placeholder from '../../../../assets/Images/placeholder.png';
 
 // icon for visitor is imported from images  directory
@@ -29,7 +28,7 @@ function Maps() {
 
   // const [city, setCity] = useState([]);
 
-  const cityCoordinates = localStorage.getItem(cityCoordinates);
+  const cityCoordinates = localStorage.getItem('cityCoordinates');
 
   console.log(cityCoordinates);
   // // axios request to fetch adress data from server https://geo.api.gouv.fr/adresse
@@ -57,7 +56,11 @@ function Maps() {
         setPosition(e.latlng);
         map.flyTo(e.latlng, map.getZoom());
       });
-    }, []);
+      // Stops watching location previously initiated by map.locate
+      return function cleanup() {
+        map.stopLocate();
+      };
+    }, [map]);
     // the code above, if you want to geolocate on click
     // const map = useMapEvents({
     //   click() {
@@ -121,8 +124,8 @@ function Maps() {
             // closeOnClick={false}
           >
             <div>
-              <p><Link to={`/commercant/profil/:${activeUser.id}`}>{activeUser.shop_name}</Link></p>
-              {/* <p>{activeUser.activity_name}</p> */}
+              <h2><Link to={`/commercant/profil/:${activeUser.id}`}>{activeUser.shop_name}</Link></h2>
+              <p>{activeUser.activity_name}</p>
             </div>
           </Popup>
           )}
@@ -155,6 +158,7 @@ function Maps() {
                 {/* <h2>{activeUser.shop_name}</h2> */}
                 {/* <p> <Link to={`/user/${activeUser.id}`}>{activeUser.shop_name}</Link></p> */}
                 <p><Link to={`/commercant/profil/:${activeUser.id}`}>{activeUser.shop_name}</Link></p>
+                <p>{activeUser.activity_name}</p>
               </div>
             </Popup>
             )}
