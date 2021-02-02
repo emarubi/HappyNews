@@ -11,7 +11,7 @@ import Footer from 'src/components/Footer';
 import Home from 'src/components/Home';
 import NewsModal from 'src/components/NewsModal';
 import Terms from 'src/components/Terms';
-
+import AddNewsForm from 'src/containers/addNews';
 // import Header from 'src/components/Header';
 import Header from 'src/containers/header';
 import Login from 'src/containers/login';
@@ -59,9 +59,9 @@ const App = ({ isLogged }) => (
       <Route exact path="/newsmodal">
         <NewsModal news={newsList.data[3]} />
       </Route>
-      {/* <Route exact path="/creation-de-news">
+      <Route exact path="/creation-de-news">
         <AddNewsForm />
-      </Route> */}
+      </Route>
       <Route exact path="/condition-generales-d'utilisations">
         <CGU />
       </Route>
