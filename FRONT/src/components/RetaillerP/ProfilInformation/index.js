@@ -11,7 +11,7 @@ const ProfilInformation = () => (
       <Avatar />
     </div>
     <InformationForm />
-    <AddNewsButton />
+    {/* <AddNewsButton /> */}
     {/* <AddNewsForm /> */}
   </div>
 );

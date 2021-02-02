@@ -13,6 +13,7 @@ const mapStateToProps = (state) => ({
     activity_id: state.addNews.category,
     visible: state.addNews.visible
 });
+// console.log(state.auth.userId);
 
 // Cablage des actions
 const mapDispatchToProps = (dispatch) => ({

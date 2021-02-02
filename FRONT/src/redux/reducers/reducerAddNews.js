@@ -1,4 +1,4 @@
-import { CHANGE_ADDNEWS_FIELD } from '../actions';
+import { CHANGE_ADDNEWS_FIELD, SHOW_MODAL, HIDE_MODAL } from '../actions';
 
 // Initial State
 const initialState = {
@@ -9,7 +9,8 @@ const initialState = {
     is_news: true, 
     user_id: null, // A récupérer depuis le localstorage
     activity_id: '', // A récupérer depuis un champs déroulant. 9 id différents à récup dans le back
-    vivible: false
+    modalType: null,
+    modalProps: {}
 }
 // reducer
 
@@ -22,6 +23,15 @@ const reducerAddNews = (oldState = initialState, action) => {
         ...oldState,
         [action.name]: action.value,
       };
+    case SHOW_MODAL:
+      return {
+        ...oldState,
+        modalType: action.modalType,
+        modalProps: action.modalProps
+      };
+    case HIDE_MODAL:
+      return initialState
+    
     default:
       return { ...oldState };
   }

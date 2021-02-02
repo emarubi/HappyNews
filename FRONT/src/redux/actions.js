@@ -11,6 +11,8 @@ export const SUBSCRIBE_SUCCESS = 'GET_SELECT_FIELD';
 export const ADD_NEWS_SUCCESS = 'ADD_NEWS_SUCCESS';
 export const ADD_NEWS = 'ADD_NEWS';
 export const CHANGE_ADDNEWS_FIELD = 'CHANGE_ADDNEWS_FIELD';
+export const SHOW_MODAL = 'SHOW_MODAL';
+export const HIDE_MODAL = 'HIDE_MODAL';
 // function to change input field
 /* export const changeAuthField = (value, name) => ({
     type: CHANGE_AUTH_FIELD,
@@ -41,6 +43,15 @@ export const changeAddNewsField = (name, value) => ({
 export const addNews = () => ({
   type: ADD_NEWS,
 });
+
+// Action Creator Paco Show modal
+export const showModalAction = () => ({
+  type: 'SHOW_MODAL',
+  modalType: 'DELETE_POST',
+  modalProps: {
+    postId: 42
+  }
+}) 
 // >>>>>>> origin/front/getDataFromNewsForm
 
 // ACTION CREATOR YANN
