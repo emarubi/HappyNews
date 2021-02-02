@@ -47,8 +47,9 @@ export const addNews = () => ({
 // je crée une action pour le changement de la valeur de l'input de recherche
 // de la page News
 export const CHANGE_SEARCH_VALUE = 'CHANGE_SEARCH_VALUE';
-export const SEARCH = 'SEARCH';
+export const GET_CITY_FROM_API = 'GET_CITY_FROM_API';
 export const ACTIVITY_SELECTED = 'ACTIVITY_SELECTED';
+export const GET_CITY_FROM_API_SUCCESS = 'GET_CITY_FROM_API_SUCCESS';
 
 export const changeSearchValueAction = (value, name) => ({
   type: CHANGE_SEARCH_VALUE,
@@ -56,8 +57,9 @@ export const changeSearchValueAction = (value, name) => ({
   name,
 });
 
-export const handleSearchSubmit = () => ({
-  type: 'SEARCH',
+export const handleSearchSubmit = (cityNameEnteredByTheUser) => ({
+  type: GET_CITY_FROM_API,
+  cityNameEnteredByTheUser,
 });
 
 export const handleSelectedActivity = (value) => ({
@@ -68,6 +70,11 @@ export const handleSelectedActivity = (value) => ({
 export const addNewsSuccess = (data) => ({
   type: ADD_NEWS_SUCCESS,
   data,
+});
+
+export const getCityFromApiSuccess = (cityCoordinates) => ({
+  type: GET_CITY_FROM_API_SUCCESS,
+  cityCoordinates,
 });
 
 // export for gettting user in retailler's profil information
