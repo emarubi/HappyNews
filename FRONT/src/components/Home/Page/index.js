@@ -8,6 +8,7 @@ import './style.scss';
 function Page() {
   return (
     <div>
+      <span className="map__information">Cliquez sur cette carte et découvrez ce qui se cache près de chez vous ...</span>
       <Maps />
       <Customer />
       <Retailer />

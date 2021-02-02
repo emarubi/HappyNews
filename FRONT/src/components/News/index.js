@@ -34,11 +34,9 @@ const News = ({
 
   useEffect(() => {
     getNewsByCityNameAndActivity(list, searchValue, activitySelected);
-    console.log(filteredNews);
-    localStorage.setItem('searchValue', searchValue);
   }, [searchValue, activitySelected]);
 
-/*   useEffect(() => {
+  /*   useEffect(() => {
     getNewsByCityName(list, searchValue);
     console.log(filteredNews);
   }, [searchValue]);
@@ -154,6 +152,7 @@ News.propTypes = {
 News.defaultProps = {
   searchValue: '',
   activitySelected: '',
+  cityCoordinates: [],
 };
 
 export default News;

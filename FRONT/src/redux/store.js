@@ -8,6 +8,9 @@ import api from '../middlewares/api';
 import authMiddleware from '../middlewares/auth';
 // rootReducer = résultat de combineReducers
 import user from '../middlewares/userMiddleware';
+// import du middleware d'appel api qui retourne
+// les coordonnées gps de la ville saisie par l'utilisateur
+import getCityCoordinatesByApi from '../middlewares/getCityCoordinatesByApi';
 import rootReducer from './reducers';
 
 // on crée le store
@@ -17,6 +20,7 @@ const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(
   api,
   activitiesMiddleware,
   user,
+  getCityCoordinatesByApi,
 )));
 
 export default store;
