@@ -18,6 +18,7 @@ import './style.scss';
 const News = ({
   list, loadNews, hasData, activities, loadActivities, hasDataActivities,
   searchValue, changeSearchField, handleSearchSubmit, activitySelected, handleSelectedActivity,
+  resetActivitySelected,
 }) => {
   const filteredNews = (
     // getNewsByCityName(list, searchValue) && getNewsByActivity(list, activitySelected));
@@ -35,6 +36,10 @@ const News = ({
   useEffect(() => {
     getNewsByCityNameAndActivity(list, searchValue, activitySelected);
   }, [searchValue, activitySelected]);
+
+  /* useEffect(() => {
+    resetActivitySelected('');
+  }, []); */
 
   /*   useEffect(() => {
     getNewsByCityName(list, searchValue);
@@ -118,6 +123,7 @@ const News = ({
 };
 
 News.propTypes = {
+  resetActivitySelected: PropTypes.func.isRequired,
   handleSelectedActivity: PropTypes.func.isRequired,
   activitySelected: PropTypes.string,
   handleSearchSubmit: PropTypes.func.isRequired,
