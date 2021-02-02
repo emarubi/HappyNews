@@ -1,6 +1,7 @@
 @use '../../styles/vars';
 
 .section-addnews-form {
+  /*display: none;*/
   height: 75vh;
   border: 1px solid red;
   background:rgba(0,0,0,0.4); /* vars.$Linear-gradient*/

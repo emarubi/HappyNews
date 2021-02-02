@@ -4,7 +4,7 @@ import './style.scss';
 const AddNewsButton = () => {
   return (
     <div className="bouton">
-      <button>Ajouter une News</button>
+      <button className="btn">Ajouter une News</button>
     </div>
   )
 }
