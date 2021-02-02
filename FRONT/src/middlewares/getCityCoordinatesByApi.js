@@ -13,7 +13,7 @@ const getCityCoordinatesByApi = (store) => (next) => (action) => {
             cityCoordinates: [response.data.features[0].geometry.coordinates[1],
               response.data.features[0].geometry.coordinates[0]],
           });
-          localStorage.setItem('cityCoordinates', [response.data.features[0].geometry.coordinates[1],
+          localStorage.setItem('cityCoordinates', [(response.data.features[0].geometry.coordinates[1]),
             response.data.features[0].geometry.coordinates[0]]);
         })
         .catch((error) => {
