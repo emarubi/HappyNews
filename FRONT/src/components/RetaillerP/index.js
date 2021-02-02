@@ -1,14 +1,17 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ProfilInformation from 'src/components/RetaillerP/ProfilInformation';
+import Tabs from 'src/containers/tab';
 import './style.scss';
-import Tabs from './Tabs';
 import TitleProfil from './TitleProfil';
 
-const RetailerP = ({ loadUserDetails, user }) => {
+const RetailerP = ({
+  loadUserDetails, user, loadNews,
+}) => {
   const { id } = useParams();
   useEffect(() => {
     loadUserDetails(id);
+    loadNews();
   }, []);
 
   return (

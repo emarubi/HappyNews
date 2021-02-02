@@ -4,11 +4,15 @@ import { getUserDetails } from 'src/redux/actions';
 
 const mapStateToProps = (state) => ({
   user: state.user,
+  list: state.newsList.list,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   loadUserDetails: (id) => {
     dispatch(getUserDetails(id));
+  },
+  loadNews: () => {
+    dispatch({ type: 'GET_NEWS' });
   },
 });
 

@@ -1,5 +1,9 @@
 // import { CHANGE_SEARCH_VALUE } from '../actions';
+<<<<<<< HEAD
 import { CHANGE_SEARCH_VALUE, ACTIVITY_SELECTED, GET_CITY_FROM_API_SUCCESS } from 'src/redux/actions';
+=======
+import { ACTIVITY_SELECTED, CHANGE_SEARCH_VALUE } from 'src/redux/actions';
+>>>>>>> origin/front/retailler-profil
 
 const initialState = {
   searchValue: '',

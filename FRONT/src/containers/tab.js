@@ -2,11 +2,8 @@ import { connect } from 'react-redux';
 import Tab from 'src/components/RetaillerP/Tabs';
 
 const mapStateToProps = (state) => ({
-  content: state.user.content,
+  user: state.user.user,
+  news: state.newsList.list,
 });
 
-const mapDispatchToProps = (dispatch) => {
-
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Tab);
+export default connect(mapStateToProps)(Tab);
