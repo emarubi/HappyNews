@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+// import propTypes from 'prop-types';
 import axios from 'axios';
 import {
   MapContainer, Marker, Popup, TileLayer, useMap,
 } from 'react-leaflet';
 import L from 'leaflet';
+import './style.scss';
 // import 'leaflet/dist/leaflet.css';
 import placeholder from '../../../../assets/Images/placeholder.png';
 
@@ -15,7 +17,7 @@ const visitorIcon = L.icon({
 });
 
 const zoom = 14;
-const regionCoord = [48.864716, 2.349014];
+const cityCoord = [48.864716, 2.349014];
 
 function Maps() {
   // define a state for an activeUser, when the visitor click on a user Marker on the map
@@ -24,7 +26,13 @@ function Maps() {
 
   const [users, setUsers] = useState([]);
 
-  // axios request to fetch data from server
+  // const [city, setCity] = useState([]);
+
+  const cityCoordinates = localStorage.getItem(cityCoordinates);
+
+  console.log(cityCoordinates);
+  // // axios request to fetch adress data from server https://geo.api.gouv.fr/adresse
+  // axios request to fetch users data from heroku server
   useEffect(() => {
     axios.get('https://api-happy-news.herokuapp.com/user')
       .then((response) => {
@@ -32,6 +40,7 @@ function Maps() {
         setUsers(response.data.data);
       })
       .catch((error) => {
+        console.log(error);
       });
   }, []);
 
@@ -41,6 +50,7 @@ function Maps() {
     const [position, setPosition] = useState(null);
 
     const map = useMap();
+
     useEffect(() => {
       map.locate().on('locationfound', (e) => {
         setPosition(e.latlng);
@@ -71,12 +81,12 @@ function Maps() {
 
   return (
     <>
-      {regionCoord
+      {cityCoord
       && (
         <MapContainer
-          center={regionCoord}
+          center={cityCoord}
           zoom={zoom}
-          style={{ height: '80vh' }}
+          // style={{ height: '70vh' }}
         >
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -93,7 +103,7 @@ function Maps() {
               key={user.id}
               position={[parseFloat(user.latitude), parseFloat(user.longitude)]}
               eventHandlers={{
-                mouseover: () => {
+                click: () => {
                   console.log('marker clicked', user.shop_name);
                   setActiveUser(user);
                 },
@@ -110,6 +120,7 @@ function Maps() {
           >
             <div>
               <p><Link to={`/commercant/profil/:${activeUser.id}`}>{activeUser.shop_name}</Link></p>
+              {/* <p>{activeUser.activity_name}</p> */}
             </div>
           </Popup>
           )}
@@ -118,5 +129,13 @@ function Maps() {
     </>
   );
 }
+
+/* Maps.propTypes = {
+  cityCoordinates: propTypes.array,
+};
+
+Maps.defaultProps = {
+  cityCoordinates: [48.864716, 2.349014],
+}; */
 
 export default Maps;

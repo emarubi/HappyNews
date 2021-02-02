@@ -1,13 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import {
-  MapContainer, TileLayer, Marker, Popup, useMapEvents,
+  MapContainer, Marker, Popup, TileLayer, useMap,
 } from 'react-leaflet';
 import L from 'leaflet';
-// import users from './user';
-import './style.scss';
+// import 'leaflet/dist/leaflet.css';
 import placeholder from '../../../../assets/Images/placeholder.png';
-import useGeoLocation from './useGeoLocation';
 
 // icon for visitor is imported from images  directory
 const visitorIcon = L.icon({
@@ -15,32 +14,17 @@ const visitorIcon = L.icon({
   iconSize: [40, 40],
 });
 
-const Maps = () => {
+const zoom = 14;
+const regionCoord = [48.864716, 2.349014];
+
+function Maps() {
   // define a state for an activeUser, when the visitor click on a user Marker on the map
   // if the vsitor doesn't select a user Marker, the activeUser is set at null in the state
   const [activeUser, setActiveUser] = useState(null);
 
   const [users, setUsers] = useState([]);
 
-  // const mapRef = useRef();
-
-  // const location = useGeoLocation();
-
-  // console.log('location avant showMyLocation', location);
-
-  // const showMyLocation = () => {
-  //   // console.log('location dans showMyLocation', location);
-  //   if (location.loaded && !location.error) {
-  //     // eslint-disable-next-line max-len
-  //     // console.log('nous sommes dans showMyLocation');
-  //     mapRef.current.L.flyTo([location.coordinates.lat, location.coordinates.lng], 13, { animate: true });
-  //   }
-  //   else {
-  //     console.log(location.error.message);
-  //   }
-  // };
-  // showMyLocation;
-
+  // axios request to fetch data from server
   useEffect(() => {
     axios.get('https://api-happy-news.herokuapp.com/user')
       .then((response) => {
@@ -51,27 +35,33 @@ const Maps = () => {
       });
   }, []);
 
-  console.log('users après requête axios', users);
-
-  // const position = [48.856614, 2.3522219]; // coordonnées GPS de Paris
+  // const [map, setMap] = useState();
   // visitor geoLocalisation on the Map
   function LocationMarker() {
     const [position, setPosition] = useState(null);
 
-    const map = useMapEvents({
-      click() {
-        map.locate();
-      },
-      locationfound(e) {
+    const map = useMap();
+    useEffect(() => {
+      map.locate().on('locationfound', (e) => {
         setPosition(e.latlng);
         map.flyTo(e.latlng, map.getZoom());
-      },
-    });
+      });
+    }, []);
+    // the code above, if you want to geolocate on click
+    // const map = useMapEvents({
+    //   click() {
+    //     map.locate();
+    //   },
+    //   locationfound(e) {
+    //     setPosition(e.latlng);
+    //     map.flyTo(e.latlng, map.getZoom());
+    //   },
+    // });
 
     return position === null ? null : (
       <Marker
         position={position}
-        riseOnHover
+        // riseOnHover
         icon={visitorIcon}
       >
         <Popup>Vous êtes ici</Popup>
@@ -80,29 +70,22 @@ const Maps = () => {
   }
 
   return (
+    <>
+      {regionCoord
+      && (
+        <MapContainer
+          center={regionCoord}
+          zoom={zoom}
+          style={{ height: '70vh' }}
+        >
+          <TileLayer
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
 
-    <MapContainer
-      center={[48.856614, 2.3522219]}
-      zoom={13}
-      scrollWheelZoom
-    >
-      <TileLayer
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
+          <LocationMarker />
 
-      {/* {location.loaded && !location.error && (
-      <Marker
-        icon={visitorIcon}
-        position={[location.coordinates.lat, location.coordinates.long]}
-      >
-        <Popup>Vous êtes ici</Popup>
-      </Marker>
-      )} */}
-
-      <LocationMarker />
-
-      {users.length
+          {users.length
         && users.map((user) => (
           (!isNaN(parseFloat(user.latitude)) || !isNaN(parseFloat(user.longitude)))
             && (
@@ -118,19 +101,23 @@ const Maps = () => {
             />
             )
         ))}
-      {/* check if there is an active user (if the visitor click on is marker), if true, it shows a Popup */}
-      {activeUser && (
-        <Popup
-          position={[activeUser.latitude, activeUser.longitude]}
-          closeOnClick={false}
-        >
-          <div>
-            <h2>{activeUser.shop_name}</h2>
-          </div>
-        </Popup>
+          {/* check if there is an active user (if the visitor click on is marker),
+        if true, it shows a Popup */}
+          {activeUser && (
+          <Popup
+            position={[activeUser.latitude, activeUser.longitude]}
+            // closeOnClick={false}
+          >
+            <div>
+              <p><Link to={`/commercant/profil/:${activeUser.id}`}>{activeUser.shop_name}</Link></p>
+              <p>{activeUser.activity_name}</p>
+            </div>
+          </Popup>
+          )}
+        </MapContainer>
       )}
-    </MapContainer>
-
+    </>
   );
-};
+}
+
 export default Maps;
