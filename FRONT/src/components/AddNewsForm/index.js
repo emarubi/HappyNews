@@ -11,12 +11,9 @@ export const AddNewsForm = ({
     const reader = new FileReader();
     const fileUrl = reader.readAsDataURL(file);
     console.log(fileUrl);
-    // handleChangeField(picture_url, file)
   };
 
-  // function called when form is validate
   const handleSubmit = (e) => {
-    // function called to block the reload of the page
     e.preventDefault();
     addNews();
   };
@@ -60,8 +57,6 @@ export const AddNewsForm = ({
               <select
                 onChange={(e) => handleChange(e)}
                 name="activity_id"
-                // type="text"
-                // value={category}
                 placeholder="Catégorie..."
               >
                 <option value="boulangerie">boulangerie</option>
