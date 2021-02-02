@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+// import propTypes from 'prop-types';
 import axios from 'axios';
 import {
-  MapContainer, Marker, Popup, TileLayer, useMapEvents,
+  MapContainer, Marker, Popup, TileLayer, useMap,
 } from 'react-leaflet';
 import L from 'leaflet';
+import './style.scss';
 // import 'leaflet/dist/leaflet.css';
 import './style.scss';
 import placeholder from '../../../../assets/Images/placeholder.png';
@@ -15,8 +17,8 @@ const visitorIcon = L.icon({
   iconSize: [40, 40],
 });
 
-const zoom = 13;
-const regionCoord = [48.864716, 2.349014];
+const zoom = 14;
+const cityCoord = [48.864716, 2.349014];
 
 function Maps() {
   // define a state for an activeUser, when the visitor click on a user Marker on the map
@@ -25,7 +27,13 @@ function Maps() {
 
   const [users, setUsers] = useState([]);
 
-  // axios request to fetch data from server
+  // const [city, setCity] = useState([]);
+
+  const cityCoordinates = localStorage.getItem(cityCoordinates);
+
+  console.log(cityCoordinates);
+  // // axios request to fetch adress data from server https://geo.api.gouv.fr/adresse
+  // axios request to fetch users data from heroku server
   useEffect(() => {
     axios.get('https://api-happy-news.herokuapp.com/user')
       .then((response) => {
@@ -33,28 +41,38 @@ function Maps() {
         setUsers(response.data.data);
       })
       .catch((error) => {
+        console.log(error);
       });
   }, []);
 
-  const [map, setMap] = useState();
+  // const [map, setMap] = useState();
   // visitor geoLocalisation on the Map
   function LocationMarker() {
     const [position, setPosition] = useState(null);
 
-    const map = useMapEvents({
-      click() {
-        map.locate();
-      },
-      locationfound(e) {
+    const map = useMap();
+
+    useEffect(() => {
+      map.locate().on('locationfound', (e) => {
         setPosition(e.latlng);
         map.flyTo(e.latlng, map.getZoom());
-      },
-    });
+      });
+    }, []);
+    // the code above, if you want to geolocate on click
+    // const map = useMapEvents({
+    //   click() {
+    //     map.locate();
+    //   },
+    //   locationfound(e) {
+    //     setPosition(e.latlng);
+    //     map.flyTo(e.latlng, map.getZoom());
+    //   },
+    // });
 
     return position === null ? null : (
       <Marker
         position={position}
-        riseOnHover
+        // riseOnHover
         icon={visitorIcon}
       >
         <Popup>Vous êtes ici</Popup>
@@ -65,26 +83,48 @@ function Maps() {
   return (
     <>
       <section className="map__container">
-        {regionCoord
-        && (
-          <MapContainer
-            center={regionCoord}
-            zoom={zoom}
-            style={{ height: '60vh' }}
-            whenCreated={setMap}
-          >
-            <TileLayer
-              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        {cityCoord
+      && (
+        <MapContainer
+          center={cityCoord}
+          zoom={zoom}
+          // style={{ height: '70vh' }}
+        >
+          <TileLayer
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+
+          <LocationMarker />
+
+          {users.length
+        && users.map((user) => (
+          (!isNaN(parseFloat(user.latitude)) || !isNaN(parseFloat(user.longitude)))
+            && (
+            <Marker
+              key={user.id}
+              position={[parseFloat(user.latitude), parseFloat(user.longitude)]}
+              eventHandlers={{
+                click: () => {
+                  console.log('marker clicked', user.shop_name);
+                  setActiveUser(user);
+                },
+              }}
             />
-
-            <LocationMarker />
-
-            {LocationMarker.position
-          && (
-            <Marker position={LocationMarker.position} icon={visitorIcon}>
-              <Popup>Vous êtes ici</Popup>
-            </Marker>
+            )
+        ))}
+          {/* check if there is an active user (if the visitor click on is marker),
+        if true, it shows a Popup */}
+          {activeUser && (
+          <Popup
+            position={[activeUser.latitude, activeUser.longitude]}
+            // closeOnClick={false}
+          >
+            <div>
+              <p><Link to={`/commercant/profil/:${activeUser.id}`}>{activeUser.shop_name}</Link></p>
+              {/* <p>{activeUser.activity_name}</p> */}
+            </div>
+          </Popup>
           )}
 
             {users.length
@@ -118,11 +158,19 @@ function Maps() {
               </div>
             </Popup>
             )}
-          </MapContainer>
-        )}
+        </MapContainer>
+      )}
       </section>
     </>
   );
 }
+
+/* Maps.propTypes = {
+  cityCoordinates: propTypes.array,
+};
+
+Maps.defaultProps = {
+  cityCoordinates: [48.864716, 2.349014],
+}; */
 
 export default Maps;
