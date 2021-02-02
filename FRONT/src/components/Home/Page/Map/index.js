@@ -1,11 +1,12 @@
-// import propTypes from 'prop-types';
+/* eslint-disable no-console */
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import L from 'leaflet';
-import React, { useEffect, useState } from 'react';
 import {
-  MapContainer, Marker, Popup, TileLayer, useMap
+  MapContainer, Marker, Popup, TileLayer, useMap,
 } from 'react-leaflet';
-import { Link } from 'react-router-dom';
+// import 'leaflet/dist/leaflet.css';
 import placeholder from '../../../../assets/Images/placeholder.png';
 import './style.scss';
 
@@ -27,9 +28,16 @@ function Maps() {
 
   // const [city, setCity] = useState([]);
 
-  const cityCoordinates = localStorage.getItem(cityCoordinates);
+  // coordinates from localStorage are string, so i transform them to array of numbers
+  const cityCoordinates = localStorage.getItem('cityCoordinates');
+  const cityCoordinatesToArray = cityCoordinates.split(',');
+  const arrayofNumbers = cityCoordinatesToArray.map((element) => parseFloat(element));
 
-  console.log(cityCoordinates);
+  if (cityCoordinates) {
+    cityCoord.splice(0, 1, arrayofNumbers[0]);
+    cityCoord.splice(1, 1, arrayofNumbers[1]);
+  }
+
   // // axios request to fetch adress data from server https://geo.api.gouv.fr/adresse
   // axios request to fetch users data from heroku server
   useEffect(() => {
@@ -55,6 +63,10 @@ function Maps() {
         setPosition(e.latlng);
         map.flyTo(e.latlng, map.getZoom());
       });
+      // Stops watching location previously initiated by map.locate
+      return function cleanup() {
+        map.stopLocate();
+      };
     }, []);
     // the code above, if you want to geolocate on click
     // const map = useMapEvents({
@@ -92,8 +104,8 @@ function Maps() {
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-
-          <LocationMarker />
+          {!cityCoordinates
+          && <LocationMarker />}
 
           {users.length
         && users.map((user) => (
@@ -119,56 +131,17 @@ function Maps() {
             // closeOnClick={false}
           >
             <div>
-              <p><Link to={`/commercant/profil/${activeUser.id}`}>{activeUser.shop_name}</Link></p>
-              {/* <p>{activeUser.activity_name}</p> */}
+              <h2><Link to={`/commercant/profil/:${activeUser.id}`}>{activeUser.shop_name}</Link></h2>
+              <p>{activeUser.activity_name}</p>
             </div>
           </Popup>
           )}
 
-            {users.length
-          && users.map((user) => (
-            (!isNaN(parseFloat(user.latitude)) || !isNaN(parseFloat(user.longitude)))
-              && (
-              <Marker
-                key={user.id}
-                position={[parseFloat(user.latitude), parseFloat(user.longitude)]}
-                eventHandlers={{
-                  mouseover: () => {
-                    console.log('marker clicked', user.shop_name);
-                    setActiveUser(user);
-                  },
-                }}
-              />
-              )
-          ))}
-            {/* check if there is an active user (if the visitor click on is marker),
-          if true, it shows a Popup */}
-            {activeUser && (
-            <Popup
-              position={[activeUser.latitude, activeUser.longitude]}
-              closeOnClick={false}
-              keepInView
-            >
-              <div>
-                {/* <h2>{activeUser.shop_name}</h2> */}
-                {/* <p> <Link to={`/user/${activeUser.id}`}>{activeUser.shop_name}</Link></p> */}
-                <p><Link to={`/commercant/profil/${activeUser.id}`}>{activeUser.shop_name}</Link></p>
-              </div>
-            </Popup>
-            )}
         </MapContainer>
       )}
       </section>
     </>
   );
 }
-
-/* Maps.propTypes = {
-  cityCoordinates: propTypes.array,
-};
-
-Maps.defaultProps = {
-  cityCoordinates: [48.864716, 2.349014],
-}; */
 
 export default Maps;
