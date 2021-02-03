@@ -1,9 +1,9 @@
 import React from 'react';
+import { NavLink, useParams } from 'react-router-dom';
 import './style.scss';
-import { HandleRoleIdChecked } from '../../redux/actions';
+// import { HandleRoleIdChecked } from '../../redux/actions';
 
-export const AddNewsForm = ({ title, activity_id, price, picture_url, visible, handleChangeField, handleAddNews, addNews }) => {
- 
+export const AddNewsForm = ({ title, activity_id, price, picture_url, id, handleChangeField, handleAddNews, addNews }) => {
  
   const handleChange = e => handleChangeField([e.target.name], e.target.value);
 
@@ -110,15 +110,17 @@ export const AddNewsForm = ({ title, activity_id, price, picture_url, visible, h
                   </svg>
                 </i>
               </button>
-              <button type="submit" className="news-valid-form-but">
-                <i className="picture-valid">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-x" width="32" height="32" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                  </svg>
-                </i>
-              </button>
+              <NavLink to={`/commercant/profil/${id}`}>
+                <button type="submit" className="news-valid-form-but">
+                  <i className="picture-valid">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-x" width="32" height="32" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <line x1="18" y1="6" x2="6" y2="18" />
+                      <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                  </i>
+                </button>
+              </NavLink>
             </div>
           </form>
         </div>
