@@ -1,4 +1,4 @@
-import { CHANGE_ADDNEWS_FIELD, SHOW_MODAL, HIDE_MODAL } from '../actions';
+import { CHANGE_ADDNEWS_FIELD, ADD_NEWS_SUCCESS} from '../actions';
 
 // Initial State
 const initialState = {
@@ -16,7 +16,7 @@ const initialState = {
 // reducer
 
 const reducerAddNews = (oldState = initialState, action) => {
-  console.log('oldState dans le reducer:', oldState);
+  // console.log('oldState dans le reducer:', oldState);
 
   switch (action.type) {
     case CHANGE_ADDNEWS_FIELD:
@@ -24,14 +24,11 @@ const reducerAddNews = (oldState = initialState, action) => {
         ...oldState,
         [action.name]: action.value,
       };
-    // case SHOW_MODAL:
-    //   return {
-    //     ...oldState,
-    //     modalType: action.modalType,
-    //     modalProps: action.modalProps
-    //   };
-    // case HIDE_MODAL:
-    //   return initialState
+    case ADD_NEWS_SUCCESS:
+      return {
+        ...oldState,
+        [action.name]: action.value,
+      };
     
     default:
       return { ...oldState };

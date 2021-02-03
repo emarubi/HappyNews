@@ -3,7 +3,7 @@ import { GET_USER_DETAILS_ERROR, GET_USER_DETAILS_SUCCESS } from 'src/redux/acti
 const initialState = {
   user: [],
 };
-console.log(initialState);
+// console.log(initialState);
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_USER_DETAILS_SUCCESS:

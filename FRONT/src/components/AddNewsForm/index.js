@@ -1,24 +1,28 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink, useParams } from 'react-router-dom';
 import './style.scss';
 
-export const AddNewsForm = ({ article_title, description, picture_url,price, activity_id, userId, handleChangeField }) => {
+export const AddNewsForm = ({ article_title, description, picture_url,price, userId, handleChangeField, activities, handleAddNews }) => {
  
+// console.log(state.auth.userId);
+
   const handleChange = e => handleChangeField([e.target.name], e.target.value);
 
-  const handleChangeImage = e => {
-    const reader = new FileReader() // Je crée un nouveau reader
-    const file = e.target.files[0] // Je récupère mon image 
-    reader.onloadend =() =>{ // Je la converti en blob afin de pouvoir l'envoyer au back.
-      // console.log('reader.result', reader.result)
-      handleChangeField('picture_url', reader.result)
-    }
-    console.log(reader.readAsDataURL(file))
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Titre :', article_title,'Description:', description,'activity_id:', activity_id,'price:', price,'picture_url:', picture_url)
+  // const handleChangeImage = e => {
+  //   const reader = new FileReader() // Je crée un nouveau reader
+  //   const file = e.target.files[0] // Je récupère mon image 
+  //   reader.onloadend =() =>{ // Je la converti en blob afin de pouvoir l'envoyer au back.
+  //     // console.log('reader.result', reader.result)
+  //     handleChangeField('picture_url', reader.result)
+  //   }
+  //   console.log(reader.readAsDataURL(file))
+  // }
+  console.log(handleAddNews);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    handleAddNews();
+    // console.log('Titre :', article_title,'Description:', description,'activity_id:', activity_id,'price:', price,'picture_url:', picture_url)
   };
 
   return (
@@ -28,7 +32,7 @@ export const AddNewsForm = ({ article_title, description, picture_url,price, act
           <span className="form-heading">Ajouter une News</span>
           <form method="post" 
             className="form-body" 
-            onSubmit={ handleSubmit }
+            onSubmit={handleSubmit}
             >
             <div className="input-group">
               <i className="news-title" />
@@ -60,15 +64,9 @@ export const AddNewsForm = ({ article_title, description, picture_url,price, act
                 name="activity_id"
                 placeholder="Catégorie..."
               >
-                <option id= "1" value="boulangerie">boulangerie</option>
-                <option id= "2" value="boucherie">boucherie</option>
-                <option id= "5" value="charcuterie">charcuterie</option>
-                <option id= "" value="coiffeur">coiffeur</option>
-                <option id= "3" value="fleuriste">fleuriste</option>
-                <option id= "4" value="fromagerie">fromagerie</option>
-                <option id= "6" value="garagiste">garagiste</option>
-                <option id= "9" value="papeterie">papeterie</option>
-                <option id= "7" value="primeur">primeur</option>
+                {activities.map((tag) => (
+                <option key={tag.id} value={tag.id}>{tag.activity_name}</option>
+                ))}
               </select>
               <span className="bar" />
             </div>
@@ -90,7 +88,7 @@ export const AddNewsForm = ({ article_title, description, picture_url,price, act
                 type="file"
                 value={picture_url}
                 accept="image" 
-                onChange={e => handleChangeImage(e)}
+                onChange={e => handleChange(e)}
                 //multiple
               />
               <span className="bar"></span>
@@ -124,13 +122,21 @@ export const AddNewsForm = ({ article_title, description, picture_url,price, act
   );
 };
 
-// AddNewsForm.propTypes = {
-//   title: PropTypes.string.isRequired,
-//   description: PropTypes.string.isRequired,
-//   category: PropTypes.string.isRequired,
-//   price: PropTypes.string.isRequired,
-//   file: PropTypes.array.isRequired,
-//   handleSubmit: PropTypes.func.isRequired,
-// };
+// ({ article_title, description, picture_url,price, activity_id, userId, handleChangeField }
+
+AddNewsForm.propTypes = {
+  handleAddNews: PropTypes.func.isRequired,
+  article_title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  // activity_id: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  picture_url: PropTypes.string.isRequired,
+  activities: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      activity_name: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+};
 
 // export default AddNewsForm;
