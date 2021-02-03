@@ -28,14 +28,9 @@ function Maps({
 
   // const [users, setUsers] = useState([]);
 
-  // const [city, setCity] = useState([]);
-  console.log('cityCoordinates', cityCoordinates);
-  // coordinates from localStorage are string, so i transform them to array of numbers
-  // const cityCoordinates = localStorage.getItem('cityCoordinates');
-
   if (cityCoordinates.length) {
-    const cityCoordinatesToArray = cityCoordinates.split(',');
-    const arrayofNumbers = cityCoordinatesToArray.map((element) => parseFloat(element));
+    // const cityCoordinatesToArray = cityCoordinates.split(',');
+    const arrayofNumbers = cityCoordinates.map((element) => parseFloat(element));
     cityCoord.splice(0, 1, arrayofNumbers[0]);
     cityCoord.splice(1, 1, arrayofNumbers[1]);
   }
