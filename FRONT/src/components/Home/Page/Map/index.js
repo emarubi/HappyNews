@@ -131,7 +131,7 @@ function Maps() {
             // closeOnClick={false}
           >
             <div>
-              <h2><Link to={`/commercant/profil/:${activeUser.id}`}>{activeUser.shop_name}</Link></h2>
+              <h2><Link to={`/commercant/profil/${activeUser.id}`}>{activeUser.shop_name}</Link></h2>
               <p>{activeUser.activity_name}</p>
             </div>
           </Popup>
