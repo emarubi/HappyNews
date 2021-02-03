@@ -11,6 +11,17 @@ export const SUBSCRIBE_SUCCESS = 'GET_SELECT_FIELD';
 export const ADD_NEWS_SUCCESS = 'ADD_NEWS_SUCCESS';
 export const ADD_NEWS = 'ADD_NEWS';
 export const CHANGE_ADDNEWS_FIELD = 'CHANGE_ADDNEWS_FIELD';
+export const GET_ALL_USERS = 'GET_ALL_USERS';
+export const GET_ALL_USERS_SUCCESS = 'GET_ALL_USERS_SUCCESS';
+
+export const getAllUsers = () => ({
+  type: GET_ALL_USERS,
+});
+
+export const getAllUsersSuccess = (users) => ({
+  type: GET_ALL_USERS_SUCCESS,
+  users,
+});
 // function to change input field
 /* export const changeAuthField = (value, name) => ({
     type: CHANGE_AUTH_FIELD,

@@ -1,7 +1,7 @@
-/* eslint-disable no-console */
+import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 import L from 'leaflet';
 import {
   MapContainer, Marker, Popup, TileLayer, useMap,
@@ -19,21 +19,23 @@ const visitorIcon = L.icon({
 const zoom = 14;
 const cityCoord = [48.864716, 2.349014];
 
-function Maps() {
+function Maps({
+  cityCoordinates, getAllUsers, getAllUsersSuccess, users,
+}) {
   // define a state for an activeUser, when the visitor click on a user Marker on the map
   // if the vsitor doesn't select a user Marker, the activeUser is set at null in the state
   const [activeUser, setActiveUser] = useState(null);
 
-  const [users, setUsers] = useState([]);
+  // const [users, setUsers] = useState([]);
 
   // const [city, setCity] = useState([]);
-
+  console.log('cityCoordinates', cityCoordinates);
   // coordinates from localStorage are string, so i transform them to array of numbers
-  const cityCoordinates = localStorage.getItem('cityCoordinates');
-  const cityCoordinatesToArray = cityCoordinates.split(',');
-  const arrayofNumbers = cityCoordinatesToArray.map((element) => parseFloat(element));
+  // const cityCoordinates = localStorage.getItem('cityCoordinates');
 
-  if (cityCoordinates) {
+  if (cityCoordinates.length) {
+    const cityCoordinatesToArray = cityCoordinates.split(',');
+    const arrayofNumbers = cityCoordinatesToArray.map((element) => parseFloat(element));
     cityCoord.splice(0, 1, arrayofNumbers[0]);
     cityCoord.splice(1, 1, arrayofNumbers[1]);
   }
@@ -41,14 +43,7 @@ function Maps() {
   // // axios request to fetch adress data from server https://geo.api.gouv.fr/adresse
   // axios request to fetch users data from heroku server
   useEffect(() => {
-    axios.get('https://api-happy-news.herokuapp.com/user')
-      .then((response) => {
-        console.log(response);
-        setUsers(response.data.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    getAllUsers();
   }, []);
 
   // const [map, setMap] = useState();
@@ -104,7 +99,7 @@ function Maps() {
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          {!cityCoordinates
+          {!cityCoordinates.length
           && <LocationMarker />}
 
           {users.length
@@ -143,5 +138,24 @@ function Maps() {
     </>
   );
 }
+
+Maps.propTypes = {
+  getAllUsersSuccess: PropTypes.func.isRequired,
+  getAllUsers: PropTypes.func.isRequired,
+  cityCoordinates: PropTypes.array,
+  users: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      shop_name: PropTypes.string.isRequired,
+      activity_name: PropTypes.string.isRequired,
+      latitude: PropTypes.string.isRequired,
+      longitude: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+};
+
+Maps.defaultProps = {
+  cityCoordinates: [],
+};
 
 export default Maps;

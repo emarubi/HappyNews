@@ -1,6 +1,6 @@
 import React from 'react';
 import Customer from './Customer/index';
-import Maps from './Map/index';
+import Maps from '../../../containers/map';
 import Retailer from './Retailer/index';
 // == Import du CSS
 import './style.scss';

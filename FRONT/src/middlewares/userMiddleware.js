@@ -1,10 +1,23 @@
 import axios from 'axios';
 // import { useParams } from 'react-router-dom';
 // import FormData from 'form-data';
-import { getUserDetailsSuccess, GET_USER_DETAILS } from '../redux/actions';
+import {
+  getAllUsers, getAllUsersSuccess, getUserDetailsSuccess, GET_USER_DETAILS, GET_ALL_USERS,
+} from '../redux/actions';
 
 const userApi = (store) => (next) => (action) => {
   switch (action.type) {
+    // shows all shop owners on the map when starts
+    case GET_ALL_USERS:
+      axios.get('https://api-happy-news.herokuapp.com/user')
+        .then((response) => {
+          console.log(response.data.data);
+          store.dispatch(getAllUsersSuccess(response.data.data));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      break;
     case GET_USER_DETAILS: {
       // let params = action.id
       console.log('je suis dans middl');
