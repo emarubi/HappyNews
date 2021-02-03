@@ -15,6 +15,8 @@ const searchReducer = (state = initialState, action) => {
       return { ...state, activitySelected: action.value };
     case GET_CITY_FROM_API_SUCCESS:
       return { ...state, cityCoordinates: action.cityCoordinates };
+/*     case RESET_ACTIVITY_SELECTED:
+      return { ...state, activitySelected: action.value }; */
     default:
       return { ...state };
   }

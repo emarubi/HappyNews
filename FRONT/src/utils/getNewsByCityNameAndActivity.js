@@ -1,8 +1,16 @@
 const getNewsByCityNameAndActivity = (news, city, activity) => {
+  if (activity === '' && city === '') {
+    return news;
+  }
   if (city === '') {
-    return news;
-  } if (activity === '') {
-    return news;
+    const filteredNews = (
+      news.filter((item2) => item2.activity_name.toLowerCase() === activity.toLowerCase()));
+    return (filteredNews);
+  }
+  if (activity === '') {
+    const filteredNews = (
+      news.filter((item) => item.city.toLowerCase() === city.toLowerCase()));
+    return filteredNews;
   }
   // on prend toutes les news en parametre
   // on filtre sur la ville du commerçant (city)
@@ -15,3 +23,4 @@ const getNewsByCityNameAndActivity = (news, city, activity) => {
 };
 
 export default getNewsByCityNameAndActivity;
+

@@ -9,9 +9,8 @@ import NewsModal from 'src/components/NewsModal';
 import Spinner from 'src/components/Spinner';
 
 // utils
-// import getNewsByActivity from 'src/utils/getNewsByActivity';
-// import getNewsByCityName from 'src/utils/getNewsByCityName';
 import getNewsByCityNameAndActivity from 'src/utils/getNewsByCityNameAndActivity';
+
 // Import du CSS
 import './style.scss';
 
@@ -36,15 +35,9 @@ const News = ({
     getNewsByCityNameAndActivity(list, searchValue, activitySelected);
   }, [searchValue, activitySelected]);
 
-  /*   useEffect(() => {
-    getNewsByCityName(list, searchValue);
-    console.log(filteredNews);
-  }, [searchValue]);
-
-  useEffect(() => {
-    getNewsByActivity(list, activitySelected);
-    console.log(filteredNews);
-  }, [activitySelected]); */
+  /* useEffect(() => {
+    resetActivitySelected('');
+  }, []); */
 
   const { register, handleSubmit, errors } = useForm();
   return (
@@ -152,7 +145,6 @@ News.propTypes = {
 News.defaultProps = {
   searchValue: '',
   activitySelected: '',
-  cityCoordinates: [],
 };
 
 export default News;

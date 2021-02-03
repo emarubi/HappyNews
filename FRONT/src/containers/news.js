@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 // composant de présentation
 import News from 'src/components/News';
 import {
-  changeSearchValueAction, handleSearchSubmit, handleSelectedActivity, getCityFromApiSuccess
+  changeSearchValueAction, handleSearchSubmit, handleSelectedActivity, getCityFromApiSuccess,
 } from 'src/redux/actions';
 
 const mapStateToProps = (state) => ({
@@ -43,6 +43,9 @@ const mapDispatchToProps = (dispatch) => ({
   getCityFromApiSuccess: (cityCoordinates) => {
     dispatch(getCityFromApiSuccess(cityCoordinates));
   },
+/*   resetActivitySelected: (value) => {
+    dispatch(resetActivitySelected(value));
+  }, */
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(News);

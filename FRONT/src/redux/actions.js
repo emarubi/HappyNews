@@ -50,6 +50,7 @@ export const CHANGE_SEARCH_VALUE = 'CHANGE_SEARCH_VALUE';
 export const GET_CITY_FROM_API = 'GET_CITY_FROM_API';
 export const ACTIVITY_SELECTED = 'ACTIVITY_SELECTED';
 export const GET_CITY_FROM_API_SUCCESS = 'GET_CITY_FROM_API_SUCCESS';
+// export const RESET_ACTIVITY_SELECTED = 'RESET_ACTIVITY_SELECTED';
 
 export const changeSearchValueAction = (value, name) => ({
   type: CHANGE_SEARCH_VALUE,
@@ -76,6 +77,13 @@ export const getCityFromApiSuccess = (cityCoordinates) => ({
   type: GET_CITY_FROM_API_SUCCESS,
   cityCoordinates,
 });
+
+/* export const resetActivitySelected = (value) => ({
+  type: RESET_ACTIVITY_SELECTED,
+  value,
+}); */
+
+// FIN ACTION CREATOR DE YANN
 
 // export for gettting user in retailler's profil information
 export const GET_USER_DETAILS = 'GET_USER_DETAILS';
