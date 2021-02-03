@@ -45,13 +45,13 @@ export const addNews = () => ({
 });
 
 // Action Creator Paco Show modal
-export const showModalAction = () => ({
-  type: 'SHOW_MODAL',
-  modalType: 'DELETE_POST',
-  modalProps: {
-    postId: 42
-  }
-}) 
+// export const showModalAction = () => ({
+//   type: 'SHOW_MODAL',
+//   modalType: 'DELETE_POST',
+//   modalProps: {
+//     postId: 42
+//   }
+// }) 
 // >>>>>>> origin/front/getDataFromNewsForm
 
 // ACTION CREATOR YANN

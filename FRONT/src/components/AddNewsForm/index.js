@@ -1,20 +1,16 @@
 import React from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import './style.scss';
-// import { HandleRoleIdChecked } from '../../redux/actions';
 
-export const AddNewsForm = ({ title, activity_id, price, picture_url, id, handleChangeField, handleAddNews, addNews }) => {
+export const AddNewsForm = ({ article_title, description, picture_url,price, activity_id, userId, handleChangeField }) => {
  
   const handleChange = e => handleChangeField([e.target.name], e.target.value);
 
   const handleChangeImage = e => {
-    // Je crée un nouveau reader
-    const reader = new FileReader()
-    // Je récupère mon image
-    const file = e.target.files[0]
-    // Je la converti en blob afin de pouvoir l'envoyer au back. 
-    reader.onloadend =() =>{
-      console.log('reader.result', reader.result)
+    const reader = new FileReader() // Je crée un nouveau reader
+    const file = e.target.files[0] // Je récupère mon image 
+    reader.onloadend =() =>{ // Je la converti en blob afin de pouvoir l'envoyer au back.
+      // console.log('reader.result', reader.result)
       handleChangeField('picture_url', reader.result)
     }
     console.log(reader.readAsDataURL(file))
@@ -22,7 +18,7 @@ export const AddNewsForm = ({ title, activity_id, price, picture_url, id, handle
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addNews();
+    console.log('Titre :', article_title,'Description:', description,'activity_id:', activity_id,'price:', price,'picture_url:', picture_url)
   };
 
   return (
@@ -31,17 +27,15 @@ export const AddNewsForm = ({ title, activity_id, price, picture_url, id, handle
         <div className="form-container">
           <span className="form-heading">Ajouter une News</span>
           <form method="post" 
-            //action="" 
             className="form-body" 
-            onSubmit={e => handleSubmit(e)}
-            //encType="multipart/form-data"
+            onSubmit={ handleSubmit }
             >
             <div className="input-group">
               <i className="news-title" />
               <input
                 name="article_title"
                 type="text"
-                value={title}
+                value={article_title}
                 placeholder="Titre..." 
                 onChange={e => handleChange(e)}
                 required
@@ -53,7 +47,7 @@ export const AddNewsForm = ({ title, activity_id, price, picture_url, id, handle
               <input
                 name="description"
                 type="text"
-                value={activity_id}
+                value={description}
                 placeholder="Description..."
                 onChange={(e) => handleChange(e)}
               />
@@ -66,15 +60,15 @@ export const AddNewsForm = ({ title, activity_id, price, picture_url, id, handle
                 name="activity_id"
                 placeholder="Catégorie..."
               >
-                <option value="boulangerie">boulangerie</option>
-                <option value="boucherie">boucherie</option>
-                <option value="charcuterie">charcuterie</option>
-                <option value="coiffeur">coiffeur</option>
-                <option value="fleuriste">fleuriste</option>
-                <option value="fromagerie">fromagerie</option>
-                <option value="garagiste">garagiste</option>
-                <option value="papeterie">papeterie</option>
-                <option value="primeur">primeur</option>
+                <option id= "1" value="boulangerie">boulangerie</option>
+                <option id= "2" value="boucherie">boucherie</option>
+                <option id= "5" value="charcuterie">charcuterie</option>
+                <option id= "" value="coiffeur">coiffeur</option>
+                <option id= "3" value="fleuriste">fleuriste</option>
+                <option id= "4" value="fromagerie">fromagerie</option>
+                <option id= "6" value="garagiste">garagiste</option>
+                <option id= "9" value="papeterie">papeterie</option>
+                <option id= "7" value="primeur">primeur</option>
               </select>
               <span className="bar" />
             </div>
@@ -110,8 +104,8 @@ export const AddNewsForm = ({ title, activity_id, price, picture_url, id, handle
                   </svg>
                 </i>
               </button>
-              <NavLink to={`/commercant/profil/${id}`}>
-                <button type="submit" className="news-valid-form-but">
+              <NavLink to={`/commercant/profil/${userId}`}>
+                <button className="news-valid-form-but">
                   <i className="picture-valid">
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-x" width="32" height="32" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />

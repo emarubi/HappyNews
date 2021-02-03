@@ -9,9 +9,10 @@ const initialState = {
     is_news: true, 
     user_id: null, // A récupérer depuis le localstorage
     activity_id: '', // A récupérer depuis un champs déroulant. 9 id différents à récup dans le back
-    modalType: null,
-    modalProps: {}
+    // modalType: null,
+    // modalProps: {}
 }
+
 // reducer
 
 const reducerAddNews = (oldState = initialState, action) => {
@@ -23,14 +24,14 @@ const reducerAddNews = (oldState = initialState, action) => {
         ...oldState,
         [action.name]: action.value,
       };
-    case SHOW_MODAL:
-      return {
-        ...oldState,
-        modalType: action.modalType,
-        modalProps: action.modalProps
-      };
-    case HIDE_MODAL:
-      return initialState
+    // case SHOW_MODAL:
+    //   return {
+    //     ...oldState,
+    //     modalType: action.modalType,
+    //     modalProps: action.modalProps
+    //   };
+    // case HIDE_MODAL:
+    //   return initialState
     
     default:
       return { ...oldState };
