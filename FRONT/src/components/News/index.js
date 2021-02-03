@@ -31,9 +31,11 @@ const News = ({
     loadActivities();
   }, []);
 
+  // Ajout d'un useEffect pour le filtre par recherche dans l'input
+  // Ou par activité ou les 2
   useEffect(() => {
     getNewsByCityNameAndActivity(list, searchValue, activitySelected);
-  }, [searchValue, activitySelected]);
+  }, [list, searchValue, activitySelected]);
 
   /* useEffect(() => {
     resetActivitySelected('');
@@ -102,7 +104,7 @@ const News = ({
         {filteredNews && filteredNews.map((news) => (
           <div key={news.id} className="newsList__item">
             {hasData && <NewsModal news={news} />}
-            {/* Affichage conditionnel : si pas de donnée, pas de News */}
+            {/* Affichage conditionnel avec hasData : si pas de donnée, pas de News */}
           </div>
         ))}
       </section>
