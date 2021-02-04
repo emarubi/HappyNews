@@ -5,7 +5,6 @@ import './style.scss';
 
 export const AddNewsForm = ({ article_title, description, picture_url,price, userId, handleChangeField, activities, handleAddNews }) => {
  
-// console.log(state.auth.userId);
 
   const handleChange = e => handleChangeField([e.target.name], e.target.value);
 
@@ -26,7 +25,6 @@ export const AddNewsForm = ({ article_title, description, picture_url,price, use
   const handleSubmit = (event) => {
     event.preventDefault();
     handleAddNews();
-    // e.target.reset()
   };
 
   return (
@@ -61,20 +59,6 @@ export const AddNewsForm = ({ article_title, description, picture_url,price, use
               />
               <span className="bar" />
             </div>
-            {/* <div className="input-group">
-              <i className="news-category" />
-              <select
-                onChange={(e) => handleChange(e)}
-                name="activity_id"
-                placeholder="Catégorie..."
-                // value=""
-              >
-                {activities.map((tag) => (
-                <option className="input-group" placeholder="Catégorie..." key={tag.id} value={tag.id} selected="charcuterie">{tag.activity_name}</option>
-                ))}
-              </select>
-              <span className="bar" />
-            </div> */}
             <div className="input-group">
               <i className="news-price" />
               <input
@@ -94,7 +78,6 @@ export const AddNewsForm = ({ article_title, description, picture_url,price, use
                 value={picture_url}
                 accept="image" 
                 onChange={e => handleChange(e)}
-                //multiple
               />
               <span className="bar"></span>
             </div>
@@ -127,7 +110,7 @@ export const AddNewsForm = ({ article_title, description, picture_url,price, use
   );
 };
 
-// ({ article_title, description, picture_url,price, activity_id, userId, handleChangeField }
+// ------------- Proptypes ----------
 
 AddNewsForm.propTypes = {
   handleAddNews: PropTypes.func.isRequired,
@@ -144,4 +127,4 @@ AddNewsForm.propTypes = {
   ).isRequired,
 };
 
-// export default AddNewsForm;
+
