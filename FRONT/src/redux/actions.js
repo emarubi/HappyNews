@@ -178,9 +178,13 @@ export const deleteNews = (value) => ({
   type: DELETE_NEWS,
   value,
 });
-export const deleteNewsSuccess = () => ({
-  type: DELETE_NEWS_SUCCESS,
-});
+export const deleteNewsSuccess = (message) => {
+  console.log('je suis dans ma reponse success');
+  return {
+    type: DELETE_NEWS_SUCCESS,
+    message,
+  };
+};
 export const deleteNewsError = () => ({
   type: DELETE_NEWS_ERROR,
 });

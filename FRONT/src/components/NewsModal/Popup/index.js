@@ -5,7 +5,6 @@ import './style.scss';
 const PopUp = ({ changePopup, handleDelete, news }) => {
   const handleDeleteCard = (event) => {
     handleDelete(event.target.value);
-    console.log(event.target.value);
   };
   return (
 
@@ -22,7 +21,7 @@ const PopUp = ({ changePopup, handleDelete, news }) => {
         <button
           type="button"
           className="popup_bouton_delete"
-        // name={news.article_title}
+          name={news.article_title}
           value={news.id}
         //   onClick={(event) => handleDelete(console.log(event.target.value))}
           onClick={handleDeleteCard}

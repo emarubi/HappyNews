@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { MdDeleteForever } from 'react-icons/md';
 import PopUp from 'src/containers/popup';
-// import PopUp from './Popup';
 import './style.scss';
 
 const NewsModal = ({

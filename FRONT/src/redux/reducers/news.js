@@ -1,3 +1,4 @@
+import { DELETE_NEWS_SUCCESS } from 'src/redux/actions';
 // state initial de la tranche "newsList" notre store
 const initialState = {
   list: [],
@@ -12,6 +13,10 @@ const newsReducer = (oldState = initialState, action) => {
         ...oldState,
         list: action.list,
 
+      };
+    case DELETE_NEWS_SUCCESS:
+      return {
+        ...oldState,
       };
     default:
       return { ...oldState };

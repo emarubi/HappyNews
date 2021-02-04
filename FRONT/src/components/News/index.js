@@ -1,16 +1,14 @@
 import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { NavLink } from 'react-router-dom';
 import Button from 'src/components/Header/Button';
 // Import des composants
 import Field from 'src/components/Login/Field';
 import NewsModal from 'src/components/NewsModal';
 import Spinner from 'src/components/Spinner';
-
 // utils
 import getNewsByCityNameAndActivity from 'src/utils/getNewsByCityNameAndActivity';
-
 // Import du CSS
 import './style.scss';
 
@@ -30,6 +28,10 @@ const News = ({
     // loadActivities: une prop qui charge les acitivités (les catégories de news)
     loadActivities();
   }, []);
+
+  useEffect(() => {
+    loadNews();
+  }, [list.id]);
 
   // Ajout d'un useEffect pour le filtre par recherche dans l'input
   // Ou par activité ou les 2
