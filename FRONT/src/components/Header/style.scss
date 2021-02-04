@@ -6,22 +6,49 @@
   display: flex ;
   justify-content: space-between;
   text-align: center;
-  background: vars.$Background;
+  background: vars.$Clear;
   color: vars.$Dark;
   height: 7em;
   width: 100%;
   font-size: 1.2em;
   padding: 1em;
   box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.6);
-  &-nav {
-  display: flex;
-  width: 33%;
-  justify-content:flex-end;
-  align-items: center;
-  }
-  &-helloUser {
-    font-weight: 500;
-    margin: 0 1em 0 0.5em;
+
+    &-nav {
+      display: flex;
+      width: 33%;
+      justify-content:space-evenly;
+      align-items: center;
+      margin-top: .4em;
+    }
+
+    &-helloUser {
+      font-weight: 500;
+      margin: 0 1em 0 0.5em;
+    }
+}
+
+@media (min-width: 1200px) {
+  .header {
+    max-width: 60vw;
+    margin: 0 auto;
   }
 }
+
+@media (max-width: 800px) and (orientation: portrait) {
+  .header {
+    max-width: 90vw;
+    margin: 1em auto;
+    height: 8em;
+
+    &-nav {
+      margin-top: .4em;
+      margin-right: .4em;
+      flex-direction: column;
+      justify-content: center;
+      height: 80%;
+
+      }
+    }
+  }
 

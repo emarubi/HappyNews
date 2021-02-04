@@ -20,7 +20,7 @@ const zoom = 14;
 const cityCoord = [48.864716, 2.349014];
 
 function Maps({
-  cityCoordinates, getAllUsers, getAllUsersSuccess, users,
+  cityCoordinates, getAllUsers, users,
 }) {
   // define a state for an activeUser, when the visitor click on a user Marker on the map
   // if the vsitor doesn't select a user Marker, the activeUser is set at null in the state
@@ -88,7 +88,7 @@ function Maps({
         <MapContainer
           center={cityCoord}
           zoom={zoom}
-          // style={{ height: '70vh' }}
+          scrollWheelZoom={false}
         >
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -135,7 +135,6 @@ function Maps({
 }
 
 Maps.propTypes = {
-  getAllUsersSuccess: PropTypes.func.isRequired,
   getAllUsers: PropTypes.func.isRequired,
   cityCoordinates: PropTypes.array,
   users: PropTypes.arrayOf(
