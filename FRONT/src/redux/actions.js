@@ -65,7 +65,7 @@ export const addNewsSuccess = (data) => ({
 //   modalProps: {
 //     postId: 42
 //   }
-// }) 
+// })
 // >>>>>>> origin/front/getDataFromNewsForm
 
 // ACTION CREATOR YANN
@@ -167,4 +167,20 @@ export const getUserDetailsSuccess = (user) => ({
 });
 export const getUserDetailsError = () => ({
   type: GET_USER_DETAILS_ERROR,
+});
+
+// delete news
+export const DELETE_NEWS = 'DELETE_NEWS';
+export const DELETE_NEWS_SUCCESS = 'DELETE_NEWS_SUCCESS';
+export const DELETE_NEWS_ERROR = 'DELETE_NEWS_ERROR';
+
+export const deleteNews = (value) => ({
+  type: DELETE_NEWS,
+  value,
+});
+export const deleteNewsSuccess = () => ({
+  type: DELETE_NEWS_SUCCESS,
+});
+export const deleteNewsError = () => ({
+  type: DELETE_NEWS_ERROR,
 });
