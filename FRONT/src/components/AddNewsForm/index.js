@@ -26,6 +26,7 @@ export const AddNewsForm = ({ article_title, description, picture_url,price, use
   const handleSubmit = (event) => {
     event.preventDefault();
     handleAddNews();
+    // e.target.reset()
   };
 
   return (
@@ -66,9 +67,10 @@ export const AddNewsForm = ({ article_title, description, picture_url,price, use
                 onChange={(e) => handleChange(e)}
                 name="activity_id"
                 placeholder="Catégorie..."
+                // value=""
               >
                 {activities.map((tag) => (
-                <option className="input-group" key={tag.id} value={tag.id}>{tag.activity_name}</option>
+                <option className="input-group" placeholder="Catégorie..." key={tag.id} value={tag.id} selected="charcuterie">{tag.activity_name}</option>
                 ))}
               </select>
               <span className="bar" />

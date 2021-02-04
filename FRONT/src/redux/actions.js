@@ -53,9 +53,8 @@ export const handleAddNews = () => ({
   type: ADD_NEWS,
 });
 
-export const addNewsSuccess = (data) => ({
+export const addNewsSuccess = () => ({
   type: ADD_NEWS_SUCCESS,
-  data,
 });
 
 // Action Creator Paco Show modal

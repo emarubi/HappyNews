@@ -25,9 +25,17 @@ const reducerAddNews = (oldState = initialState, action) => {
         [action.name]: action.value,
       };
     case ADD_NEWS_SUCCESS:
+      console.log("case addNewsSuccess");
       return {
         ...oldState,
-        [action.name]: action.value,
+        article_title: '',
+        description: '',
+        picture_url: '',
+        price: '',
+        is_news: true, 
+        user_id: null, 
+        activity_id: '',
+        window: window.alert("La news a été ajoutée avec succès")
       };
     
     default:

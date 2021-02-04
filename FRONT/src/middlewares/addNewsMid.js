@@ -40,23 +40,25 @@ const add = (store) => (next) => (action) => {
           'Content-Type' : 'multipart/form-data', // Ici on précise le type de data qu'on envoie. Celui-ci sert à pouvoir envoyer du texte et des fichiers
           Authorization: `Bearer ${token}`,
         },
+        
         data: formData, 
       };
 
       axios(config) // On lance la requête
         .then((response) => { // La requête réussit
-          console.log('Je suis dans la réponse, et response.data vaut:', response.data);
+          // console.log('Je suis dans axios.then, et response.data vaut:', response.data);
           store.dispatch(console.log(response.data));
+          ;
           // addNewsSuccess(response.data)
 
-          // const { userToken } = response.data; // On stocke le contenu de la réponse dans le userToken
-          // localStorage.setItem('token', userToken); // On le stocke aussi dans le localStorage
-          // TODO: faire les différents clg en fonction des datas envoyées pour vérifier que tout passe correctement. 
+          
 
 
         })
         .catch((error) => { // La requête échoue
-          console.log('Je suis dans la réponse, et response.error vaut:', error);
+          if (error) {
+            // console.log('Je suis dans l\'erreur, et response.error vaut:', error);
+          }
         })
       break;
     }
