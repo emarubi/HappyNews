@@ -46,17 +46,13 @@ const add = (store) => (next) => (action) => {
 
       axios(config) // On lance la requête
         .then((response) => { // La requête réussit
-          // console.log('Je suis dans axios.then, et response.data vaut:', response.data);
-          store.dispatch(console.log(response.data));
-          ;
+          console.log('Je suis dans axios.then, et response.data vaut:', response.data);
+          store.dispatch({ type: ADD_NEWS_SUCCESS, newNews: response.data });
           // addNewsSuccess(response.data)
-
-          
-
-
         })
         .catch((error) => { // La requête échoue
           if (error) {
+            window.alert("La création de news a échoué, merci de remplir tous les champs du formulaire")
             // console.log('Je suis dans l\'erreur, et response.error vaut:', error);
           }
         })
