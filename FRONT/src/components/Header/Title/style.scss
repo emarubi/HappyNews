@@ -1,12 +1,12 @@
 @use 'src/styles/vars';
 .title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    //display: flex;
+    //flex-direction: column;
+    //align-items: center;
     width: 33%;
     &-h1 {
     font-family:  'Quicksand', 'Inter', 'Roboto',sans-serif;
-    margin-bottom: 0.2em;
+    margin: auto;
     padding-bottom: 0.4em;
     transition: 0.5s;
     color: vars.$Dark;
@@ -38,7 +38,15 @@ h1 {
 }
 // max size 688 px
 @media screen and (max-width: 688px){
-h1 {
-    font-size: 1.5em;
+  .title {
+    position: absolute;
+
+    h1 {
+      position: relative;
+      top: 2.1em;
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+      //width: 7em;
+    }
   }
 }

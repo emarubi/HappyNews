@@ -1,7 +1,7 @@
 @use 'src/styles/vars';
 
 .avatar {
-    width: 40%;
+  //  width: 40%;
 }
   .avatar img {
     width: 30%;
@@ -45,4 +45,11 @@
         width: 60px;
      
     }
+}
+
+@media screen and (max-width: 688px){
+  .avatar-img {
+      width: 20vw;
+   
+  }
 }

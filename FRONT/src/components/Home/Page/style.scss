@@ -16,6 +16,12 @@
 @media (min-width: 1200px) {
   .main_container {
     max-width: 60vw;
-    margin: 0 auto;
+    margin: .5em auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .map__information {
+    padding: .5em .5em;
   }
 }
