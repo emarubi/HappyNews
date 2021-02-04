@@ -61,7 +61,7 @@ export const AddNewsForm = ({ article_title, description, picture_url,price, use
               />
               <span className="bar" />
             </div>
-            <div className="input-group">
+            {/* <div className="input-group">
               <i className="news-category" />
               <select
                 onChange={(e) => handleChange(e)}
@@ -74,7 +74,7 @@ export const AddNewsForm = ({ article_title, description, picture_url,price, use
                 ))}
               </select>
               <span className="bar" />
-            </div>
+            </div> */}
             <div className="input-group">
               <i className="news-price" />
               <input
