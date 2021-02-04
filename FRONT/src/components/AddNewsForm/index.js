@@ -9,20 +9,23 @@ export const AddNewsForm = ({ article_title, description, picture_url,price, use
 
   const handleChange = e => handleChangeField([e.target.name], e.target.value);
 
-  // const handleChangeImage = e => {
-  //   const reader = new FileReader() // Je crée un nouveau reader
-  //   const file = e.target.files[0] // Je récupère mon image 
-  //   reader.onloadend =() =>{ // Je la converti en blob afin de pouvoir l'envoyer au back.
-  //     // console.log('reader.result', reader.result)
-  //     handleChangeField('picture_url', reader.result)
-  //   }
-  //   console.log(reader.readAsDataURL(file))
-  // }
+  {/** ------------- Récupère l'image et la transforme en blob --------
+     const handleChangeImage = e => {
+    const reader = new FileReader() // Je crée un nouveau reader
+    const file = e.target.files[0] // Je récupère mon image 
+    reader.onloadend =() =>{ // Je la converti en blob afin de pouvoir l'envoyer au back.
+      // console.log('reader.result', reader.result)
+      handleChangeField('picture_url', reader.result)
+    }
+    console.log(reader.readAsDataURL(file))
+  }
+   */}
+
+ 
   console.log(handleAddNews);
   const handleSubmit = (event) => {
     event.preventDefault();
     handleAddNews();
-    // console.log('Titre :', article_title,'Description:', description,'activity_id:', activity_id,'price:', price,'picture_url:', picture_url)
   };
 
   return (
@@ -65,7 +68,7 @@ export const AddNewsForm = ({ article_title, description, picture_url,price, use
                 placeholder="Catégorie..."
               >
                 {activities.map((tag) => (
-                <option key={tag.id} value={tag.id}>{tag.activity_name}</option>
+                <option className="input-group" key={tag.id} value={tag.id}>{tag.activity_name}</option>
                 ))}
               </select>
               <span className="bar" />
