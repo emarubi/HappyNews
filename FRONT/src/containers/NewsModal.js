@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-
 // composant de présentation
 import NewsModal from 'src/components/NewsModal';
 

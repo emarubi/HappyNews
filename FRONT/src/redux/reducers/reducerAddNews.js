@@ -1,17 +1,17 @@
-import { CHANGE_ADDNEWS_FIELD, ADD_NEWS_SUCCESS} from '../actions';
+import { ADD_NEWS_SUCCESS, CHANGE_ADDNEWS_FIELD } from '../actions';
 
 // Initial State
 const initialState = {
-    article_title: '',
-    description: '',
-    picture_url: '',
-    price: '',
-    is_news: true, 
-    user_id: null, // A récupérer depuis le localstorage
-    activity_id: '', // A récupérer depuis un champs déroulant. 9 id différents à récup dans le back
-    // modalType: null,
-    // modalProps: {}
-}
+  article_title: '',
+  description: '',
+  picture_url: '',
+  price: '',
+  is_news: true,
+  user_id: null, // A récupérer depuis le localstorage
+  activity_id: '', // A récupérer depuis un champs déroulant. 9 id différents à récup dans le back
+  // modalType: null,
+  // modalProps: {}
+};
 
 // reducer
 
@@ -29,7 +29,7 @@ const reducerAddNews = (oldState = initialState, action) => {
         ...oldState,
         [action.name]: action.value,
       };
-    
+
     default:
       return { ...oldState };
   }

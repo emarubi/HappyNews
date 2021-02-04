@@ -1,17 +1,18 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink, useParams } from 'react-router-dom';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './style.scss';
 
-export const AddNewsForm = ({ article_title, description, picture_url,price, userId, handleChangeField, activities, handleAddNews }) => {
- 
-// console.log(state.auth.userId);
+export const AddNewsForm = ({
+  article_title, description, picture_url, price, userId, handleChangeField, activities, handleAddNews,
+}) => {
+  // console.log(state.auth.userId);
 
-  const handleChange = e => handleChangeField([e.target.name], e.target.value);
+  const handleChange = (e) => handleChangeField([e.target.name], e.target.value);
 
   // const handleChangeImage = e => {
   //   const reader = new FileReader() // Je crée un nouveau reader
-  //   const file = e.target.files[0] // Je récupère mon image 
+  //   const file = e.target.files[0] // Je récupère mon image
   //   reader.onloadend =() =>{ // Je la converti en blob afin de pouvoir l'envoyer au back.
   //     // console.log('reader.result', reader.result)
   //     handleChangeField('picture_url', reader.result)
@@ -30,21 +31,22 @@ export const AddNewsForm = ({ article_title, description, picture_url,price, use
       <div id="wraper">
         <div className="form-container">
           <span className="form-heading">Ajouter une News</span>
-          <form method="post" 
-            className="form-body" 
+          <form
+            method="post"
+            className="form-body"
             onSubmit={handleSubmit}
-            >
+          >
             <div className="input-group">
               <i className="news-title" />
               <input
                 name="article_title"
                 type="text"
                 value={article_title}
-                placeholder="Titre..." 
-                onChange={e => handleChange(e)}
+                placeholder="Titre..."
+                onChange={(e) => handleChange(e)}
                 required
-                />
-              <span className="bar"></span>
+              />
+              <span className="bar" />
             </div>
             <div className="input-group">
               <i className="news-description" />
@@ -65,7 +67,7 @@ export const AddNewsForm = ({ article_title, description, picture_url,price, use
                 placeholder="Catégorie..."
               >
                 {activities.map((tag) => (
-                <option key={tag.id} value={tag.id}>{tag.activity_name}</option>
+                  <option key={tag.id} value={tag.id}>{tag.activity_name}</option>
                 ))}
               </select>
               <span className="bar" />
@@ -87,11 +89,11 @@ export const AddNewsForm = ({ article_title, description, picture_url,price, use
                 name="picture_url"
                 type="file"
                 value={picture_url}
-                accept="image" 
-                onChange={e => handleChange(e)}
-                //multiple
+                accept="image"
+                onChange={(e) => handleChange(e)}
+                // multiple
               />
-              <span className="bar"></span>
+              <span className="bar" />
             </div>
             <div className="input-group">
               <button className="news-valid-form-but">

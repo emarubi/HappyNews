@@ -1,12 +1,9 @@
 import axios from 'axios';
 import FormData from 'form-data';
-import { ADD_NEWS, ADD_NEWS_SUCCESS } from '../redux/actions';
-
-
+import { ADD_NEWS } from '../redux/actions';
 
 const add = (store) => (next) => (action) => {
   switch (action.type) {
-    
     case ADD_NEWS: {
       const state = store.getState();
       const token = localStorage.getItem('token');
@@ -22,7 +19,7 @@ const add = (store) => (next) => (action) => {
       console.log('State.addNews.is_news:', state.addNews.is_news);
       console.log('State.auth.user_id:', state.auth.userId);
       console.log('State.addNews.activity_id:', parseInt(state.addNews.activity_id));
-      
+
       const formData = new FormData();
       // Ici, les données du formulaire
       formData.append('article_title', state.addNews.article_title);
@@ -37,10 +34,10 @@ const add = (store) => (next) => (action) => {
         method: 'post', // verbe de la requête, ici un post pour insérer des informations à la bdd
         url: 'https://api-happy-news.herokuapp.com/article', // Voir avec Fredo pour finir la route. Viser celle pour la creation de new
         headers: {
-          'Content-Type' : 'multipart/form-data', // Ici on précise le type de data qu'on envoie. Celui-ci sert à pouvoir envoyer du texte et des fichiers
+          'Content-Type': 'multipart/form-data', // Ici on précise le type de data qu'on envoie. Celui-ci sert à pouvoir envoyer du texte et des fichiers
           Authorization: `Bearer ${token}`,
         },
-        data: formData, 
+        data: formData,
       };
 
       axios(config) // On lance la requête
@@ -51,17 +48,14 @@ const add = (store) => (next) => (action) => {
 
           // const { userToken } = response.data; // On stocke le contenu de la réponse dans le userToken
           // localStorage.setItem('token', userToken); // On le stocke aussi dans le localStorage
-          // TODO: faire les différents clg en fonction des datas envoyées pour vérifier que tout passe correctement. 
-
-
+          // TODO: faire les différents clg en fonction des datas envoyées pour vérifier que tout passe correctement.
         })
         .catch((error) => { // La requête échoue
           console.log('Je suis dans la réponse, et response.error vaut:', error);
-        })
+        });
       break;
     }
-      
-  
+
     default:
       next(action);
   }
