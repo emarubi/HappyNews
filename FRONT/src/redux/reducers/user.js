@@ -4,7 +4,7 @@ const initialState = {
   user: [],
   users: [],
 };
-console.log(initialState);
+// console.log(initialState);
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_ALL_USERS_SUCCESS:

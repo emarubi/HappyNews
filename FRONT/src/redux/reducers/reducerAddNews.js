@@ -1,4 +1,4 @@
-import { CHANGE_ADDNEWS_FIELD } from '../actions';
+import { CHANGE_ADDNEWS_FIELD, ADD_NEWS_SUCCESS} from '../actions';
 
 // Initial State
 const initialState = {
@@ -9,12 +9,14 @@ const initialState = {
     is_news: true, 
     user_id: null, // A récupérer depuis le localstorage
     activity_id: '', // A récupérer depuis un champs déroulant. 9 id différents à récup dans le back
-    vivible: false
+    // modalType: null,
+    // modalProps: {}
 }
+
 // reducer
 
 const reducerAddNews = (oldState = initialState, action) => {
-  console.log('oldState dans le reducer:', oldState);
+  // console.log('oldState dans le reducer:', oldState);
 
   switch (action.type) {
     case CHANGE_ADDNEWS_FIELD:
@@ -22,6 +24,12 @@ const reducerAddNews = (oldState = initialState, action) => {
         ...oldState,
         [action.name]: action.value,
       };
+    case ADD_NEWS_SUCCESS:
+      return {
+        ...oldState,
+        [action.name]: action.value,
+      };
+    
     default:
       return { ...oldState };
   }

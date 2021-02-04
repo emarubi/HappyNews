@@ -49,9 +49,23 @@ export const changeAddNewsField = (name, value) => ({
 });
 
 // Function to submit the addNewsForm
-export const addNews = () => ({
+export const handleAddNews = () => ({
   type: ADD_NEWS,
 });
+
+export const addNewsSuccess = (data) => ({
+  type: ADD_NEWS_SUCCESS,
+  data,
+});
+
+// Action Creator Paco Show modal
+// export const showModalAction = () => ({
+//   type: 'SHOW_MODAL',
+//   modalType: 'DELETE_POST',
+//   modalProps: {
+//     postId: 42
+//   }
+// }) 
 // >>>>>>> origin/front/getDataFromNewsForm
 
 // ACTION CREATOR YANN
@@ -77,11 +91,6 @@ export const handleSearchSubmit = (cityNameEnteredByTheUser) => ({
 export const handleSelectedActivity = (value) => ({
   type: ACTIVITY_SELECTED,
   value,
-});
-
-export const addNewsSuccess = (data) => ({
-  type: ADD_NEWS_SUCCESS,
-  data,
 });
 
 export const getCityFromApiSuccess = (cityCoordinates) => ({

@@ -11,7 +11,7 @@ import Title from './Title';
 const Header = ({
   token, handleLogout, id, prenom,
 }) => {
-  console.log(useParams);
+  // console.log(useParams);
   return (
     <header className="header">
       <Logo />
