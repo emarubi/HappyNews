@@ -7,7 +7,7 @@ export default function Title() {
       <h1 className="title-h1">
         Happy News
       </h1>
-      <p className="header-accroche">Vos producteurs locaux ont une bonne nouvelle à vous annoncer</p>
+      {/* <p className="header-accroche">Vos producteurs locaux ont une bonne nouvelle à vous annoncer</p> */}
     </div>
   );
 }

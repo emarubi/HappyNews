@@ -1,47 +1,55 @@
-@use '../../../../styles/vars';
+// @use '../../../../styles/vars';
+@use 'src/styles/vars';
 
-.character {
-  display: block;
-/*   margin: 1em 1em; */
-}
-.contain{
+.customer {
+  background: vars.$Linear-gradient;
+  color: #FFF;
   display: flex;
+  height: 60vh;
+
+  &__presentationText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3em;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    &__presentationTitle {
+      padding-bottom: 0.5em;
+      font-size: 2em;
+      font-weight: 400;
+    }
+
+    &__presentationBody {
+      font-size: 1.2em;
+    }
+  }
+
+  &__pictureCharacter__illustrationPicture {
+      max-width: 40vw;
+      margin: 2em 4em;
+  }
 }
 
-.illustrationPicture.customer {
-  width: 80%;
-  object-fit: cover;
-  margin: 2em 2em;
+@media (min-width: 1200px) {
+  .customer__pictureCharacter__illustrationPicture {
+    max-width: 25vw;
+    margin: 0 auto;
+  }
 }
 
-.presentationTitle.customer {
-  padding-bottom: 0.5em;
-  font-size: 2em;
-  font-weight: 400;
-}
+// .contenWave {
+//   position: relative;
+// }
 
-.presentationText.customer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 3em;
-}
-
-.presentationBody.customer {
-  font-size: 1.2em;
-}
-
-.contenWave {
-  position: relative;
-}
-
-.wave-2 {
-  width: 100%;
-  object-fit: cover;
-  position: relative;
-  top: 0.3em;
-  left: -0.1rem;
-}
+// .wave-2 {
+//   width: 100%;
+//   object-fit: cover;
+//   position: relative;
+//   top: 0.3em;
+//   left: -0.1rem;
+// }
 
 
