@@ -4,12 +4,13 @@
     //flex-direction: column;
     //align-items: center;
     width: 33%;
-    &-h1 {
-    font-family:  'Quicksand', 'Inter', 'Roboto',sans-serif;
-    margin: auto;
-    padding-bottom: 0.4em;
-    transition: 0.5s;
-    color: vars.$Dark;
+    margin-top: 1em;
+      &-h1 {
+      font-family:  'Quicksand', 'Inter', 'Roboto',sans-serif;
+      margin: auto;
+      padding-bottom: 0.4em;
+      transition: 0.5s;
+      color: vars.$Dark;
   }
   &:hover {
     color: vars.$Dark;
@@ -43,7 +44,7 @@ h1 {
 
     h1 {
       position: relative;
-      top: 2.1em;
+      top: 1.8em;
       font-size: 1.5em;
       margin-bottom: 0.5em;
       //width: 7em;

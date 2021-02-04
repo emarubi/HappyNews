@@ -26,7 +26,7 @@ import './styles.scss';
 
 // == Composant
 const App = ({ isLogged }) => (
-  <div className="page_cotainer">
+  <div className="page_container">
     <Header />
     <Switch>
       <Route exact path="/">

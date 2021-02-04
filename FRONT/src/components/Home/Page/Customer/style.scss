@@ -40,6 +40,15 @@
   }
 }
 
+
+@media (max-width: 600px) {
+  .customer {
+    height: 40vh;
+    &__pictureCharacter__illustrationPicture {
+    display: none;
+    }
+  }
+}
 // .contenWave {
 //   position: relative;
 // }
