@@ -31,7 +31,11 @@
     }
   }
 }
-
+.login__form-error {
+  color: red;
+  margin: -0.5em auto 0.2em;
+  font-size: 0.8em;
+}
 .buttonDiv {
   margin: 1em 0;
 }

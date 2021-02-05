@@ -9,8 +9,6 @@
   &__input {
     width: 100%;
     margin-bottom: 1em;
-  }
-  &__input[type="email"], &__input[type="password"], &__input[type="search"]{
     border: none;
     border-bottom: 1px solid #fff;
     background: transparent;
@@ -19,6 +17,15 @@
     color: #fff;
     font-size: 0.9em;
   }
+  // &__input[type="email"], &__input[type="password"], &__input[type="search"]{
+  //   border: none;
+  //   border-bottom: 1px solid #fff;
+  //   background: transparent;
+  //   outline: none;
+  //   height: 1.8em;
+  //   color: #fff;
+  //   font-size: 0.9em;
+  // }
 
   &__link {
     display: block;

@@ -42,10 +42,9 @@ const FormRegister = ({
             type="text"
             register={register({
               required: { value: true, message: 'ce champs est obligatoire' },
-              minLength: { value: 4, message: 'vous devez entrer au moins 4 caracteres' },
             })}
           />
-          {errors.last_name && <span> {errors.last_name.message} </span>}
+          {errors.last_name && <div className="login__form-error"> {errors.last_name.message} </div>}
           <Field
             name="first_name"
             value={first_name}
@@ -54,14 +53,13 @@ const FormRegister = ({
             type="text"
             register={register({
               required: { value: true, message: 'ce champs est obligatoire' },
-              minLength: { value: 5, message: 'vous devez entrer au moins 5 caracteres' },
             })}
           />
         </div>
-        {errors.first_name && <span> {errors.first_name.message} </span>}
+        {errors.first_name && <div className="login__form-error"> {errors.first_name.message} </div>}
       </fieldset>
       <fieldset className="register-sec-address">
-        <legend className="register-leg-address">addresse</legend>
+        <legend className="register-leg-address">adresse</legend>
         <div className="register-form">
           <Field
             name="adress"
@@ -71,11 +69,11 @@ const FormRegister = ({
             type="text"
             register={register({
               required: { value: true, message: 'ce champs est obligatoire' },
-              minLength: { value: 6, message: 'vous devez entrer au moins 6 caracteres' },
+
             })}
           />
         </div>
-        {errors.adress && <span> {errors.adress.message} </span>}
+        {errors.adress && <div className="login__form-error"> {errors.adress.message} </div>}
         <div className="register-form">
           <Field
             name="zip_code"
@@ -85,10 +83,12 @@ const FormRegister = ({
             type="number"
             register={register({
               required: { value: true, message: 'ce champs est obligatoire' },
+              minLength: { value: 5, message: 'Ce champs ne peux contenir moins de 5 caracteres' },
+              maxLength: { value: 5, message: 'Ce champs ne peux contenir plus de 5 caracteres' },
             })}
           />
         </div>
-        {errors.zip_code && <span> {errors.zip_code.message} </span>}
+        {errors.zip_code && <div className="login__form-error"> {errors.zip_code.message} </div>}
         <div className="register-form">
           <Field
             name="city"
@@ -101,19 +101,21 @@ const FormRegister = ({
             })}
           />
         </div>
-        {errors.city && <span> {errors.city.message} </span>}
+        {errors.city && <div className="login__form-error"> {errors.city.message} </div>}
       </fieldset>
+      <div className="register-imput-checkbox">
+        <label className="form__label label-register" htmlFor="roleID"> cliquer si vous etes commercant</label>
+        <input
+          onChange={(event) => {
+            HandleRoleId(event.target.checked);
+          }}
+          id="roleID"
+          type="checkbox"
+          className="form__input"
+          name="role_id"
+        />
+      </div>
 
-      <label className="form__label" htmlFor="roleID"> cliquer si vous etes commercant</label>
-      <input
-        onChange={(event) => {
-          HandleRoleId(event.target.checked);
-        }}
-        id="roleID"
-        type="checkbox"
-        className="form__input"
-        name="role_id"
-      />
       { role_id === 3
    && (
    <>
@@ -130,6 +132,7 @@ const FormRegister = ({
              }}
              name="activity_id"
            >
+             <option value="">choisissez votre activité</option>
              <option value="boulangerie">boulangerie</option>
              <option value="boucherie">boucherie</option>
              <option value="fleuriste">fleuriste</option>
@@ -186,7 +189,7 @@ const FormRegister = ({
             })}
           />
         </div>
-        {errors.email && <span> {errors.email.message} </span>}
+        {errors.email && <div className="login__form-error"> {errors.email.message} </div>}
         <div className="register-form">
           <Field
             name="password"
@@ -196,10 +199,11 @@ const FormRegister = ({
             type="password"
             register={register({
               required: { value: true, message: 'ce champs est obligatoire' },
+              minLength: { value: 8, message: 'le password doit contenir au moins 8 caracteres' },
             })}
           />
         </div>
-        {errors.password && <span> {errors.password.message} </span>}
+        {errors.password && <div className="login__form-error"> {errors.password.message} </div>}
       </fieldset>
       <Button>Validez la création</Button>
     </form>
