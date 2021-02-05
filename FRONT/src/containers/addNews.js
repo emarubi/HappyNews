@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { AddNewsForm } from 'src/components/AddNewsForm';
-import { addNews, changeAddNewsField, handleAddNews } from '../redux/actions';
+import { addNews, addNewsSuccess, changeAddNewsField, handleAddNews } from '../redux/actions';
 
 // const { auth } = store.getState();
 // console.log(state.auth.user_id);
@@ -33,6 +33,10 @@ const mapDispatchToProps = (dispatch) => ({
       // dispatch(addNews());
       dispatch(handleAddNews());
     },
+    addNewsSuccess: () => {
+      dispatch(addNewsSuccess())
+      console.log("Je suis dans addNewsSuccess container");
+    }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddNewsForm);

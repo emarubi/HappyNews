@@ -8,12 +8,12 @@ const api = (store) => (next) => (action) => {
   switch (action.type) {
     case LOGIN: {
       const state = store.getState();
-      console.log(state);
+      // console.log(state);
 
       const form = new FormData();
       form.append('email', state.auth.email);
       form.append('password', state.auth.password);
-      console.log(form);
+      // console.log(form);
 
       const config = {
         method: 'post', // verbe POST
@@ -27,16 +27,16 @@ const api = (store) => (next) => (action) => {
         .then((response) => { // cas de réussite
           const { userToken } = response.data;
           const { id } = response.data.user[0];
-          console.log(userToken);
+          // console.log(userToken);
           localStorage.setItem('token', userToken);
           localStorage.setItem('id', id);
           store.dispatch(handleLoginSuccess(response.data));
           // on le stocke aussi dans le localStorage
 
-          console.log(response.data);
-          console.log('Je suis dans la réponse, et response.data du Tokenvaut : ', response.data.userToken);
-          console.log('Je suis dans la réponse, et response.data du logged : ', response.data.logged);
-          console.log('Je suis dans la réponse, et response.data de l\'id : ', response.data.user[0].id);
+          // console.log(response.data);
+          // console.log('Je suis dans la réponse, et response.data du Tokenvaut : ', response.data.userToken);
+          // console.log('Je suis dans la réponse, et response.data du logged : ', response.data.logged);
+          // console.log('Je suis dans la réponse, et response.data de l\'id : ', response.data.user[0].id);
         })
         .catch((error) => { // cas d'erreur
           console.log(error);
@@ -45,7 +45,7 @@ const api = (store) => (next) => (action) => {
     }
     case SUBSCRIBE: {
       const state = store.getState();
-      console.log(state);
+      // console.log(state);
 
       const form = new FormData();
       form.append('first_name', state.auth.first_name);

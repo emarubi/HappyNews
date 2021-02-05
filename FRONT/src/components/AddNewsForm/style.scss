@@ -4,7 +4,8 @@
   /*display: none;*/
   height: 75vh;
   // border: 1px solid red;
-  background:rgba(0,0,0,0.4); /* vars.$Linear-gradient*/
+  // background: vars.$Linear-gradient;
+  // rgba(0,0,0,0.4);
 }
 
 #wraper {
@@ -67,6 +68,17 @@ box-shadow: 0 1px 1.5rem rgba(0,0,0,.1);
 }
 
 .input-group input {
+  position: relative;
+  width: 100%;
+  padding: 1rem 0;
+  margin-top: .5rem;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  color: vars.$Primary;
+}
+
+.input-group select {
   position: relative;
   width: 100%;
   padding: 1rem 0;

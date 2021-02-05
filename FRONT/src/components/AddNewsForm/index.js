@@ -1,29 +1,30 @@
-import PropTypes from 'prop-types';
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { NavLink, useParams, Redirect } from 'react-router-dom';
 import './style.scss';
 
-export const AddNewsForm = ({
-  article_title, description, picture_url, price, userId, handleChangeField, activities, handleAddNews,
-}) => {
-  // console.log(state.auth.userId);
+export const AddNewsForm = ({ article_title, description, picture_url,price, userId, handleChangeField, activities, handleAddNews }) => {
+ 
 
   const handleChange = (e) => handleChangeField([e.target.name], e.target.value);
 
-  // const handleChangeImage = e => {
-  //   const reader = new FileReader() // Je crée un nouveau reader
-  //   const file = e.target.files[0] // Je récupère mon image
-  //   reader.onloadend =() =>{ // Je la converti en blob afin de pouvoir l'envoyer au back.
-  //     // console.log('reader.result', reader.result)
-  //     handleChangeField('picture_url', reader.result)
-  //   }
-  //   console.log(reader.readAsDataURL(file))
-  // }
-  console.log(handleAddNews);
+  {/** ------------- Récupère l'image et la transforme en blob --------
+     const handleChangeImage = e => {
+    const reader = new FileReader() // Je crée un nouveau reader
+    const file = e.target.files[0] // Je récupère mon image 
+    reader.onloadend =() =>{ // Je la converti en blob afin de pouvoir l'envoyer au back.
+      // console.log('reader.result', reader.result)
+      handleChangeField('picture_url', reader.result)
+    }
+    console.log(reader.readAsDataURL(file))
+  }
+   */}
+
+ 
+  // console.log(handleAddNews);
   const handleSubmit = (event) => {
     event.preventDefault();
     handleAddNews();
-    // console.log('Titre :', article_title,'Description:', description,'activity_id:', activity_id,'price:', price,'picture_url:', picture_url)
   };
 
   return (
@@ -60,19 +61,6 @@ export const AddNewsForm = ({
               <span className="bar" />
             </div>
             <div className="input-group">
-              <i className="news-category" />
-              <select
-                onChange={(e) => handleChange(e)}
-                name="activity_id"
-                placeholder="Catégorie..."
-              >
-                {activities.map((tag) => (
-                  <option key={tag.id} value={tag.id}>{tag.activity_name}</option>
-                ))}
-              </select>
-              <span className="bar" />
-            </div>
-            <div className="input-group">
               <i className="news-price" />
               <input
                 name="price"
@@ -89,9 +77,8 @@ export const AddNewsForm = ({
                 name="picture_url"
                 type="file"
                 value={picture_url}
-                accept="image"
-                onChange={(e) => handleChange(e)}
-                // multiple
+                accept="image" 
+                onChange={e => handleChange(e)}
               />
               <span className="bar" />
             </div>
@@ -124,7 +111,7 @@ export const AddNewsForm = ({
   );
 };
 
-// ({ article_title, description, picture_url,price, activity_id, userId, handleChangeField }
+// ------------- Proptypes ----------
 
 AddNewsForm.propTypes = {
   handleAddNews: PropTypes.func.isRequired,
@@ -141,4 +128,4 @@ AddNewsForm.propTypes = {
   ).isRequired,
 };
 
-// export default AddNewsForm;
+

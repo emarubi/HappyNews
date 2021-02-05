@@ -11,7 +11,7 @@ const userApi = (store) => (next) => (action) => {
     case GET_ALL_USERS:
       axios.get('https://api-happy-news.herokuapp.com/user')
         .then((response) => {
-          console.log(response.data.data);
+          // console.log(response.data.data);
           store.dispatch(getAllUsersSuccess(response.data.data));
         })
         .catch((error) => {
@@ -20,7 +20,7 @@ const userApi = (store) => (next) => (action) => {
       break;
     case GET_USER_DETAILS: {
       // let params = action.id
-      console.log('je suis dans middl');
+      // console.log('je suis dans middl');
       // const config = {
       //   method: 'get',
       //   url: `https://api-happy-news.herokuapp.com/user/${2}`,

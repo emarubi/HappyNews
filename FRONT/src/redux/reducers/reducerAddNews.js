@@ -1,23 +1,19 @@
-import { ADD_NEWS_SUCCESS, CHANGE_ADDNEWS_FIELD } from '../actions';
+import { Redirect } from 'react-router-dom';
+import { CHANGE_ADDNEWS_FIELD, ADD_NEWS_SUCCESS} from '../actions';
 
 // Initial State
 const initialState = {
-  article_title: '',
-  description: '',
-  picture_url: '',
-  price: '',
-  is_news: true,
-  user_id: null, // A récupérer depuis le localstorage
-  activity_id: '', // A récupérer depuis un champs déroulant. 9 id différents à récup dans le back
-  // modalType: null,
-  // modalProps: {}
-};
+    article_title: '',
+    description: '',
+    picture_url: '',
+    price: '',
+    is_news: true, 
+    user_id: null, 
+    activity_id: '', 
+}
 
 // reducer
-
 const reducerAddNews = (oldState = initialState, action) => {
-  // console.log('oldState dans le reducer:', oldState);
-
   switch (action.type) {
     case CHANGE_ADDNEWS_FIELD:
       return {
@@ -27,9 +23,15 @@ const reducerAddNews = (oldState = initialState, action) => {
     case ADD_NEWS_SUCCESS:
       return {
         ...oldState,
-        [action.name]: action.value,
+        article_title: '',
+        description: '',
+        picture_url: '',
+        price: '',
+        is_news: true, 
+        user_id: null, 
+        activity_id: '',
+        window: window.alert("La news a été ajoutée avec succès")
       };
-
     default:
       return { ...oldState };
   }
