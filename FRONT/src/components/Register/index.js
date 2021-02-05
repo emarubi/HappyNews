@@ -203,7 +203,7 @@ const FormRegister = ({
             type="password"
             register={register({
               required: { value: true, message: 'ce champs est obligatoire' },
-              minLength: { value: 8, message: 'le password doit contenir au moins 8 caracteres' },
+              // minLength: { value: 8, message: 'le password doit contenir au moins 8 caracteres' },
             })}
           />
         </div>
