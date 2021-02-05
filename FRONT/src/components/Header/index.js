@@ -10,9 +10,9 @@ import Title from './Title';
 
 const Header = ({
   token, handleLogout, id, prenom,
-}) => {
+}) =>
   // console.log(useParams);
-  return (
+  (
     <header className="header">
       <Logo />
       <Title />
@@ -29,7 +29,7 @@ const Header = ({
           >
             Déconnexion
           </Button>
-          <NavLink to={`/commercant/profil/${id}`}> <Button>mon profil</Button></NavLink>
+          <NavLink to={`/commercant/profil/${id}`}> <Button>Mon profil</Button></NavLink>
         </>
         )}
         {token == null && (
@@ -41,8 +41,6 @@ const Header = ({
       </div>
     </header>
   );
-};
-
 Header.propTypes = {
   isLogged: PropTypes.bool,
   handleLogout: PropTypes.func.isRequired,

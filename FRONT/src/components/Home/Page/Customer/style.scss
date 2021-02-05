@@ -57,8 +57,17 @@
 @media (max-width: 600px) {
   .customer {
     height: 40vh;
-    &__pictureCharacter__illustrationPicture {
-    display: none;
+      &__pictureCharacter {
+        width: 0;
+
+        &__illustrationPicture {
+          display: none;
+          padding-left: 0;
+        }
+      }
+      
+    &__presentationText {
+      margin: 0 .5em;
     }
   }
 }

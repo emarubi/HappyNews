@@ -51,7 +51,9 @@ const Login = ({
               })}
             />
             {errors.password && <p> {errors.password.message}</p>}
-            <Button type="submit">Se connecter</Button>
+            <div className="buttonDiv">
+              <Button type="submit">Se connecter</Button>
+            </div>
           </form>
           <a className="form__link" href="#">Mot de passe oublié ?</a>
           <h2 className="form__h2">Si vous n'avez pas encore de compte :</h2>

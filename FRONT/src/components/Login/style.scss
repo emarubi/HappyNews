@@ -10,11 +10,12 @@
     box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
     border-radius: 1em;
     width: 25em;
-    height: 35em;
+    height: fit-content;
     background: black;
     color: #fff;
     box-sizing: border-box;
     padding: 4em 2em;
+    margin-bottom: 2em;
     &__avatar {
       width: 100px;
       height: 100px;
@@ -29,6 +30,14 @@
       text-align: center;
     }
   }
+}
+
+.buttonDiv {
+  margin: 1em 0;
+}
+
+.form__h2 {
+  margin-bottom: 1em;
 }
 
 
