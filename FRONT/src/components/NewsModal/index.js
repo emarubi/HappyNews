@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { MdDeleteForever } from 'react-icons/md';
-import PopUp from './Popup';
+import PopUp from 'src/containers/popup';
 import './style.scss';
 
 const NewsModal = ({
@@ -26,7 +26,6 @@ const NewsModal = ({
           <div className="product-bottom-details">
             <div className="product-price"><small>$96.00</small>${news.price}</div>
             <div className="product-links">
-              {/* { {console.log(localStorage.getItem('id'))} */}
               { parseInt(localStorage.getItem('id')) === news.user_id
                 && (
                   <>
@@ -35,7 +34,7 @@ const NewsModal = ({
                     }}
                     />
                     {popUp === true
-                    && <PopUp changePopup={changePopup} />}
+                    && <PopUp news={news} changePopup={changePopup} />}
                   </>
 
                 )}
@@ -49,6 +48,7 @@ const NewsModal = ({
 
 NewsModal.propTypes = {
   news: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     article_title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     picture_url: PropTypes.string.isRequired,

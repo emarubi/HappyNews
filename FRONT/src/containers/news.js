@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 // composant de présentation
 import News from 'src/components/News';
 import {
-  changeSearchValueAction, handleSearchSubmit, handleSelectedActivity, getCityFromApiSuccess,
+  changeSearchValueAction,
+  getCityFromApiSuccess, handleSearchSubmit, handleSelectedActivity
 } from 'src/redux/actions';
 
 const mapStateToProps = (state) => ({

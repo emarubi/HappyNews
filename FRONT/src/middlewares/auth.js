@@ -86,6 +86,7 @@ const api = (store) => (next) => (action) => {
         .catch((error) => { // cas d'erreur
           console.log(error);
         });
+      break;
     }
     default:
       next(action);
