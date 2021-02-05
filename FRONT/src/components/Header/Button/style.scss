@@ -35,6 +35,8 @@
   inset -2px -2px 12px rgba(255,255,255,0.5),
   inset 2px 2px 4px rgba(255,255,255,0.1),
   inset 2px 2px 8px rgba(0,0,0,0.15);
+  white-space: nowrap;
+  padding: 0.1em 0.5em;
 }
 
 .button:hover{
@@ -44,11 +46,4 @@
   inset 2px 2px 8px rgba(0,0,0,0.15);
   background: vars.$Linear-gradient;
   color: vars.$Dark;
-}
-
-// max size 688 px
-@media screen and (max-width: 688px){
-  .button {
-      width: 7.5em;
-  }
 }

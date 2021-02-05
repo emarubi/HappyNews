@@ -39,3 +39,18 @@
 
   }
 }
+
+@media (min-width: 1500px) {
+  .footer {
+    max-width: 70vw;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .footer {
+    max-width: 90vw;
+    margin: 1em auto;
+    height: 8em;
+  }
+}

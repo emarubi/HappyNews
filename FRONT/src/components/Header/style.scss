@@ -28,14 +28,14 @@
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1500px) {
   .header {
-    max-width: 60vw;
+    max-width: 70vw;
     margin: 0 auto;
   }
 }
 
-@media (max-width: 800px) and (orientation: portrait) {
+@media (max-width: 800px) {
   .header {
     max-width: 90vw;
     margin: 1em auto;
