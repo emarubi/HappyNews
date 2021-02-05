@@ -169,6 +169,10 @@ const FormRegister = ({
              onChange={changeField}
              placeholder="siret"
              type="text"
+             register={register({
+               minLength: { value: 4, message: 'le siret doit contenir au moins 4 caracteres' },
+               maxLength: { value: 14, message: 'le siret doit contenir au plus 14 caracteres' },
+             })}
            />
          </div>
        </div>
