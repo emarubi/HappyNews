@@ -24,7 +24,7 @@ const add = (store) => (next) => (action) => {
       // Ici, les données du formulaire
       formData.append('article_title', state.addNews.article_title);
       formData.append('description', state.addNews.description);
-      formData.append('picture_url', ''); // **********
+      formData.append('picture_url', state.addNews.picture_url); // **********
       formData.append('price', state.addNews.price);
       formData.append('is_news', state.addNews.is_news);
       formData.append('user_id', state.auth.userId);
