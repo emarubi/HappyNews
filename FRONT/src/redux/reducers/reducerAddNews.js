@@ -29,7 +29,7 @@ const reducerAddNews = (oldState = initialState, action) => {
         is_news: true,
         user_id: null,
         activity_id: '',
-        window: window.alert("La news a été ajoutée avec succès")
+        window: window.alert('La news a été ajoutée avec succès'),
       };
     default:
       return { ...oldState };

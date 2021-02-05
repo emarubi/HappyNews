@@ -9,8 +9,10 @@ const add = (store) => (next) => (action) => {
       const token = localStorage.getItem('token');
       // console.log('token du localstorage vaut :', token);
       // Faire la requête pour l'ajout de news
-      // On récupère l'objet qui défini la news et DANS L'ORDRE que le back attends sinon ça ne passera pas
-      // store.getstate nous donne l'état du store à un instant T. On le déstructure pour prendre ce dont on a besoin
+      // On récupère l'objet qui défini la news et
+      // DANS L'ORDRE que le back attends sinon ça ne passera pas
+      // store.getstate nous donne l'état du store à un instant T.
+      // On le déstructure pour prendre ce dont on a besoin
       // const { addNews, auth } = store.getState();
       // console.log('State.addNews.article_title:', state.addNews.article_title);
       // console.log('State.addNews.description:', state.addNews.description);
@@ -19,16 +21,15 @@ const add = (store) => (next) => (action) => {
       // console.log('State.addNews.is_news:', state.addNews.is_news);
       // console.log('State.auth.user_id:', state.auth.userId);
       // console.log('State.addNews.activity_id:', state.user.user.activity_id);
-      
       const formData = new FormData();
       // Ici, les données du formulaire
       formData.append('article_title', state.addNews.article_title);
       formData.append('description', state.addNews.description);
-      formData.append('picture_url', state.addNews.picture_url); // **********
+      formData.append('picture_url', state.addNews.picture_url);
       formData.append('price', state.addNews.price);
       formData.append('is_news', state.addNews.is_news);
       formData.append('user_id', state.auth.userId);
-      formData.append('activity_id', state.user.user.activity_id); // *********
+      formData.append('activity_id', state.user.user.activity_id);
       console.log(formData);
       const config = {
         method: 'post', // verbe de la requête, ici un post pour insérer des informations à la bdd
@@ -37,8 +38,7 @@ const add = (store) => (next) => (action) => {
           'Content-Type': 'multipart/form-data', // Ici on précise le type de data qu'on envoie. Celui-ci sert à pouvoir envoyer du texte et des fichiers
           Authorization: `Bearer ${token}`,
         },
-        
-        data: formData, 
+        data: formData,
       };
 
       axios(config) // On lance la requête
@@ -50,10 +50,10 @@ const add = (store) => (next) => (action) => {
         .catch((error) => { // La requête échoue
           if (error) {
             console.log(error);
-            window.alert("La création de news a échoué, merci de remplir tous les champs du formulaire")
+            window.alert('La création de news a échoué, merci de remplir tous les champs du formulaire');
             // console.log('Je suis dans l\'erreur, et response.error vaut:', error);
           }
-        })
+        });
       break;
     }
 
