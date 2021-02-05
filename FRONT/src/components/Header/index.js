@@ -17,9 +17,10 @@ const Header = ({
       <Logo />
       <Title />
       <div className="header-nav">
-        <Avatar />
+
         {token && (
         <>
+          <Avatar />
           <div className="header-helloUser">
             <p>Bonjour {prenom} !</p>
           </div>
