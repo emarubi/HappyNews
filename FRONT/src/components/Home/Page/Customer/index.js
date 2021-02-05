@@ -11,7 +11,7 @@ const Customer = () => (
     </div>
     <div className="customer__presentationText">
       <h2 className="customer__presentationText__presentationTitle">Vous êtes Client</h2>
-      <p className="customer__presentationText__presentationBody">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates, laudantium id hic enim ut corrupti eum odio facilis dolore earum alias veniam? Nisi consectetur quos distinctio. Repellendus dolorum id quisquam!</p>
+      <p className="customer__presentationText__presentationBody">Vous souhaitez connaître les producteurs autour de chez vous et être informé des promotions ponctuelles qui vous feront gagner en pouvoir d’achat.</p>
     </div>
     {/* <div className="contenWave">
       <img className="wave-2" src={Wave2} alt="wave" />

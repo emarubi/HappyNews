@@ -7,7 +7,7 @@ const Retailer = () => (
   <section className="retailer">
     <div className="retailer__presentationText">
       <h2 className="retailer__presentationText__presentationTitle">Vous êtes Commerçant</h2>
-      <p className="retailer__presentationText__presentationBody">Lorem ipsum, dolor    sit amet consectetur adipisicing elit. Expedita officia    quia alias voluptates? Corporis magni facere sint  assumenda porro ipsum! Iste laborum repellat provident   qui numquam possimus totam porro? Et?</p>
+      <p className="retailer__presentationText__presentationBody">Vous souhaitez communiquer à vos clients les dernières promotions et captiver votre clientèle locale potentielle.</p>
     </div>
     <div className="retailer__pictureCharacter">
       <img className="retailer__pictureCharacter__illustrationPicture" src={RetailPict} alt="retailer" />

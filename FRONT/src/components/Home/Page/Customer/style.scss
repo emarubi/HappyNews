@@ -2,10 +2,12 @@
 @use 'src/styles/vars';
 
 .customer {
-  background: vars.$Linear-gradient;
+  background:vars.$Linear-gradient;
   color: #FFF;
   display: flex;
   height: 60vh;
+  margin: 1em 0;
+  box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.75);
 
   &__presentationText {
     display: flex;
@@ -15,6 +17,9 @@
     margin: 0 3em;
     margin-top: auto;
     margin-bottom: auto;
+    padding-left: 2em;
+    padding-right: 2em;
+    line-height: 1.5em;
 
     &__presentationTitle {
       padding-bottom: 0.5em;
@@ -27,16 +32,24 @@
     }
   }
 
-  &__pictureCharacter__illustrationPicture {
-      max-width: 40vw;
-      margin: 2em 4em;
+  &__pictureCharacter {
+    width: 50%;
+    height: inherit;
+
+    &__illustrationPicture {
+      // max-width: 40vw;
+      // margin: 2em 4em;
+      height: inherit;
+      object-fit: contain;
+      padding: 2em;
+    }
   }
+    
 }
 
 @media (min-width: 1200px) {
   .customer__pictureCharacter__illustrationPicture {
-  //  max-width: 30vw;
-  //  margin: 0 auto;
+    // max-width: 30vw;
   }
 }
 
