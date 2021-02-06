@@ -5,6 +5,7 @@ import './style.scss';
 const PopUp = ({ changePopup, handleDelete, news }) => {
   const handleDeleteCard = (event) => {
     handleDelete(event.target.value);
+    changePopup();
   };
 
   return (
