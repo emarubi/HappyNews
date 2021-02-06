@@ -29,9 +29,9 @@ const News = ({
     loadActivities();
   }, []);
 
-  useEffect(() => {
-    loadNews();
-  }, [list.id]);
+//  useEffect(() => {
+// loadNews();
+// }, [list.id]);
 
   // Ajout d'un useEffect pour le filtre par recherche dans l'input
   // Ou par activité ou les 2

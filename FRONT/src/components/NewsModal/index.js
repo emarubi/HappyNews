@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MdDeleteForever } from 'react-icons/md';
+import { loadNews } from 'src/redux/actions';
 import { NavLink } from 'react-router-dom';
 import PopUp from 'src/containers/popup';
 import './style.scss';
@@ -17,6 +18,13 @@ const NewsModal = ({
   const manageState = () => {
     setModalState(!modalState);
   };
+
+  useEffect(() => {
+    // loadNews : une prop qui charge les news (les articles)
+    // cette fonction prop sera définie dans le container
+    loadNews();
+    console.log('je suis dans le useEffect de NewsModal');
+  }, [popUp]);
 
   return (
     <>

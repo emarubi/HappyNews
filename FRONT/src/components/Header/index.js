@@ -48,13 +48,13 @@ Header.propTypes = {
   handleLogout: PropTypes.func.isRequired,
   token: PropTypes.string,
   prenom: PropTypes.string,
-  id: PropTypes.bool,
+  id: PropTypes.string,
 };
 
 Header.defaultProps = {
   prenom: '',
   token: '',
-  id: null,
+  id: '',
 };
 
 export default Header;
