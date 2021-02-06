@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 // import de Firebase pour les images
 import { storage } from 'src/middlewares/firebase';
 import PropTypes from 'prop-types';
-import { NavLink, useParams  } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
+import Button from 'src/components/Header/Button';
 import './style.scss';
 
 const AddNewsForm = ({
@@ -76,15 +77,18 @@ const AddNewsForm = ({
     <>
       { parseInt(localStorage.getItem('id'), 10) === parseInt(id, 10)
       && (
-        <button type="button" onClick={() => manageState(!modalState)}>
-          creer une news / un article
-        </button>
+        <Button
+          type="button"
+          event={() => manageState(!modalState)}
+        >
+          Créer une news / un article
+        </Button>
       )}
       <section className={`section-addnews-form modalBackground modalShowing-${modalState}`}>
       {/* <section className="section-addnews-form"> */}
         <div id="wraper">
           <div className="form-container">
-            <span className="form-heading">Ajouter une News</span>
+            <span className="form-heading">Ici, vous pouvez ajouter une News ou un article à votre vitrine</span>
             <form
               className="form-body"
               onSubmit={handleSubmit}
@@ -128,7 +132,7 @@ const AddNewsForm = ({
               </div>
               {/* ajout input article is news a false */}
               <div className="input-group">
-                <label className="form__label label-register" htmlFor="isNews">cliquer si vous etes commercant</label>
+                <label className="form__label label-register" htmlFor="isNews">Cochez s'il s'agit d'un article pour votre vitrine</label>
                 <input
                   onChange={(event) => {
                     handleIsNews(event.target.checked);

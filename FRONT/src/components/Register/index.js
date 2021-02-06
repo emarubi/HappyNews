@@ -65,7 +65,7 @@ const FormRegister = ({
             name="adress"
             value={adress}
             onChange={changeField}
-            placeholder="adress"
+            placeholder="adresse"
             type="text"
             register={register({
               required: { value: true, message: 'ce champs est obligatoire' },
