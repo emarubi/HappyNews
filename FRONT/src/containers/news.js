@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import News from 'src/components/News';
 import {
   changeSearchValueAction,
-  getCityFromApiSuccess, handleSearchSubmit, handleSelectedActivity
+  getCityFromApiSuccess, handleSearchSubmit, handleSelectedActivity,
 } from 'src/redux/actions';
 
 const mapStateToProps = (state) => ({
