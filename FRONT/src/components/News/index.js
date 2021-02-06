@@ -44,9 +44,9 @@ const News = ({
   const { register, handleSubmit, errors } = useForm();
 
   return (
-    <div>
-      <section className="searchSection">
-        <div className="searchSection__searchBar">
+    <div className="newsContainer">
+      <section className="newsContainer__searchSection">
+        <div className="newsContainer__searchSection__searchBar">
           <div>
             <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-search" width="44" height="44" viewBox="0 0 24 24" strokeWidth="3" stroke="#36586B" fill="none" strokeLinecap="round" strokeLinejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -54,13 +54,13 @@ const News = ({
               <line x1="21" y1="21" x2="15" y2="15" />
             </svg>
           </div>
-          <div className="searchSection__searchBar__container">
+          <div className="newsContainer__searchSection__searchBar__container">
             <form onSubmit={handleSubmit(handleSearchSubmit)}>
               <Field
                 name="search"
                 value={searchValue}
                 onChange={changeSearchField}
-                placeholder="Saisissez le nom de votre ville"
+                placeholder="Saisissez le nom de la ville"
                 type="search"
                 register={register({
                   required: true, message: 'vous devez entrer un nom de ville valide',
@@ -70,7 +70,7 @@ const News = ({
             </form>
           </div>
         </div>
-        <div className="searchSection__searchOnMap">
+        <div className="newsContainer__searchSection__searchOnMap">
           <div>
             <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-map-pin" width="44" height="44" viewBox="0 0 24 24" strokeWidth="2" stroke="#36586B" fill="none" strokeLinecap="round" strokeLinejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -78,7 +78,7 @@ const News = ({
               <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
             </svg>
           </div>
-          <div className="searchSection__searchOnMap__buttonContainer">
+          <div className="newsContainer__searchSection__searchOnMap__buttonContainer">
             <NavLink to="/">
               <Button>Afficher sur la carte</Button>
             </NavLink>
@@ -86,9 +86,9 @@ const News = ({
         </div>
       </section>
       {/* On prévoit ici la future fonctionnalité de recherche par tag */}
-      <div className="tagsContainer">
+      <div className="newsContainer__tagsContainer">
         {activities.map((tag) => (
-          <div key={tag.id} className="tagsContainer__tag">
+          <div key={tag.id} className="newsContainer__tagsContainer__tag">
             {hasDataActivities && (
               <Button
                 event={(event) => {
@@ -100,10 +100,10 @@ const News = ({
           </div>
         ))}
       </div>
-      <section className="newsList">
+      <section className="newsContainer__newsList">
         {!hasData && <Spinner />}
         {filteredNews && filteredNews.map((news) => (
-          <div key={news.id} className="newsList__item">
+          <div key={news.id} className="newsContainer__newsList__item">
             {hasData && <NewsModal news={news} />}
             {/* Affichage conditionnel avec hasData : si pas de donnée, pas de News */}
           </div>
