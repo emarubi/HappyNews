@@ -16,9 +16,13 @@ const News = ({
   list, loadNews, hasData, activities, loadActivities, hasDataActivities,
   searchValue, changeSearchField, handleSearchSubmit, activitySelected, handleSelectedActivity,
 }) => {
+  // je déclare une variable qui ne garde que les news avec la prop
+  // isNews à true (donc la News est effective en ce moment pour le commerçant)
+  const listIsNewsTrue = list.filter((item) => ((item.is_news === true)));
+  console.log(listIsNewsTrue);
   const filteredNews = (
     // getNewsByCityName(list, searchValue) && getNewsByActivity(list, activitySelected));
-    getNewsByCityNameAndActivity(list, searchValue, activitySelected));
+    getNewsByCityNameAndActivity(listIsNewsTrue, searchValue, activitySelected));
   // useEffect : appelle une fonction au chargement du composant
   // car 2eme parametre = []
   useEffect(() => {
@@ -29,21 +33,16 @@ const News = ({
     loadActivities();
   }, []);
 
-//  useEffect(() => {
-// loadNews();
-// }, [list.id]);
-
   // Ajout d'un useEffect pour le filtre par recherche dans l'input
   // Ou par activité ou les 2
   useEffect(() => {
+    // const listIsNewsTrue = list.filter((item) => ((item.is_news === true)));
+    // console.log(listIsNewsTrue);
     getNewsByCityNameAndActivity(list, searchValue, activitySelected);
   }, [list, searchValue, activitySelected]);
 
-  /* useEffect(() => {
-    resetActivitySelected('');
-  }, []); */
-
   const { register, handleSubmit, errors } = useForm();
+
   return (
     <div>
       <section className="searchSection">
