@@ -57,12 +57,6 @@ const AddNewsForm = ({
     console.log('handleUpload');
   }; */
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    handleAddNews();
-    // setIsDisabled(!isDisabled);
-  };
-
   const { id } = useParams();
 
   // Gestion de la modal :
@@ -71,12 +65,19 @@ const AddNewsForm = ({
     setModalState(!modalState);
   };
 
+  // Validation du formulaire :
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    handleAddNews();
+    setModalState(!modalState);
+  };
+
   return (
     <>
       { parseInt(localStorage.getItem('id'), 10) === parseInt(id, 10)
       && (
         <button type="button" onClick={() => manageState(!modalState)}>
-          creer une news
+          creer une news / un article
         </button>
       )}
       <section className={`section-addnews-form modalBackground modalShowing-${modalState}`}>
