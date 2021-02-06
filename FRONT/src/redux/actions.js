@@ -39,7 +39,7 @@ export const GET_ALL_USERS_SUCCESS = 'GET_ALL_USERS_SUCCESS';
     return {
         type: LOGOUT
     };
-  } */
+  }
 
 // Function to change fields on addNewsForm
 export const changeAddNewsField = (name, value) => ({
@@ -109,21 +109,21 @@ export const GET_USER_DETAILS = 'GET_USER_DETAILS';
 export const GET_USER_DETAILS_SUCCESS = 'GET_USER_DETAILS_SUCCESS';
 export const GET_USER_DETAILS_ERROR = 'GET_USER_DETAILS_ERROR';
 
-export const changeAuthField = (value, name) => ({
+/* export const changeAuthField = (value, name) => ({
   type: CHANGE_AUTH_FIELD,
   name,
   value,
-});
-export const handleLogin = () => ({
+}); */
+/* export const handleLogin = () => ({
   type: LOGIN,
-});
+}); */
 export const handleLoginSuccess = (data) => ({
   type: LOGIN_SUCCESS,
   data,
 });
-export const handleLogout = () => ({
+/* export const handleLogout = () => ({
   type: LOGOUT,
-});
+}); */
 //   export const handleLoginError = () => {
 //     return {
 //         type: 'LOGIN_ERROR'
