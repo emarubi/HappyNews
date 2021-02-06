@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 // import de Firebase pour les images
 import { storage } from 'src/middlewares/firebase';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams  } from 'react-router-dom';
 import './style.scss';
 
 const AddNewsForm = ({
@@ -63,6 +63,8 @@ const AddNewsForm = ({
     // setIsDisabled(!isDisabled);
   };
 
+  const { id } = useParams();
+
   // Gestion de la modal :
   const [modalState, setModalState] = useState(false);
   const manageState = () => {
@@ -71,7 +73,7 @@ const AddNewsForm = ({
 
   return (
     <>
-      { parseInt(localStorage.getItem('id'), 10) === userId
+      { parseInt(localStorage.getItem('id'), 10) === parseInt(id, 10)
       && (
         <button type="button" onClick={() => manageState(!modalState)}>
           creer une news
