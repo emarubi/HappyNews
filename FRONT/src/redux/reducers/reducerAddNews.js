@@ -1,4 +1,4 @@
-import { CHANGE_ADDNEWS_FIELD, ADD_NEWS_SUCCESS } from '../actions';
+import { CHANGE_ADDNEWS_FIELD, ADD_NEWS_SUCCESS, SET_ISNEWS_ON_ARTICLE } from '../actions';
 
 // Initial State
 const initialState = {
@@ -31,6 +31,20 @@ const reducerAddNews = (oldState = initialState, action) => {
         activity_id: '',
         window: window.alert('La news a été ajoutée avec succès'),
       };
+    case SET_ISNEWS_ON_ARTICLE:
+      if (action.checked === false) {
+        return {
+          ...oldState,
+          is_news: true,
+        };
+      }
+      if (action.checked === true) {
+        return {
+          ...oldState,
+          is_news: false,
+        };
+      }
+      break;
     default:
       return { ...oldState };
   }

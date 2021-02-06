@@ -192,3 +192,13 @@ export const deleteNewsSuccess = (message) => {
 export const deleteNewsError = () => ({
   type: DELETE_NEWS_ERROR,
 });
+
+// form is news a true
+export const SET_ISNEWS_ON_ARTICLE = 'SET_ISNEWS_ON_ARTICLE';
+export const handleIsNewsArticle = (checked) => {
+  console.log('je suis is news dans action creator');
+  return {
+    type: SET_ISNEWS_ON_ARTICLE,
+    checked
+  };
+};

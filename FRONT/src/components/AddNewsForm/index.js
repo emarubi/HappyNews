@@ -8,7 +8,7 @@ import './style.scss';
 
 const AddNewsForm = ({
   article_title, description,
-  price, userId, handleChangeField, handleAddNews,
+  price, userId, handleChangeField, handleAddNews, handleIsNews,
 }) => {
   const [image, setImage ] = useState('');
   const [progress, setProgress] = useState(0);
@@ -125,6 +125,20 @@ const AddNewsForm = ({
                 />
                 <span className="bar" />
               </div>
+              {/* ajout input article is news a false */}
+              <div className="input-group">
+                <label className="form__label label-register" htmlFor="isNews">cliquer si vous etes commercant</label>
+                <input
+                  onChange={(event) => {
+                    handleIsNews(event.target.checked);
+                  }}
+                  id="isNews"
+                  type="checkbox"
+                  className="form__input"
+                  name="isNews"
+                />
+              </div>
+              {/* fin de l'ajout */}
               <div className="input-group">
                 <i className="picture-downlaod" />
                 <input
@@ -170,7 +184,8 @@ const AddNewsForm = ({
 };
 
 AddNewsForm.propTypes = {
-  userId: PropTypes.number,
+  handleIsNews: PropTypes.func.isRequired,
+  userId: PropTypes.string,
   handleChangeField: PropTypes.func.isRequired,
   handleAddNews: PropTypes.func.isRequired,
   article_title: PropTypes.string.isRequired,
@@ -179,7 +194,7 @@ AddNewsForm.propTypes = {
 };
 
 AddNewsForm.defaultProps = {
-  userId: null,
+  userId: '',
 };
 
 export default AddNewsForm;
