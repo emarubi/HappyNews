@@ -15,8 +15,8 @@
     &__searchBar {
       display:flex;
       align-items: center;
-      flex-wrap: wrap;
-      width: 25%;
+      //flex-wrap: wrap;
+      width: 30%;
 
       & label {
         display: none;
@@ -77,7 +77,7 @@
       justify-content: space-between;
 
       &__searchBar {
-        flex-wrap: nowrap;
+        //flex-wrap: nowrap;
         width: 90%;
       }
 

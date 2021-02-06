@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { MdDeleteForever } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
 import PopUp from 'src/containers/popup';
+import Button from 'src/components/Header/Button';
 import './style.scss';
 
 const NewsModal = ({
@@ -29,12 +30,14 @@ const NewsModal = ({
           </div>
           <div className="product-details">
             <span className="product-catagory">{news.activity_name}</span>
-            <h4><a href="">{news.article_title}</a></h4>
+            <h4 className="product-title">{news.article_title}</h4>
             <p>{news.description}</p>
             <div className="product-bottom-details">
-              <div className="product-price"><small>$96.00</small>${news.price}</div>
+              <div className="product-price">{news.price} €</div>
               <div className="product-links">
-                <NavLink to={`/commercant/profil/${news.user_id}`}>Voir le profil de ce commercant</NavLink>
+                <NavLink to={`/commercant/profil/${news.user_id}`}>
+                  <Button>Voir le profil du commerçant</Button>
+                </NavLink>
                 { parseInt(localStorage.getItem('id'), 10) === news.user_id
                   && (
                     <>

@@ -61,7 +61,7 @@ const News = ({
                 name="search"
                 value={searchValue}
                 onChange={changeSearchField}
-                placeholder="Saisissez le nom de votre ville"
+                placeholder="Saisissez le nom de la ville"
                 type="search"
                 register={register({
                   required: true, message: 'vous devez entrer un nom de ville valide',
