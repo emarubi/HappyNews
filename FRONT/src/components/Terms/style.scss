@@ -1,0 +1,21 @@
+@use 'src/styles/vars';
+.terms{
+    text-align: justify;
+    height: 73vh;
+    width: 50%;
+    margin: 3em auto 3em;
+    line-height: 1.2em;
+    background-color: vars.$Linear-gradient;
+
+    &_title{
+    margin: 1em;
+    font-weight: vars.$Dark ;
+    }
+
+    &_paragraph {
+        margin: 1em;
+        font-size: 1.2em;
+    }
+}
+
+

@@ -1,0 +1,54 @@
+@use 'src/styles/vars';
+.title {
+    //display: flex;
+    //flex-direction: column;
+    //align-items: center;
+    width: 33%;
+    margin-top: 1em;
+      &-h1 {
+      font-family:  'Quicksand', 'Inter', 'Roboto',sans-serif;
+      margin: auto;
+      padding-bottom: 0.4em;
+      transition: 0.5s;
+      color: vars.$Dark;
+  }
+  &:hover {
+    color: vars.$Dark;
+    font-weight: bold;
+  }
+}
+
+
+
+@media screen and (min-width: 1313px) {
+  h1 {
+    font-size: 2.8em;
+    text-align: right;
+  }
+}
+// max size 1313 px
+@media screen and (max-width: 1312px) {
+h1 {
+    font-size: 2.5em;
+  }
+}
+// max size 992px
+@media screen and (max-width: 992px) {
+h1 {
+    font-size: 2em;
+  }
+}
+// max size 688 px
+@media screen and (max-width: 688px){
+  .title {
+    position: absolute;
+
+    h1 {
+      position: relative;
+      top: 1.8em;
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+      //width: 7em;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@use 'src/styles/vars';
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.map__information {
+  display: block;
+  text-align: center;
+  padding: 1.5em;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: vars.$Secondary;
+}
+
+@media (min-width: 1200px) {
+  .mainContainer {
+    max-width: 70vw;
+    margin: .5em auto;
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 600px) {
+  .mainContainer {
+    max-width: 90vw;
+    margin: .5em auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .map__information {
+    padding: .5em .5em;
+  }
+}

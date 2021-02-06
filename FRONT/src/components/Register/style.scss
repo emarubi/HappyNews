@@ -1,0 +1,79 @@
+@use 'src/styles/vars';
+
+.register {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 4.5em auto;
+    padding: 0 2em 0.7em;
+    background: black;
+    color: #fff;
+    border-radius: 1em;
+    box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+   
+    &-avatar {
+        box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+        border-radius: 1em;
+        width: 15em;
+        height: 15em;
+        // background: black;
+        color: #fff;
+        box-sizing: border-box;
+        padding: 4em 2em;
+    }
+    &-title{
+        padding: 1em 0;
+        text-align: center;
+    }
+
+    &-leg-identite,
+    &-leg-address,
+    &-leg-business,
+    &-leg-security {
+        font-size: large;
+        font-weight: bold;
+        color: vars.$Primary;
+    }
+    
+    &-sec-identite,
+    &-sec-address,
+    &-sec-business,
+    &-sec-security{
+        border: 1px dashed vars.$Primary;
+        padding: 10px;
+        margin: 10px auto;
+        border-radius: 15px;
+        width: 80%;
+    }
+
+    &-form-input    {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 1.8em;
+    color: #fff;
+    font-size: 0.9em;
+    }
+  
+}
+.register-imput-checkbox{
+    display: flex;
+    width: 100%;
+    margin-left: 12%;
+}
+.form__label {
+    text-align: left;
+    width: 30em;
+}
+fieldset>div {
+    padding: 0.3em;
+    text-align: left; 
+}
+div>label {
+    width: 38%;
+    display: inline-block;
+    text-align: right;
+    font-weight: bold;
+}
+

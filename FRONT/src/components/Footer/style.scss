@@ -1,0 +1,61 @@
+@use 'src/styles/vars';
+
+.footer {
+  // position: absolute;
+  // bottom: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 4em;
+  background-color: vars.$Dark;
+  color: vars.$Primary;
+  font-size: 1.5em;
+  box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+  font-weight: 500;
+  &__list {
+    color: inherit;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    &__item {
+      padding: 0 2em;
+      ::after {
+        content:'';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: vars.$Primary;
+        transition: width .3s;
+        margin-top: 0.2em;
+      }
+      :hover::after {
+        width: 100%;
+        transition: width .3s;
+      }
+      &__link:hover {
+        color: vars.$Primary;
+      }
+    }
+
+  }
+}
+
+// @media (min-width: 1500px) {
+//   .footer {
+//     max-width: 70vw;
+//     margin: 0 auto;
+//   }
+// }
+
+@media (max-width: 800px) {
+  .footer {
+    // max-width: 90vw;
+    margin-top: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    height: fit-content;
+    &__list {
+      flex-wrap: wrap;
+    }
+  }
+}

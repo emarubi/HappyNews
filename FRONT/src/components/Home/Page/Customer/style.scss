@@ -1,0 +1,86 @@
+// @use '../../../../styles/vars';
+@use 'src/styles/vars';
+
+.customer {
+  background:vars.$Linear-gradient;
+  color: #FFF;
+  display: flex;
+  height: 60vh;
+  margin: 1em 0;
+  box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.75);
+
+  &__presentationText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3em;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left: 2em;
+    padding-right: 2em;
+    line-height: 1.5em;
+
+    &__presentationTitle {
+      padding-bottom: 0.5em;
+      font-size: 2em;
+      font-weight: 400;
+    }
+
+    &__presentationBody {
+      font-size: 1.2em;
+    }
+  }
+
+  &__pictureCharacter {
+    width: 50%;
+    height: inherit;
+
+    &__illustrationPicture {
+      // max-width: 40vw;
+      // margin: 2em 4em;
+      height: inherit;
+      object-fit: contain;
+      padding: 2em;
+    }
+  }
+    
+}
+
+@media (min-width: 1200px) {
+  .customer__pictureCharacter__illustrationPicture {
+    // max-width: 30vw;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .customer {
+    height: 40vh;
+      &__pictureCharacter {
+        width: 0;
+
+        &__illustrationPicture {
+          display: none;
+          padding-left: 0;
+        }
+      }
+      
+    &__presentationText {
+      margin: 0 .5em;
+    }
+  }
+}
+// .contenWave {
+//   position: relative;
+// }
+
+// .wave-2 {
+//   width: 100%;
+//   object-fit: cover;
+//   position: relative;
+//   top: 0.3em;
+//   left: -0.1rem;
+// }
+
+
