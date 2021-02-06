@@ -48,7 +48,6 @@ const Login = ({
               type="password"
               register={register({
                 required: { value: true, message: 'Ce champs est obligatoire' },
-                // minLength: { value: 8, message: 'le password doit contenir au moins 8 caracteres' },
               })}
             />
             {errors.password && <div className="login__form-error"> {errors.password.message}</div>}
