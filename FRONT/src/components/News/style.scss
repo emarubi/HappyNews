@@ -9,6 +9,7 @@
   &__searchBar {
     display:flex;
     align-items: center;
+    flex-wrap: wrap;
     width: 25%;
     & label {
       display: none;
