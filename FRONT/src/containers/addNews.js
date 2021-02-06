@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import AddNewsForm from 'src/components/AddNewsForm';
-import { addNewsSuccess, changeAddNewsField, handleAddNews } from '../redux/actions';
+import { addNewsSuccess, changeAddNewsField, handleAddNews, handleIsNewsArticle } from '../redux/actions';
 
 const mapStateToProps = (state) => ({
   article_title: state.addNews.article_title,
@@ -27,6 +27,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   addNewsSuccess: () => {
     dispatch(addNewsSuccess());
+  },
+  handleIsNews: (checked) => {
+    dispatch(handleIsNewsArticle(checked));
   },
 });
 

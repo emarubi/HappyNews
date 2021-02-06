@@ -38,6 +38,7 @@ const Header = ({
         {token == null && (
         <>
           <NavLink to="/connexion"> <Button>Connexion</Button></NavLink>
+          <NavLink to="/inscription"> <Button>Inscription</Button></NavLink>
         </>
         )}
         <NavLink to="/news/liste"><Button>Liste des news</Button></NavLink>

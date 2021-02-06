@@ -1,6 +1,6 @@
 import axios from 'axios';
 import FormData from 'form-data';
-import { ADD_NEWS, ADD_NEWS_SUCCESS } from '../redux/actions';
+import { ADD_NEWS, ADD_NEWS_SUCCESS, GET_NEWS } from '../redux/actions';
 
 const add = (store) => (next) => (action) => {
   switch (action.type) {
@@ -45,6 +45,7 @@ const add = (store) => (next) => (action) => {
         .then((response) => { // La requête réussit
           console.log('Je suis dans axios.then, et response.data vaut:', response.data);
           store.dispatch({ type: ADD_NEWS_SUCCESS, newNews: response.data });
+          store.dispatch({ type: GET_NEWS });
           // addNewsSuccess(response.data)
         })
         .catch((error) => { // La requête échoue

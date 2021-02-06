@@ -12,14 +12,7 @@ const Tabs = ({ user, news }) => {
     setToggleState(index);
   };
   const { id } = useParams();
-  // console.log(id);
-  // console.log(parseInt(id));
-  // const { id } = useParams();
-  // console.log(news);
 
-  // const newsByUserId = news.filter((article) => article.user_id = id);
-  // console.log(newsByUserId);
-  // console.log(news);
   const newsIsNewsTrue = news.filter((news) => (news.is_news === true));
   // console.log(newsIsNewsTrue);
 
@@ -60,9 +53,7 @@ const Tabs = ({ user, news }) => {
             {user.content}
           </p>
         </div>
-
-        <div className={toggleState === 2 ? 'content  active-content' : 'content'}>
-          
+        <div className={toggleState === 2 ? 'content  active-content' : 'content'}> 
             {/* // news.map((item) => <li> {item.id}</li>) */}
             {
                 newsUserIdIsTrue.map((news) => (
@@ -71,11 +62,8 @@ const Tabs = ({ user, news }) => {
                   </div>
                 ))
               }
-       
         </div>
-
         <div className={toggleState === 3 ? 'content  active-content' : 'content'}>
-         
             {
                 newsUserIdIsFalse.map((news) => (
                   <div key={news.id} className="newsList__item">
@@ -83,9 +71,7 @@ const Tabs = ({ user, news }) => {
                   </div>
                 ))
               }
-       
         </div>
-
       </div>
     </div>
   );

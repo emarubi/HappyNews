@@ -3,12 +3,13 @@ import React, { useState } from 'react';
 // import de Firebase pour les images
 import { storage } from 'src/middlewares/firebase';
 import PropTypes from 'prop-types';
-import { NavLink, useParams  } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
+import Button from 'src/components/Header/Button';
 import './style.scss';
 
 const AddNewsForm = ({
   article_title, description,
-  price, userId, handleChangeField, handleAddNews,
+  price, userId, handleChangeField, handleAddNews, handleIsNews,
 }) => {
   const [image, setImage ] = useState('');
   const [progress, setProgress] = useState(0);
@@ -57,12 +58,6 @@ const AddNewsForm = ({
     console.log('handleUpload');
   }; */
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    handleAddNews();
-    // setIsDisabled(!isDisabled);
-  };
-
   const { id } = useParams();
 
   // Gestion de la modal :
@@ -71,19 +66,29 @@ const AddNewsForm = ({
     setModalState(!modalState);
   };
 
+  // Validation du formulaire :
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    handleAddNews();
+    setModalState(!modalState);
+  };
+
   return (
     <>
       { parseInt(localStorage.getItem('id'), 10) === parseInt(id, 10)
       && (
-        <button type="button" onClick={() => manageState(!modalState)}>
-          creer une news
-        </button>
+        <Button
+          type="button"
+          event={() => manageState(!modalState)}
+        >
+          Créer une news / un article
+        </Button>
       )}
       <section className={`section-addnews-form modalBackground modalShowing-${modalState}`}>
       {/* <section className="section-addnews-form"> */}
         <div id="wraper">
           <div className="form-container">
-            <span className="form-heading">Ajouter une News</span>
+            <span className="form-heading">Ici, vous pouvez ajouter une News ou un article à votre vitrine</span>
             <form
               className="form-body"
               onSubmit={handleSubmit}
@@ -125,6 +130,20 @@ const AddNewsForm = ({
                 />
                 <span className="bar" />
               </div>
+              {/* ajout input article is news a false */}
+              <div className="input-group">
+                <label className="form__label label-register" htmlFor="isNews">Cochez s'il s'agit d'un article pour votre vitrine</label>
+                <input
+                  onChange={(event) => {
+                    handleIsNews(event.target.checked);
+                  }}
+                  id="isNews"
+                  type="checkbox"
+                  className="form__input"
+                  name="isNews"
+                />
+              </div>
+              {/* fin de l'ajout */}
               <div className="input-group">
                 <i className="picture-downlaod" />
                 <input
@@ -170,7 +189,8 @@ const AddNewsForm = ({
 };
 
 AddNewsForm.propTypes = {
-  userId: PropTypes.number,
+  handleIsNews: PropTypes.func.isRequired,
+  userId: PropTypes.string,
   handleChangeField: PropTypes.func.isRequired,
   handleAddNews: PropTypes.func.isRequired,
   article_title: PropTypes.string.isRequired,
@@ -179,7 +199,7 @@ AddNewsForm.propTypes = {
 };
 
 AddNewsForm.defaultProps = {
-  userId: null,
+  userId: '',
 };
 
 export default AddNewsForm;
