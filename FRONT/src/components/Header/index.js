@@ -1,7 +1,7 @@
 // import NPM
 import PropTypes from 'prop-types';
 import React from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import Avatar from 'src/components/Header/Avatar';
 import Button from 'src/components/Header/Button';
 import Logo from 'src/components/Header/Logo';
@@ -24,12 +24,14 @@ const Header = ({
           <div className="header-helloUser">
             <p>Bonjour {prenom} !</p>
           </div>
-          <Button
-            type="button"
-            event={handleLogout}
-          >
-            Déconnexion
-          </Button>
+          <NavLink to="/">
+            <Button
+              type="button"
+              event={handleLogout}
+            >
+              Déconnexion
+            </Button>
+          </NavLink>
           <NavLink to={`/commercant/profil/${id}`}> <Button>Mon profil</Button></NavLink>
         </>
         )}
@@ -43,9 +45,16 @@ const Header = ({
     </header>
   );
 Header.propTypes = {
-  isLogged: PropTypes.bool,
   handleLogout: PropTypes.func.isRequired,
-  first_name: PropTypes.string,
+  token: PropTypes.string,
+  prenom: PropTypes.string,
+  id: PropTypes.bool,
+};
+
+Header.defaultProps = {
+  prenom: '',
+  token: '',
+  id: null,
 };
 
 export default Header;

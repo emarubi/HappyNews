@@ -9,7 +9,7 @@ import CGU from 'src/components/CGU';
 import ContactForm from 'src/components/ContactForm';
 import Footer from 'src/components/Footer';
 import Home from 'src/components/Home';
-import NewsModal from 'src/components/NewsModal';
+// import NewsModal from 'src/components/NewsModal';
 import Terms from 'src/components/Terms';
 import AddNewsForm from 'src/containers/addNews';
 // import Header from 'src/components/Header';
@@ -20,7 +20,7 @@ import News from 'src/containers/news';
 import Register from 'src/containers/register';
 // import Login from 'src/components/Login';
 import RetaillerP from 'src/containers/RetaillerP';
-import newsList from 'src/data/data';
+
 // == Import CSS
 import './styles.scss';
 
@@ -39,15 +39,15 @@ const App = ({ isLogged }) => (
         <Register />
       </Route>
       <Route exact path="/commercant/profil/:id">
-        {/* { localStorage.getItem('token') ? <RetaillerP /> : <Redirect to="/news/liste" />} */}
+        {/* { isLogged ? <RetaillerP /> : <Redirect to="/news/liste" />} */}
         <RetaillerP />
       </Route>
       <Route exact path="/news/liste">
         <News />
       </Route>
-      <Route exact path="/newsmodal">
+{/*       <Route exact path="/newsmodal">
         <NewsModal news={newsList.data[3]} />
-      </Route>
+      </Route> */}
       <Route exact path="/creation-de-news">
         <AddNewsForm />
       </Route>
