@@ -1,16 +1,15 @@
-import { Redirect } from 'react-router-dom';
-import { CHANGE_ADDNEWS_FIELD, ADD_NEWS_SUCCESS} from '../actions';
+import { CHANGE_ADDNEWS_FIELD, ADD_NEWS_SUCCESS } from '../actions';
 
 // Initial State
 const initialState = {
-    article_title: '',
-    description: '',
-    picture_url: '',
-    price: '',
-    is_news: true, 
-    user_id: null, 
-    activity_id: '', 
-}
+  article_title: '',
+  description: '',
+  picture_url: '',
+  price: '',
+  is_news: true,
+  user_id: null,
+  activity_id: '',
+};
 
 // reducer
 const reducerAddNews = (oldState = initialState, action) => {
@@ -27,10 +26,10 @@ const reducerAddNews = (oldState = initialState, action) => {
         description: '',
         picture_url: '',
         price: '',
-        is_news: true, 
-        user_id: null, 
+        is_news: true,
+        user_id: null,
         activity_id: '',
-        window: window.alert("La news a été ajoutée avec succès")
+        window: window.alert('La news a été ajoutée avec succès'),
       };
     default:
       return { ...oldState };

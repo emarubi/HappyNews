@@ -41,21 +41,10 @@ const App = ({ isLogged }) => (
       <Route exact path="/commercant/profil/:id">
         {/* { localStorage.getItem('token') ? <RetaillerP /> : <Redirect to="/news/liste" />} */}
         <RetaillerP />
-        {/* <AddNewsForm /> */}
       </Route>
       <Route exact path="/news/liste">
         <News />
       </Route>
-      {/* <Route exact path="/news/:categoriesId">
-        < />
-    </Route> */}
-      {/* <Route exact path="/news/recherche">
-          < />
-    </Route> */}
-      {/* <Route exact path="/map/recherche">
-          < />
-    </Route> */}
-      {/* Route provisoire pour afficher le détail d'une carte */}
       <Route exact path="/newsmodal">
         <NewsModal news={newsList.data[3]} />
       </Route>

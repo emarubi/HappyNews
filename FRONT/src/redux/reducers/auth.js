@@ -49,13 +49,17 @@ const authReducer = (state = initialState, action) => {
       localStorage.clear();
       return {
         ...state,
+        userId: '',
         logged: false,
         token: null,
         // 2eme changement
         email: '',
         password: '',
-        first_name: null,
-
+        first_name: '',
+        last_name: '',
+        adress: '',
+        zip_code: '',
+        city: '',
       };
       // case SUBSCRIBE_ROLE_ID:
     case SUBSCRIBE_ROLE_ID:
