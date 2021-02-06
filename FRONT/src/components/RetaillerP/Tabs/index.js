@@ -56,13 +56,13 @@ const Tabs = ({ user, news }) => {
       </div>
       <div className="content-tabs">
         <div className={toggleState === 1 ? 'content  active-content' : 'content'}>
-          <p>
+          <p className="content-tabs-p">
             {user.content}
           </p>
         </div>
 
         <div className={toggleState === 2 ? 'content  active-content' : 'content'}>
-          <p>
+          
             {/* // news.map((item) => <li> {item.id}</li>) */}
             {
                 newsUserIdIsTrue.map((news) => (
@@ -71,20 +71,19 @@ const Tabs = ({ user, news }) => {
                   </div>
                 ))
               }
-          </p>
+       
         </div>
 
         <div className={toggleState === 3 ? 'content  active-content' : 'content'}>
-          <p>
+         
             {
                 newsUserIdIsFalse.map((news) => (
                   <div key={news.id} className="newsList__item">
                     <NewsModal news={news} />
-
                   </div>
                 ))
               }
-          </p>
+       
         </div>
 
       </div>
