@@ -65,15 +65,17 @@ const NewsModal = ({
             </div>
             <div className="product-details-modal">
               <span className="product-catagory-modal">{news.activity_name}</span>
-              <h4><a href="">{news.article_title}</a></h4>
+              <h4 className="product-title-modal">{news.article_title}</h4>
               <p>{news.description}</p>
               <div className="product-bottom-details-modal">
-                <div className="product-price-modal"><small>$96.00</small>${news.price}</div>
+                <div className="product-price-modal">{news.price} €</div>
                 <div className="product-links-modal">
-                  <button type="button" onClick={() => manageState(!modalState)}>
-                    fermer la modale
+                  <NavLink to={`/commercant/profil/${news.user_id}`}>
+                    <Button>Voir le profil du commerçant</Button>
+                  </NavLink>
+                  <button type="button" className="button" onClick={() => manageState(!modalState)}>
+                    Fermer  la fenêtre
                   </button>
-                  <NavLink to={`/commercant/profil/${news.user_id}`}>Voir le profil de ce commercant</NavLink>
                 </div>
               </div>
             </div>

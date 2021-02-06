@@ -75,7 +75,7 @@
   overflow: auto;
   font-size: 15px;
   line-height: 22px;
-  // margin-bottom: 10px;
+  padding-bottom: 1em;
 }
 
 .product-bottom-details {
@@ -83,11 +83,6 @@
   border-top: 1px solid #eee;
   padding-top: 1em;
 }
-
-// .product-bottom-details div {
-//   float: right;
-//   width: fit-content;
-// }
 
 .product-price {
   font-size: 1.5em;
@@ -137,21 +132,13 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  max-height: 50%;
+  //max-height: 50%;
   max-width: 25%;
   transition: opacity 0.4s ease-in-out;
+  height: fit-content;
   // background: vars.$Clear;
 }
 .badge-modal{
-/*   left: 0;
-  top: 20px;
-  text-transform: uppercase;
-  font-size: 13px;
-  font-weight: 700;
-  background: red;
-  color: rgb(248, 248, 248);
-  padding: 3px 10px; */
-  
   box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.8);
   left: 0;
   top: 20px;
@@ -181,35 +168,78 @@
 }
 .product-catagory-modal{
   display: block;
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: 700;
   text-transform: uppercase;
   color: rgb(255, 255, 255);
   margin-bottom: 15px;
 }
+
+.product-title-modal {
+  color: vars.$Secondary;
+  font-size: 1.4em;
+  margin-bottom: 1em;
+  padding: .2em;
+  text-align: center;
+  font-weight: 700;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 4px rgba(68, 68, 68, 0.8)
+}
+
 .product-details-modal p {
   font-weight: 500;
   // display: block;
   // margin-bottom: 18px;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   // color: #797979;
   text-decoration: none;
   transition: 0.3s;
-  height: 4.5em;
+  height: fit-content;
   // overflow: auto;
   font-size: 15px;
   line-height: 22px;
-  // margin-bottom: 10px;
-  color: rgb(255, 255, 255);
+  padding-bottom: 1em;
+  color: vars.$Dark;
 }
+
+.product-bottom-details-modal {
+  overflow: hidden;
+  border-top: 1px solid #eee;
+  padding-top: 1em;
+}
+
 .product-price-modal{
-  font-size: 18px;
+  font-size: 1.5em;
   color: vars.$Secondary;
   font-weight: 600;
+  width: fit-content;
+  padding: .2em;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 4px rgba(68, 68, 68, 0.8)
 }
 .product-links-modal {
-  text-align: right;
+  // text-align: right;
+  margin: 1em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.button {
+  width: 100%;
+  border-radius: 1em;
+  margin-bottom: 1em;
+}
+  
+.product-links-modal a {
+  // display: inline-block;
+  margin-left: 5px;
+  color: vars.$Secondary;
+  transition: 0.3s;
+  font-size: 17px;
+  }
+
 .product-links-modal a:hover {
   color: vars.$Secondary;
 }
