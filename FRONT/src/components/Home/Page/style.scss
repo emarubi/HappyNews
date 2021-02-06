@@ -1,6 +1,6 @@
 @use 'src/styles/vars';
 
-.main_container {
+.mainContainer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -15,14 +15,14 @@
 }
 
 @media (min-width: 1200px) {
-  .main_container {
+  .mainContainer {
     max-width: 70vw;
     margin: .5em auto;
   }
 }
 
 @media (max-width: 1200px) and (min-width: 600px) {
-  .main_container {
+  .mainContainer {
     max-width: 90vw;
     margin: .5em auto;
   }
