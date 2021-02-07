@@ -20,15 +20,35 @@
     padding-left: 2em;
     padding-right: 2em;
     line-height: 1.5em;
+    font-size: 1.2em;
+    text-shadow: 2px 2px 10px rgba(155, 155, 155, 0.75);
 
     &__presentationTitle {
       padding-bottom: 0.5em;
       font-size: 2em;
       font-weight: 400;
+      &::after {
+        content:'';
+        display: block;
+        width: 0;
+        height: 0.3rem;
+        background: vars.$Clear;
+        font-weight: 700;
+        transition: width .5s;
+        margin-top: 0.2em;
+      }
+      &:hover::after {
+        width: 100%;
+        transition: width .5s;
+      }
+      &:hover {
+        color: vars.$Secondary;
+      }
     }
 
     &__presentationBody {
       font-size: 1.2em;
+      font-weight: 400;
     }
   }
 

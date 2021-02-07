@@ -36,6 +36,7 @@ const api = (store) => (next) => (action) => {
           // on envoie une action pour sauvegarder la liste des news (articles)
           // avec un second paramètre qui contient la réponse
           store.dispatch(deleteNewsSuccess(response.data));
+          store.dispatch({ type: 'GET_NEWS' }); // GG !  thank's brooo
           window.alert('La suppression de la carte a été effectuée');
         })
         .catch((error) => { // cas d'erreur

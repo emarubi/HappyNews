@@ -11,6 +11,7 @@
       padding-bottom: 0.4em;
       transition: 0.5s;
       color: vars.$Dark;
+      text-shadow: 5px 5px 10px rgba(255, 255, 255, 0.75);
   }
   &:hover {
     color: vars.$Dark;

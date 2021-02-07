@@ -38,6 +38,7 @@ const Header = ({
         {token == null && (
         <>
           <NavLink to="/connexion"> <Button>Connexion</Button></NavLink>
+          <NavLink to="/inscription"> <Button>Inscription</Button></NavLink>
         </>
         )}
         <NavLink to="/news/liste"><Button>Liste des news</Button></NavLink>
@@ -48,13 +49,13 @@ Header.propTypes = {
   handleLogout: PropTypes.func.isRequired,
   token: PropTypes.string,
   prenom: PropTypes.string,
-  id: PropTypes.bool,
+  id: PropTypes.string,
 };
 
 Header.defaultProps = {
   prenom: '',
   token: '',
-  id: null,
+  id: '',
 };
 
 export default Header;

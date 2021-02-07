@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MdDeleteForever } from 'react-icons/md';
+import { loadNews } from 'src/redux/actions';
 import { NavLink } from 'react-router-dom';
 import PopUp from 'src/containers/popup';
 import Button from 'src/components/Header/Button';
@@ -19,11 +20,22 @@ const NewsModal = ({
     setModalState(!modalState);
   };
 
+  useEffect(() => {
+    // loadNews : une prop qui charge les news (les articles)
+    // cette fonction prop sera définie dans le container
+    loadNews();
+    console.log('je suis dans le useEffect de NewsModal');
+  }, [popUp]);
+
   return (
     <>
       <section>
         <div className="product-card">
-          <div className="badge">News  </div>
+          <div className="badge">
+            {
+              news.is_news === true ? 'News' : 'Article en vitrine'
+            }
+          </div>
 
           <div className="product-tumb">
             <img src={news.picture_url} alt="news" onClick={() => manageState(!modalState)} />
@@ -59,7 +71,11 @@ const NewsModal = ({
       <section>
         <div className={`modalBackground modalShowing-${modalState} product-modal`}>
           <div className="container-modal">
-            <div className="badge-modal">News</div>
+            <div className="badge-modal">
+              {
+                news.is_news === true ? 'News' : 'Article en vitrine'
+              }
+            </div>
             <div className="product-tumb-modal">
               <img src={news.picture_url} alt="news-modal" className="modal-picture" />
             </div>
@@ -95,6 +111,7 @@ NewsModal.propTypes = {
     price: PropTypes.string.isRequired,
     activity_name: PropTypes.string.isRequired,
     user_id: PropTypes.number.isRequired,
+    is_news: PropTypes.bool.isRequired,
   }).isRequired,
 };
 

@@ -50,14 +50,18 @@
   text-transform: uppercase;
   color: rgb(255, 255, 255);
   margin-bottom: 15px;
+  text-shadow: 3px 3px 3px rgba(0, 113, 126, 1);
 }
 
 .product-title {
   color: vars.$Secondary;
   font-size: 1.4em;
+  //height: 2.5em;
   margin-bottom: 1em;
   padding: .2em;
   text-align: center;
+  overflow-wrap: normal;
+  word-break: keep-all;
   font-weight: 700;
   background-color: #ffffff;
   box-shadow: 2px 2px 4px rgba(68, 68, 68, 0.8)
@@ -73,8 +77,8 @@
   transition: 0.3s;
   height: 4.5em;
   overflow: auto;
-  font-size: 15px;
-  line-height: 22px;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
   padding-bottom: 1em;
 }
 
@@ -95,7 +99,7 @@
 }
 
 .product-links {
- // text-align: right;
+  text-align: center;
   margin-top: 1em;
 }
 
@@ -173,6 +177,7 @@
   text-transform: uppercase;
   color: rgb(255, 255, 255);
   margin-bottom: 15px;
+  text-shadow: 3px 3px 3px rgba(0, 113, 126, 1);
 }
 
 .product-title-modal {
@@ -181,6 +186,7 @@
   margin-bottom: 1em;
   padding: .2em;
   text-align: center;
+  overflow-wrap: break-word;
   font-weight: 700;
   background-color: #ffffff;
   box-shadow: 2px 2px 4px rgba(68, 68, 68, 0.8)
@@ -194,10 +200,10 @@
   // color: #797979;
   text-decoration: none;
   transition: 0.3s;
-  height: fit-content;
+  height: fit-content; // height: 4.5em;
   // overflow: auto;
-  font-size: 15px;
-  line-height: 22px;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
   padding-bottom: 1em;
   color: vars.$Dark;
 }
@@ -227,8 +233,8 @@
 }
 
 .button {
-  width: 100%;
-  border-radius: 1em;
+  width: fit-content;
+  // border-radius: 1em;
   margin-bottom: 1em;
 }
   
