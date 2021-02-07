@@ -10,7 +10,7 @@
     justify-content: space-around;
     align-items: center;
     padding: 2em;
-    background: vars.$Primary;
+    background: vars.$Clear;
 
     &__searchBar {
       display:flex;
@@ -42,7 +42,8 @@
   &__tagsContainer {
     display: flex;
     flex-wrap: wrap;
-    background: vars.$Primary;
+    background: vars.$Clear;
+    box-shadow: 0px 12px 16px -7px #000000;
     &__tag {
       width: 8em;
       margin: 1em;
