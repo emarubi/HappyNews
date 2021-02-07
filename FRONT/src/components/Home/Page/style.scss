@@ -9,9 +9,10 @@
   display: block;
   text-align: center;
   padding: 1.5em;
-  font-size: 1.5em;
+  font-size: 1.6em;
   font-weight: bold;
   color: vars.$Secondary;
+  text-shadow: 5px 5px 10px rgba(255, 255, 255, 0.75);
 }
 
 @media (min-width: 1200px) {

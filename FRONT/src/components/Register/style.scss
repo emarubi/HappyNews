@@ -1,5 +1,9 @@
 @use 'src/styles/vars';
 
+.containerRegister {
+  background: vars.$Linear-gradient;
+}
+
 .register {
     display: flex;
     flex-direction: column;
@@ -10,6 +14,7 @@
     color: #fff;
     border-radius: 1em;
     box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+    font-size: 1.1em;
    
     &-avatar {
         box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
@@ -30,9 +35,10 @@
     &-leg-address,
     &-leg-business,
     &-leg-security {
-        font-size: large;
+        // font-size: 1.2;
         font-weight: bold;
         color: vars.$Primary;
+        font-size: 1.1rem;
     }
     
     &-sec-identite,
@@ -40,31 +46,49 @@
     &-sec-business,
     &-sec-security{
         border: 1px dashed vars.$Primary;
-        padding: 10px;
-        margin: 10px auto;
+        padding: 0.8em;
+        margin: 0.8em auto;
         border-radius: 15px;
         width: 80%;
+        font-size: 1.1rem;
     }
 
-    &-form-input    {
-    border: none;
-    border-bottom: 1px solid #fff;
-    background: transparent;
-    outline: none;
-    height: 1.8em;
-    color: #fff;
-    font-size: 0.9em;
+     &-form-activity {
+    display: flex;
+    // justify-content: space-around;
+    align-items: center;
+     &-select {
+       font-size: 1.1em;
+     }
     }
-  
 }
+
+.form__input {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  // height: 1.8em;
+  color: #fff;
+  font-size: 1.1em;
+}
+
 .register-input-checkbox{
-    // display: flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
     width: 100%;
-    margin-left: 12%;
 }
 .form__label {
     text-align: left;
-    width: 30em;
+    width: 15em;
+    font-size: 1.2rem;
+    &-register{
+      margin-left: 3em;
+      width: 50%;
+      font-size: 1.2rem;
+    }
 }
 fieldset>div {
     padding: 0.3em;

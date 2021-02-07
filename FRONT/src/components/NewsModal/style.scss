@@ -50,11 +50,13 @@
   text-transform: uppercase;
   color: rgb(255, 255, 255);
   margin-bottom: 15px;
+  text-shadow: 3px 3px 3px rgba(0, 113, 126, 1);
 }
 
 .product-title {
   color: vars.$Secondary;
   font-size: 1.4em;
+  height: 2.5em;
   margin-bottom: 1em;
   padding: .2em;
   text-align: center;
@@ -73,8 +75,8 @@
   transition: 0.3s;
   height: 4.5em;
   overflow: auto;
-  font-size: 15px;
-  line-height: 22px;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
   padding-bottom: 1em;
 }
 
@@ -95,7 +97,7 @@
 }
 
 .product-links {
- // text-align: right;
+  text-align: center;
   margin-top: 1em;
 }
 
@@ -173,6 +175,7 @@
   text-transform: uppercase;
   color: rgb(255, 255, 255);
   margin-bottom: 15px;
+  text-shadow: 3px 3px 3px rgba(0, 113, 126, 1);
 }
 
 .product-title-modal {
@@ -194,10 +197,10 @@
   // color: #797979;
   text-decoration: none;
   transition: 0.3s;
-  height: fit-content;
+  height: fit-content; // height: 4.5em;
   // overflow: auto;
-  font-size: 15px;
-  line-height: 22px;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
   padding-bottom: 1em;
   color: vars.$Dark;
 }

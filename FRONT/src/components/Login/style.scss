@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   background: vars.$Linear-gradient;
-  height: 45em;
+  height: 51em;
   &__loginbox {
     box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
     border-radius: 1em;
@@ -15,17 +15,17 @@
     color: #fff;
     box-sizing: border-box;
     padding: 4em 2em;
-    margin-bottom: 2em;
+    // margin-bottom: 3em;
+    font-size: 1.2em;
     &__avatar {
-      width: 100px;
-      height: 100px;
+      width: 6em;
+      height: 6em;
       border-radius: 50%;
       position: absolute;
-      top: 10em;
-      left: calc(50% - 50px);
+      top: 8.5em;
+      left: calc(50% - 3em);
     }
     &__title {
-      margin: 0;
       padding: 0 0 1em;
       text-align: center;
     }
