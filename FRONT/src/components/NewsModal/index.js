@@ -36,7 +36,6 @@ const NewsModal = ({
               news.is_news === true ? 'News' : 'Article en vitrine'
             }
           </div>
-
           <div className="product-tumb">
             <img src={news.picture_url} alt="news" onClick={() => manageState(!modalState)} />
           </div>
@@ -53,10 +52,13 @@ const NewsModal = ({
                 { parseInt(localStorage.getItem('id'), 10) === news.user_id
                   && (
                     <>
-                      <MdDeleteForever onClick={() => {
-                        changePopup(); console.log(popUp);
-                      }}
-                      />
+                      <div className="delete-button">
+                        <MdDeleteForever
+                          onClick={() => {
+                            changePopup(); console.log(popUp);
+                          }}
+                        />
+                      </div>
                       {popUp === true
                       && <PopUp news={news} changePopup={changePopup} />}
                     </>

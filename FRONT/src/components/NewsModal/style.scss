@@ -233,7 +233,7 @@
 }
 
 .button {
-  width: fit-content;
+  // width: fit-content;
   // border-radius: 1em;
   margin-bottom: 1em;
 }
@@ -248,4 +248,13 @@
 
 .product-links-modal a:hover {
   color: vars.$Secondary;
+}
+
+.delete-button {
+  font-size: 2em;
+  position: relative;
+  top: -2.9em;
+  left: 3.5em;
+  color: red;
+  cursor: pointer;
 }
