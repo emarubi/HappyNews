@@ -132,7 +132,7 @@ const AddNewsForm = ({
               </div>
               {/* ajout input article is news a false */}
               <div className="input-group">
-                <label className="form__label label-register" htmlFor="isNews">Cochez s'il s'agit d'un article pour votre vitrine</label>
+                <label className="form__label--isNews" htmlFor="isNews">Cochez s'il s'agit d'un article pour votre vitrine</label>
                 <input
                   onChange={(event) => {
                     handleIsNews(event.target.checked);
@@ -151,7 +151,7 @@ const AddNewsForm = ({
                   type="file"
                   onChange={handleChangeImg}
                 />
-                <button type="button" onClick={uploadImageFirebase}>v</button>
+                <button type="button" onClick={uploadImageFirebase}>valider</button>
                 <span className="bar" />
               </div>
               <div className="input-group">
