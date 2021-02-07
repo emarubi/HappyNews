@@ -152,23 +152,25 @@
     font-size: 1.3em;
     font-weight: 500;
     min-height: 23em;
+    overflow-wrap: normal;
+    word-break: keep-all;
   }
  
   .content-tabs{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     width: 100%;
   }
   
   .active-content {
     display: flex;
     // flex-direction: row;
-    // flex:wrap;
-    // height: 100%;
-    width: 100%;
+    flex-wrap:wrap;
+    height: 100%;
+    // width: 100%;
     padding: 2em;
-    justify-content: center;
-    overflow-x: auto;
+    justify-content: space-around;
+    // overflow-x: auto;
   }
   // .newsList__item {
   //   display: flex;
