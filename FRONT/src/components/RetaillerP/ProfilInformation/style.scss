@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 .information-container {
     width: 100%;
     display: flex;
@@ -16,3 +18,8 @@
   padding: 3em 0 1em 1em;
   width: 30em;
 }
+
+/* .profil-pic {
+  width: 8em;
+  border: solid 2px vars.$Primary ;
+} */

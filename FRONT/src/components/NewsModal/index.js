@@ -45,11 +45,7 @@ const NewsModal = ({
             <p>{news.description}</p>
             <div className="product-bottom-details">
               <div className="product-price">{news.price} €</div>
-              <div className="product-links">
-                <NavLink to={`/commercant/profil/${news.user_id}`}>
-                  <Button>Voir le profil du commerçant</Button>
-                </NavLink>
-                { parseInt(localStorage.getItem('id'), 10) === news.user_id
+              { parseInt(localStorage.getItem('id'), 10) === news.user_id
                   && (
                     <>
                       <div className="delete-button">
@@ -63,6 +59,10 @@ const NewsModal = ({
                       && <PopUp news={news} changePopup={changePopup} />}
                     </>
                   )}
+              <div className="product-links">
+                <NavLink to={`/commercant/profil/${news.user_id}`}>
+                  <Button>Voir le profil du commerçant</Button>
+                </NavLink>
               </div>
             </div>
           </div>
