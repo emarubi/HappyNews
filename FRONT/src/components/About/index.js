@@ -7,7 +7,7 @@ import PacAvatar from 'src/assets/Images/Paco.svg';
 import './style.scss';
 
 const About = () => (
-  <section className="container">
+  <section className="aboutUs">
     <div className="presentation__section">
       <h2 className="presentation__title">Titre de la section présentation</h2>
       <p className="presentation__text">Texte de la présentation</p>
@@ -41,7 +41,18 @@ const About = () => (
     </div>
     <div className="evolution__section">
       <h2 className="evolution__title">Titre de la section évolutions</h2>
-      <p className="evolution__text">Texte de la section évolutions</p>
+      <div className="evolution__text">
+        <ul>
+          <li>Optimiser le contact commerçant (formulaire de contact ou chat)</li>
+          <li>Mise en place de la durée de vie d’une news au moment de la création</li>
+          <li>Favoris pour trouver l’intérêt de créer un compte client</li>
+          <li>Envoi automatique de NewsLetter</li>
+          <li>Monétisation du site (La publication de news payant / La possibilité d’acheter directement en ligne)</li>
+          <li>Une partie admin pour gérer les réclamations des utilisateurs</li>
+          <li>Mise en place d’un système de livraison</li>
+          <li>Historique des ventes et d’achats pour les utilisateurs</li>
+        </ul>
+      </div>
     </div>
     
   </section>
