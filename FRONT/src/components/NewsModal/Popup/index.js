@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import Button from 'src/components/Header/Button';
 import './style.scss';
 
 const PopUp = ({ changePopup, handleDelete, news }) => {
   const handleDeleteCard = (event) => {
+    console.log('je suis dans ma fonctin handleDEleteCAD');
     handleDelete(event.target.value);
     changePopup();
   };
@@ -13,19 +15,27 @@ const PopUp = ({ changePopup, handleDelete, news }) => {
     <div className="popup">
       <div className="popup_inner">
         <p className="popup_message">Êtes vous sûr de vouloir supprimer cette news?</p>
-        <button
+
+        <Button
           type="button"
-          className="popup_bouton_close"
-          onClick={() => changePopup()}
+          event={() => changePopup()}
+        > Fermer
+        </Button>
+        {console.log(news.id)}
+        {console.log(news.article_title)}
+        {/* <Button
+          type="button"
+          name={news.article_title}
+          value={news.id}
+          event={handleDeleteCard}
         >
-          Fermer
-        </button>
+          Confirmer la suppresion
+        </Button> */}
         <button
           type="button"
           className="popup_bouton_delete"
           name={news.article_title}
           value={news.id}
-        //   onClick={(event) => handleDelete(console.log(event.target.value))}
           onClick={handleDeleteCard}
         >
           Confirmer la suppresion

@@ -35,8 +35,7 @@ const Login = ({
               placeholder="Email"
               type="email"
               register={register({
-                required: true,
-                minLength: { value: 8, message: 'Vous devez entrer au moins 8 caracteres' },
+                required: { value: true, message: 'Ce champ est obligatoire' },
               })}
             />
             {errors.email && <div className="login__form-error"> {errors.email.message} </div>}
@@ -47,7 +46,7 @@ const Login = ({
               placeholder="Mot de passe"
               type="password"
               register={register({
-                required: { value: true, message: 'Ce champs est obligatoire' },
+                required: { value: true, message: 'Ce champ est obligatoire' },
               })}
             />
             {errors.password && <div className="login__form-error"> {errors.password.message}</div>}
