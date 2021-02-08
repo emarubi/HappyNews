@@ -20,7 +20,7 @@ const About = () => (
         <img src={ EmaAvatar } alt="emanuella avatar" className="aboutUs__teamSection__character__avatar"/>
         <h4 className="aboutUs__teamSection__title">Emanuella</h4>
         <p className="aboutUs__teamSection__text">Bonjour, je suis Emanuella</p>
-        <div className="aboutUs__teamSection__social">
+        <div className="aboutUs__teamSection__character__social">
           <i className="aboutUs__teamSection__icon__face">
             <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-facebook" width="20" height="20" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#597e8d" fill="none" strokeLinecap="round" strokeLinejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -51,7 +51,7 @@ const About = () => (
         <img src={ ArtAvatar } alt="arthur avatar" className="aboutUs__teamSection__character__avatar"/>
         <h4 className="aboutUs__teamSection__title">Arthur</h4>
         <p className="aboutUs__teamSection__text">Bonjour, je suis Arthur</p>
-        <div className="aboutUs__teamSection__social">
+        <div className="aboutUs__teamSection__character__social">
           <i className="aboutUs__teamSection__icon__face">
             <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-facebook" width="20" height="20" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#597e8d" fill="none" strokeLinecap="round" strokeLinejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -82,7 +82,7 @@ const About = () => (
         <img src={ FredAvatar } alt="fredo" className="aboutUs__teamSection__character__avatar"/>
         <h4 className="aboutUs__teamSection__title">Frédo</h4>
         <p className="aboutUs__teamSection__text">Bonjour, je suis Frédo</p>
-        <div className="aboutUs__teamSection__social">
+        <div className="aboutUs__teamSection__character__social">
           <i className="aboutUs__teamSection__icon__face">
             <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-facebook" width="20" height="20" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#597e8d" fill="none" strokeLinecap="round" strokeLinejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -113,7 +113,7 @@ const About = () => (
         <img src={ YannAvatar } alt="yann" className="aboutUs__teamSection__character__avatar"/>
         <h4 className="aboutUs__teamSection__title">Yann</h4>
         <p className="aboutUs__teamSection__text">Bonjour, je suis Yann</p>
-        <div className="aboutUs__teamSection__social">
+        <div className="aboutUs__teamSection__character__social">
           <i className="aboutUs__teamSection__icon__face">
             <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-facebook" width="20" height="20" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#597e8d" fill="none" strokeLinecap="round" strokeLinejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -144,7 +144,7 @@ const About = () => (
         <img src={ PacAvatar } alt="paco" className="aboutUs__teamSection__character__avatar"/>
         <h4 className="aboutUs__teamSection__title">Paco</h4>
         <p className="aboutUs__teamSection__text">Bonjour, je suis Paco</p>
-        <div className="aboutUs__teamSection__social">
+        <div className="aboutUs__teamSection__character__social">
           <i className="aboutUs__teamSection__icon__face">
             <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-facebook" width="20" height="20" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#597e8d" fill="none" strokeLinecap="round" strokeLinejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
