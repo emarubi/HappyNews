@@ -1,7 +1,7 @@
 // import NPM
 import PropTypes from 'prop-types';
 import React from 'react';
-import { NavLink, Redirect } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Avatar from 'src/components/Header/Avatar';
 import Button from 'src/components/Header/Button';
 import Logo from 'src/components/Header/Logo';
@@ -22,7 +22,7 @@ const Header = ({
         <>
           <Avatar />
           <div className="header-helloUser">
-            <p>Bonjour {prenom} !</p>
+            <p>Bonjour {prenom}</p>
           </div>
           <NavLink to="/">
             <Button
