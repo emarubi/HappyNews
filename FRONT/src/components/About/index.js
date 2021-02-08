@@ -4,13 +4,17 @@ import ArtAvatar from 'src/assets/Images/Arthur.svg';
 import FredAvatar from 'src/assets/Images/Fredo.svg';
 import YannAvatar from 'src/assets/Images/Yann.svg';
 import PacAvatar from 'src/assets/Images/Paco.svg';
+import Discount from 'src/assets/Images/undraw_discount_d4bd.svg';
+
 import './style.scss';
 
 const About = () => (
   <section className="aboutUs">
     <div className="aboutUs__presentationSection">
-      <h2 className="aboutUs__presentationSection__title">Titre de la section présentation</h2>
-      <p className="aboutUs__presentationSection__text">Texte de la présentation</p>
+      <h2 className="aboutUs__presentationSection__title">Le projet</h2>
+      <p className="aboutUs__presentationSection__text">Happy News est une application qui vise à renouer les liens entre les commerçants de proximité et les clients. </p>
+      <p className="aboutUs__presentationSection__text">Ces clients profiteront de promotions  mise en ligne par les commerçants.  </p>
+      <img className="aboutUs__presentationSection__img" src={ Discount } alt=""/>
     </div>
     <div className="aboutUs__teamSection">
       <div className="aboutUs__teamSection__titleSection">
@@ -19,7 +23,7 @@ const About = () => (
       <div className="aboutUs__teamSection__character">
         <img src={ EmaAvatar } alt="emanuella avatar" className="aboutUs__teamSection__character__avatar"/>
         <h4 className="aboutUs__teamSection__character__title">Emanuella</h4>
-        <p className="aboutUs__teamSection__character__text">Bonjour, je suis Emanuella</p>
+        <p className="aboutUs__teamSection__character__text">Scrum Master</p>
         <div className="aboutUs__teamSection__character__social">
           <i className="aboutUs__teamSection__icon__face">
             <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-facebook" width="30" height="30" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#597e8d" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -50,7 +54,7 @@ const About = () => (
       <div className="aboutUs__teamSection__character">
         <img src={ ArtAvatar } alt="arthur avatar" className="aboutUs__teamSection__character__avatar"/>
         <h4 className="aboutUs__teamSection__character__title">Arthur</h4>
-        <p className="aboutUs__teamSection__character__text">Bonjour, je suis Arthur</p>
+        <p className="aboutUs__teamSection__character__text">Lead dev front</p>
         <div className="aboutUs__teamSection__character__social">
           <i className="aboutUs__teamSection__icon__face">
             <svg xmlns="http://www.w3.org/3000/svg" className="icon icon-tabler icon-tabler-brand-facebook" width="30" height="30" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#597e8d" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -81,7 +85,7 @@ const About = () => (
       <div className="aboutUs__teamSection__character">
         <img src={ FredAvatar } alt="fredo" className="aboutUs__teamSection__character__avatar"/>
         <h4 className="aboutUs__teamSection__character__title">Frédo</h4>
-        <p className="aboutUs__teamSection__character__text">Bonjour, je suis Frédo</p>
+        <p className="aboutUs__teamSection__character__text">Lead Back</p>
         <div className="aboutUs__teamSection__character__social">
           <i className="aboutUs__teamSection__icon__face">
             <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-facebook" width="30" height="30" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#597e8d" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -112,7 +116,7 @@ const About = () => (
       <div className="aboutUs__teamSection__character">
         <img src={ YannAvatar } alt="yann" className="aboutUs__teamSection__character__avatar"/>
         <h4 className="aboutUs__teamSection__character__title">Yann</h4>
-        <p className="aboutUs__teamSection__character__text">Bonjour, je suis Yann</p>
+        <p className="aboutUs__teamSection__character__text">Git Master</p>
         <div className="aboutUs__teamSection__character__social">
           <i className="aboutUs__teamSection__icon__face">
             <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-facebook" width="30" height="30" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#597e8d" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -143,7 +147,7 @@ const About = () => (
       <div className="aboutUs__teamSection__character">
         <img src={ PacAvatar } alt="paco" className="aboutUs__teamSection__character__avatar"/>
         <h4 className="aboutUs__teamSection__character__title">Paco</h4>
-        <p className="aboutUs__teamSection__character__text">Bonjour, je suis Paco</p>
+        <p className="aboutUs__teamSection__character__text">Product owner</p>
         <div className="aboutUs__teamSection__character__social">
           <i className="aboutUs__teamSection__icon__face">
             <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-facebook" width="30" height="30" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#597e8d" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -173,7 +177,7 @@ const About = () => (
       </div>
     </div>
     <div className="aboutUs__evolutionSection">
-      <h2 className="aboutUs__evolutionSection__title">Titre de la section évolutions</h2>
+      <h2 className="aboutUs__evolutionSection__title">Evolutions prévues</h2>
       <div className="aboutUs__evolutionSection__text">
         <ul>
           <li className="aboutUs__evolutionSection__text__item">- Optimiser le contact commerçant (formulaire de contact ou chat)</li>
