@@ -4,7 +4,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    height: 10em;
+    height: fit-content;
 }
 .avatar-profil {
     width: 35%;
@@ -23,3 +23,11 @@
   width: 8em;
   border: solid 2px vars.$Primary ;
 } */
+
+
+@media (max-width: 600px) {
+  .information-container {
+    // width: 60%;
+    margin: 1em;
+  }
+}
