@@ -48,7 +48,8 @@ const NewsModal = ({
             <h4 className="product-title">{news.article_title}</h4>
             <p>{news.description}</p>
             <div className="product-bottom-details">
-              <div className="product-price">{news.price} €</div>
+              { news.is_news === true
+              && <div className="product-price">{news.price} €</div>}
               { parseInt(localStorage.getItem('id'), 10) === news.user_id
                   && (
                     <>
