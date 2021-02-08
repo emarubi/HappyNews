@@ -8,33 +8,40 @@ import './style.scss';
 
 const About = () => (
   <section className="container">
-    <div className="presentation">
-      <div className="presentation__profile__emanuella">
-        <img src={ EmaAvatar } alt="" className="presentation__avatar__emanuella"/>
-        <h4 className="presentation__title__emanuella">Emanuella</h4>
-      </div>
-      <div className="presentation__profile__arthur">
-        <img src={ ArtAvatar } alt="" className="presentation__avatar__emanuella"/>
-        <h4 className="presentation__title__arthur">Arthur</h4>
-      </div>
-      <div className="presentation__profile__fredo">
-        <img src={ FredAvatar } alt="" className="presentation__avatar__emanuella"/>
-        <h4 className="presentation__title__fredo">Frédo</h4>
-      </div>
-      <div className="presentation__profile__yann">
-        <img src={ YannAvatar } alt="" className="presentation__avatar__emanuella"/>
-        <h4 className="presentation__title__yann">Yann</h4>
-      </div>
-      <div className="presentation__profile__paco">
-        <img src={ PacAvatar } alt="" className="presentation__avatar__emanuella"/>
-        <h4 className="presentation__title__paco">Paco</h4>
-      </div>
+    <div className="presentation__section">
+      <h2 className="presentation__title">Titre de la section présentation</h2>
+      <p className="presentation__text">Texte de la présentation</p>
     </div>
-    <div className="team">
-      L'équipe
+    <div className="team__section">
+      <div className="team__profile__emanuella">
+          <img src={ EmaAvatar } alt="emanuella avatar" className="team__avatar__emanuella"/>
+          <h4 className="team__title__emanuella">Emanuella</h4>
+          <p className="team__text__emanuella">Bonjour, je suis Emanuella</p>
+        </div>
+        <div className="team__profile__arthur">
+          <img src={ ArtAvatar } alt="arthur avatar" className="team__avatar__emanuella"/>
+          <h4 className="team__title__arthur">Arthur</h4>
+          <p className="team__text__arthur">Bonjour, je suis Arthur</p>
+        </div>
+        <div className="team__profile__fredo">
+          <img src={ FredAvatar } alt="fredo" className="team__avatar__emanuella"/>
+          <h4 className="team__title__fredo">Frédo</h4>
+          <p className="team__text__fredo">Bonjour, je suis Frédo</p>
+        </div>
+        <div className="team__profile__yann">
+          <img src={ YannAvatar } alt="yann" className="team__avatar__emanuella"/>
+          <h4 className="team__title__yann">Yann</h4>
+          <p className="team__text__yann">Bonjour, je suis Yann</p>
+        </div>
+        <div className="team__profile__paco">
+          <img src={ PacAvatar } alt="paco" className="team__avatar__emanuella"/>
+          <h4 className="team__title__paco">Paco</h4>
+          <p className="team__text__paco">Bonjour, je suis Paco</p>
+        </div>
     </div>
-    <div className="evolution">
-      Evolutions possibles
+    <div className="evolution__section">
+      <h2 className="evolution__title">Titre de la section évolutions</h2>
+      <p className="evolution__text">Texte de la section évolutions</p>
     </div>
     
   </section>
