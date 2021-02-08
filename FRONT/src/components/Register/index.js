@@ -193,7 +193,6 @@ const FormRegister = ({
               type="email"
               register={register({
                 required: { value: true, message: 'ce champ est obligatoire' },
-                minLength: { value: 9, message: 'Vous devez entrer au moins 9 caracteres' },
               })}
             />
           </div>

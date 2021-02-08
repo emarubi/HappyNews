@@ -36,7 +36,6 @@ const Login = ({
               type="email"
               register={register({
                 required: { value: true, message: 'Ce champ est obligatoire' },
-                minLength: { value: 9, message: 'Vous devez entrer au moins 9 caracteres' },
               })}
             />
             {errors.email && <div className="login__form-error"> {errors.email.message} </div>}
