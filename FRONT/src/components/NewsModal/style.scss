@@ -264,6 +264,9 @@
 }
 
 @media (max-width: 600px) {
+  .product-card {
+    width: 100%;
+  }
   .container-modal {
     min-width: 100%;
   }

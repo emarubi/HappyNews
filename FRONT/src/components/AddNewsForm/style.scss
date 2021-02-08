@@ -141,6 +141,9 @@
 // NOUVEAU CSS
 
 @use '../../styles/vars';
+.addNewsButton {
+  width: fit-content;
+}
 
 .section-addnews-form {
   height: 75vh;
