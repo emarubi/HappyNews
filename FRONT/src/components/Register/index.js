@@ -212,6 +212,7 @@ const FormRegister = ({
           </div>
           {errors.password && <div className="login__form-error"> {errors.password.message} </div>}
         </fieldset>
+        {/* <Button>Validez la création</Button> */}
         <Button>Validez la création</Button>
       </form>
     </div>

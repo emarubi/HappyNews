@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { MdDeleteForever } from 'react-icons/md';
-import { loadNews } from 'src/redux/actions';
-import { NavLink } from 'react-router-dom';
-import PopUp from 'src/containers/popup';
+import { NavLink, useLocation, useParams } from 'react-router-dom';
 import Button from 'src/components/Header/Button';
+import PopUp from 'src/containers/popup';
+import { loadNews } from 'src/redux/actions';
 import './style.scss';
 
 const NewsModal = ({
@@ -19,6 +19,10 @@ const NewsModal = ({
   const manageState = () => {
     setModalState(!modalState);
   };
+  const { id } = useParams();
+  console.log(id);
+  const location = useLocation();
+  console.log(location.pathname);
 
   useEffect(() => {
     // loadNews : une prop qui charge les news (les articles)
@@ -44,7 +48,8 @@ const NewsModal = ({
             <h4 className="product-title">{news.article_title}</h4>
             <p>{news.description}</p>
             <div className="product-bottom-details">
-              <div className="product-price">{news.price} €</div>
+              { news.is_news === true
+              && <div className="product-price">{news.price} €</div>}
               { parseInt(localStorage.getItem('id'), 10) === news.user_id
                   && (
                     <>
@@ -60,9 +65,16 @@ const NewsModal = ({
                     </>
                   )}
               <div className="product-links">
-                <NavLink to={`/commercant/profil/${news.user_id}`}>
-                  <Button>Voir le profil du commerçant</Button>
-                </NavLink>
+                {
+                  location.pathname !== `/commercant/profil/${id}`
+                  && (
+                    <>
+                      <NavLink to={`/commercant/profil/${news.user_id}`}>
+                        <Button>Voir le profil du commerçant</Button>
+                      </NavLink>
+                    </>
+                  )
+                }
               </div>
             </div>
           </div>
