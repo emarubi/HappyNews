@@ -8,40 +8,40 @@ import './style.scss';
 
 const About = () => (
   <section className="aboutUs">
-    <div className="presentation__section">
-      <h2 className="presentation__title">Titre de la section présentation</h2>
-      <p className="presentation__text">Texte de la présentation</p>
+    <div className="aboutUs__presentationSection">
+      <h2 className="aboutUs__presentationSection__title">Titre de la section présentation</h2>
+      <p className="aboutUs__presentationSection__text">Texte de la présentation</p>
     </div>
-    <div className="team__section">
-      <div className="team__profile__emanuella">
-          <img src={ EmaAvatar } alt="emanuella avatar" className="team__avatar__emanuella"/>
-          <h4 className="team__title__emanuella">Emanuella</h4>
-          <p className="team__text__emanuella">Bonjour, je suis Emanuella</p>
-        </div>
-        <div className="team__profile__arthur">
-          <img src={ ArtAvatar } alt="arthur avatar" className="team__avatar__emanuella"/>
-          <h4 className="team__title__arthur">Arthur</h4>
-          <p className="team__text__arthur">Bonjour, je suis Arthur</p>
-        </div>
-        <div className="team__profile__fredo">
-          <img src={ FredAvatar } alt="fredo" className="team__avatar__emanuella"/>
-          <h4 className="team__title__fredo">Frédo</h4>
-          <p className="team__text__fredo">Bonjour, je suis Frédo</p>
-        </div>
-        <div className="team__profile__yann">
-          <img src={ YannAvatar } alt="yann" className="team__avatar__emanuella"/>
-          <h4 className="team__title__yann">Yann</h4>
-          <p className="team__text__yann">Bonjour, je suis Yann</p>
-        </div>
-        <div className="team__profile__paco">
-          <img src={ PacAvatar } alt="paco" className="team__avatar__emanuella"/>
-          <h4 className="team__title__paco">Paco</h4>
-          <p className="team__text__paco">Bonjour, je suis Paco</p>
-        </div>
+    <div className="aboutUs__teamSection">
+      <div className="aboutUs__teamSection__character">
+        <img src={ EmaAvatar } alt="emanuella avatar" className="aboutUs__teamSection__avatar"/>
+        <h4 className="aboutUs__teamSection__title">Emanuella</h4>
+        <p className="aboutUs__teamSection__text">Bonjour, je suis Emanuella</p>
+      </div>
+      <div className="aboutUs__teamSection__character">
+        <img src={ ArtAvatar } alt="arthur avatar" className="aboutUs__teamSection__avatar"/>
+        <h4 className="aboutUs__teamSection__title">Arthur</h4>
+        <p className="aboutUs__teamSection__text">Bonjour, je suis Arthur</p>
+      </div>
+      <div className="aboutUs__teamSection__character">
+        <img src={ FredAvatar } alt="fredo" className="aboutUs__teamSection__avatar"/>
+        <h4 className="aboutUs__teamSection__title">Frédo</h4>
+        <p className="aboutUs__teamSection__text">Bonjour, je suis Frédo</p>
+      </div>
+      <div className="aboutUs__teamSection__character">
+        <img src={ YannAvatar } alt="yann" className="aboutUs__teamSection__avatar"/>
+        <h4 className="aboutUs__teamSection__title">Yann</h4>
+        <p className="aboutUs__teamSection__text">Bonjour, je suis Yann</p>
+      </div>
+      <div className="aboutUs__teamSection__character">
+        <img src={ PacAvatar } alt="paco" className="aboutUs__teamSection__avatar"/>
+        <h4 className="aboutUs__teamSection__title">Paco</h4>
+        <p className="aboutUs__teamSection__text">Bonjour, je suis Paco</p>
+      </div>
     </div>
-    <div className="evolution__section">
-      <h2 className="evolution__title">Titre de la section évolutions</h2>
-      <div className="evolution__text">
+    <div className="aboutUs__evolutionSection">
+      <h2 className="aboutUs__evolutionSection__title">Titre de la section évolutions</h2>
+      <div className="aboutUs__evolutionSection__text">
         <ul>
           <li>Optimiser le contact commerçant (formulaire de contact ou chat)</li>
           <li>Mise en place de la durée de vie d’une news au moment de la création</li>

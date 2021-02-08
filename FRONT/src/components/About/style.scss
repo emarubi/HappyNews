@@ -1,6 +1,8 @@
 @use 'src/styles/vars';
 
 .aboutUs {
+    display: flex;
+    flex-direction: column;
     // height: 69.3vh;
     // width: 50%;
     // text-align: justify;
@@ -8,9 +10,29 @@
     // line-height: 2em;
     // background-color: vars.$Linear-gradient;
     
-    &team__section {
+    &__presentationSection {
+        border: 1px solid black;
+        background-color: salmon;
+
+
+    }
+
+    &__teamSection {
+        border: 1px solid brown;
+        background-color: cadetblue;
         &__avatar {
-        height: 3em;
+            height: 10em;
         }
+        &__title{
+            font-size: 1.5em;
+        }
+        &__text{
+            font-size: 1.2em;
+        }
+    }
+
+    &__evolutionSection {
+        border: 1px solid royalblue;
+        background-color: silver;
     }
 }
