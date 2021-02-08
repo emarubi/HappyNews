@@ -176,14 +176,14 @@ const About = () => (
       <h2 className="aboutUs__evolutionSection__title">Titre de la section évolutions</h2>
       <div className="aboutUs__evolutionSection__text">
         <ul>
-          <li>Optimiser le contact commerçant (formulaire de contact ou chat)</li>
-          <li>Mise en place de la durée de vie d’une news au moment de la création</li>
-          <li>Favoris pour trouver l’intérêt de créer un compte client</li>
-          <li>Envoi automatique de NewsLetter</li>
-          <li>Monétisation du site (La publication de news payant / La possibilité d’acheter directement en ligne)</li>
-          <li>Une partie admin pour gérer les réclamations des utilisateurs</li>
-          <li>Mise en place d’un système de livraison</li>
-          <li>Historique des ventes et d’achats pour les utilisateurs</li>
+          <li className="aboutUs__evolutionSection__text__item">- Optimiser le contact commerçant (formulaire de contact ou chat)</li>
+          <li className="aboutUs__evolutionSection__text__item">- Mise en place de la durée de vie d’une news au moment de la création</li>
+          <li className="aboutUs__evolutionSection__text__item">- Favoris pour trouver l’intérêt de créer un compte client</li>
+          <li className="aboutUs__evolutionSection__text__item">- Envoi automatique de NewsLetter</li>
+          <li className="aboutUs__evolutionSection__text__item">- Monétisation du site (La publication de news payant / La possibilité d’acheter directement en ligne)</li>
+          <li className="aboutUs__evolutionSection__text__item">- Une partie admin pour gérer les réclamations des utilisateurs</li>
+          <li className="aboutUs__evolutionSection__text__item">- Mise en place d’un système de livraison</li>
+          <li className="aboutUs__evolutionSection__text__item">- Historique des ventes et d’achats pour les utilisateurs</li>
         </ul>
       </div>
     </div>
