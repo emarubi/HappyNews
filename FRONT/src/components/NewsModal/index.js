@@ -99,9 +99,16 @@ const NewsModal = ({
               <div className="product-bottom-details-modal">
                 <div className="product-price-modal">{news.price} €</div>
                 <div className="product-links-modal">
-                  <NavLink to={`/commercant/profil/${news.user_id}`}>
-                    <Button>Voir le profil du commerçant</Button>
-                  </NavLink>
+                  {
+                    location.pathname !== `/commercant/profil/${id}`
+                    && (
+                      <>
+                        <NavLink to={`/commercant/profil/${news.user_id}`}>
+                          <Button>Voir le profil du commerçant</Button>
+                        </NavLink>
+                      </>
+                    )
+                  }
                   <button type="button" className="button" onClick={() => manageState(!modalState)}>
                     Fermer  la fenêtre
                   </button>
