@@ -13,28 +13,31 @@ const About = () => (
       <p className="aboutUs__presentationSection__text">Texte de la présentation</p>
     </div>
     <div className="aboutUs__teamSection">
+      <div className="aboutUs__teamSection__titleSection">
+        <h2>La team</h2>
+      </div>
       <div className="aboutUs__teamSection__character">
-        <img src={ EmaAvatar } alt="emanuella avatar" className="aboutUs__teamSection__avatar"/>
+        <img src={ EmaAvatar } alt="emanuella avatar" className="aboutUs__teamSection__character__avatar"/>
         <h4 className="aboutUs__teamSection__title">Emanuella</h4>
         <p className="aboutUs__teamSection__text">Bonjour, je suis Emanuella</p>
       </div>
       <div className="aboutUs__teamSection__character">
-        <img src={ ArtAvatar } alt="arthur avatar" className="aboutUs__teamSection__avatar"/>
+        <img src={ ArtAvatar } alt="arthur avatar" className="aboutUs__teamSection__character__avatar"/>
         <h4 className="aboutUs__teamSection__title">Arthur</h4>
         <p className="aboutUs__teamSection__text">Bonjour, je suis Arthur</p>
       </div>
       <div className="aboutUs__teamSection__character">
-        <img src={ FredAvatar } alt="fredo" className="aboutUs__teamSection__avatar"/>
+        <img src={ FredAvatar } alt="fredo" className="aboutUs__teamSection__character__avatar"/>
         <h4 className="aboutUs__teamSection__title">Frédo</h4>
         <p className="aboutUs__teamSection__text">Bonjour, je suis Frédo</p>
       </div>
       <div className="aboutUs__teamSection__character">
-        <img src={ YannAvatar } alt="yann" className="aboutUs__teamSection__avatar"/>
+        <img src={ YannAvatar } alt="yann" className="aboutUs__teamSection__character__avatar"/>
         <h4 className="aboutUs__teamSection__title">Yann</h4>
         <p className="aboutUs__teamSection__text">Bonjour, je suis Yann</p>
       </div>
       <div className="aboutUs__teamSection__character">
-        <img src={ PacAvatar } alt="paco" className="aboutUs__teamSection__avatar"/>
+        <img src={ PacAvatar } alt="paco" className="aboutUs__teamSection__character__avatar"/>
         <h4 className="aboutUs__teamSection__title">Paco</h4>
         <p className="aboutUs__teamSection__text">Bonjour, je suis Paco</p>
       </div>
