@@ -37,6 +37,7 @@ const Header = ({
         )}
         {token == null && (
         <>
+          <div className="header-adjustSize" />
           <NavLink to="/connexion"> <Button>Connexion</Button></NavLink>
           <NavLink to="/inscription"> <Button>Inscription</Button></NavLink>
         </>
