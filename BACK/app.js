@@ -29,5 +29,5 @@ app.use(express.urlencoded({extended: true}));
 app.use(router);
 // start server on port
 app.listen(process.env.PORT || 3000, () => {
-    console.log('API is ready on :', process.env.PORT);
+    console.log('🚀 API is ready on :', process.env.PORT);
 });
