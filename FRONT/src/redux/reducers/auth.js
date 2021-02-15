@@ -8,6 +8,7 @@ export const initialState = {
   email: '',
   password: '',
   logged: false,
+  regeisterd: false,
   token: null || localStorage.getItem('token'),
   errorMessage: '',
   first_name: '',
@@ -17,11 +18,11 @@ export const initialState = {
   latitude: '',
   longitude: '',
   city: '',
-  company_name: null,
-  shop_name: null,
-  registration_number: null,
+  company_name: '',
+  shop_name: '',
+  registration_number: '',
   role_id: 4,
-  activity_id: null,
+  activity_id: '',
 };
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -133,6 +134,18 @@ const authReducer = (state = initialState, action) => {
     case SUBSCRIBE_SUCCESS:
       return {
         ...state,
+        registered: action.data.registered,
+        email: '',
+        password: '',
+        first_name: '',
+        last_name: '',
+        adress: '',
+        zip_code: '',
+        city: '',
+        company_name: '',
+        shop_name: '',
+        registration_number: '',
+        role_id: 4,
       };
     default:
       return { ...state };

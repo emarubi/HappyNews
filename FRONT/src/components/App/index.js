@@ -20,12 +20,11 @@ import News from 'src/containers/news';
 import Register from 'src/containers/register';
 // import Login from 'src/components/Login';
 import RetaillerP from 'src/containers/RetaillerP';
-
 // == Import CSS
 import './styles.scss';
 
 // == Composant
-const App = ({ isLogged }) => (
+const App = ({ isLogged, isRegistered }) => (
   <div className="page_container">
     <Header />
     <Switch>
@@ -36,7 +35,8 @@ const App = ({ isLogged }) => (
         {isLogged ? <Redirect to="/news/liste" /> : <Login />}
       </Route>
       <Route exact path="/inscription">
-        <Register />
+        {isRegistered ? <Redirect to="/connexion" /> : <Register />}
+        {/* <Register /> */}
       </Route>
       <Route exact path="/commercant/profil/:id">
         {/* { isLogged ? <RetaillerP /> : <Redirect to="/news/liste" />} */}
@@ -45,9 +45,6 @@ const App = ({ isLogged }) => (
       <Route exact path="/news/liste">
         <News />
       </Route>
-{/*       <Route exact path="/newsmodal">
-        <NewsModal news={newsList.data[3]} />
-      </Route> */}
       <Route exact path="/creation-de-news">
         <AddNewsForm />
       </Route>

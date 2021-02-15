@@ -11,13 +11,13 @@ const AddNewsForm = ({
   article_title, description,
   price, userId, handleChangeField, handleAddNews, handleIsNews,
 }) => {
-  const [image, setImage ] = useState('');
+  const [image, setImage] = useState('');
   const [progress, setProgress] = useState(0);
   // const [isDisabled, setIsDisabled] = useState(true);
 
-  const handleChange = e => handleChangeField([e.target.name], e.target.value);
+  const handleChange = (e) => handleChangeField([e.target.name], e.target.value);
   //
-  const handleChangeImg = e => {
+  const handleChangeImg = (e) => {
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
     }
@@ -77,15 +77,17 @@ const AddNewsForm = ({
     <>
       { parseInt(localStorage.getItem('id'), 10) === parseInt(id, 10)
       && (
+      <div className="addNewsButton">
         <Button
           type="button"
           event={() => manageState(!modalState)}
         >
           Créer une news / un article
         </Button>
+      </div>
       )}
       <section className={`section-addnews-form modalBackground modalShowing-${modalState}`}>
-      {/* <section className="section-addnews-form"> */}
+        {/* <section className="section-addnews-form"> */}
         <div id="wraper">
           <div className="form-container">
             <span className="form-heading">Ici, vous pouvez ajouter une News ou un article à votre vitrine</span>
@@ -132,7 +134,7 @@ const AddNewsForm = ({
               </div>
               {/* ajout input article is news a false */}
               <div className="input-group">
-                <label className="form__label label-register" htmlFor="isNews">Cochez s'il s'agit d'un article pour votre vitrine</label>
+                <label className="form__label--isNews" htmlFor="isNews">Cochez s'il s'agit d'un article pour votre vitrine</label>
                 <input
                   onChange={(event) => {
                     handleIsNews(event.target.checked);
@@ -151,7 +153,7 @@ const AddNewsForm = ({
                   type="file"
                   onChange={handleChangeImg}
                 />
-                <button type="button" onClick={uploadImageFirebase}>v</button>
+                <button type="button" onClick={uploadImageFirebase}>valider</button>
                 <span className="bar" />
               </div>
               <div className="input-group">

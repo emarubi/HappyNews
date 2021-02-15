@@ -42,7 +42,7 @@ const FormRegister = ({
               placeholder="Nom"
               type="text"
               register={register({
-                required: { value: true, message: 'ce champs est obligatoire' },
+                required: { value: true, message: 'ce champ est obligatoire' },
               })}
             />
             {errors.last_name && <div className="login__form-error"> {errors.last_name.message} </div>}
@@ -53,7 +53,7 @@ const FormRegister = ({
               placeholder="prenom"
               type="text"
               register={register({
-                required: { value: true, message: 'ce champs est obligatoire' },
+                required: { value: true, message: 'ce champ est obligatoire' },
               })}
             />
           </div>
@@ -69,7 +69,7 @@ const FormRegister = ({
               placeholder="adresse"
               type="text"
               register={register({
-                required: { value: true, message: 'ce champs est obligatoire' },
+                required: { value: true, message: 'ce champ est obligatoire' },
 
               })}
             />
@@ -83,9 +83,9 @@ const FormRegister = ({
               placeholder="code postal"
               type="number"
               register={register({
-                required: { value: true, message: 'ce champs est obligatoire' },
-                minLength: { value: 5, message: 'Ce champs ne peux contenir moins de 5 caracteres' },
-                maxLength: { value: 5, message: 'Ce champs ne peux contenir plus de 5 caracteres' },
+                required: { value: true, message: 'ce champ est obligatoire' },
+                minLength: { value: 5, message: 'Ce champ ne peux contenir moins de 5 caracteres' },
+                maxLength: { value: 5, message: 'Ce champ ne peux contenir plus de 5 caracteres' },
               })}
             />
           </div>
@@ -98,7 +98,7 @@ const FormRegister = ({
               placeholder="ville"
               type="text"
               register={register({
-                required: { value: true, message: 'ce champs est obligatoire' },
+                required: { value: true, message: 'ce champ est obligatoire' },
               })}
             />
           </div>
@@ -172,11 +172,12 @@ const FormRegister = ({
               placeholder="siret"
               type="text"
               register={register({
-                minLength: { value: 4, message: 'le siret doit contenir au moins 4 caracteres' },
-                maxLength: { value: 14, message: 'le siret doit contenir au plus 14 caracteres' },
+                minLength: { value: 14, message: 'le siret doit contenir 14 caracteres' },
+                maxLength: { value: 14, message: 'le siret doit contenir 14 caracteres' },
               })}
             />
           </div>
+          {errors.registration_number && <div className="login__form-error"> {errors.registration_number.message} </div>}
         </div>
       </fieldset>
     </>
@@ -191,7 +192,7 @@ const FormRegister = ({
               placeholder="email"
               type="email"
               register={register({
-                required: { value: true, message: 'ce champs est obligatoire' },
+                required: { value: true, message: 'ce champ est obligatoire' },
               })}
             />
           </div>
@@ -204,13 +205,14 @@ const FormRegister = ({
               placeholder="mot de passe"
               type="password"
               register={register({
-                required: { value: true, message: 'ce champs est obligatoire' },
+                required: { value: true, message: 'ce champ est obligatoire' },
                 // minLength: { value: 8, message: 'le password doit contenir au moins 8 caracteres' },
               })}
             />
           </div>
           {errors.password && <div className="login__form-error"> {errors.password.message} </div>}
         </fieldset>
+        {/* <Button>Validez la création</Button> */}
         <Button>Validez la création</Button>
       </form>
     </div>

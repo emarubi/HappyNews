@@ -1,20 +1,118 @@
 @use 'src/styles/vars';
 
-.about {
-    height: 69.3vh;
-    width: 50%;
-    text-align: justify;
-    margin: 3em auto 3em;
-    line-height: 2em;
-    background-color: vars.$Linear-gradient;
-    
-    &_title {
-        margin: 1em;
-        font-weight: vars.$Dark ;
+.aboutUs {
+    display: flex;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+
+    &__presentationSection {
+        margin: 1.5em 0;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background:vars.$Linear-gradient;
+        display: flex;
+        box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.55);
+        &__title{
+            padding: 1em 0;
+            font-size: 2.5em;
+            color: #fff;
+        }
+        &__text {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 1em;
+            color: #fff;
+            width: 90%;
+        }
+        &__img {
+          margin-top: 10em;
+          width: 45em;
+        }
     }
 
-    &_text {
-        margin: 1em;
-        font-size: 1.2em;
+    &__teamSection {
+        height: 90vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        background: #36586B;
+        box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.55);
+        &__titleSection {
+            width: 100%;
+            text-align: center;
+            padding: 1em 0;
+            font-size: 2.5em;
+            color: #fff;
+        }
+        &__character {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 20em;
+            width: 14.2em;
+            border-radius: 17% 7%;
+            background-color: #fff;
+            &__avatar {
+                margin-top: -3.5em;
+                height: 8em;
+            }
+            &__avatar:hover {
+                transition: 0.5s ease-in-out;
+                margin-top: -3.6em;
+                height: 8.5em;
+            }
+            &__title {
+                font-size: 1.8em;
+                margin-top: -2em;
+            }
+            &__text {
+                font-size: 1.6em;
+                font-weight: 500;
+                margin-top: -2em;
+            }
+            &__social {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                margin-bottom: 1.5em;
+                width: 100%;
+            }
+        }
+    }
+        
+    &__evolutionSection {
+        margin: 1.5em 0;
+        display: flex;
+        height: 90vh;
+        flex-direction: column;
+        align-items: center;
+        background:vars.$Linear-gradient;
+        box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.55);
+        &__title {
+            margin: 1em 0;
+            font-size: 2.5em;
+            color: #fff;
+        }
+        &__text {
+            margin: 1em 2em;
+            font-size: 2em;
+            color: #fff;
+            align-items: center;
+            &__item {
+                margin-top: 0.6em;
+            }
+            &__item:hover {
+                color: #ceea53;
+                // font-weight: 450;
+                transition: 0.5s ease-in-out;
+                cursor: pointer;
+            }
+        }
+        
     }
 }

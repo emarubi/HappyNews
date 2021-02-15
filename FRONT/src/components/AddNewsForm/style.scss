@@ -141,6 +141,10 @@
 // NOUVEAU CSS
 
 @use '../../styles/vars';
+.addNewsButton {
+  width: fit-content;
+  padding-left: 5em;
+}
 
 .section-addnews-form {
   height: 75vh;
@@ -163,7 +167,7 @@
   height: 90%;
   background-color: #ffffff;
   position: relative;
-  top:-3em;
+  // top:-2em;
   padding: 10rem 0;
   box-shadow: 0 1px 1.5rem rgba(0,0,0,.1);
   border-radius: 1rem;
@@ -177,9 +181,11 @@
   left: 0;
   width: 100%;
   height: 27rem;
-  background: linear-gradient(to left, #fc6767, #ec008c);
+  background: vars.$Linear-gradient;
   border-bottom-right-radius: 100%;
   border-bottom-left-radius: 100%;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
   // z-index: -1;
 }
 
@@ -187,16 +193,16 @@
   color: #ffffff;
   font-size: 2.5rem;
   position: absolute;
-  top: 3.5rem;
+  top: 1.8rem;
   left: 10rem;
 }
 
 .form-body {
-transform: translateX(10rem);
+transform: translateX(5rem);
 padding: 2rem 0;
 background-color: #fff;
 border-radius: 1rem;
-box-shadow: 0 1px 1.5rem rgba(0,0,0,.1);
+box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
 }
 
 .input-group {
@@ -204,7 +210,7 @@ box-shadow: 0 1px 1.5rem rgba(0,0,0,.1);
   margin: 0 auto;
   position: relative;
   display: flex;
-  align-items: baseline;
+  align-items: center;
 }
 
 .input-group input {
@@ -249,32 +255,31 @@ box-shadow: 0 1px 1.5rem rgba(0,0,0,.1);
 .input-group button{
   margin: 2rem auto;
   padding: 0.4rem 4rem;
-  background: linear-gradient(to left, #fc6767, #ec008c);
+  background: vars.$Linear-gradient;
   border: none;
   color: #fff;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   cursor: pointer;
   border-radius: 3rem;
 }
 
 .input-group button:focus,
 .input-group button:hover {
-  background: linear-gradient(to right, #fc6767, #ec008c);
+  background: vars.$Secondary;
 }
 
 .form__send--picture {
   height: 2em;
 }
 
+.form__label--isNews {
+  width: auto;
+  font-size: 1.2em;
+}
 
-
-
-
-
-
-
-
-
+.button--select-file {
+  width: 10%;
+}
 
 // Modal
 .modalBackground {

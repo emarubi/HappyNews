@@ -82,6 +82,8 @@ const api = (store) => (next) => (action) => {
       axios(config)
         .then((response) => {
           store.dispatch(handleSubscribeSuccess(response.data));
+          console.log(response.data);
+          console.log(response.data.registered);
         })
         .catch((error) => { // cas d'erreur
           console.log(error);

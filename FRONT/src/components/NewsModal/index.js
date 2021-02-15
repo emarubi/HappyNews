@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { MdDeleteForever } from 'react-icons/md';
-import { loadNews } from 'src/redux/actions';
-import { NavLink } from 'react-router-dom';
-import PopUp from 'src/containers/popup';
+import { NavLink, useLocation, useParams } from 'react-router-dom';
 import Button from 'src/components/Header/Button';
+import PopUp from 'src/containers/popup';
+import { loadNews } from 'src/redux/actions';
 import './style.scss';
 
 const NewsModal = ({
@@ -19,6 +19,10 @@ const NewsModal = ({
   const manageState = () => {
     setModalState(!modalState);
   };
+  const { id } = useParams();
+  console.log(id);
+  const location = useLocation();
+  console.log(location.pathname);
 
   useEffect(() => {
     // loadNews : une prop qui charge les news (les articles)
@@ -36,7 +40,6 @@ const NewsModal = ({
               news.is_news === true ? 'News' : 'Article en vitrine'
             }
           </div>
-
           <div className="product-tumb">
             <img src={news.picture_url} alt="news" onClick={() => manageState(!modalState)} />
           </div>
@@ -45,23 +48,33 @@ const NewsModal = ({
             <h4 className="product-title">{news.article_title}</h4>
             <p>{news.description}</p>
             <div className="product-bottom-details">
-              <div className="product-price">{news.price} €</div>
-              <div className="product-links">
-                <NavLink to={`/commercant/profil/${news.user_id}`}>
-                  <Button>Voir le profil du commerçant</Button>
-                </NavLink>
-                { parseInt(localStorage.getItem('id'), 10) === news.user_id
+              { news.is_news === true
+              && <div className="product-price">{news.price} €</div>}
+              { parseInt(localStorage.getItem('id'), 10) === news.user_id
                   && (
                     <>
-                      <MdDeleteForever onClick={() => {
-                        changePopup(); console.log(popUp);
-                      }}
-                      />
+                      <div className="delete-button">
+                        <MdDeleteForever
+                          onClick={() => {
+                            changePopup(); console.log(popUp);
+                          }}
+                        />
+                      </div>
                       {popUp === true
                       && <PopUp news={news} changePopup={changePopup} />}
                     </>
-
                   )}
+              <div className="product-links">
+                {
+                  location.pathname !== `/commercant/profil/${id}`
+                  && (
+                    <>
+                      <NavLink to={`/commercant/profil/${news.user_id}`}>
+                        <Button>Voir le profil du commerçant</Button>
+                      </NavLink>
+                    </>
+                  )
+                }
               </div>
             </div>
           </div>
@@ -86,9 +99,16 @@ const NewsModal = ({
               <div className="product-bottom-details-modal">
                 <div className="product-price-modal">{news.price} €</div>
                 <div className="product-links-modal">
-                  <NavLink to={`/commercant/profil/${news.user_id}`}>
-                    <Button>Voir le profil du commerçant</Button>
-                  </NavLink>
+                  {
+                    location.pathname !== `/commercant/profil/${id}`
+                    && (
+                      <>
+                        <NavLink to={`/commercant/profil/${news.user_id}`}>
+                          <Button>Voir le profil du commerçant</Button>
+                        </NavLink>
+                      </>
+                    )
+                  }
                   <button type="button" className="button" onClick={() => manageState(!modalState)}>
                     Fermer  la fenêtre
                   </button>
