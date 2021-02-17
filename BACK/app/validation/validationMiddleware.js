@@ -3,6 +3,7 @@ module.exports = {
     validateBody(schema) {
         return async (request, response, next) => {
             try {
+                // le "schema" représente les informations envoyées par le formulaire du front
                 const validation = await schema.validateAsync(request.body);
 
                 // validation has an error prop if there is a problem
